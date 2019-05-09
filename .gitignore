@@ -1,0 +1,10 @@
+*.log
+INCA_libs/*
+*/INCA_libs/*
+*/nWaveLog/*
+nWaveLog/*
+*/novas*
+sftp-config.json
+db/
+.qsys_edit/
+incremental_db/
