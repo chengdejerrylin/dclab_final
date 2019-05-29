@@ -4,7 +4,8 @@ INCA_libs/*
 */nWaveLog/*
 nWaveLog/*
 */novas*
-sftp-config.json
+sftp*
 db/
 .qsys_edit/
 incremental_db/
+.vscode/

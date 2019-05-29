@@ -136,35 +136,16 @@ module DE2_115(
 	output [16:0] HSMC_TX_D_P,
 	inout [6:0] EX_IO
 );
-	// inout port at this layer
-	logic i2c_oen, i2c_sdat;
-	logic [15:0] sram_wdata;
-	assign I2C_SDAT = i2c_oen ? i2c_sdat : 1'bz;
-	assign SRAM_DQ = /* TODO */;
-	/* TODO: Add PLL to generate a 100kHz clock (Generate ALTPLL module with Qsys) */
-	I2CSender u_i2c(
-		// .i_clk(pll_clk),
-		.i_rst(KEY[0]),
-		.o_sclk(I2C_SCLK),
-		.o_sdat(i2c_sdat),
-		// you are outputing (you are not outputing only when you are "ack"ing.)
-		.o_oen(i2c_oen)
-	);
-	// And add your module here, it roughly looks like this
-	YourModule u_your_module(
-		.i_clk(AUD_BCLK),
-		.i_rst(KEY[0]),
-		.i_adc_dat(AUD_ADCDAT),
-		.i_adc_clk(AUD_ADCLRCK),
-		.o_dac_dat(AUD_DACDAT),
-		.i_dac_clk(AUD_DACLRCK),
-		.o_sram_adr(SRAM_ADDR),
-		.i_sram_rdata(SRAM_DQ),
-		.o_sram_wdata(sram_wdata),
-		.o_sram_cen(SRAM_CE_N),
-		.o_sram_lb(SRAM_LB_N),
-		.o_sram_ue(SRAM_UB_N),
-		.o_sram_oe(SRAM_OE_N),
-		.o_sram_we(SRAM_WE_N)
-	);
+wire RST_N;
+reg VGA_CLK;
+
+assign RST_N = KEY[0];
+
+always_ff @(posedge CLOCK_50 or negedge RST_N) begin
+	if(~RST_N) begin
+		VGA_CLK <= 1'b0;
+	end else begin
+		VGA_CLK <= 1'b1;
+	end
+end
 endmodule
