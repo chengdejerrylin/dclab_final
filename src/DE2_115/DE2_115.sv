@@ -137,15 +137,9 @@ module DE2_115(
 	inout [6:0] EX_IO
 );
 wire RST_N;
-reg VGA_CLK;
-
 assign RST_N = KEY[0];
 
-always_ff @(posedge CLOCK_50 or negedge RST_N) begin
-	if(~RST_N) begin
-		VGA_CLK <= 1'b0;
-	end else begin
-		VGA_CLK <= 1'b1;
-	end
-end
+VGA vga(.clk(CLOCK_50), .rst_n(RST_N), .VGA_B(VGA_B), .VGA_BLANK_N(VGA_BLANK_N), .VGA_CLK(VGA_CLK), .VGA_G(VGA_G), 
+	.VGA_HS(VGA_HS), .VGA_R(VGA_R), .VGA_SYNC_N(VGA_SYNC_N), .VGA_VS(VGA_VS));
+
 endmodule
