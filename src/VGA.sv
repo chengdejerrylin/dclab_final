@@ -1,4 +1,5 @@
 `define START_PICTURE "pic/snow_tree.jpg.dat"
+`define SECOND_PICTURE "pic/arch_nebula.jpg.dat"
 
 module VGA(
 	input clk, 
@@ -12,7 +13,10 @@ module VGA(
 	output logic       VGA_HS,
 	output logic [7:0] VGA_R,
 	output             VGA_SYNC_N,
-	output logic       VGA_VS
+	output logic       VGA_VS,
+
+	//top
+	input i_state
 );
 
 //protocal
@@ -40,6 +44,7 @@ logic n_VGA_HS, n_VGA_VS, n_VGA_BLANK_N;
 
 //mem
 logic [23:0] start_pic_mem [0 : (H_DISP * V_DISP -1)];
+logic [23:0] second_pic_mem [0 : (H_DISP * V_DISP -1)];
 logic [23:0] curr_pixel_w;
 
 //assignment
@@ -49,15 +54,18 @@ assign n_VGA_HS = (h_counter >= H_SYNC);
 assign n_VGA_VS = (v_counter >= V_SYNC);
 assign n_VGA_BLANK_N = is_display_w;
 assign n_h_counter = (h_counter == (H_TOTAL - 11'd1) ) ? 11'd0 : h_counter + 11'd1;
-assign curr_pixel_w = start_pic_mem[pic_addr];
 assign is_display_w = (h_counter >= H_SYNC + H_BACK) && (h_counter < H_SYNC + H_BACK + H_DISP) && 
 					  (v_counter >= V_SYNC + V_BACK) && (v_counter < V_SYNC + V_BACK + V_DISP);
 
+assign curr_pixel_w = i_state ? second_pic_mem[pic_addr] : start_pic_mem[pic_addr];
 assign n_VGA_R = curr_pixel_w[23:16];
 assign n_VGA_G = curr_pixel_w[15: 8];
 assign n_VGA_B = curr_pixel_w[ 7: 0];
 
-initial $readmemh(`START_PICTURE,start_pic_mem);
+initial begin
+	$readmemh(`START_PICTURE, start_pic_mem);
+	$readmemh(`SECOND_PICTURE, second_pic_mem);
+end 
 
 always_comb begin
 	if(h_counter == H_TOTAL - 11'd1)n_v_counter = (v_counter == (V_TOTAL - 10'd1) ) ? 10'd0 : v_counter + 10'd1;
