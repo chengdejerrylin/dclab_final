@@ -140,7 +140,7 @@ wire RST_N;
 assign RST_N = KEY[0];
 
 wire key1;
-Debounce debounce(.i_in(KEY[1]), .i_clk(CLOCK_50), .i_rst(RST_N), .o_neg(key1))
+Debounce debounce(.i_in(KEY[1]), .i_clk(CLOCK_50), .i_rst(RST_N), .o_debounced(key1));
 
 VGA vga(.clk(CLOCK_50), .rst_n(RST_N), .VGA_B(VGA_B), .VGA_BLANK_N(VGA_BLANK_N), .VGA_CLK(VGA_CLK), .VGA_G(VGA_G), 
 	.VGA_HS(VGA_HS), .VGA_R(VGA_R), .VGA_SYNC_N(VGA_SYNC_N), .VGA_VS(VGA_VS), .i_state(key1));

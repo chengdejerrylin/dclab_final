@@ -1,5 +1,5 @@
-`define START_PICTURE "pic/snow_tree.jpg.dat"
-`define SECOND_PICTURE "pic/arch_nebula.jpg.dat"
+`define START_PICTURE "../pic/snow_tree.jpg.dat"
+`define SECOND_PICTURE "../pic/arch_nebula.jpg.dat"
 
 module VGA(
 	input clk, 
@@ -58,6 +58,7 @@ assign is_display_w = (h_counter >= H_SYNC + H_BACK) && (h_counter < H_SYNC + H_
 					  (v_counter >= V_SYNC + V_BACK) && (v_counter < V_SYNC + V_BACK + V_DISP);
 
 assign curr_pixel_w = i_state ? second_pic_mem[pic_addr] : start_pic_mem[pic_addr];
+// assign curr_pixel_w = i_state ? 24'hFFFF00 : 24'hFFFFFF;
 assign n_VGA_R = curr_pixel_w[23:16];
 assign n_VGA_G = curr_pixel_w[15: 8];
 assign n_VGA_B = curr_pixel_w[ 7: 0];
