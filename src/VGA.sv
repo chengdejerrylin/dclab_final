@@ -64,8 +64,8 @@ assign n_VGA_G = {8{curr_pixel_w[1]}};
 assign n_VGA_B = {8{curr_pixel_w[0]}};
 
 initial begin
-	$readmemh(`START_PICTURE, start_pic_mem);
-	$readmemh(`SECOND_PICTURE, second_pic_mem);
+	$readmemb(`START_PICTURE, start_pic_mem);
+	$readmemb(`SECOND_PICTURE, second_pic_mem);
 end 
 
 always_comb begin
