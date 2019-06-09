@@ -43,9 +43,9 @@ logic [7:0] n_VGA_R, n_VGA_G, n_VGA_B;
 logic n_VGA_HS, n_VGA_VS, n_VGA_BLANK_N;
 
 //mem
-logic [23:0] start_pic_mem [0 : (H_DISP * V_DISP -1)];
-logic [23:0] second_pic_mem [0 : (H_DISP * V_DISP -1)];
-logic [23:0] curr_pixel_w;
+logic [2:0] start_pic_mem [0 : (H_DISP * V_DISP -1)];
+logic [2:0] second_pic_mem [0 : (H_DISP * V_DISP -1)];
+logic [2:0] curr_pixel_w;
 
 //assignment
 assign VGA_CLK = clk;
@@ -59,9 +59,9 @@ assign is_display_w = (h_counter >= H_SYNC + H_BACK) && (h_counter < H_SYNC + H_
 
 assign curr_pixel_w = i_state ? second_pic_mem[pic_addr] : start_pic_mem[pic_addr];
 // assign curr_pixel_w = i_state ? 24'hFFFF00 : 24'hFFFFFF;
-assign n_VGA_R = curr_pixel_w[23:16];
-assign n_VGA_G = curr_pixel_w[15: 8];
-assign n_VGA_B = curr_pixel_w[ 7: 0];
+assign n_VGA_R = {8{curr_pixel_w[2]}};
+assign n_VGA_G = {8{curr_pixel_w[1]}};
+assign n_VGA_B = {8{curr_pixel_w[0]}};
 
 initial begin
 	$readmemh(`START_PICTURE, start_pic_mem);
