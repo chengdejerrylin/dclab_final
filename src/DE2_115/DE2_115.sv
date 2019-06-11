@@ -136,13 +136,20 @@ module DE2_115(
 	output [16:0] HSMC_TX_D_P,
 	inout [6:0] EX_IO
 );
+reg CLOCK_25;
 wire RST_N;
+
 assign RST_N = KEY[0];
+
+always_ff @(posedge CLOCK_50 or negedge RST_N) begin
+	if(~RST_N) CLOCK_25 <= 1'b0;
+	else CLOCK_25 <= ~CLOCK_25;
+end
 
 wire key1;
 Debounce debounce(.i_in(KEY[1]), .i_clk(CLOCK_50), .i_rst(RST_N), .o_debounced(key1));
 
-VGA vga(.clk(CLOCK_50), .rst_n(RST_N), .VGA_B(VGA_B), .VGA_BLANK_N(VGA_BLANK_N), .VGA_CLK(VGA_CLK), .VGA_G(VGA_G), 
+VGA vga(.clk(CLOCK_25), .rst_n(RST_N), .VGA_B(VGA_B), .VGA_BLANK_N(VGA_BLANK_N), .VGA_CLK(VGA_CLK), .VGA_G(VGA_G), 
 	.VGA_HS(VGA_HS), .VGA_R(VGA_R), .VGA_SYNC_N(VGA_SYNC_N), .VGA_VS(VGA_VS), .i_state(key1));
 
 endmodule
