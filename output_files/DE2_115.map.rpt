@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_115
-Sun Jun 09 15:22:48 2019
+Thu Jun 13 18:43:21 2019
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
 
 
@@ -16,10 +16,11 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
   8. General Register Statistics
   9. Parameter Settings for User Entity Instance: Debounce:debounce
  10. Parameter Settings for User Entity Instance: VGA:vga
- 11. Port Connectivity Checks: "Debounce:debounce"
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+ 11. Port Connectivity Checks: "VGA:vga"
+ 12. Port Connectivity Checks: "Debounce:debounce"
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -46,15 +47,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jun 09 15:22:48 2019       ;
+; Analysis & Synthesis Status        ; Successful - Thu Jun 13 18:43:21 2019       ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Full Version ;
 ; Revision Name                      ; DE2_115                                     ;
 ; Top-level Entity Name              ; DE2_115                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 33,123                                      ;
-;     Total combinational functions  ; 33,102                                      ;
-;     Dedicated logic registers      ; 71                                          ;
-; Total registers                    ; 71                                          ;
+; Total logic elements               ; 102                                         ;
+;     Total combinational functions  ; 89                                          ;
+;     Dedicated logic registers      ; 72                                          ;
+; Total registers                    ; 72                                          ;
 ; Total pins                         ; 480                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -159,58 +160,55 @@ agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ; < 0.1%      ;
-;     Processors 5-8         ;   0.0%      ;
+;     Processors 2-8         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                    ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                ; Library ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
-; src/DE2_115/DE2_115.sv           ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/DE2_115/DE2_115.sv  ;         ;
-; src/VGA.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/VGA.sv              ;         ;
-; src/Debounce.sv                  ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/Debounce.sv         ;         ;
-; pic/snow_tree.jpg.dat            ; yes             ; User Unspecified File        ; C:/Users/team06/Desktop/dclab_final/pic/snow_tree.jpg.dat   ;         ;
-; pic/arch_nebula.jpg.dat          ; yes             ; User Unspecified File        ; C:/Users/team06/Desktop/dclab_final/pic/arch_nebula.jpg.dat ;         ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                               ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------+---------+
+; src/DE2_115/DE2_115.sv           ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/DE2_115/DE2_115.sv ;         ;
+; src/VGA.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/VGA.sv             ;         ;
+; src/Debounce.sv                  ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/Debounce.sv        ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                       ;
-+---------------------------------------------+---------------------+
-; Resource                                    ; Usage               ;
-+---------------------------------------------+---------------------+
-; Estimated Total logic elements              ; 33,123              ;
-;                                             ;                     ;
-; Total combinational functions               ; 33102               ;
-; Logic element usage by number of LUT inputs ;                     ;
-;     -- 4 input functions                    ; 28290               ;
-;     -- 3 input functions                    ; 3729                ;
-;     -- <=2 input functions                  ; 1083                ;
-;                                             ;                     ;
-; Logic elements by mode                      ;                     ;
-;     -- normal mode                          ; 33065               ;
-;     -- arithmetic mode                      ; 37                  ;
-;                                             ;                     ;
-; Total registers                             ; 71                  ;
-;     -- Dedicated logic registers            ; 71                  ;
-;     -- I/O registers                        ; 0                   ;
-;                                             ;                     ;
-; I/O pins                                    ; 480                 ;
-;                                             ;                     ;
-; Embedded Multiplier 9-bit elements          ; 0                   ;
-;                                             ;                     ;
-; Maximum fan-out node                        ; VGA:vga|pic_addr[4] ;
-; Maximum fan-out                             ; 8375                ;
-; Total fan-out                               ; 127400              ;
-; Average fan-out                             ; 3.72                ;
-+---------------------------------------------+---------------------+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 102          ;
+;                                             ;              ;
+; Total combinational functions               ; 89           ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 32           ;
+;     -- 3 input functions                    ; 4            ;
+;     -- <=2 input functions                  ; 53           ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 61           ;
+;     -- arithmetic mode                      ; 28           ;
+;                                             ;              ;
+; Total registers                             ; 72           ;
+;     -- Dedicated logic registers            ; 72           ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 480          ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; KEY[0]~input ;
+; Maximum fan-out                             ; 72           ;
+; Total fan-out                               ; 1112         ;
+; Average fan-out                             ; 0.88         ;
++---------------------------------------------+--------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -218,9 +216,9 @@ agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
-; |DE2_115                   ; 33102 (0)         ; 71 (0)       ; 0           ; 0            ; 0       ; 0         ; 480  ; 0            ; |DE2_115                   ; work         ;
+; |DE2_115                   ; 89 (1)            ; 72 (1)       ; 0           ; 0            ; 0       ; 0         ; 480  ; 0            ; |DE2_115                   ; work         ;
 ;    |Debounce:debounce|     ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:debounce ; work         ;
-;    |VGA:vga|               ; 33097 (33097)     ; 67 (67)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga           ; work         ;
+;    |VGA:vga|               ; 83 (83)           ; 67 (67)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga           ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -230,12 +228,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 71    ;
+; Total registers                              ; 72    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 71    ;
+; Number of registers using Asynchronous Clear ; 72    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 29    ;
+; Number of registers using Clock Enable       ; 28    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -252,21 +250,43 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: VGA:vga ;
-+----------------+-------------+-----------------------+
-; Parameter Name ; Value       ; Type                  ;
-+----------------+-------------+-----------------------+
-; H_SYNC         ; 00001111000 ; Unsigned Binary       ;
-; H_BACK         ; 00001000000 ; Unsigned Binary       ;
-; H_DISP         ; 01100100000 ; Unsigned Binary       ;
-; H_FRONT        ; 00000111000 ; Unsigned Binary       ;
-; H_TOTAL        ; 10000010000 ; Unsigned Binary       ;
-; V_SYNC         ; 0000000110  ; Unsigned Binary       ;
-; V_BACK         ; 0000010111  ; Unsigned Binary       ;
-; V_DISP         ; 1001011000  ; Unsigned Binary       ;
-; V_FRONT        ; 0000100101  ; Unsigned Binary       ;
-; V_TOTAL        ; 1010011010  ; Unsigned Binary       ;
-+----------------+-------------+-----------------------+
++-------------------+------------+---------------------+
+; Parameter Name    ; Value      ; Type                ;
++-------------------+------------+---------------------+
+; H_SYNC            ; 0001100000 ; Unsigned Binary     ;
+; H_BACK            ; 0000110000 ; Unsigned Binary     ;
+; H_DISP            ; 1010000000 ; Unsigned Binary     ;
+; H_FRONT           ; 0000010000 ; Unsigned Binary     ;
+; H_TOTAL           ; 1100100000 ; Unsigned Binary     ;
+; V_SYNC            ; 0000000010 ; Unsigned Binary     ;
+; V_BACK            ; 0000100001 ; Unsigned Binary     ;
+; V_DISP            ; 0111100000 ; Unsigned Binary     ;
+; V_FRONT           ; 0000001010 ; Unsigned Binary     ;
+; V_TOTAL           ; 1000001101 ; Unsigned Binary     ;
+; PIXEL_PER_GRID    ; 1010       ; Unsigned Binary     ;
+; STATUS_BAR_HEIGHT ; 000100     ; Unsigned Binary     ;
+; WIDTH             ; 0001000000 ; Unsigned Binary     ;
+; HEIGHT            ; 0000110000 ; Unsigned Binary     ;
+; GAME_HEIGHT       ; 0000101100 ; Unsigned Binary     ;
++-------------------+------------+---------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA:vga"                                                                                                                                                ;
++--------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                                                         ;
++--------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; i_state      ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (2 bits) it drives.  Extra input bit(s) "i_state[1..1]" will be connected to GND. ;
+; o_request_x  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; o_request_y  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; o_buzy       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                        ;
+; i_is_wall    ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.    ;
+; i_is_tank_1  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.    ;
+; i_is_tank_2  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.    ;
+; i_is_shell_1 ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.    ;
+; i_is_shell_2 ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.    ;
++--------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
@@ -285,22 +305,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 480                         ;
-; cycloneiii_ff         ; 71                          ;
-;     CLR               ; 42                          ;
-;     ENA CLR           ; 29                          ;
+; cycloneiii_ff         ; 72                          ;
+;     CLR               ; 44                          ;
+;     ENA CLR           ; 28                          ;
 ; cycloneiii_io_obuf    ; 140                         ;
-; cycloneiii_lcell_comb ; 33103                       ;
-;     arith             ; 37                          ;
-;         2 data inputs ; 37                          ;
-;     normal            ; 33066                       ;
+; cycloneiii_lcell_comb ; 90                          ;
+;     arith             ; 28                          ;
+;         2 data inputs ; 28                          ;
+;     normal            ; 62                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 1043                        ;
-;         3 data inputs ; 3729                        ;
-;         4 data inputs ; 28290                       ;
+;         1 data inputs ; 15                          ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 32                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 18.00                       ;
-; Average LUT depth     ; 11.90                       ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 1.23                        ;
 +-----------------------+-----------------------------+
 
 
@@ -309,7 +329,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:21:53     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -319,7 +339,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
-    Info: Processing started: Sun Jun 09 14:34:14 2019
+    Info: Processing started: Thu Jun 13 18:43:12 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off dclab_final -c DE2_115
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file src/de2_115/de2_115.sv
@@ -405,15 +425,10 @@ Info (12128): Elaborating entity "Debounce" for hierarchy "Debounce:debounce"
 Warning (10230): Verilog HDL assignment warning at Debounce.sv(22): truncated value with size 32 to match size of target (3)
 Warning (10230): Verilog HDL assignment warning at Debounce.sv(24): truncated value with size 32 to match size of target (3)
 Info (12128): Elaborating entity "VGA" for hierarchy "VGA:vga"
-Warning (10030): Net "start_pic_mem.data_a" at VGA.sv(46) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "start_pic_mem.waddr_a" at VGA.sv(46) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "second_pic_mem.data_a" at VGA.sv(47) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "second_pic_mem.waddr_a" at VGA.sv(47) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "start_pic_mem.we_a" at VGA.sv(46) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "second_pic_mem.we_a" at VGA.sv(47) has no driver or initial value, using a default initial value '0'
-Critical Warning (127005): Memory depth (524288) in the design file differs from memory depth (480000) in the Memory Initialization File "C:/Users/team06/Desktop/dclab_final/db/DE2_115.ram0_VGA_16719.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (524288) in the design file differs from memory depth (480000) in the Memory Initialization File "C:/Users/team06/Desktop/dclab_final/db/DE2_115.ram1_VGA_16719.hdl.mif" -- setting initial value for remaining addresses to 0
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (10230): Verilog HDL assignment warning at VGA.sv(75): truncated value with size 11 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at VGA.sv(129): truncated value with size 11 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at VGA.sv(161): truncated value with size 9 to match size of target (8)
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "LCD_DATA[0]" has no driver
     Warning (13040): bidirectional pin "LCD_DATA[1]" has no driver
@@ -869,15 +884,15 @@ Warning (21074): Design contains 89 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[14]"
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[15]"
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[16]"
-Info (21057): Implemented 33607 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 586 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 92 input pins
     Info (21059): Implemented 248 output pins
     Info (21060): Implemented 140 bidirectional pins
-    Info (21061): Implemented 33127 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 529 warnings
-    Info: Peak virtual memory: 5650 megabytes
-    Info: Processing ended: Sun Jun 09 15:22:48 2019
-    Info: Elapsed time: 00:48:34
-    Info: Total CPU time (on all processors): 00:48:42
+    Info (21061): Implemented 106 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 524 warnings
+    Info: Peak virtual memory: 4891 megabytes
+    Info: Processing ended: Thu Jun 13 18:43:22 2019
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:19
 
 
