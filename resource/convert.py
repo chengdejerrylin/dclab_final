@@ -1,19 +1,21 @@
 import numpy as np
 from skimage import io
 from sklearn.cluster import KMeans
+import sys
 from argparse import ArgumentParser
 
 parser = ArgumentParser(description='A program that convert the bmp picture to hardware format.')
 parser.add_argument('pic', help='Input pucture.')
 parser.add_argument('-o', dest="out", default="", help='output prefix.')
 parser.add_argument('-b', dest="bit", type=int, default=3, help='bits of label.')
-parser.add_argument('-fix', dest="fix", action="store_true", help='fix randome seed.')
+parser.add_argument('-no-fix', dest="fix", action="store_false", help='use randome seed.')
+parser.add_argument('-no-d', dest="dither", action="store_false", help='no dithering algorithm.')
 
 args = parser.parse_args()
-n_colors = (1 << args.bit)
-if not args.out : args.out = args.pic[:-4] + "_" + str(n_colors)
-seed = None if args.fix else 42
 original = io.imread(args.pic)
+n_colors = (1 << args.bit)
+seed = 42 if args.fix else None
+if not args.out : args.out = args.pic[:-4] + "_" + str(n_colors)
 
 arr = original.reshape((-1, 3))
 kmeans = KMeans(n_clusters=n_colors, random_state=seed).fit(arr)
