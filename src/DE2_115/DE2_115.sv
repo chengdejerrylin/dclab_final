@@ -152,7 +152,7 @@ Debounce debounce(.i_in(KEY[1]), .i_clk(CLOCK_50), .i_rst(RST_N), .o_debounced(k
 VGA vga(.clk(CLOCK_25), .rst_n(RST_N), .VGA_B(VGA_B), .VGA_BLANK_N(VGA_BLANK_N), .VGA_CLK(VGA_CLK), .VGA_G(VGA_G), 
 	.VGA_HS(VGA_HS), .VGA_R(VGA_R), .VGA_SYNC_N(VGA_SYNC_N), .VGA_VS(VGA_VS), .i_state(key1));
 
-Joystick p1(.clk(CLOCK_50), .rst_n(RST_N), .i_up(GPIO[3]), .i_down (GPIO[5]), .i_left (GPIO[7]), .i_right(GPIO[9]), 
-	.i_fire (GPIO[11]), .o_vdd  (GPIO[1]), .o_gnd(GPIO[13]), .o_led  (LEDG[4:0]));
+Joystick p1(.clk(CLOCK_50), .rst_n(RST_N), .i_up(GPIO[1]), .i_down (GPIO[5]), .i_left (GPIO[9]), .i_right(GPIO[13]), 
+	.i_fire (GPIO[17]), .o_led  (LEDG[4:0]));
 
 endmodule

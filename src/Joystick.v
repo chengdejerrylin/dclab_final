@@ -8,8 +8,6 @@ module Joystick (
 	input i_right,
 	input i_fire, 
 
-	output o_vdd,
-	output o_gnd,
 	output o_up,
 	output o_down,
 	output o_left,
