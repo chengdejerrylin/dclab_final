@@ -56,7 +56,8 @@ logic [ 5:0] display_x, n_display_x;
 logic [ 5:0] display_y, n_display_y;
 logic [ 3:0] grid_x, n_grid_x;
 logic [ 3:0] grid_y, n_grid_y;
-logic [18:0] pic_addr , n_pic_addr;
+logic [ 9:0] frame_x, n_frame_x;
+logic [ 8:0] frame_y, n_frame_y;
 logic is_display_w;
 
 //VGA
@@ -66,6 +67,9 @@ logic n_VGA_HS, n_VGA_VS, n_VGA_BLANK_N;
 //IO
 logic [5:0] n_o_request_x, n_o_request_y;
 logic n_o_buzy;
+
+//frame
+logic [23:0] start_rgb;
 
 /**************************
           assignment
@@ -82,6 +86,7 @@ assign VGA_SYNC_N = 1'b0;
 assign n_VGA_HS = (h_counter >= H_SYNC);
 assign n_VGA_VS = (v_counter >= V_SYNC);
 assign n_VGA_BLANK_N = is_display_w;
+assign n_VGA_RGB = start_rgb;
 
 //IO
 assign n_o_buzy = (v_counter >= V_SYNC + V_BACK) && (v_counter < V_SYNC + V_BACK + V_DISP);
@@ -93,26 +98,26 @@ always_comb begin
 
 	if(is_display_w) begin 
 		n_grid_x = (grid_x == PIXEL_PER_GRID - 4'd1) ? 4'd0 : grid_x + 4'd1;
-		n_pic_addr = (pic_addr == (H_DISP * V_DISP - 19'd1) ) ? 19'd0 : pic_addr + 19'd1;
+		n_frame_x = (frame_x == H_DISP - 10'd1) ? 10'd0 : frame_x + 10'd1;
 	end else begin 
 		n_grid_x = grid_x;
-		n_pic_addr = pic_addr;
+		n_frame_x = frame_x;
 	end
 
 	if(grid_x == PIXEL_PER_GRID - 4'd1) n_display_x = (display_x == WIDTH -6'd1) ? 6'd0 : display_x + 6'd1;
 	else n_display_x = display_x;
 
-	if((grid_x == PIXEL_PER_GRID - 4'd1) && (display_x == WIDTH - 6'd1) ) 
+	if(frame_x == H_DISP - 10'd1 ) begin
 		n_grid_y = (grid_y == PIXEL_PER_GRID - 4'd1) ? 4'd0 : grid_y + 4'd1;
-	else n_grid_y = grid_y;
+		n_frame_y = (frame_y == V_DISP - 9'd1) ? 9'd0 : frame_y + 9'd1;
+	end else begin 
+		n_grid_y = grid_y;
+		n_frame_y = frame_y;
+	end
 
-	if((grid_x == PIXEL_PER_GRID - 4'd1) && (display_x == WIDTH - 6'd1) && (grid_y == PIXEL_PER_GRID - 4'd1) ) 
+	if((frame_x == H_DISP - 10'd1) && (grid_y == PIXEL_PER_GRID - 4'd1) ) 
 		n_display_y = (display_y == HEIGHT -6'd1) ? 6'd0 : display_y + 6'd1;
 	else n_display_y = display_y;
-
-	//VGA
-	if(display_y < STATUS_BAR_HEIGHT)n_VGA_RGB = 24'h7f7f7f;
-	else n_VGA_RGB = (display_x[0] ^ display_y[0] ^ i_state[0]) ? 24'h6699ff : 24'hffff66;
 
 	//IO
 	if(grid_x == PIXEL_PER_GRID - 4'd2) n_o_request_x = (o_request_x == WIDTH -6'd1) ? 6'd0 : o_request_x + 6'd1;
@@ -123,6 +128,8 @@ always_comb begin
 	else n_o_request_y = o_request_y;
 end
 
+StartFrame sf(.i_x(frame_x), .i_y(frame_y), .o_rgb(start_rgb));
+
 always_ff @(posedge clk or negedge rst_n) begin
 	if(~rst_n) begin
 		//control
@@ -132,7 +139,8 @@ always_ff @(posedge clk or negedge rst_n) begin
 		display_y <= 6'd0;
 		grid_x <= 4'd0;
 		grid_y <= 4'd0;
-		pic_addr  <= 19'd0;
+		frame_x <= 10'd0;
+		frame_y <=  9'd0;
 
 		//VGA
 		VGA_R <= 8'd0;
@@ -154,7 +162,8 @@ always_ff @(posedge clk or negedge rst_n) begin
 		display_y <= n_display_y;
 		grid_x <= n_grid_x;
 		grid_y <= n_grid_y;
-		pic_addr  <= n_pic_addr;
+		frame_x <= n_frame_x;
+		frame_y <= n_frame_y;
 
 		//VGA
 		VGA_R <= n_VGA_RGB[23:16];
