@@ -139,7 +139,7 @@ always_comb begin
 				end
 			end
 		end
-		default : n_VGA_RGB = 24'h0;
+		default : n_VGA_RGB = {frame_y[7:0], ~frame_y[7:0], frame_x[7:0]};
 	endcase
 end
 
