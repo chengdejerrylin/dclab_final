@@ -112,14 +112,14 @@ always_comb begin
 				if(display_y < STATUS_BAR_HEIGHT)begin
 					case (display_x)
 						6'd1, 6'd2, 6'd3 : begin //shell 1
-							symbol_x_w = (display_x - 6'd7)* PIXEL_PER_GRID + grid_x;
+							symbol_x_w = (display_x - 6'd1)* PIXEL_PER_GRID + grid_x;
 							symbol_y_w = display_y * PIXEL_PER_GRID + grid_y;
 							symbol_type_w = 4'd10;
 							n_VGA_RGB = symbol_dot_w ? `SHELL_0 : `STATUS_BAR_COLOR;
 						end
 						
 						6'd4, 6'd5, 6'd6 : begin //shell 1 remain
-							symbol_x_w = (display_x - 6'd7)* PIXEL_PER_GRID + grid_x;
+							symbol_x_w = (display_x - 6'd4)* PIXEL_PER_GRID + grid_x;
 							symbol_y_w = display_y * PIXEL_PER_GRID + grid_y;
 							n_VGA_RGB = symbol_dot_w ? 24'd0 : `STATUS_BAR_COLOR;
 						end 
