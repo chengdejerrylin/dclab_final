@@ -75,7 +75,7 @@ logic [23:0] start_rgb;
 //number
 logic [4:0] symbol_x_w;
 logic [5:0] symbol_y_w;
-logic symbol_type_w;
+logic [3:0] symbol_type_w;
 logic symbol_dot_w;
 
 /**************************

@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Sat Jun 22 18:59:06 2019
+Analysis & Synthesis Status : Successful - Sat Jun 22 20:05:16 2019
 Quartus II 64-Bit Version : 15.0.0 Build 145 04/22/2015 SJ Full Version
 Revision Name : DE2_115
 Top-level Entity Name : DE2_115
 Family : Cyclone IV E
-Total logic elements : 149
-    Total combinational functions : 130
+Total logic elements : 274
+    Total combinational functions : 254
     Dedicated logic registers : 105
 Total registers : 105
 Total pins : 480
