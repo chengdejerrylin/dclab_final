@@ -73,10 +73,10 @@ logic n_o_buzy;
 logic [23:0] start_rgb;
 
 //number
-logic [4:0] num_x_w;
-logic [5:0] num_y_w;
-logic num_num_w;
-logic num_dot_w;
+logic [4:0] symbol_x_w;
+logic [5:0] symbol_y_w;
+logic symbol_type_w;
+logic symbol_dot_w;
 
 /**************************
           assignment
@@ -98,9 +98,9 @@ assign n_VGA_BLANK_N = is_display_w;
 assign n_o_buzy = (v_counter >= V_SYNC + V_BACK) && (v_counter < V_SYNC + V_BACK + V_DISP);
 
 always_comb begin
-	num_x_w = 5'd0;
-	num_y_w = 6'd0;
-	num_num_w = 4'd0;
+	symbol_x_w = 5'd0;
+	symbol_y_w = 6'd0;
+	symbol_type_w = 4'd0;
 
 	case (i_state)
 		2'b00 : n_VGA_RGB = start_rgb;
@@ -112,9 +112,9 @@ always_comb begin
 				if(display_y < STATUS_BAR_HEIGHT)begin
 					case (display_x)
 						6'd7, 6'd8, 6'd9 : begin //shell 1 remain
-							num_x_w = (display_x - 6'd7)* PIXEL_PER_GRID + grid_x;
-							num_y_w = display_y * PIXEL_PER_GRID + grid_y;
-							n_VGA_RGB = num_dot_w ? 24'd0 : 24'hff0000;
+							symbol_x_w = (display_x - 6'd7)* PIXEL_PER_GRID + grid_x;
+							symbol_y_w = display_y * PIXEL_PER_GRID + grid_y;
+							n_VGA_RGB = symbol_dot_w ? 24'd0 : 24'hff0000;
 						end 
 						
 						default : n_VGA_RGB =  `STATUS_BAR_COLOR;
@@ -167,7 +167,7 @@ always_comb begin
 end
 
 StartFrame sf(.i_x(frame_x), .i_y(frame_y), .o_rgb(start_rgb));
-Number num(.i_x(num_x_w), .i_y(num_y_w), .i_num(num_num_w), .o_dot(num_dot_w));
+Symbol symbol(.i_x(symbol_x_w), .i_y(symbol_y_w), .i_type(symbol_type_w), .o_dot(symbol_dot_w));
 
 always_ff @(posedge clk or negedge rst_n) begin
 	if(~rst_n) begin
