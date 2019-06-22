@@ -1,5 +1,6 @@
 //control
 //`define COMPILE_FRAME
+`define COMPILE_SMALL
 
 //color
 `define STATUS_BAR_COLOR  24'h7f7f7f

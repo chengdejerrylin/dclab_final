@@ -17,15 +17,17 @@ module VGA(
     //game
     input [1:0] i_state,
     output logic o_buzy,
-    input i_is_wall,
     output logic [5:0] o_request_x,
     output logic [5:0] o_request_y,
-    
-    //tank & shell
-    input i_is_tank_1,
-    input i_is_tank_2,
-    input i_is_shell_1,
-    input i_is_shell_2
+    input i_is_wall,
+
+    //tank
+    input [5:0] i_tank1_x,
+    input [5:0] i_tank1_y,
+    input [1:0] i_tank1_dir,
+    input [5:0] i_tank2_x,
+    input [5:0] i_tank2_y,
+    input [1:0] i_tank2_dir
 );
 
 //protocal
@@ -70,6 +72,12 @@ logic n_o_buzy;
 //frame
 logic [23:0] start_rgb;
 
+//number
+logic [4:0] num_x_w;
+logic [5:0] num_y_w;
+logic num_num_w;
+logic num_dot_w;
+
 /**************************
           assignment
 ***************************/
@@ -90,6 +98,10 @@ assign n_VGA_BLANK_N = is_display_w;
 assign n_o_buzy = (v_counter >= V_SYNC + V_BACK) && (v_counter < V_SYNC + V_BACK + V_DISP);
 
 always_comb begin
+	num_x_w = 5'd0;
+	num_y_w = 6'd0;
+	num_num_w = 4'd0;
+
 	case (i_state)
 		2'b00 : n_VGA_RGB = start_rgb;
 
@@ -98,7 +110,15 @@ always_comb begin
 
 			if(is_display_w) begin
 				if(display_y < STATUS_BAR_HEIGHT)begin
-					n_VGA_RGB =  `STATUS_BAR_COLOR;
+					case (display_x)
+						6'd7, 6'd8, 6'd9 : begin //shell 1 remain
+							num_x_w = (display_x - 6'd7)* PIXEL_PER_GRID + grid_x;
+							num_y_w = display_y * PIXEL_PER_GRID + grid_y;
+							n_VGA_RGB = num_dot_w ? 24'd0 : `STATUS_BAR_COLOR;
+						end 
+						
+						default : n_VGA_RGB = n_VGA_RGB =  `STATUS_BAR_COLOR;
+					endcase
 				end
 				else begin
 					n_VGA_RGB = `GROUND_COLOR;
