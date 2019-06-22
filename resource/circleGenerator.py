@@ -12,12 +12,10 @@ centerY = args.height // 2
 squR = args.radius **2
 
 with open(args.out, 'w') as f :
-	for y in range(args.height+1) :
-		if y == centerY : continue
+	for y in range(args.height) :
 
-		for x in range(args.width+1) :
-			if x == centerX : continue
-			
+		for x in range(args.width) :
+
 			diffX = x - centerX
 			diffY = y - centerY
 			squDis = diffX **2 + diffY**2
