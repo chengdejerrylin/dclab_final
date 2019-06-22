@@ -114,10 +114,10 @@ always_comb begin
 						6'd7, 6'd8, 6'd9 : begin //shell 1 remain
 							num_x_w = (display_x - 6'd7)* PIXEL_PER_GRID + grid_x;
 							num_y_w = display_y * PIXEL_PER_GRID + grid_y;
-							n_VGA_RGB = num_dot_w ? 24'd0 : `STATUS_BAR_COLOR;
+							n_VGA_RGB = num_dot_w ? 24'd0 : 24'hff0000;
 						end 
 						
-						default : n_VGA_RGB = n_VGA_RGB =  `STATUS_BAR_COLOR;
+						default : n_VGA_RGB =  `STATUS_BAR_COLOR;
 					endcase
 				end
 				else begin
@@ -167,6 +167,7 @@ always_comb begin
 end
 
 StartFrame sf(.i_x(frame_x), .i_y(frame_y), .o_rgb(start_rgb));
+Number num(.i_x(num_x_w), .i_y(num_y_w), .i_num(num_num_w), .o_dot(num_dot_w));
 
 always_ff @(posedge clk or negedge rst_n) begin
 	if(~rst_n) begin
