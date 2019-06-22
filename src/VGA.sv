@@ -1,3 +1,5 @@
+`include "src/define.sv"
+
 module VGA(
 	input clk, 
 	input rst_n,
@@ -11,15 +13,13 @@ module VGA(
 	output logic [7:0] VGA_R,
 	output             VGA_SYNC_N,
 	output logic       VGA_VS,
-
-	//for all
-    output logic [5:0] o_request_x,
-    output logic [5:0] o_request_y,
     
     //game
     input [1:0] i_state,
     output logic o_buzy,
     input i_is_wall,
+    output logic [5:0] o_request_x,
+    output logic [5:0] o_request_y,
     
     //tank & shell
     input i_is_tank_1,
@@ -47,7 +47,6 @@ parameter STATUS_BAR_HEIGHT = 6'd4;
 parameter WIDTH  = H_DISP / PIXEL_PER_GRID;
 parameter HEIGHT = V_DISP / PIXEL_PER_GRID;
 parameter GAME_HEIGHT = HEIGHT - STATUS_BAR_HEIGHT;
-
 
 //control
 logic [ 9:0] h_counter, n_h_counter;
@@ -86,10 +85,29 @@ assign VGA_SYNC_N = 1'b0;
 assign n_VGA_HS = (h_counter >= H_SYNC);
 assign n_VGA_VS = (v_counter >= V_SYNC);
 assign n_VGA_BLANK_N = is_display_w;
-assign n_VGA_RGB = start_rgb;
 
 //IO
 assign n_o_buzy = (v_counter >= V_SYNC + V_BACK) && (v_counter < V_SYNC + V_BACK + V_DISP);
+
+always_comb begin
+	case (i_state)
+		2'b00 : n_VGA_RGB = start_rgb;
+
+		2'b01 : begin //game
+			n_VGA_RGB = 24'd0;
+
+			if(is_display_w) begin
+				if(display_y < STATUS_BAR_HEIGHT)begin
+					n_VGA_RGB =  STATUS_BAR_COLOR;
+				end
+				else begin
+					n_VGA_RGB = GROUND_COLOR;
+				end
+			end
+		end
+		default : n_VGA_RGB = 24'hffffff;
+	endcase
+end
 
 always_comb begin
 	//control
