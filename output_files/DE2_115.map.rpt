@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_115
-Sat Jun 22 20:18:44 2019
+Sat Jun 22 20:37:03 2019
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
 
 
@@ -63,13 +63,13 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jun 22 20:18:44 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sat Jun 22 20:37:03 2019       ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Full Version ;
 ; Revision Name                      ; DE2_115                                     ;
 ; Top-level Entity Name              ; DE2_115                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 276                                         ;
-;     Total combinational functions  ; 256                                         ;
+; Total logic elements               ; 328                                         ;
+;     Total combinational functions  ; 308                                         ;
 ;     Dedicated logic registers      ; 105                                         ;
 ; Total registers                    ; 105                                         ;
 ; Total pins                         ; 480                                         ;
@@ -189,6 +189,7 @@ agreement for further details.
 +----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                     ; Library ;
 +----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
+; src/Colon.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/Colon.sv                 ;         ;
 ; src/define.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/define.sv                ;         ;
 ; src/VGA.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/VGA.sv                   ;         ;
 ; src/Symbol.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/Symbol.sv                ;         ;
@@ -196,6 +197,7 @@ agreement for further details.
 ; src/Joystick.v                   ; yes             ; User Verilog HDL File        ; C:/Users/team06/Desktop/dclab_final/src/Joystick.v               ;         ;
 ; src/DE2_115/DE2_115.sv           ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/DE2_115/DE2_115.sv       ;         ;
 ; src/Debounce.sv                  ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/Debounce.sv              ;         ;
+; resource/dat/colon.dat           ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/colon.dat       ;         ;
 ; resource/dat/1.bmp.dat           ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/1.bmp.dat       ;         ;
 ; resource/dat/7.bmp.dat           ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/7.bmp.dat       ;         ;
 ; resource/dat/4.bmp.dat           ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/4.bmp.dat       ;         ;
@@ -215,17 +217,17 @@ agreement for further details.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 276          ;
+; Estimated Total logic elements              ; 328          ;
 ;                                             ;              ;
-; Total combinational functions               ; 256          ;
+; Total combinational functions               ; 308          ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 144          ;
-;     -- 3 input functions                    ; 33           ;
-;     -- <=2 input functions                  ; 79           ;
+;     -- 4 input functions                    ; 188          ;
+;     -- 3 input functions                    ; 40           ;
+;     -- <=2 input functions                  ; 80           ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 208          ;
-;     -- arithmetic mode                      ; 48           ;
+;     -- normal mode                          ; 257          ;
+;     -- arithmetic mode                      ; 51           ;
 ;                                             ;              ;
 ; Total registers                             ; 105          ;
 ;     -- Dedicated logic registers            ; 105          ;
@@ -237,8 +239,8 @@ agreement for further details.
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[0]~input ;
 ; Maximum fan-out                             ; 105          ;
-; Total fan-out                               ; 1828         ;
-; Average fan-out                             ; 1.25         ;
+; Total fan-out                               ; 2025         ;
+; Average fan-out                             ; 1.34         ;
 +---------------------------------------------+--------------+
 
 
@@ -247,7 +249,7 @@ agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
-; |DE2_115                   ; 256 (1)           ; 105 (1)      ; 0           ; 0            ; 0       ; 0         ; 480  ; 0            ; |DE2_115                            ; work         ;
+; |DE2_115                   ; 308 (1)           ; 105 (1)      ; 0           ; 0            ; 0       ; 0         ; 480  ; 0            ; |DE2_115                            ; work         ;
 ;    |Debounce:debounce0|    ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:debounce0         ; work         ;
 ;    |Debounce:debounce1|    ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:debounce1         ; work         ;
 ;    |Joystick:p1|           ; 25 (0)            ; 20 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1                ; work         ;
@@ -256,8 +258,9 @@ agreement for further details.
 ;       |Debounce:left|      ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1|Debounce:left  ; work         ;
 ;       |Debounce:right|     ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1|Debounce:right ; work         ;
 ;       |Debounce:up|        ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1|Debounce:up    ; work         ;
-;    |VGA:vga|               ; 220 (133)         ; 76 (76)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga                    ; work         ;
-;       |Symbol:symbol|      ; 87 (87)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Symbol:symbol      ; work         ;
+;    |VGA:vga|               ; 272 (161)         ; 76 (76)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga                    ; work         ;
+;       |Colon:colon|        ; 26 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Colon:colon        ; work         ;
+;       |Symbol:symbol|      ; 85 (85)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Symbol:symbol      ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -294,7 +297,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
 ; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |DE2_115|VGA:vga|symbol_y_w[0] ;
 ; 67:1               ; 5 bits    ; 220 LEs       ; 5 LEs                ; 215 LEs                ; No         ; |DE2_115|VGA:vga|symbol_y_w[1] ;
-; 67:1               ; 4 bits    ; 176 LEs       ; 12 LEs               ; 164 LEs                ; No         ; |DE2_115|VGA:vga|symbol_x_w[4] ;
+; 67:1               ; 5 bits    ; 220 LEs       ; 20 LEs               ; 200 LEs                ; No         ; |DE2_115|VGA:vga|symbol_x_w[5] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
 
 
@@ -513,19 +516,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     CLR               ; 68                          ;
 ;     ENA CLR           ; 37                          ;
 ; cycloneiii_io_obuf    ; 140                         ;
-; cycloneiii_lcell_comb ; 257                         ;
-;     arith             ; 48                          ;
+; cycloneiii_lcell_comb ; 309                         ;
+;     arith             ; 51                          ;
 ;         2 data inputs ; 36                          ;
-;         3 data inputs ; 12                          ;
-;     normal            ; 209                         ;
+;         3 data inputs ; 15                          ;
+;     normal            ; 258                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 10                          ;
-;         2 data inputs ; 33                          ;
-;         3 data inputs ; 21                          ;
-;         4 data inputs ; 144                         ;
+;         1 data inputs ; 12                          ;
+;         2 data inputs ; 32                          ;
+;         3 data inputs ; 25                          ;
+;         4 data inputs ; 188                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 15.00                       ;
-; Average LUT depth     ; 5.19                        ;
+; Max LUT depth         ; 17.00                       ;
+; Average LUT depth     ; 6.62                        ;
 +-----------------------+-----------------------------+
 
 
@@ -534,7 +537,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -544,9 +547,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
-    Info: Processing started: Sat Jun 22 20:18:35 2019
+    Info: Processing started: Sat Jun 22 20:36:54 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off dclab_final -c DE2_115
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file src/colon.sv
+    Info (12023): Found entity 1: Colon
 Info (12021): Found 0 design units, including 0 entities, in source file src/define.sv
 Info (12021): Found 1 design units, including 1 entities, in source file src/vga.sv
     Info (12023): Found entity 1: VGA
@@ -637,11 +642,9 @@ Info (12128): Elaborating entity "Debounce" for hierarchy "Debounce:debounce0"
 Warning (10230): Verilog HDL assignment warning at Debounce.sv(22): truncated value with size 32 to match size of target (3)
 Warning (10230): Verilog HDL assignment warning at Debounce.sv(24): truncated value with size 32 to match size of target (3)
 Info (12128): Elaborating entity "VGA" for hierarchy "VGA:vga"
-Warning (10230): Verilog HDL assignment warning at VGA.sv(86): truncated value with size 11 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at VGA.sv(115): truncated value with size 6 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at VGA.sv(122): truncated value with size 6 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at VGA.sv(182): truncated value with size 11 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at VGA.sv(216): truncated value with size 9 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at VGA.sv(87): truncated value with size 11 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at VGA.sv(190): truncated value with size 11 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at VGA.sv(224): truncated value with size 9 to match size of target (8)
 Info (12128): Elaborating entity "StartFrame" for hierarchy "VGA:vga|StartFrame:sf"
 Warning (10858): Verilog HDL warning at StartFrame.sv(13): object mem used but never assigned
 Warning (10858): Verilog HDL warning at StartFrame.sv(14): object center used but never assigned
@@ -679,16 +682,22 @@ Warning (10030): Net "mem7.we_a" at Symbol.sv(17) has no driver or initial value
 Warning (10030): Net "mem8.we_a" at Symbol.sv(18) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "mem9.we_a" at Symbol.sv(19) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "memA.we_a" at Symbol.sv(20) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "Colon" for hierarchy "VGA:vga|Colon:colon"
+Warning (10030): Net "mem.data_a" at Colon.sv(9) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "mem.waddr_a" at Colon.sv(9) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "mem.we_a" at Colon.sv(9) has no driver or initial value, using a default initial value '0'
 Info (12128): Elaborating entity "Joystick" for hierarchy "Joystick:p1"
-Info (276014): Found 4 instances of uninferred RAM logic
+Info (276014): Found 5 instances of uninferred RAM logic
     Info (276007): RAM logic "VGA:vga|Symbol:symbol|mem0" is uninferred due to asynchronous read logic
     Info (276007): RAM logic "VGA:vga|Symbol:symbol|mem2" is uninferred due to asynchronous read logic
     Info (276007): RAM logic "VGA:vga|Symbol:symbol|mem8" is uninferred due to asynchronous read logic
     Info (276007): RAM logic "VGA:vga|Symbol:symbol|memA" is uninferred due to asynchronous read logic
+    Info (276007): RAM logic "VGA:vga|Colon:colon|mem" is uninferred due to asynchronous read logic
 Critical Warning (127005): Memory depth (64) in the design file differs from memory depth (40) in the Memory Initialization File "C:/Users/team06/Desktop/dclab_final/db/DE2_115.ram0_Symbol_a98a3296.hdl.mif" -- setting initial value for remaining addresses to 0
 Critical Warning (127005): Memory depth (64) in the design file differs from memory depth (40) in the Memory Initialization File "C:/Users/team06/Desktop/dclab_final/db/DE2_115.ram2_Symbol_a98a3296.hdl.mif" -- setting initial value for remaining addresses to 0
 Critical Warning (127005): Memory depth (64) in the design file differs from memory depth (40) in the Memory Initialization File "C:/Users/team06/Desktop/dclab_final/db/DE2_115.ram8_Symbol_a98a3296.hdl.mif" -- setting initial value for remaining addresses to 0
 Critical Warning (127005): Memory depth (64) in the design file differs from memory depth (40) in the Memory Initialization File "C:/Users/team06/Desktop/dclab_final/db/DE2_115.ram10_Symbol_a98a3296.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (64) in the design file differs from memory depth (40) in the Memory Initialization File "C:/Users/team06/Desktop/dclab_final/db/DE2_115.ram0_Colon_48f3690.hdl.mif" -- setting initial value for remaining addresses to 0
 Warning (12241): 9 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "GPIO[1]" has no driver
@@ -1139,14 +1148,14 @@ Warning (21074): Design contains 88 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[14]"
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[15]"
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[16]"
-Info (21057): Implemented 760 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 812 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 92 input pins
     Info (21059): Implemented 248 output pins
     Info (21060): Implemented 140 bidirectional pins
-    Info (21061): Implemented 280 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 559 warnings
-    Info: Peak virtual memory: 4871 megabytes
-    Info: Processing ended: Sat Jun 22 20:18:44 2019
+    Info (21061): Implemented 332 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 561 warnings
+    Info: Peak virtual memory: 4869 megabytes
+    Info: Processing ended: Sat Jun 22 20:37:03 2019
     Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:19
 
