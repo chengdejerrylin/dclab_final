@@ -146,11 +146,12 @@ always_ff @(posedge CLOCK_50 or negedge RST_N) begin
 	else CLOCK_25 <= ~CLOCK_25;
 end
 
-wire key1;
-Debounce debounce(.i_in(KEY[1]), .i_clk(CLOCK_50), .i_rst(RST_N), .o_debounced(key1));
+wire [1:0] state;
+Debounce debounce(.i_in(KEY[1]), .i_clk(CLOCK_50), .i_rst(RST_N), .o_debounced(state[0]));
+Debounce debounce(.i_in(KEY[2]), .i_clk(CLOCK_50), .i_rst(RST_N), .o_debounced(state[1]));
 
 VGA vga(.clk(CLOCK_25), .rst_n(RST_N), .VGA_B(VGA_B), .VGA_BLANK_N(VGA_BLANK_N), .VGA_CLK(VGA_CLK), .VGA_G(VGA_G), 
-	.VGA_HS(VGA_HS), .VGA_R(VGA_R), .VGA_SYNC_N(VGA_SYNC_N), .VGA_VS(VGA_VS), .i_state(key1));
+	.VGA_HS(VGA_HS), .VGA_R(VGA_R), .VGA_SYNC_N(VGA_SYNC_N), .VGA_VS(VGA_VS), .i_state(state));
 
 Joystick p1(.clk(CLOCK_50), .rst_n(RST_N), .i_up(GPIO[1]), .i_down (GPIO[5]), .i_left (GPIO[9]), .i_right(GPIO[13]), 
 	.i_fire (GPIO[17]), .o_led  (LEDG[4:0]));
