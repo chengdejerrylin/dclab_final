@@ -11,7 +11,7 @@ localparam VERTICAL   =  8'd240;
 localparam PIXEL_BITS = 3;
 
 logic [PIXEL_BITS-1 : 0] mem [0 : HORIZONTAL * VERTICAL -1];
-logic [23:0] center [0 : PIXEL_BITS-1];
+logic [23:0] center [0 : (1 << PIXEL_BITS)-1];
 
 logic [16:0] addr;
 logic [PIXEL_BITS-1 : 0] current_pixel;
