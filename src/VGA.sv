@@ -98,10 +98,10 @@ always_comb begin
 
 			if(is_display_w) begin
 				if(display_y < STATUS_BAR_HEIGHT)begin
-					n_VGA_RGB =  STATUS_BAR_COLOR;
+					n_VGA_RGB =  `STATUS_BAR_COLOR;
 				end
 				else begin
-					n_VGA_RGB = GROUND_COLOR;
+					n_VGA_RGB = `GROUND_COLOR;
 				end
 			end
 		end
