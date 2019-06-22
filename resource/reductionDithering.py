@@ -4,7 +4,7 @@ from sklearn.cluster import KMeans
 import sys
 from argparse import ArgumentParser
 
-parser = ArgumentParser(description='A program that convert the bmp picture to hardware format.')
+parser = ArgumentParser(description='A program that convert the colorful jpg to hardware format.')
 parser.add_argument('pic', help='Input pucture.')
 parser.add_argument('-o', dest="out", default="", help='output prefix.')
 parser.add_argument('-b', dest="bit", type=int, default=3, help='bits of label.')

@@ -49,6 +49,7 @@ initial begin
 	$readmemb("resource/dat/7.bmp.dat", mem7);
 	$readmemb("resource/dat/8.bmp.dat", mem8);
 	$readmemb("resource/dat/9.bmp.dat", mem9);
+	$readmemb("resource/dat/statusShell.dat", memA);
 end
 `endif
 

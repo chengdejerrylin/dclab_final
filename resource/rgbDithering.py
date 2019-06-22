@@ -3,7 +3,7 @@ from skimage import io
 import sys
 from argparse import ArgumentParser
 
-parser = ArgumentParser(description='A program that convert the bmp picture to hardware format.')
+parser = ArgumentParser(description='A program that convert the colorful jpg to hardware format.')
 parser.add_argument('pic', help='Input pucture.')
 parser.add_argument('-o', dest="out", default="", help='output prefix.')
 parser.add_argument('-m', dest="mode", default="sierra", help='dithering algorithm. \'sierra\', \'JJN\'')
