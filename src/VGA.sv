@@ -72,11 +72,12 @@ logic n_o_buzy;
 //frame
 logic [23:0] start_rgb;
 
-//number
-logic [4:0] symbol_x_w;
+//symbol
+logic [5:0] symbol_x_w;
 logic [5:0] symbol_y_w;
 logic [3:0] symbol_type_w;
 logic symbol_dot_w;
+logic colon_dot_w;
 
 /**************************
           assignment
@@ -98,7 +99,7 @@ assign n_VGA_BLANK_N = is_display_w;
 assign n_o_buzy = (v_counter >= V_SYNC + V_BACK) && (v_counter < V_SYNC + V_BACK + V_DISP);
 
 always_comb begin
-	symbol_x_w = 5'd0;
+	symbol_x_w = 6'd0;
 	symbol_y_w = 6'd0;
 	symbol_type_w = 4'd0;
 
@@ -122,6 +123,12 @@ always_comb begin
 							symbol_x_w = (display_x - 6'd4)* PIXEL_PER_GRID + grid_x;
 							symbol_y_w = display_y * PIXEL_PER_GRID + grid_y;
 							n_VGA_RGB = symbol_dot_w ? 24'd0 : `STATUS_BAR_COLOR;
+						end
+
+						6'd30, 6'd31, 6'd32, 6'd33 : begin
+							symbol_x_w = (display_x - 6'd30)* PIXEL_PER_GRID + grid_x;
+							symbol_y_w = display_y * PIXEL_PER_GRID + grid_y;
+							n_VGA_RGB = colon_dot_w ? 24'd0 : `STATUS_BAR_COLOR;
 						end 
 						
 						default : n_VGA_RGB =  `STATUS_BAR_COLOR;
@@ -174,7 +181,8 @@ always_comb begin
 end
 
 StartFrame sf(.i_x(frame_x), .i_y(frame_y), .o_rgb(start_rgb));
-Symbol symbol(.i_x(symbol_x_w), .i_y(symbol_y_w), .i_type(symbol_type_w), .o_dot(symbol_dot_w));
+Symbol symbol(.i_x(symbol_x_w[4:0]), .i_y(symbol_y_w), .i_type(symbol_type_w), .o_dot(symbol_dot_w));
+Colon colon (.i_x(symbol_x_w), .i_y(symbol_y_w), .o_dot(colon_dot_w));
 
 always_ff @(posedge clk or negedge rst_n) begin
 	if(~rst_n) begin
