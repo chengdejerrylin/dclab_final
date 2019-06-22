@@ -1110,28 +1110,16 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SYSTEMVERILOG_FILE src/define.sv
 set_global_assignment -name SYSTEMVERILOG_FILE src/VGA.sv
 set_global_assignment -name SYSTEMVERILOG_FILE src/Symbol.sv
 set_global_assignment -name SYSTEMVERILOG_FILE src/StartFrame.sv
 set_global_assignment -name VERILOG_FILE src/Joystick.v
 set_global_assignment -name SYSTEMVERILOG_FILE src/DE2_115/DE2_115.sv
-set_global_assignment -name LICENSE_FILE resource/dat/9.bmp.dat
-set_global_assignment -name LICENSE_FILE resource/dat/8.bmp.dat
-set_global_assignment -name LICENSE_FILE resource/dat/7.bmp.dat
-set_global_assignment -name LICENSE_FILE resource/dat/6.bmp.dat
-set_global_assignment -name LICENSE_FILE resource/dat/5.bmp.dat
-set_global_assignment -name LICENSE_FILE resource/dat/4.bmp.dat
-set_global_assignment -name LICENSE_FILE resource/dat/3.bmp.dat
-set_global_assignment -name LICENSE_FILE resource/dat/2.bmp.dat
-set_global_assignment -name LICENSE_FILE resource/dat/1.bmp.dat
-set_global_assignment -name LICENSE_FILE resource/dat/0.bmp.dat
-set_global_assignment -name LICENSE_FILE resource/dat/road_8_values.dat
-set_global_assignment -name LICENSE_FILE resource/dat/road_8_labels.dat
-set_global_assignment -name SDC_FILE src/DE2_115/DE2_115.sdc
-set_global_assignment -name SOURCE_FILE src/DE2_115/DE2_115.qsf
 set_global_assignment -name SYSTEMVERILOG_FILE src/SevenHexDecoder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE src/I2Csender.sv
 set_global_assignment -name SYSTEMVERILOG_FILE src/I2Cinitialize.sv
 set_global_assignment -name SYSTEMVERILOG_FILE src/Debounce.sv
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SDC_FILE src/DE2_115/DE2_115.sdc
+set_global_assignment -name SOURCE_FILE src/DE2_115/DE2_115.qsf
