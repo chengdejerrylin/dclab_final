@@ -34,8 +34,8 @@ always_comb begin
 end
 
 `ifdef COMPILE_SMALL
-	initial $readmemh("resource/dat/tank0_labels.dat",mem);
-	initial $readmemh("resource/dat/tank0_values.dat",center);
+	initial $readmemh("resource/dat/tank1_labels.dat",mem);
+	initial $readmemh("resource/dat/tank1_values.dat",center);
 `endif
 
 endmodule
