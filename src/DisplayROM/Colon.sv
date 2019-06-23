@@ -10,7 +10,7 @@ logic [39:0] mem [0:39];
 logic [39:0] col;
 
 assign col = mem[i_y];
-assign o_dot = col[i_x];
+assign o_dot = col[39 - i_x];
 
 `ifdef COMPILE_SMALL
 initial begin

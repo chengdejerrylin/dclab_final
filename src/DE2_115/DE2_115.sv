@@ -155,11 +155,11 @@ Debounce debounce0(.i_in(KEY[1]), .i_clk(CLOCK_50), .i_rst(RST_N), .o_debounced(
 Debounce debounce1(.i_in(KEY[2]), .i_clk(CLOCK_50), .i_rst(RST_N), .o_debounced(state[1]));
 
 VGA vga(.clk(CLOCK_25), .rst_n(RST_N), .VGA_B(VGA_B), .VGA_BLANK_N(VGA_BLANK_N), .VGA_CLK(VGA_CLK), .VGA_G(VGA_G), 
-	.VGA_HS(VGA_HS), .VGA_R(VGA_R), .VGA_SYNC_N(VGA_SYNC_N), .VGA_VS(VGA_VS), .i_state(state), .i_tank0_x(6'd2), 
+	.VGA_HS(VGA_HS), .VGA_R(VGA_R), .VGA_SYNC_N(VGA_SYNC_N), .VGA_VS(VGA_VS), .i_state({~state[1], state[0]}), .i_tank0_x(6'd2), 
 	.i_tank0_y(6'd2), .i_tank0_dir(SW[1:0]), .o_buzy(VGA_buzy), .i_min_ten(min_ten), .i_min_one(min_one), 
 	.i_sec_ten(sec_ten), .i_sec_one(sec_one));
 
-timer t(.clk(CLOCK_25), .rst_n(RST_N), .i_top_state(state), .i_VGA_buzy(VGA_buzy), .o_min_ten(min_ten), .o_min_one(min_one), 
+timer t(.clk(CLOCK_25), .rst_n(RST_N), .i_top_state({~state[1], state[0]}), .i_VGA_buzy(VGA_buzy), .o_min_ten(min_ten), .o_min_one(min_one), 
 	.o_sec_ten(sec_ten), .o_sec_one(sec_one));
 
 

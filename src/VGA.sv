@@ -269,7 +269,7 @@ end
 
 StartFrame sf(.i_x(frame_x), .i_y(frame_y), .o_rgb(start_rgb));
 p1Frame p1(.i_x(frame_x), .i_y(frame_y), .o_rgb(p1_rgb));
-p2artFrame p2(.i_x(frame_x), .i_y(frame_y), .o_rgb(p2_rgb));
+p2Frame p2(.i_x(frame_x), .i_y(frame_y), .o_rgb(p2_rgb));
 
 Symbol symbol(.i_x(symbol_x_w[4:0]), .i_y(symbol_y_w), .i_type(symbol_type_w), .o_dot(symbol_dot_w));
 Colon colon (.i_x(symbol_x_w), .i_y(symbol_y_w), .o_dot(colon_dot_w));

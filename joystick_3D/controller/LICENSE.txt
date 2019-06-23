@@ -1,0 +1,3 @@
+Controller for Lego Controller 8885 (http://www.thingiverse.com/thing:3596541) by Ben_Buggenhout is licensed under the Creative Commons - Attribution - Non-Commercial - Share Alike license.
+http://creativecommons.org/licenses/by-nc-sa/3.0/
+

@@ -33,7 +33,7 @@ always_comb begin
 				n_sec_one = 4'd0;
 
 				if(sec_ten == 3'd5) begin
-					n_o_sec_ten = 3'd0;
+					n_sec_ten = 3'd0;
 
 					if(min_one == 4'd9) begin
 						n_min_one = 4'd0;

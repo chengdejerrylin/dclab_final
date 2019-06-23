@@ -35,7 +35,7 @@ assign all_col[9]  = mem9[i_y];
 assign all_col[10] = memA[i_y];
 
 assign col = all_col[i_type];
-assign o_dot = col[i_x];
+assign o_dot = col[29 - i_x];
 
 `ifdef COMPILE_SMALL
 initial begin

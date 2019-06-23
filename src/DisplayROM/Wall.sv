@@ -27,7 +27,7 @@ end
 
 `ifdef COMPILE_SMALL
 initial begin
-	$readmemb("resource/dat/barrel.dat", mem);
+	$readmemh("resource/dat/barrel.dat", mem);
 end
 `endif
 
