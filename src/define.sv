@@ -10,7 +10,7 @@
 
 //background
 `define STATUS_BAR_COLOR  24'h7f7f7f
-`define GROUND_COLOR  24'hffffff
+`define GROUND_COLOR  24'h7f7f00
 
 //shell
 `define SHELL_0 24'h00ff00

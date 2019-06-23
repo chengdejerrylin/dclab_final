@@ -110,7 +110,7 @@ logic [3:0] symbol_type_w;
 
 logic symbol_dot_w;
 logic colon_dot_w;
-logic tank0_rgb_w;
+logic [23:0] tank0_rgb_w;
 
 /**************************
           assignment

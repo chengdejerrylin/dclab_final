@@ -21,10 +21,10 @@ assign y_w = (i_game_y + 6'd2 - i_tank_y) * 4'd10 + i_grid_y;
 
 always_comb begin
 	if( i_game_x >= i_tank_x - 6'd2 && i_game_x <= i_tank_x + 6'd2 && 
-		i_game_y >= i_tank_y - 6'd2 && i_game_y <= i_tank_y + 6'd2 && ) begin
+		i_game_y >= i_tank_y - 6'd2 && i_game_y <= i_tank_y + 6'd2) begin
 
 		case (i_tank_dir)
-			2'd0 : o_rgb_w = center[mem[         y_w  * 6'd50 +          i_w ]]; // up
+			2'd0 : o_rgb_w = center[mem[         y_w  * 6'd50 +          x_w ]]; // up
 			2'd1 : o_rgb_w = center[mem[(6'd49 - y_w) * 6'd50 + (6'd49 - x_w)]]; // down
 			2'd2 : o_rgb_w = center[mem[         x_w  * 6'd50 + (6'd49 - y_w)]]; // left
 			2'd3 : o_rgb_w = center[mem[(6'd49 - x_w) * 6'd50 +          y_w ]]; // right
@@ -33,8 +33,8 @@ always_comb begin
 end
 
 `ifdef COMPILE_SMALL
-initial $readmemh("resource/dat/tank0_4_labels.dat",mem);
-initial $readmemh("resource/dat/tank0_4_values.dat",center);
+	initial $readmemh("resource/dat/tank0_4_labels.dat",mem);
+	initial $readmemh("resource/dat/tank0_4_values.dat",center);
 `endif
 
 endmodule
