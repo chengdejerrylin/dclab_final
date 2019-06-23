@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_115
-Mon Jun 24 02:01:54 2019
+Mon Jun 24 02:17:02 2019
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
 
 
@@ -84,7 +84,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jun 24 02:01:53 2019       ;
+; Analysis & Synthesis Status        ; Successful - Mon Jun 24 02:17:02 2019       ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Full Version ;
 ; Revision Name                      ; DE2_115                                     ;
 ; Top-level Entity Name              ; DE2_115                                     ;
@@ -1074,7 +1074,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
-    Info: Processing started: Mon Jun 24 02:01:37 2019
+    Info: Processing started: Mon Jun 24 02:16:44 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off dclab_final -c DE2_115
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file src/tank.sv
@@ -1138,75 +1138,75 @@ Info (12021): Found 1 design units, including 1 entities, in source file src/joy
     Info (12023): Found entity 1: Joystick
 Info (12021): Found 0 design units, including 0 entities, in source file src/define.sv
 Warning (10236): Verilog HDL Implicit Net warning at I2S.sv(223): created implicit net for "n_adc_valid"
-Warning (10236): Verilog HDL Implicit Net warning at DE2_115.sv(257): created implicit net for "CLK_25"
-Warning (10236): Verilog HDL Implicit Net warning at DE2_115.sv(261): created implicit net for "tank_2_y_pos"
+Warning (10236): Verilog HDL Implicit Net warning at DE2_115.sv(264): created implicit net for "CLK_25"
+Warning (10236): Verilog HDL Implicit Net warning at DE2_115.sv(268): created implicit net for "tank_2_y_pos"
 Info (12127): Elaborating entity "DE2_115" for the top level hierarchy
-Warning (10034): Output port "LEDG[8..5]" at DE2_115.sv(8) has no driver
-Warning (10034): Output port "LEDR[17..5]" at DE2_115.sv(9) has no driver
-Warning (10034): Output port "HEX0" at DE2_115.sv(12) has no driver
-Warning (10034): Output port "HEX1" at DE2_115.sv(13) has no driver
-Warning (10034): Output port "HEX2" at DE2_115.sv(14) has no driver
-Warning (10034): Output port "HEX3" at DE2_115.sv(15) has no driver
-Warning (10034): Output port "HEX4" at DE2_115.sv(16) has no driver
-Warning (10034): Output port "HEX5" at DE2_115.sv(17) has no driver
-Warning (10034): Output port "HEX6" at DE2_115.sv(18) has no driver
-Warning (10034): Output port "HEX7" at DE2_115.sv(19) has no driver
-Warning (10034): Output port "ENET0_TX_DATA" at DE2_115.sv(69) has no driver
-Warning (10034): Output port "ENET1_TX_DATA" at DE2_115.sv(85) has no driver
-Warning (10034): Output port "OTG_ADDR" at DE2_115.sv(95) has no driver
-Warning (10034): Output port "DRAM_ADDR" at DE2_115.sv(102) has no driver
-Warning (10034): Output port "DRAM_BA" at DE2_115.sv(103) has no driver
-Warning (10034): Output port "DRAM_DQM" at DE2_115.sv(109) has no driver
-Warning (10034): Output port "SRAM_ADDR" at DE2_115.sv(112) has no driver
-Warning (10034): Output port "FL_ADDR" at DE2_115.sv(119) has no driver
-Warning (10034): Output port "HSMC_TX_D_P" at DE2_115.sv(136) has no driver
-Warning (10034): Output port "SMA_CLKOUT" at DE2_115.sv(7) has no driver
-Warning (10034): Output port "LCD_BLON" at DE2_115.sv(20) has no driver
-Warning (10034): Output port "LCD_EN" at DE2_115.sv(22) has no driver
-Warning (10034): Output port "LCD_ON" at DE2_115.sv(23) has no driver
-Warning (10034): Output port "LCD_RS" at DE2_115.sv(24) has no driver
-Warning (10034): Output port "LCD_RW" at DE2_115.sv(25) has no driver
-Warning (10034): Output port "UART_CTS" at DE2_115.sv(26) has no driver
-Warning (10034): Output port "UART_TXD" at DE2_115.sv(29) has no driver
-Warning (10034): Output port "SD_CLK" at DE2_115.sv(34) has no driver
-Warning (10034): Output port "AUD_DACDAT" at DE2_115.sv(49) has no driver
-Warning (10034): Output port "AUD_XCK" at DE2_115.sv(52) has no driver
-Warning (10034): Output port "EEP_I2C_SCLK" at DE2_115.sv(53) has no driver
-Warning (10034): Output port "I2C_SCLK" at DE2_115.sv(55) has no driver
-Warning (10034): Output port "ENET0_GTX_CLK" at DE2_115.sv(57) has no driver
-Warning (10034): Output port "ENET0_MDC" at DE2_115.sv(59) has no driver
-Warning (10034): Output port "ENET0_RST_N" at DE2_115.sv(61) has no driver
-Warning (10034): Output port "ENET0_TX_EN" at DE2_115.sv(70) has no driver
-Warning (10034): Output port "ENET0_TX_ER" at DE2_115.sv(71) has no driver
-Warning (10034): Output port "ENET1_GTX_CLK" at DE2_115.sv(73) has no driver
-Warning (10034): Output port "ENET1_MDC" at DE2_115.sv(75) has no driver
-Warning (10034): Output port "ENET1_RST_N" at DE2_115.sv(77) has no driver
-Warning (10034): Output port "ENET1_TX_EN" at DE2_115.sv(86) has no driver
-Warning (10034): Output port "ENET1_TX_ER" at DE2_115.sv(87) has no driver
-Warning (10034): Output port "TD_RESET_N" at DE2_115.sv(92) has no driver
-Warning (10034): Output port "OTG_CS_N" at DE2_115.sv(96) has no driver
-Warning (10034): Output port "OTG_WR_N" at DE2_115.sv(97) has no driver
-Warning (10034): Output port "OTG_RD_N" at DE2_115.sv(98) has no driver
-Warning (10034): Output port "OTG_RST_N" at DE2_115.sv(100) has no driver
-Warning (10034): Output port "DRAM_CAS_N" at DE2_115.sv(104) has no driver
-Warning (10034): Output port "DRAM_CKE" at DE2_115.sv(105) has no driver
-Warning (10034): Output port "DRAM_CLK" at DE2_115.sv(106) has no driver
-Warning (10034): Output port "DRAM_CS_N" at DE2_115.sv(107) has no driver
-Warning (10034): Output port "DRAM_RAS_N" at DE2_115.sv(110) has no driver
-Warning (10034): Output port "DRAM_WE_N" at DE2_115.sv(111) has no driver
-Warning (10034): Output port "SRAM_CE_N" at DE2_115.sv(113) has no driver
-Warning (10034): Output port "SRAM_LB_N" at DE2_115.sv(115) has no driver
-Warning (10034): Output port "SRAM_OE_N" at DE2_115.sv(116) has no driver
-Warning (10034): Output port "SRAM_UB_N" at DE2_115.sv(117) has no driver
-Warning (10034): Output port "SRAM_WE_N" at DE2_115.sv(118) has no driver
-Warning (10034): Output port "FL_CE_N" at DE2_115.sv(120) has no driver
-Warning (10034): Output port "FL_OE_N" at DE2_115.sv(122) has no driver
-Warning (10034): Output port "FL_RST_N" at DE2_115.sv(123) has no driver
-Warning (10034): Output port "FL_WE_N" at DE2_115.sv(125) has no driver
-Warning (10034): Output port "FL_WP_N" at DE2_115.sv(126) has no driver
-Warning (10034): Output port "HSMC_CLKOUT_P1" at DE2_115.sv(131) has no driver
-Warning (10034): Output port "HSMC_CLKOUT_P2" at DE2_115.sv(132) has no driver
-Warning (10034): Output port "HSMC_CLKOUT0" at DE2_115.sv(133) has no driver
+Warning (10034): Output port "LEDG[8..5]" at DE2_115.sv(10) has no driver
+Warning (10034): Output port "LEDR[17..5]" at DE2_115.sv(11) has no driver
+Warning (10034): Output port "HEX0" at DE2_115.sv(14) has no driver
+Warning (10034): Output port "HEX1" at DE2_115.sv(15) has no driver
+Warning (10034): Output port "HEX2" at DE2_115.sv(16) has no driver
+Warning (10034): Output port "HEX3" at DE2_115.sv(17) has no driver
+Warning (10034): Output port "HEX4" at DE2_115.sv(18) has no driver
+Warning (10034): Output port "HEX5" at DE2_115.sv(19) has no driver
+Warning (10034): Output port "HEX6" at DE2_115.sv(20) has no driver
+Warning (10034): Output port "HEX7" at DE2_115.sv(21) has no driver
+Warning (10034): Output port "ENET0_TX_DATA" at DE2_115.sv(71) has no driver
+Warning (10034): Output port "ENET1_TX_DATA" at DE2_115.sv(87) has no driver
+Warning (10034): Output port "OTG_ADDR" at DE2_115.sv(97) has no driver
+Warning (10034): Output port "DRAM_ADDR" at DE2_115.sv(104) has no driver
+Warning (10034): Output port "DRAM_BA" at DE2_115.sv(105) has no driver
+Warning (10034): Output port "DRAM_DQM" at DE2_115.sv(111) has no driver
+Warning (10034): Output port "SRAM_ADDR" at DE2_115.sv(114) has no driver
+Warning (10034): Output port "FL_ADDR" at DE2_115.sv(121) has no driver
+Warning (10034): Output port "HSMC_TX_D_P" at DE2_115.sv(138) has no driver
+Warning (10034): Output port "SMA_CLKOUT" at DE2_115.sv(9) has no driver
+Warning (10034): Output port "LCD_BLON" at DE2_115.sv(22) has no driver
+Warning (10034): Output port "LCD_EN" at DE2_115.sv(24) has no driver
+Warning (10034): Output port "LCD_ON" at DE2_115.sv(25) has no driver
+Warning (10034): Output port "LCD_RS" at DE2_115.sv(26) has no driver
+Warning (10034): Output port "LCD_RW" at DE2_115.sv(27) has no driver
+Warning (10034): Output port "UART_CTS" at DE2_115.sv(28) has no driver
+Warning (10034): Output port "UART_TXD" at DE2_115.sv(31) has no driver
+Warning (10034): Output port "SD_CLK" at DE2_115.sv(36) has no driver
+Warning (10034): Output port "AUD_DACDAT" at DE2_115.sv(51) has no driver
+Warning (10034): Output port "AUD_XCK" at DE2_115.sv(54) has no driver
+Warning (10034): Output port "EEP_I2C_SCLK" at DE2_115.sv(55) has no driver
+Warning (10034): Output port "I2C_SCLK" at DE2_115.sv(57) has no driver
+Warning (10034): Output port "ENET0_GTX_CLK" at DE2_115.sv(59) has no driver
+Warning (10034): Output port "ENET0_MDC" at DE2_115.sv(61) has no driver
+Warning (10034): Output port "ENET0_RST_N" at DE2_115.sv(63) has no driver
+Warning (10034): Output port "ENET0_TX_EN" at DE2_115.sv(72) has no driver
+Warning (10034): Output port "ENET0_TX_ER" at DE2_115.sv(73) has no driver
+Warning (10034): Output port "ENET1_GTX_CLK" at DE2_115.sv(75) has no driver
+Warning (10034): Output port "ENET1_MDC" at DE2_115.sv(77) has no driver
+Warning (10034): Output port "ENET1_RST_N" at DE2_115.sv(79) has no driver
+Warning (10034): Output port "ENET1_TX_EN" at DE2_115.sv(88) has no driver
+Warning (10034): Output port "ENET1_TX_ER" at DE2_115.sv(89) has no driver
+Warning (10034): Output port "TD_RESET_N" at DE2_115.sv(94) has no driver
+Warning (10034): Output port "OTG_CS_N" at DE2_115.sv(98) has no driver
+Warning (10034): Output port "OTG_WR_N" at DE2_115.sv(99) has no driver
+Warning (10034): Output port "OTG_RD_N" at DE2_115.sv(100) has no driver
+Warning (10034): Output port "OTG_RST_N" at DE2_115.sv(102) has no driver
+Warning (10034): Output port "DRAM_CAS_N" at DE2_115.sv(106) has no driver
+Warning (10034): Output port "DRAM_CKE" at DE2_115.sv(107) has no driver
+Warning (10034): Output port "DRAM_CLK" at DE2_115.sv(108) has no driver
+Warning (10034): Output port "DRAM_CS_N" at DE2_115.sv(109) has no driver
+Warning (10034): Output port "DRAM_RAS_N" at DE2_115.sv(112) has no driver
+Warning (10034): Output port "DRAM_WE_N" at DE2_115.sv(113) has no driver
+Warning (10034): Output port "SRAM_CE_N" at DE2_115.sv(115) has no driver
+Warning (10034): Output port "SRAM_LB_N" at DE2_115.sv(117) has no driver
+Warning (10034): Output port "SRAM_OE_N" at DE2_115.sv(118) has no driver
+Warning (10034): Output port "SRAM_UB_N" at DE2_115.sv(119) has no driver
+Warning (10034): Output port "SRAM_WE_N" at DE2_115.sv(120) has no driver
+Warning (10034): Output port "FL_CE_N" at DE2_115.sv(122) has no driver
+Warning (10034): Output port "FL_OE_N" at DE2_115.sv(124) has no driver
+Warning (10034): Output port "FL_RST_N" at DE2_115.sv(125) has no driver
+Warning (10034): Output port "FL_WE_N" at DE2_115.sv(127) has no driver
+Warning (10034): Output port "FL_WP_N" at DE2_115.sv(128) has no driver
+Warning (10034): Output port "HSMC_CLKOUT_P1" at DE2_115.sv(133) has no driver
+Warning (10034): Output port "HSMC_CLKOUT_P2" at DE2_115.sv(134) has no driver
+Warning (10034): Output port "HSMC_CLKOUT0" at DE2_115.sv(135) has no driver
 Info (12128): Elaborating entity "pll" for hierarchy "pll:pll"
 Info (12128): Elaborating entity "pll_altpll_0" for hierarchy "pll:pll|pll_altpll_0:altpll_0"
 Info (12128): Elaborating entity "pll_altpll_0_stdsync_sv6" for hierarchy "pll:pll|pll_altpll_0:altpll_0|pll_altpll_0_stdsync_sv6:stdsync2"
@@ -6921,9 +6921,9 @@ Info (21057): Implemented 1613 device resources after synthesis - the final reso
     Info (21061): Implemented 1132 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5724 warnings
-    Info: Peak virtual memory: 4882 megabytes
-    Info: Processing ended: Mon Jun 24 02:01:54 2019
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Peak virtual memory: 4900 megabytes
+    Info: Processing ended: Mon Jun 24 02:17:02 2019
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:28
 
 
