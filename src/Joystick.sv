@@ -15,12 +15,15 @@ module Joystick (
 	output o_fire,
 	output [4:0] o_led
 );
-assign o_led = {o_up, o_down, o_left, o_right, o_fire};
+wire fire_debounced, fire_neg;
+
+assign o_led = {o_up, o_down, o_left, o_right, fire_debounced};
+assign o_fire = ~fire_neg;
 
 Debounce up   (.i_in(i_up)   , .i_clk(clk), .i_rst(rst_n), .o_debounced(o_up   ));
 Debounce down (.i_in(i_down) , .i_clk(clk), .i_rst(rst_n), .o_debounced(o_down ));
 Debounce left (.i_in(i_left) , .i_clk(clk), .i_rst(rst_n), .o_debounced(o_left ));
 Debounce right(.i_in(i_right), .i_clk(clk), .i_rst(rst_n), .o_debounced(o_right));
-Debounce fire (.i_in(i_fire) , .i_clk(clk), .i_rst(rst_n), .o_debounced(o_fire ));
+Debounce fire (.i_in(i_fire) , .i_clk(clk), .i_rst(rst_n), .o_debounced(fire_debounced ), .o_neg(fire_neg));
 
 endmodule // joystick
