@@ -11,8 +11,8 @@ module Tank0Display(
 	output logic [23:0] o_rgb_w
 );
 
-logic [ 1:0] mem [0:2499];
-logic [23:0] center [0:3];
+logic [ 2:0] mem [0:2499];
+logic [23:0] center [0:7];
 
 logic [ 5:0] x_w;
 logic [ 5:0] y_w;
@@ -34,8 +34,8 @@ always_comb begin
 end
 
 `ifdef COMPILE_SMALL
-	initial $readmemh("resource/dat/tank0_4_labels.dat",mem);
-	initial $readmemh("resource/dat/tank0_4_values.dat",center);
+	initial $readmemh("resource/dat/tank0_labels.dat",mem);
+	initial $readmemh("resource/dat/tank0_values.dat",center);
 `endif
 
 endmodule
