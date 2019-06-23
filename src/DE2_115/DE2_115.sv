@@ -144,8 +144,9 @@ logic p1_up, p1_down, p1_left, p1_right, p1_fire;
 logic p2_up, p2_down, p2_left, p2_right, p2_fire;
 logic [4:0] p1_led, p2_led;
 
-assign RST_N = KEY[0];
 
+
+assign RST_N = KEY[0];
 assign p1_up     = GPIO[1];
 assign p1_down   = GPIO[3];
 assign p1_left   = GPIO[5];
@@ -169,33 +170,104 @@ pll pll(.clk_clk(CLOCK_50), .reset_reset_n(RST_N), .altpll_0_c0_clk(CLOCK_25));
 /******************
        Module
 ******************/
-
-//top
-logic [1:0] state;
+logic up_1_joy_state, down_1_joy_state, left_1_joy_state, right_1_joy_state, fire_1_joy_state;
+logic up_2_joy_state, down_2_joy_state, left_2_joy_state, right_2_joy_state, fire_2_joy_state;
+logic [5:0] tank_1_pos_x, tank_1_pos_y, tank_2_pos_x, tank_2_pos_y;
+logic [5:0] o_init_tank_1_pos_x, o_init_tank_1_pos_y, o_init_tank_2_pos_x, o_init_tank_2_pos_y;
+logic [4:0] valid_shell_1, valid_shell_2;
+logic [5:0] shell_1_0_pos_x, shell_1_0_pos_y, shell_1_1_pos_x, shell_1_1_pos_y, shell_1_2_pos_x,
+			shell_1_2_pos_y, shell_1_3_pos_x, shell_1_3_pos_y, shell_1_4_pos_x, shell_1_4_pos_y;
+logic [5:0] shell_2_0_pos_x, shell_2_0_pos_y, shell_2_1_pos_x, shell_2_1_pos_y, shell_2_2_pos_x,
+			shell_2_2_pos_y, shell_2_3_pos_x, shell_2_3_pos_y, shell_2_4_pos_x, shell_2_4_pos_y;
+logic [4:0] shell_vanish_1, shell_vanish_2;
+logic valid_frame_1, valid_frame_2;
+logic [2:0] direction_1_state_tank, direction_2_state_tank;
+logic fire_1, fire_2;
+logic [5:0] x_pos_vga_state, y_pos_vga_state;
+logic is_map;
+logic [1:0] game_state;
+logic [1:0] who_wins;
+logic [1:0] direction_tank_1, direction_tank_2;
+logic [4:0] valid_1_shell, valid_2_shell;
 
 //VGA
-logic VGA_buzy;
+logic VGA_busy;
 
 //timer
 logic [2:0] min_ten, sec_ten;
 logic [3:0] min_one, sec_one;
 
-Debounce debounce0(.i_in(KEY[1]), .i_clk(CLOCK_50), .i_rst(RST_N), .o_debounced(state[0]));
-Debounce debounce1(.i_in(KEY[2]), .i_clk(CLOCK_50), .i_rst(RST_N), .o_debounced(state[1]));
 
-VGA vga(.clk(CLOCK_25), .rst_n(RST_N), .VGA_B(VGA_B), .VGA_BLANK_N(VGA_BLANK_N), .VGA_CLK(VGA_CLK), .VGA_G(VGA_G), 
-	.VGA_HS(VGA_HS), .VGA_R(VGA_R), .VGA_SYNC_N(VGA_SYNC_N), .VGA_VS(VGA_VS), .i_state({~state[1], state[0]}), .i_tank0_x(6'd2), 
-	.i_tank0_y(6'd2), .i_tank0_dir(SW[1:0]), .o_buzy(VGA_buzy), .i_min_ten(min_ten), .i_min_one(min_one), 
-	.i_sec_ten(sec_ten), .i_sec_one(sec_one), .i_tank1_x(6'd32), .i_tank1_y(6'd22), .i_tank1_dir(SW[3:2]) );
+VGA vga(.clk(CLOCK_25), .rst_n(RST_N), .VGA_B(VGA_B), .VGA_BLANK_N(VGA_BLANK_N), .VGA_CLK(VGA_CLK), 
+	.VGA_G(VGA_G), .VGA_HS(VGA_HS), .VGA_R(VGA_R), .VGA_SYNC_N(VGA_SYNC_N), .VGA_VS(VGA_VS), 
+	.i_state(game_state), .i_tank0_x(tank_1_pos_x), .i_tank0_y(tank_1_pos_y), 
+	.i_tank0_dir(direction_tank_1), .o_buzy(VGA_busy), .i_min_ten(min_ten), .i_min_one(min_one), 
+	.i_sec_ten(sec_ten), .i_sec_one(sec_one), .i_tank1_x(tank_2_pos_x), .i_tank1_y(tank_2_pos_y), 
+	.i_tank1_dir(direction_tank_2));
 
-timer t(.clk(CLOCK_25), .rst_n(RST_N), .i_top_state({~state[1], state[0]}), .i_VGA_buzy(VGA_buzy), .o_min_ten(min_ten), .o_min_one(min_one), 
+timer t(.clk(CLOCK_25), .rst_n(RST_N), .i_top_state(game_state), .i_VGA_buzy(VGA_busy), .o_min_ten(min_ten), .o_min_one(min_one), 
 	.o_sec_ten(sec_ten), .o_sec_one(sec_one));
 
 
-Joystick p1(.clk(CLOCK_50), .rst_n(RST_N), .i_up(p1_up), .i_down (p1_down), .i_left (p1_left), .i_right(p1_right), 
-	.i_fire (p1_fire), .o_led  (p1_led));
-Joystick p2(.clk(CLOCK_50), .rst_n(RST_N), .i_up(p2_up), .i_down (p2_down), .i_left (p2_left), .i_right(p2_right), 
-	.i_fire (p2_fire), .o_led  (p2_led));
+Joystick p1(.clk(CLOCK_25), .rst_n(RST_N), .i_up(p1_up), .i_down (p1_down), .i_left (p1_left), 
+			.i_right(p1_right), .i_fire (p1_fire), .o_up(up_1_joy_state), .o_down(down_1_joy_state),
+			.o_left(left_1_joy_state), .o_right(right_1_joy_state), .o_fire(fire_1_joy_state),
+			.o_led(p1_led));
+Joystick p2(.clk(CLOCK_25), .rst_n(RST_N), .i_up(p2_up), .i_down (p2_down), .i_left (p2_left), 
+			.i_right(p2_right), .i_fire (p2_fire), .o_up(up_2_joy_state), .o_down(down_2_joy_state),
+			.o_left(left_2_joy_state), .o_right(right_2_joy_state), .o_fire(fire_2_joy_state), 
+			.o_led  (p2_led));
 
+state state_1(.clk(CLOCK_25), .rst_n(RST_N), .press_up_1(up_1_joy_state), .press_down_1(down_1_joy_state),
+			  .press_left_1(left_1_joy_state), .press_right_1(right_1_joy_state), 
+			  .press_fire_1(fire_1_joy_state), .press_up_2(up_2_joy_state),
+			  .press_down_2(down_2_joy_state), .press_left_2(left_2_joy_state),
+			  .press_right_2(right_2_joy_state), .press_fire_2(.fire_2_joy_state),
+			  .tank_1_pos_x(tank_1_pos_x), .tank_1_pos_y(tank_1_pos_y), .tank_2_pos_x(tank_2_pos_x),
+			  .tank_2_pos_y(tank_2_pos_y), .o_init_tank_1_pos_x(o_init_tank_1_pos_x),
+			  .o_init_tank_1_pos_y(o_init_tank_1_pos_y), .o_init_tank_2_pos_x(o_init_tank_2_pos_x),
+			  .o_init_tank_2_pos_y(o_init_tank_2_pos_y), .i_valid_shell_1(valid_shell_1),
+			  .i_valid_shell_2(valid_shell_2), .shell_1_0_pos_x(shell_1_0_pos_x), 
+			  .shell_1_0_pos_y(shell_1_0_pos_y), .shell_1_1_pos_x(shell_1_1_pos_x), 
+			  .shell_1_1_pos_y(shell_1_1_pos_y), .shell_1_2_pos_x(shell_1_2_pos_x),
+			  .shell_1_2_pos_y(shell_1_2_pos_y), .shell_1_3_pos_x(shell_1_3_pos_x), 
+			  .shell_1_3_pos_y(shell_1_3_pos_y), .shell_1_4_pos_x(shell_1_4_pos_x),
+			  .shell_1_4_pos_y(shell_1_4_pos_y), .shell_2_0_pos_x(shell_2_0_pos_x), 
+			  .shell_2_0_pos_y(shell_2_0_pos_y), .shell_2_1_pos_x(shell_2_1_pos_x),
+			  .shell_2_1_pos_y(shell_2_1_pos_y), .shell_2_2_pos_x(shell_2_2_pos_x),
+			  .shell_2_2_pos_y(shell_2_2_pos_y), .shell_2_3_pos_x(shell_2_3_pos_x),
+			  .shell_2_3_pos_y(shell_2_3_pos_y), .shell_2_4_pos_x(shell_2_4_pos_x),
+			  .shell_2_4_pos_y(shell_2_4_pos_y), .o_shell_vanish_1(shell_vanish_1),
+			  .o_shell_vanish_2(shell_vanish_2), .o_valid_frame_1(valid_frame_1), 
+			  .o_valid_frame_2(valid_frame_2), .o_dir_1(direction_1_state_tank),
+			  .o_dir_2(direction_2_state_tank), .o_fire_1(fire_1), .o_fire_2(fire_2), 
+			  .i_x_pos(x_pos_vga_state), .i_y_pos(y_pos_vga_state), .i_busy(VGA_busy),
+			  .o_is_map(is_map), .o_state(game_state), .o_who_wins(who_wins));
 
+shell shell_1(.clk(CLK_25), .rst_n(RST_N), .fire_1(fire_1), .fire_2(fire_2),
+			  .valid_give_shell_1(valid_frame_1), .valid_give_shell_2(valid_frame_2),
+			  .vanish_1(shell_vanish_1), .vanish_2(shell_vanish_2), .direction_1_in(direction_tank_1),
+			  .direction_2_in(direction_tank_2), .tank_1_x_pos(tank_1_pos_x), .tank_2_x_pos(tank_2_x_pos),
+			  .tank_2_y_pos(tank_2_y_pos), .shell_1_0_pos_x(shell_1_0_pos_x), 
+			  .shell_1_0_pos_y(shell_1_0_pos_y), .shell_1_1_pos_x(shell_1_1_pos_x), 
+			  .shell_1_1_pos_y(shell_1_1_pos_y), .shell_1_2_pos_x(shell_1_2_pos_x),
+			  .shell_1_2_pos_y(shell_1_2_pos_y), .shell_1_3_pos_x(shell_1_3_pos_x), 
+			  .shell_1_3_pos_y(shell_1_3_pos_y), .shell_1_4_pos_x(shell_1_4_pos_x),
+			  .shell_1_4_pos_y(shell_1_4_pos_y), .shell_2_0_pos_x(shell_2_0_pos_x), 
+			  .shell_2_0_pos_y(shell_2_0_pos_y), .shell_2_1_pos_x(shell_2_1_pos_x),
+			  .shell_2_1_pos_y(shell_2_1_pos_y), .shell_2_2_pos_x(shell_2_2_pos_x),
+			  .shell_2_2_pos_y(shell_2_2_pos_y), .shell_2_3_pos_x(shell_2_3_pos_x),
+			  .shell_2_3_pos_y(shell_2_3_pos_y), .shell_2_4_pos_x(shell_2_4_pos_x),
+			  .shell_2_4_pos_y(shell_2_4_pos_y), .valid_1_shell(valid_1_shell), 
+			  .valid_2_shell(valid_2_shell));
+
+tank tank_1(.clk(CLK_25), rst_n(RST_N), .initial_x(o_init_tank_1_pos_x), 
+			.initial_y(o_init_tank_1_pos_y), .initial_direction(2'd3), 
+			.direction_in(direction_1_state_tank), .valid_take_direction(valid_frame_1), 
+			.tank_x_pos(tank_1_pos_x), .tank_y_pos(tank_1_pos_y), .direction_out(direction_tank_1));
+    
+tank tank_2(.clk(CLK_25), rst_n(RST_N), .initial_x(o_init_tank_2_pos_x), 
+			.initial_y(o_init_tank_2_pos_y), .initial_direction(2'd2), 
+			.direction_in(direction_2_state_tank), .valid_take_direction(valid_frame_2), 
+			.tank_x_pos(tank_2_pos_x), .tank_y_pos(tank_2_pos_y), .direction_out(direction_tank_2));
 endmodule
