@@ -32,33 +32,27 @@ module VGA(
     //shell
     input [5:0] i_shell0_0_x,
     input [5:0] i_shell0_0_y,
-    input       i_shell0_0_valid,
     input [5:0] i_shell0_1_x,
     input [5:0] i_shell0_1_y,
-    input       i_shell0_1_valid,
     input [5:0] i_shell0_2_x,
     input [5:0] i_shell0_2_y,
-    input       i_shell0_2_valid,
     input [5:0] i_shell0_3_x,
     input [5:0] i_shell0_3_y,
-    input       i_shell0_3_valid,
     input [5:0] i_shell0_4_x,
     input [5:0] i_shell0_4_y,
+    input [4:0] i_shell0_valid,
 
     input [5:0] i_shell1_0_x,
     input [5:0] i_shell1_0_y,
-    input       i_shell1_0_valid,
     input [5:0] i_shell1_1_x,
     input [5:0] i_shell1_1_y,
-    input       i_shell1_1_valid,
     input [5:0] i_shell1_2_x,
     input [5:0] i_shell1_2_y,
-    input       i_shell1_2_valid,
     input [5:0] i_shell1_3_x,
     input [5:0] i_shell1_3_y,
-    input       i_shell1_3_valid,
     input [5:0] i_shell1_4_x,
-    input [5:0] i_shell1_4_y
+    input [5:0] i_shell1_4_y,
+    input [4:0] i_shell1_valid,
 );
 
 //protocal
