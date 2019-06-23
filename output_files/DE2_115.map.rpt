@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_115
-Sun Jun 23 11:30:48 2019
+Sun Jun 23 13:34:57 2019
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
 
 
@@ -13,36 +13,43 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: Debounce:debounce0
- 12. Parameter Settings for User Entity Instance: Debounce:debounce1
- 13. Parameter Settings for User Entity Instance: VGA:vga
- 14. Parameter Settings for User Entity Instance: Joystick:p1|Debounce:up
- 15. Parameter Settings for User Entity Instance: Joystick:p1|Debounce:down
- 16. Parameter Settings for User Entity Instance: Joystick:p1|Debounce:left
- 17. Parameter Settings for User Entity Instance: Joystick:p1|Debounce:right
- 18. Parameter Settings for User Entity Instance: Joystick:p1|Debounce:fire
- 19. Parameter Settings for Inferred Entity Instance: VGA:vga|Tank0Display:t0|lpm_mult:Mult1
- 20. Parameter Settings for Inferred Entity Instance: VGA:vga|Tank0Display:t0|lpm_mult:Mult2
- 21. Parameter Settings for Inferred Entity Instance: VGA:vga|Tank0Display:t0|lpm_mult:Mult0
- 22. Parameter Settings for Inferred Entity Instance: VGA:vga|Tank0Display:t0|lpm_mult:Mult3
- 23. lpm_mult Parameter Settings by Entity Instance
- 24. Port Connectivity Checks: "Joystick:p1|Debounce:fire"
- 25. Port Connectivity Checks: "Joystick:p1|Debounce:right"
- 26. Port Connectivity Checks: "Joystick:p1|Debounce:left"
- 27. Port Connectivity Checks: "Joystick:p1|Debounce:down"
- 28. Port Connectivity Checks: "Joystick:p1|Debounce:up"
- 29. Port Connectivity Checks: "Joystick:p1"
- 30. Port Connectivity Checks: "VGA:vga|Tank0Display:t0"
- 31. Port Connectivity Checks: "VGA:vga|Symbol:symbol"
- 32. Port Connectivity Checks: "VGA:vga"
- 33. Port Connectivity Checks: "Debounce:debounce1"
- 34. Port Connectivity Checks: "Debounce:debounce0"
- 35. Post-Synthesis Netlist Statistics for Top Partition
- 36. Elapsed Time Per Partition
- 37. Analysis & Synthesis Messages
+  8. Analysis & Synthesis IP Cores Summary
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for pll:pll|pll_altpll_0:altpll_0
+ 14. Source assignments for pll:pll|pll_altpll_0:altpll_0|pll_altpll_0_stdsync_sv6:stdsync2|pll_altpll_0_dffpipe_l2c:dffpipe3
+ 15. Source assignments for pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
+ 16. Source assignments for pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
+ 17. Parameter Settings for User Entity Instance: pll:pll|altera_reset_controller:rst_controller
+ 18. Parameter Settings for User Entity Instance: pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
+ 19. Parameter Settings for User Entity Instance: pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
+ 20. Parameter Settings for User Entity Instance: Debounce:debounce0
+ 21. Parameter Settings for User Entity Instance: Debounce:debounce1
+ 22. Parameter Settings for User Entity Instance: VGA:vga
+ 23. Parameter Settings for User Entity Instance: Joystick:p1|Debounce:up
+ 24. Parameter Settings for User Entity Instance: Joystick:p1|Debounce:down
+ 25. Parameter Settings for User Entity Instance: Joystick:p1|Debounce:left
+ 26. Parameter Settings for User Entity Instance: Joystick:p1|Debounce:right
+ 27. Parameter Settings for User Entity Instance: Joystick:p1|Debounce:fire
+ 28. Port Connectivity Checks: "Joystick:p1|Debounce:fire"
+ 29. Port Connectivity Checks: "Joystick:p1|Debounce:right"
+ 30. Port Connectivity Checks: "Joystick:p1|Debounce:left"
+ 31. Port Connectivity Checks: "Joystick:p1|Debounce:down"
+ 32. Port Connectivity Checks: "Joystick:p1|Debounce:up"
+ 33. Port Connectivity Checks: "Joystick:p1"
+ 34. Port Connectivity Checks: "VGA:vga|Symbol:symbol"
+ 35. Port Connectivity Checks: "VGA:vga"
+ 36. Port Connectivity Checks: "Debounce:debounce1"
+ 37. Port Connectivity Checks: "Debounce:debounce0"
+ 38. Port Connectivity Checks: "pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1"
+ 39. Port Connectivity Checks: "pll:pll|altera_reset_controller:rst_controller"
+ 40. Port Connectivity Checks: "pll:pll|pll_altpll_0:altpll_0|pll_altpll_0_altpll_m342:sd1"
+ 41. Port Connectivity Checks: "pll:pll|pll_altpll_0:altpll_0"
+ 42. Post-Synthesis Netlist Statistics for Top Partition
+ 43. Elapsed Time Per Partition
+ 44. Analysis & Synthesis Messages
 
 
 
@@ -69,20 +76,20 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jun 23 11:30:48 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sun Jun 23 13:34:57 2019       ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Full Version ;
 ; Revision Name                      ; DE2_115                                     ;
 ; Top-level Entity Name              ; DE2_115                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 455                                         ;
-;     Total combinational functions  ; 455                                         ;
-;     Dedicated logic registers      ; 113                                         ;
-; Total registers                    ; 113                                         ;
+; Total logic elements               ; 338                                         ;
+;     Total combinational functions  ; 338                                         ;
+;     Dedicated logic registers      ; 112                                         ;
+; Total registers                    ; 112                                         ;
 ; Total pins                         ; 480                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total PLLs                         ; 1                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -190,57 +197,39 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                               ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                           ; Library ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
-; src/DisplayROM/Tank0Display.sv   ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/DisplayROM/Tank0Display.sv     ;         ;
-; src/DE2_115/Debounce.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/DE2_115/Debounce.sv            ;         ;
-; src/DE2_115/DE2_115.sv           ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/DE2_115/DE2_115.sv             ;         ;
-; src/DisplayROM/Symbol.sv         ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/DisplayROM/Symbol.sv           ;         ;
-; src/DisplayROM/StartFrame.sv     ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/DisplayROM/StartFrame.sv       ;         ;
-; src/DisplayROM/Colon.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/DisplayROM/Colon.sv            ;         ;
-; src/VGA.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/VGA.sv                         ;         ;
-; src/Joystick.sv                  ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/Joystick.sv                    ;         ;
-; src/define.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/define.sv                      ;         ;
-; resource/dat/tank0_4_values.dat  ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/tank0_4_values.dat    ;         ;
-; resource/dat/tank0_4_labels.dat  ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/tank0_4_labels.dat    ;         ;
-; resource/dat/1.bmp.dat           ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/1.bmp.dat             ;         ;
-; resource/dat/7.bmp.dat           ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/7.bmp.dat             ;         ;
-; resource/dat/4.bmp.dat           ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/4.bmp.dat             ;         ;
-; resource/dat/2.bmp.dat           ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/2.bmp.dat             ;         ;
-; resource/dat/8.bmp.dat           ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/8.bmp.dat             ;         ;
-; resource/dat/5.bmp.dat           ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/5.bmp.dat             ;         ;
-; resource/dat/3.bmp.dat           ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/3.bmp.dat             ;         ;
-; resource/dat/statusshell.dat     ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/statusshell.dat       ;         ;
-; resource/dat/6.bmp.dat           ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/6.bmp.dat             ;         ;
-; resource/dat/9.bmp.dat           ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/9.bmp.dat             ;         ;
-; resource/dat/0.bmp.dat           ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/0.bmp.dat             ;         ;
-; resource/dat/colon.dat           ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/colon.dat             ;         ;
-; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
-; aglobal150.inc                   ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/aglobal150.inc          ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
-; multcore.inc                     ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/multcore.inc            ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/bypassff.inc            ;         ;
-; altshift.inc                     ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/altshift.inc            ;         ;
-; multcore.tdf                     ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/multcore.tdf            ;         ;
-; csa_add.inc                      ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/csa_add.inc             ;         ;
-; mpar_add.inc                     ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
-; muleabz.inc                      ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/muleabz.inc             ;         ;
-; mul_lfrg.inc                     ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/mul_lfrg.inc            ;         ;
-; mul_boothc.inc                   ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/mul_boothc.inc          ;         ;
-; alt_ded_mult.inc                 ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/alt_ded_mult.inc        ;         ;
-; alt_ded_mult_y.inc               ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
-; dffpipe.inc                      ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
-; mpar_add.tdf                     ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
-; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
-; addcore.inc                      ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/addcore.inc             ;         ;
-; look_add.inc                     ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/look_add.inc            ;         ;
-; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
-; db/add_sub_jgh.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/team06/Desktop/dclab_final/db/add_sub_jgh.tdf                 ;         ;
-; altshift.tdf                     ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/altshift.tdf            ;         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                       ;
++-------------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                      ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                              ; Library ;
++-------------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
+; qsys/synthesis/pll.v                                  ; yes             ; User Verilog HDL File        ; C:/Users/team06/Desktop/dclab_final/qsys/synthesis/pll.v                                  ;         ;
+; qsys/synthesis/submodules/altera_reset_controller.v   ; yes             ; User Verilog HDL File        ; C:/Users/team06/Desktop/dclab_final/qsys/synthesis/submodules/altera_reset_controller.v   ; pll     ;
+; qsys/synthesis/submodules/altera_reset_synchronizer.v ; yes             ; User Verilog HDL File        ; C:/Users/team06/Desktop/dclab_final/qsys/synthesis/submodules/altera_reset_synchronizer.v ; pll     ;
+; qsys/synthesis/submodules/pll_altpll_0.v              ; yes             ; User Verilog HDL File        ; C:/Users/team06/Desktop/dclab_final/qsys/synthesis/submodules/pll_altpll_0.v              ; pll     ;
+; src/DisplayROM/Tank0Display.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/DisplayROM/Tank0Display.sv                        ;         ;
+; src/DE2_115/Debounce.sv                               ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/DE2_115/Debounce.sv                               ;         ;
+; src/DE2_115/DE2_115.sv                                ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/DE2_115/DE2_115.sv                                ;         ;
+; src/DisplayROM/Symbol.sv                              ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/DisplayROM/Symbol.sv                              ;         ;
+; src/DisplayROM/StartFrame.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/DisplayROM/StartFrame.sv                          ;         ;
+; src/DisplayROM/Colon.sv                               ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/DisplayROM/Colon.sv                               ;         ;
+; src/VGA.sv                                            ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/VGA.sv                                            ;         ;
+; src/Joystick.sv                                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/Joystick.sv                                       ;         ;
+; src/define.sv                                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/define.sv                                         ;         ;
+; resource/dat/tank0_4_values.dat                       ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/tank0_4_values.dat                       ;         ;
+; resource/dat/tank0_4_labels.dat                       ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/tank0_4_labels.dat                       ;         ;
+; resource/dat/1.bmp.dat                                ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/1.bmp.dat                                ;         ;
+; resource/dat/7.bmp.dat                                ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/7.bmp.dat                                ;         ;
+; resource/dat/4.bmp.dat                                ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/4.bmp.dat                                ;         ;
+; resource/dat/2.bmp.dat                                ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/2.bmp.dat                                ;         ;
+; resource/dat/8.bmp.dat                                ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/8.bmp.dat                                ;         ;
+; resource/dat/5.bmp.dat                                ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/5.bmp.dat                                ;         ;
+; resource/dat/3.bmp.dat                                ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/3.bmp.dat                                ;         ;
+; resource/dat/statusshell.dat                          ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/statusshell.dat                          ;         ;
+; resource/dat/6.bmp.dat                                ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/6.bmp.dat                                ;         ;
+; resource/dat/9.bmp.dat                                ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/9.bmp.dat                                ;         ;
+; resource/dat/0.bmp.dat                                ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/0.bmp.dat                                ;         ;
+; resource/dat/colon.dat                                ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/colon.dat                                ;         ;
++-------------------------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------+
@@ -248,84 +237,94 @@ agreement for further details.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 455          ;
+; Estimated Total logic elements              ; 338          ;
 ;                                             ;              ;
-; Total combinational functions               ; 455          ;
+; Total combinational functions               ; 338          ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 228          ;
-;     -- 3 input functions                    ; 113          ;
-;     -- <=2 input functions                  ; 114          ;
+;     -- 4 input functions                    ; 182          ;
+;     -- 3 input functions                    ; 74           ;
+;     -- <=2 input functions                  ; 82           ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 356          ;
-;     -- arithmetic mode                      ; 99           ;
+;     -- normal mode                          ; 279          ;
+;     -- arithmetic mode                      ; 59           ;
 ;                                             ;              ;
-; Total registers                             ; 113          ;
-;     -- Dedicated logic registers            ; 113          ;
+; Total registers                             ; 112          ;
+;     -- Dedicated logic registers            ; 112          ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
 ; I/O pins                                    ; 480          ;
 ;                                             ;              ;
 ; Embedded Multiplier 9-bit elements          ; 0            ;
 ;                                             ;              ;
+; Total PLLs                                  ; 1            ;
+;     -- PLLs                                 ; 1            ;
+;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[0]~input ;
-; Maximum fan-out                             ; 113          ;
-; Total fan-out                               ; 2503         ;
-; Average fan-out                             ; 1.50         ;
+; Maximum fan-out                             ; 112          ;
+; Total fan-out                               ; 2140         ;
+; Average fan-out                             ; 1.38         ;
 +---------------------------------------------+--------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                               ;
-+---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                ; Library Name ;
-+---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DE2_115                                          ; 455 (1)           ; 113 (1)      ; 0           ; 0            ; 0       ; 0         ; 480  ; 0            ; |DE2_115                                                                                                                           ; work         ;
-;    |Debounce:debounce0|                           ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:debounce0                                                                                                        ; work         ;
-;    |Debounce:debounce1|                           ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:debounce1                                                                                                        ; work         ;
-;    |Joystick:p1|                                  ; 25 (0)            ; 20 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1                                                                                                               ; work         ;
-;       |Debounce:down|                             ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1|Debounce:down                                                                                                 ; work         ;
-;       |Debounce:fire|                             ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1|Debounce:fire                                                                                                 ; work         ;
-;       |Debounce:left|                             ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1|Debounce:left                                                                                                 ; work         ;
-;       |Debounce:right|                            ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1|Debounce:right                                                                                                ; work         ;
-;       |Debounce:up|                               ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1|Debounce:up                                                                                                   ; work         ;
-;    |VGA:vga|                                      ; 419 (208)         ; 84 (84)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga                                                                                                                   ; work         ;
-;       |Colon:colon|                               ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Colon:colon                                                                                                       ; work         ;
-;       |Symbol:symbol|                             ; 89 (89)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Symbol:symbol                                                                                                     ; work         ;
-;       |Tank0Display:t0|                           ; 107 (86)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0                                                                                                   ; work         ;
-;          |lpm_mult:Mult0|                         ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult0                                                                                    ; work         ;
-;             |multcore:mult_core|                  ; 5 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult0|multcore:mult_core                                                                 ; work         ;
-;                |mpar_add:padder|                  ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                 ; work         ;
-;                   |lpm_add_sub:adder[0]|          ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; work         ;
-;                      |add_sub_jgh:auto_generated| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_jgh:auto_generated ; work         ;
-;          |lpm_mult:Mult1|                         ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult1                                                                                    ; work         ;
-;             |multcore:mult_core|                  ; 5 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult1|multcore:mult_core                                                                 ; work         ;
-;                |mpar_add:padder|                  ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder                                                 ; work         ;
-;                   |lpm_add_sub:adder[0]|          ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; work         ;
-;                      |add_sub_jgh:auto_generated| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_jgh:auto_generated ; work         ;
-;          |lpm_mult:Mult2|                         ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult2                                                                                    ; work         ;
-;             |multcore:mult_core|                  ; 4 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult2|multcore:mult_core                                                                 ; work         ;
-;                |mpar_add:padder|                  ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder                                                 ; work         ;
-;                   |lpm_add_sub:adder[0]|          ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; work         ;
-;                      |add_sub_jgh:auto_generated| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_jgh:auto_generated ; work         ;
-;          |lpm_mult:Mult3|                         ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult3                                                                                    ; work         ;
-;             |multcore:mult_core|                  ; 7 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult3|multcore:mult_core                                                                 ; work         ;
-;                |mpar_add:padder|                  ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder                                                 ; work         ;
-;                   |lpm_add_sub:adder[0]|          ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; work         ;
-;                      |add_sub_jgh:auto_generated| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_jgh:auto_generated ; work         ;
-+---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                      ;
++-----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                 ; Library Name ;
++-----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------+--------------+
+; |DE2_115                                ; 338 (0)           ; 112 (0)      ; 0           ; 0            ; 0       ; 0         ; 480  ; 0            ; |DE2_115                                                            ; work         ;
+;    |Debounce:debounce0|                 ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:debounce0                                         ; work         ;
+;    |Debounce:debounce1|                 ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:debounce1                                         ; work         ;
+;    |Joystick:p1|                        ; 25 (0)            ; 20 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1                                                ; work         ;
+;       |Debounce:down|                   ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1|Debounce:down                                  ; work         ;
+;       |Debounce:fire|                   ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1|Debounce:fire                                  ; work         ;
+;       |Debounce:left|                   ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1|Debounce:left                                  ; work         ;
+;       |Debounce:right|                  ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1|Debounce:right                                 ; work         ;
+;       |Debounce:up|                     ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1|Debounce:up                                    ; work         ;
+;    |VGA:vga|                            ; 303 (200)         ; 84 (84)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga                                                    ; work         ;
+;       |Colon:colon|                     ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Colon:colon                                        ; work         ;
+;       |Symbol:symbol|                   ; 88 (88)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Symbol:symbol                                      ; work         ;
+;       |Tank0Display:t0|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0                                    ; work         ;
+;    |pll:pll|                            ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|pll:pll                                                    ; work         ;
+;       |pll_altpll_0:altpll_0|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|pll:pll|pll_altpll_0:altpll_0                              ; pll          ;
+;          |pll_altpll_0_altpll_m342:sd1| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|pll:pll|pll_altpll_0:altpll_0|pll_altpll_0_altpll_m342:sd1 ; pll          ;
++-----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                     ;
-+---------------------------------------+--------------------------------+
-; Register name                         ; Reason for Removal             ;
-+---------------------------------------+--------------------------------+
-; VGA:vga|grid_x[0]                     ; Merged with VGA:vga|frame_x[0] ;
-; VGA:vga|frame_y[0]                    ; Merged with VGA:vga|grid_y[0]  ;
-; Total Number of Removed Registers = 2 ;                                ;
-+---------------------------------------+--------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                ;
++--------+-------------------------+---------+--------------+--------------+---------------------------------------------------------+-----------------+
+; Vendor ; IP Core Name            ; Version ; Release Date ; License Type ; Entity Instance                                         ; IP Include File ;
++--------+-------------------------+---------+--------------+--------------+---------------------------------------------------------+-----------------+
+; Altera ; altpll                  ; 15.0    ; N/A          ; N/A          ; |DE2_115|pll:pll|pll_altpll_0:altpll_0                  ; pll.qsys        ;
+; Altera ; altera_reset_controller ; 15.0    ; N/A          ; N/A          ; |DE2_115|pll:pll|altera_reset_controller:rst_controller ; pll.qsys        ;
++--------+-------------------------+---------+--------------+--------------+---------------------------------------------------------+-----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                          ;
++------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                                                                      ; Reason for Removal                     ;
++------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; pll:pll|pll_altpll_0:altpll_0|prev_reset                                                                                           ; Stuck at GND due to stuck port data_in ;
+; pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out  ; Lost fanout                            ;
+; pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0,1] ; Lost fanout                            ;
+; VGA:vga|grid_x[0]                                                                                                                  ; Merged with VGA:vga|frame_x[0]         ;
+; VGA:vga|frame_y[0]                                                                                                                 ; Merged with VGA:vga|grid_y[0]          ;
+; Total Number of Removed Registers = 6                                                                                              ;                                        ;
++------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                               ;
++------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+; Register name                            ; Reason for Removal        ; Registers Removed due to This Register                                                                                             ;
++------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+; pll:pll|pll_altpll_0:altpll_0|prev_reset ; Stuck at GND              ; pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out, ;
+;                                          ; due to stuck port data_in ; pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0],  ;
+;                                          ;                           ; pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[1]   ;
++------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -333,27 +332,118 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 113   ;
+; Total registers                              ; 112   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 1     ;
-; Number of registers using Asynchronous Clear ; 113   ;
+; Number of registers using Asynchronous Clear ; 112   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 45    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |DE2_115|VGA:vga|Tank0Display:t0|Mux6 ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |DE2_115|VGA:vga|n_VGA_RGB            ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |DE2_115|VGA:vga|symbol_x_w[0]        ;
-; 67:1               ; 5 bits    ; 220 LEs       ; 5 LEs                ; 215 LEs                ; No         ; |DE2_115|VGA:vga|symbol_y_w[1]        ;
-; 67:1               ; 5 bits    ; 220 LEs       ; 20 LEs               ; 200 LEs                ; No         ; |DE2_115|VGA:vga|symbol_x_w[5]        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |DE2_115|VGA:vga|symbol_y_w[0] ;
+; 67:1               ; 5 bits    ; 220 LEs       ; 5 LEs                ; 215 LEs                ; No         ; |DE2_115|VGA:vga|symbol_y_w[5] ;
+; 67:1               ; 5 bits    ; 220 LEs       ; 20 LEs               ; 200 LEs                ; No         ; |DE2_115|VGA:vga|symbol_x_w[5] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+
+
++------------------------------------------------------+
+; Source assignments for pll:pll|pll_altpll_0:altpll_0 ;
++----------------+-------+------+----------------------+
+; Assignment     ; Value ; From ; To                   ;
++----------------+-------+------+----------------------+
+; POWER_UP_LEVEL ; HIGH  ; -    ; pfdena_reg           ;
++----------------+-------+------+----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for pll:pll|pll_altpll_0:altpll_0|pll_altpll_0_stdsync_sv6:stdsync2|pll_altpll_0_dffpipe_l2c:dffpipe3 ;
++---------------------------------+-------+------+-------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                      ;
++---------------------------------+-------+------+-------------------------------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                       ;
++---------------------------------+-------+------+-------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Source assignments for pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1 ;
++-------------------+-------+------+-------------------------------------------------------------------------------+
+; Assignment        ; Value ; From ; To                                                                            ;
++-------------------+-------+------+-------------------------------------------------------------------------------+
+; PRESERVE_REGISTER ; on    ; -    ; altera_reset_synchronizer_int_chain[1]                                        ;
+; PRESERVE_REGISTER ; on    ; -    ; altera_reset_synchronizer_int_chain[0]                                        ;
++-------------------+-------+------+-------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Source assignments for pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1 ;
++-------------------+-------+------+-----------------------------------------------------------------------------------+
+; Assignment        ; Value ; From ; To                                                                                ;
++-------------------+-------+------+-----------------------------------------------------------------------------------+
+; PRESERVE_REGISTER ; on    ; -    ; altera_reset_synchronizer_int_chain[0]                                            ;
+; PRESERVE_REGISTER ; on    ; -    ; altera_reset_synchronizer_int_chain[1]                                            ;
++-------------------+-------+------+-----------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pll:pll|altera_reset_controller:rst_controller ;
++---------------------------+----------+------------------------------------------------------+
+; Parameter Name            ; Value    ; Type                                                 ;
++---------------------------+----------+------------------------------------------------------+
+; NUM_RESET_INPUTS          ; 1        ; Signed Integer                                       ;
+; USE_RESET_REQUEST_IN0     ; 0        ; Signed Integer                                       ;
+; USE_RESET_REQUEST_IN1     ; 0        ; Signed Integer                                       ;
+; USE_RESET_REQUEST_IN2     ; 0        ; Signed Integer                                       ;
+; USE_RESET_REQUEST_IN3     ; 0        ; Signed Integer                                       ;
+; USE_RESET_REQUEST_IN4     ; 0        ; Signed Integer                                       ;
+; USE_RESET_REQUEST_IN5     ; 0        ; Signed Integer                                       ;
+; USE_RESET_REQUEST_IN6     ; 0        ; Signed Integer                                       ;
+; USE_RESET_REQUEST_IN7     ; 0        ; Signed Integer                                       ;
+; USE_RESET_REQUEST_IN8     ; 0        ; Signed Integer                                       ;
+; USE_RESET_REQUEST_IN9     ; 0        ; Signed Integer                                       ;
+; USE_RESET_REQUEST_IN10    ; 0        ; Signed Integer                                       ;
+; USE_RESET_REQUEST_IN11    ; 0        ; Signed Integer                                       ;
+; USE_RESET_REQUEST_IN12    ; 0        ; Signed Integer                                       ;
+; USE_RESET_REQUEST_IN13    ; 0        ; Signed Integer                                       ;
+; USE_RESET_REQUEST_IN14    ; 0        ; Signed Integer                                       ;
+; USE_RESET_REQUEST_IN15    ; 0        ; Signed Integer                                       ;
+; OUTPUT_RESET_SYNC_EDGES   ; deassert ; String                                               ;
+; SYNC_DEPTH                ; 2        ; Signed Integer                                       ;
+; RESET_REQUEST_PRESENT     ; 0        ; Signed Integer                                       ;
+; RESET_REQ_WAIT_TIME       ; 1        ; Signed Integer                                       ;
+; MIN_RST_ASSERTION_TIME    ; 3        ; Signed Integer                                       ;
+; RESET_REQ_EARLY_DSRT_TIME ; 1        ; Signed Integer                                       ;
+; ADAPT_RESET_REQUEST       ; 0        ; Signed Integer                                       ;
++---------------------------+----------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1 ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                          ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+; ASYNC_RESET    ; 1     ; Unsigned Binary                                                                                               ;
+; DEPTH          ; 2     ; Signed Integer                                                                                                ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1 ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                              ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------+
+; ASYNC_RESET    ; 0     ; Signed Integer                                                                                                    ;
+; DEPTH          ; 2     ; Signed Integer                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------+
@@ -450,205 +540,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: VGA:vga|Tank0Display:t0|lpm_mult:Mult1 ;
-+------------------------------------------------+--------------+-------------------------+
-; Parameter Name                                 ; Value        ; Type                    ;
-+------------------------------------------------+--------------+-------------------------+
-; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY              ;
-; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY            ;
-; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE            ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE          ;
-; LPM_WIDTHA                                     ; 7            ; Untyped                 ;
-; LPM_WIDTHB                                     ; 6            ; Untyped                 ;
-; LPM_WIDTHP                                     ; 13           ; Untyped                 ;
-; LPM_WIDTHR                                     ; 13           ; Untyped                 ;
-; LPM_WIDTHS                                     ; 1            ; Untyped                 ;
-; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                 ;
-; LPM_PIPELINE                                   ; 0            ; Untyped                 ;
-; LATENCY                                        ; 0            ; Untyped                 ;
-; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                 ;
-; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped                 ;
-; USE_EAB                                        ; OFF          ; Untyped                 ;
-; MAXIMIZE_SPEED                                 ; 5            ; Untyped                 ;
-; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                 ;
-; CARRY_CHAIN                                    ; MANUAL       ; Untyped                 ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K     ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                 ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                 ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                 ;
-; CBXI_PARAMETER                                 ; NOTHING      ; Untyped                 ;
-; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                 ;
-; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                 ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                 ;
-+------------------------------------------------+--------------+-------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: VGA:vga|Tank0Display:t0|lpm_mult:Mult2 ;
-+------------------------------------------------+--------------+-------------------------+
-; Parameter Name                                 ; Value        ; Type                    ;
-+------------------------------------------------+--------------+-------------------------+
-; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY              ;
-; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY            ;
-; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE            ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE          ;
-; LPM_WIDTHA                                     ; 7            ; Untyped                 ;
-; LPM_WIDTHB                                     ; 6            ; Untyped                 ;
-; LPM_WIDTHP                                     ; 13           ; Untyped                 ;
-; LPM_WIDTHR                                     ; 13           ; Untyped                 ;
-; LPM_WIDTHS                                     ; 1            ; Untyped                 ;
-; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                 ;
-; LPM_PIPELINE                                   ; 0            ; Untyped                 ;
-; LATENCY                                        ; 0            ; Untyped                 ;
-; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                 ;
-; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped                 ;
-; USE_EAB                                        ; OFF          ; Untyped                 ;
-; MAXIMIZE_SPEED                                 ; 5            ; Untyped                 ;
-; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                 ;
-; CARRY_CHAIN                                    ; MANUAL       ; Untyped                 ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K     ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                 ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                 ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                 ;
-; CBXI_PARAMETER                                 ; NOTHING      ; Untyped                 ;
-; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                 ;
-; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                 ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                 ;
-+------------------------------------------------+--------------+-------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: VGA:vga|Tank0Display:t0|lpm_mult:Mult0 ;
-+------------------------------------------------+--------------+-------------------------+
-; Parameter Name                                 ; Value        ; Type                    ;
-+------------------------------------------------+--------------+-------------------------+
-; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY              ;
-; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY            ;
-; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE            ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE          ;
-; LPM_WIDTHA                                     ; 7            ; Untyped                 ;
-; LPM_WIDTHB                                     ; 6            ; Untyped                 ;
-; LPM_WIDTHP                                     ; 13           ; Untyped                 ;
-; LPM_WIDTHR                                     ; 13           ; Untyped                 ;
-; LPM_WIDTHS                                     ; 1            ; Untyped                 ;
-; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                 ;
-; LPM_PIPELINE                                   ; 0            ; Untyped                 ;
-; LATENCY                                        ; 0            ; Untyped                 ;
-; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                 ;
-; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped                 ;
-; USE_EAB                                        ; OFF          ; Untyped                 ;
-; MAXIMIZE_SPEED                                 ; 5            ; Untyped                 ;
-; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                 ;
-; CARRY_CHAIN                                    ; MANUAL       ; Untyped                 ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K     ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                 ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                 ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                 ;
-; CBXI_PARAMETER                                 ; NOTHING      ; Untyped                 ;
-; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                 ;
-; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                 ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                 ;
-+------------------------------------------------+--------------+-------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: VGA:vga|Tank0Display:t0|lpm_mult:Mult3 ;
-+------------------------------------------------+--------------+-------------------------+
-; Parameter Name                                 ; Value        ; Type                    ;
-+------------------------------------------------+--------------+-------------------------+
-; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY              ;
-; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY            ;
-; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE            ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE          ;
-; LPM_WIDTHA                                     ; 7            ; Untyped                 ;
-; LPM_WIDTHB                                     ; 6            ; Untyped                 ;
-; LPM_WIDTHP                                     ; 13           ; Untyped                 ;
-; LPM_WIDTHR                                     ; 13           ; Untyped                 ;
-; LPM_WIDTHS                                     ; 1            ; Untyped                 ;
-; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                 ;
-; LPM_PIPELINE                                   ; 0            ; Untyped                 ;
-; LATENCY                                        ; 0            ; Untyped                 ;
-; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                 ;
-; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped                 ;
-; USE_EAB                                        ; OFF          ; Untyped                 ;
-; MAXIMIZE_SPEED                                 ; 5            ; Untyped                 ;
-; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                 ;
-; CARRY_CHAIN                                    ; MANUAL       ; Untyped                 ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K     ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                 ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                 ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                 ;
-; CBXI_PARAMETER                                 ; NOTHING      ; Untyped                 ;
-; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                 ;
-; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                 ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                 ;
-+------------------------------------------------+--------------+-------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------+
-; lpm_mult Parameter Settings by Entity Instance                                 ;
-+---------------------------------------+----------------------------------------+
-; Name                                  ; Value                                  ;
-+---------------------------------------+----------------------------------------+
-; Number of entity instances            ; 4                                      ;
-; Entity Instance                       ; VGA:vga|Tank0Display:t0|lpm_mult:Mult1 ;
-;     -- LPM_WIDTHA                     ; 7                                      ;
-;     -- LPM_WIDTHB                     ; 6                                      ;
-;     -- LPM_WIDTHP                     ; 13                                     ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED                               ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                                     ;
-;     -- INPUT_B_IS_CONSTANT            ; YES                                    ;
-;     -- USE_EAB                        ; OFF                                    ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                   ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                                     ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                                     ;
-; Entity Instance                       ; VGA:vga|Tank0Display:t0|lpm_mult:Mult2 ;
-;     -- LPM_WIDTHA                     ; 7                                      ;
-;     -- LPM_WIDTHB                     ; 6                                      ;
-;     -- LPM_WIDTHP                     ; 13                                     ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED                               ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                                     ;
-;     -- INPUT_B_IS_CONSTANT            ; YES                                    ;
-;     -- USE_EAB                        ; OFF                                    ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                   ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                                     ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                                     ;
-; Entity Instance                       ; VGA:vga|Tank0Display:t0|lpm_mult:Mult0 ;
-;     -- LPM_WIDTHA                     ; 7                                      ;
-;     -- LPM_WIDTHB                     ; 6                                      ;
-;     -- LPM_WIDTHP                     ; 13                                     ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED                               ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                                     ;
-;     -- INPUT_B_IS_CONSTANT            ; YES                                    ;
-;     -- USE_EAB                        ; OFF                                    ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                   ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                                     ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                                     ;
-; Entity Instance                       ; VGA:vga|Tank0Display:t0|lpm_mult:Mult3 ;
-;     -- LPM_WIDTHA                     ; 7                                      ;
-;     -- LPM_WIDTHB                     ; 6                                      ;
-;     -- LPM_WIDTHP                     ; 13                                     ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED                               ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                                     ;
-;     -- INPUT_B_IS_CONSTANT            ; YES                                    ;
-;     -- USE_EAB                        ; OFF                                    ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                   ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                                     ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                                     ;
-+---------------------------------------+----------------------------------------+
-
-
 +--------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "Joystick:p1|Debounce:fire"                                                                                ;
 +-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 ; Port  ; Type   ; Severity ; Details                                                                                                  ;
 +-------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; o_neg ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
 ; o_pos ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
 +-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
@@ -706,18 +602,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "VGA:vga|Tank0Display:t0"                                                                                                                            ;
-+----------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port     ; Type  ; Severity ; Details                                                                                                                                          ;
-+----------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; i_game_x ; Input ; Warning  ; Input port expression (6 bits) is smaller than the input port (7 bits) it drives.  Extra input bit(s) "i_game_x[6..6]" will be connected to GND. ;
-; i_game_y ; Input ; Warning  ; Input port expression (6 bits) is smaller than the input port (7 bits) it drives.  Extra input bit(s) "i_game_y[6..6]" will be connected to GND. ;
-; i_tank_x ; Input ; Warning  ; Input port expression (6 bits) is smaller than the input port (7 bits) it drives.  Extra input bit(s) "i_tank_x[6..6]" will be connected to GND. ;
-; i_tank_y ; Input ; Warning  ; Input port expression (6 bits) is smaller than the input port (7 bits) it drives.  Extra input bit(s) "i_tank_y[6..6]" will be connected to GND. ;
-+----------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +---------------------------------------------------+
 ; Port Connectivity Checks: "VGA:vga|Symbol:symbol" ;
 +-----------+-------+----------+--------------------+
@@ -733,10 +617,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port             ; Type   ; Severity ; Details                                                                                                                                      ;
 +------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; i_tank0_x[4..0]  ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; i_tank0_x[5]     ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; i_tank0_y[1..0]  ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
+; i_tank0_x[5..2]  ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; i_tank0_x[1]     ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
+; i_tank0_x[0]     ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
 ; i_tank0_y[5..2]  ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; i_tank0_y[1]     ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
+; i_tank0_y[0]     ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
 ; o_buzy           ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
 ; o_request_x      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
 ; o_request_y      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
@@ -795,30 +681,106 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1" ;
++----------+-------+----------+---------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                     ;
++----------+-------+----------+---------------------------------------------------------------------------------------------+
+; reset_in ; Input ; Info     ; Stuck at GND                                                                                ;
++----------+-------+----------+---------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Port Connectivity Checks: "pll:pll|altera_reset_controller:rst_controller" ;
++----------------+--------+----------+---------------------------------------+
+; Port           ; Type   ; Severity ; Details                               ;
++----------------+--------+----------+---------------------------------------+
+; reset_req      ; Output ; Info     ; Explicitly unconnected                ;
+; reset_req_in0  ; Input  ; Info     ; Stuck at GND                          ;
+; reset_in1      ; Input  ; Info     ; Stuck at GND                          ;
+; reset_req_in1  ; Input  ; Info     ; Stuck at GND                          ;
+; reset_in2      ; Input  ; Info     ; Stuck at GND                          ;
+; reset_req_in2  ; Input  ; Info     ; Stuck at GND                          ;
+; reset_in3      ; Input  ; Info     ; Stuck at GND                          ;
+; reset_req_in3  ; Input  ; Info     ; Stuck at GND                          ;
+; reset_in4      ; Input  ; Info     ; Stuck at GND                          ;
+; reset_req_in4  ; Input  ; Info     ; Stuck at GND                          ;
+; reset_in5      ; Input  ; Info     ; Stuck at GND                          ;
+; reset_req_in5  ; Input  ; Info     ; Stuck at GND                          ;
+; reset_in6      ; Input  ; Info     ; Stuck at GND                          ;
+; reset_req_in6  ; Input  ; Info     ; Stuck at GND                          ;
+; reset_in7      ; Input  ; Info     ; Stuck at GND                          ;
+; reset_req_in7  ; Input  ; Info     ; Stuck at GND                          ;
+; reset_in8      ; Input  ; Info     ; Stuck at GND                          ;
+; reset_req_in8  ; Input  ; Info     ; Stuck at GND                          ;
+; reset_in9      ; Input  ; Info     ; Stuck at GND                          ;
+; reset_req_in9  ; Input  ; Info     ; Stuck at GND                          ;
+; reset_in10     ; Input  ; Info     ; Stuck at GND                          ;
+; reset_req_in10 ; Input  ; Info     ; Stuck at GND                          ;
+; reset_in11     ; Input  ; Info     ; Stuck at GND                          ;
+; reset_req_in11 ; Input  ; Info     ; Stuck at GND                          ;
+; reset_in12     ; Input  ; Info     ; Stuck at GND                          ;
+; reset_req_in12 ; Input  ; Info     ; Stuck at GND                          ;
+; reset_in13     ; Input  ; Info     ; Stuck at GND                          ;
+; reset_req_in13 ; Input  ; Info     ; Stuck at GND                          ;
+; reset_in14     ; Input  ; Info     ; Stuck at GND                          ;
+; reset_req_in14 ; Input  ; Info     ; Stuck at GND                          ;
+; reset_in15     ; Input  ; Info     ; Stuck at GND                          ;
+; reset_req_in15 ; Input  ; Info     ; Stuck at GND                          ;
++----------------+--------+----------+---------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pll:pll|pll_altpll_0:altpll_0|pll_altpll_0_altpll_m342:sd1"                              ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; clk[4..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; inclk[1]  ; Input  ; Info     ; Stuck at GND                                                                        ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "pll:pll|pll_altpll_0:altpll_0" ;
++-----------+--------+----------+---------------------------+
+; Port      ; Type   ; Severity ; Details                   ;
++-----------+--------+----------+---------------------------+
+; read      ; Input  ; Info     ; Explicitly unconnected    ;
+; write     ; Input  ; Info     ; Explicitly unconnected    ;
+; address   ; Input  ; Info     ; Explicitly unconnected    ;
+; readdata  ; Output ; Info     ; Explicitly unconnected    ;
+; writedata ; Input  ; Info     ; Explicitly unconnected    ;
+; areset    ; Input  ; Info     ; Explicitly unconnected    ;
+; locked    ; Output ; Info     ; Explicitly unconnected    ;
+; phasedone ; Output ; Info     ; Explicitly unconnected    ;
++-----------+--------+----------+---------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 480                         ;
-; cycloneiii_ff         ; 113                         ;
-;     CLR               ; 67                          ;
+; cycloneiii_ff         ; 112                         ;
+;     CLR               ; 66                          ;
 ;     CLR SLD           ; 1                           ;
 ;     ENA CLR           ; 45                          ;
 ; cycloneiii_io_obuf    ; 140                         ;
-; cycloneiii_lcell_comb ; 456                         ;
-;     arith             ; 99                          ;
-;         2 data inputs ; 48                          ;
-;         3 data inputs ; 51                          ;
-;     normal            ; 357                         ;
+; cycloneiii_lcell_comb ; 339                         ;
+;     arith             ; 59                          ;
+;         2 data inputs ; 44                          ;
+;         3 data inputs ; 15                          ;
+;     normal            ; 280                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 15                          ;
-;         2 data inputs ; 51                          ;
-;         3 data inputs ; 62                          ;
-;         4 data inputs ; 228                         ;
+;         1 data inputs ; 12                          ;
+;         2 data inputs ; 26                          ;
+;         3 data inputs ; 59                          ;
+;         4 data inputs ; 182                         ;
+; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 18.00                       ;
-; Average LUT depth     ; 8.14                        ;
+; Max LUT depth         ; 16.00                       ;
+; Average LUT depth     ; 6.32                        ;
 +-----------------------+-----------------------------+
 
 
@@ -837,9 +799,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
-    Info: Processing started: Sun Jun 23 11:30:38 2019
+    Info: Processing started: Sun Jun 23 13:34:47 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off dclab_final -c DE2_115
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file qsys/synthesis/pll.v
+    Info (12023): Found entity 1: pll
+Info (12021): Found 1 design units, including 1 entities, in source file qsys/synthesis/pll.v
+    Info (12023): Found entity 1: pll
+Info (12021): Found 1 design units, including 1 entities, in source file qsys/synthesis/submodules/altera_reset_controller.v
+    Info (12023): Found entity 1: altera_reset_controller
+Info (12021): Found 1 design units, including 1 entities, in source file qsys/synthesis/submodules/altera_reset_synchronizer.v
+    Info (12023): Found entity 1: altera_reset_synchronizer
+Info (12021): Found 4 design units, including 4 entities, in source file qsys/synthesis/submodules/pll_altpll_0.v
+    Info (12023): Found entity 1: pll_altpll_0_dffpipe_l2c
+    Info (12023): Found entity 2: pll_altpll_0_stdsync_sv6
+    Info (12023): Found entity 3: pll_altpll_0_altpll_m342
+    Info (12023): Found entity 4: pll_altpll_0
 Info (12021): Found 1 design units, including 1 entities, in source file src/displayrom/tank0display.sv
     Info (12023): Found entity 1: Tank0Display
 Info (12021): Found 1 design units, including 1 entities, in source file src/de2_115/sevenhexdecoder.sv
@@ -935,6 +910,14 @@ Warning (10034): Output port "FL_WP_N" at DE2_115.sv(126) has no driver
 Warning (10034): Output port "HSMC_CLKOUT_P1" at DE2_115.sv(131) has no driver
 Warning (10034): Output port "HSMC_CLKOUT_P2" at DE2_115.sv(132) has no driver
 Warning (10034): Output port "HSMC_CLKOUT0" at DE2_115.sv(133) has no driver
+Info (12128): Elaborating entity "pll" for hierarchy "pll:pll"
+Info (12128): Elaborating entity "pll_altpll_0" for hierarchy "pll:pll|pll_altpll_0:altpll_0"
+Info (12128): Elaborating entity "pll_altpll_0_stdsync_sv6" for hierarchy "pll:pll|pll_altpll_0:altpll_0|pll_altpll_0_stdsync_sv6:stdsync2"
+Info (12128): Elaborating entity "pll_altpll_0_dffpipe_l2c" for hierarchy "pll:pll|pll_altpll_0:altpll_0|pll_altpll_0_stdsync_sv6:stdsync2|pll_altpll_0_dffpipe_l2c:dffpipe3"
+Info (12128): Elaborating entity "pll_altpll_0_altpll_m342" for hierarchy "pll:pll|pll_altpll_0:altpll_0|pll_altpll_0_altpll_m342:sd1"
+Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "pll:pll|altera_reset_controller:rst_controller"
+Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1"
+Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1"
 Info (12128): Elaborating entity "Debounce" for hierarchy "Debounce:debounce0"
 Warning (10230): Verilog HDL assignment warning at Debounce.sv(22): truncated value with size 32 to match size of target (3)
 Warning (10230): Verilog HDL assignment warning at Debounce.sv(24): truncated value with size 32 to match size of target (3)
@@ -3505,29 +3488,7 @@ Critical Warning (127005): Memory depth (64) in the design file differs from mem
 Critical Warning (127005): Memory depth (64) in the design file differs from memory depth (40) in the Memory Initialization File "C:/Users/team06/Desktop/dclab_final/db/DE2_115.ram10_Symbol_a98a3296.hdl.mif" -- setting initial value for remaining addresses to 0
 Critical Warning (127005): Memory depth (64) in the design file differs from memory depth (40) in the Memory Initialization File "C:/Users/team06/Desktop/dclab_final/db/DE2_115.ram0_Colon_48f3690.hdl.mif" -- setting initial value for remaining addresses to 0
 Critical Warning (127005): Memory depth (4096) in the design file differs from memory depth (2500) in the Memory Initialization File "C:/Users/team06/Desktop/dclab_final/db/DE2_115.ram0_Tank0Display_c08486fc.hdl.mif" -- setting initial value for remaining addresses to 0
-Info (278001): Inferred 4 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "VGA:vga|Tank0Display:t0|Mult1"
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "VGA:vga|Tank0Display:t0|Mult2"
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "VGA:vga|Tank0Display:t0|Mult0"
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "VGA:vga|Tank0Display:t0|Mult3"
-Info (12130): Elaborated megafunction instantiation "VGA:vga|Tank0Display:t0|lpm_mult:Mult1"
-Info (12133): Instantiated megafunction "VGA:vga|Tank0Display:t0|lpm_mult:Mult1" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTHA" = "7"
-    Info (12134): Parameter "LPM_WIDTHB" = "6"
-    Info (12134): Parameter "LPM_WIDTHP" = "13"
-    Info (12134): Parameter "LPM_WIDTHR" = "13"
-    Info (12134): Parameter "LPM_WIDTHS" = "1"
-    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
-    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
-    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Info (12131): Elaborated megafunction instantiation "VGA:vga|Tank0Display:t0|lpm_mult:Mult1|multcore:mult_core", which is child of megafunction instantiation "VGA:vga|Tank0Display:t0|lpm_mult:Mult1"
-Info (12131): Elaborated megafunction instantiation "VGA:vga|Tank0Display:t0|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "VGA:vga|Tank0Display:t0|lpm_mult:Mult1"
-Info (12131): Elaborated megafunction instantiation "VGA:vga|Tank0Display:t0|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "VGA:vga|Tank0Display:t0|lpm_mult:Mult1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_jgh.tdf
-    Info (12023): Found entity 1: add_sub_jgh
-Info (12131): Elaborated megafunction instantiation "VGA:vga|Tank0Display:t0|lpm_mult:Mult1|altshift:external_latency_ffs", which is child of megafunction instantiation "VGA:vga|Tank0Display:t0|lpm_mult:Mult1"
-Warning (12241): 10 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 9 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "GPIO[1]" has no driver
     Warning (13040): bidirectional pin "GPIO[5]" has no driver
@@ -3886,9 +3847,10 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HSMC_TX_D_P[15]" is stuck at GND
     Warning (13410): Pin "HSMC_TX_D_P[16]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 86 input pin(s) that do not drive logic
+    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 88 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CLOCK2_50"
     Warning (15610): No output dependent on input pin "CLOCK3_50"
     Warning (15610): No output dependent on input pin "ENETCLK_25"
@@ -3975,14 +3937,17 @@ Warning (21074): Design contains 86 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[14]"
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[15]"
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[16]"
-Info (21057): Implemented 936 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "SW[1]"
+    Warning (15610): No output dependent on input pin "SW[0]"
+Info (21057): Implemented 820 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 92 input pins
     Info (21059): Implemented 248 output pins
     Info (21060): Implemented 140 bidirectional pins
-    Info (21061): Implemented 456 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3067 warnings
-    Info: Peak virtual memory: 4877 megabytes
-    Info: Processing ended: Sun Jun 23 11:30:48 2019
+    Info (21061): Implemented 339 logic cells
+    Info (21065): Implemented 1 PLLs
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3069 warnings
+    Info: Peak virtual memory: 4873 megabytes
+    Info: Processing ended: Sun Jun 23 13:34:57 2019
     Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:20
 

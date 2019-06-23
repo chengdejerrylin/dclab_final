@@ -1,5 +1,5 @@
 Assembler report for DE2_115
-Sun Jun 23 11:31:09 2019
+Sun Jun 23 13:35:18 2019
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
 
 
@@ -38,7 +38,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Jun 23 11:31:09 2019 ;
+; Assembler Status      ; Successful - Sun Jun 23 13:35:18 2019 ;
 ; Revision Name         ; DE2_115                               ;
 ; Top-level Entity Name ; DE2_115                               ;
 ; Family                ; Cyclone IV E                          ;
@@ -68,8 +68,8 @@ agreement for further details.
 ; Option         ; Setting                                                               ;
 +----------------+-----------------------------------------------------------------------+
 ; Device         ; EP4CE115F29C7                                                         ;
-; JTAG usercode  ; 0x005B5357                                                            ;
-; Checksum       ; 0x005B5357                                                            ;
+; JTAG usercode  ; 0x005A3FE5                                                            ;
+; Checksum       ; 0x005A3FE5                                                            ;
 +----------------+-----------------------------------------------------------------------+
 
 
@@ -79,14 +79,14 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
-    Info: Processing started: Sun Jun 23 11:31:05 2019
+    Info: Processing started: Sun Jun 23 13:35:15 2019
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off dclab_final -c DE2_115
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4788 megabytes
-    Info: Processing ended: Sun Jun 23 11:31:09 2019
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 4784 megabytes
+    Info: Processing ended: Sun Jun 23 13:35:18 2019
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 
