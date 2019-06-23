@@ -54,6 +54,12 @@ module VGA(
     input [5:0] i_shell1_4_x,
     input [5:0] i_shell1_4_y,
     input [4:0] i_shell1_valid,
+
+    //timer
+    input [2:0] i_min_ten,
+    input [3:0] i_min_one,
+    input [2:0] i_sec_ten,
+    input [3:0] i_sec_one
 );
 
 //protocal
@@ -162,10 +168,38 @@ always_comb begin
 							n_VGA_RGB = symbol_dot_w ? 24'd0 : `STATUS_BAR_COLOR;
 						end
 
+						6'd24, 6'd25, 6'd26 : begin //timer min ten
+							symbol_x_w = (display_x - 6'd24)* PIXEL_PER_GRID + grid_x;
+							symbol_y_w = display_y * PIXEL_PER_GRID + grid_y;
+							symbol_type_w = i_min_ten;
+							n_VGA_RGB = symbol_dot_w ? 24'd0 : `STATUS_BAR_COLOR;
+						end
+
+						6'd27, 6'd28, 6'd29 : begin //timer min one
+							symbol_x_w = (display_x - 6'd27)* PIXEL_PER_GRID + grid_x;
+							symbol_y_w = display_y * PIXEL_PER_GRID + grid_y;
+							symbol_type_w = i_min_one;
+							n_VGA_RGB = symbol_dot_w ? 24'd0 : `STATUS_BAR_COLOR;
+						end
+
 						6'd30, 6'd31, 6'd32, 6'd33 : begin //colon
 							symbol_x_w = (display_x - 6'd30)* PIXEL_PER_GRID + grid_x;
 							symbol_y_w = display_y * PIXEL_PER_GRID + grid_y;
 							n_VGA_RGB = colon_dot_w ? 24'd0 : `STATUS_BAR_COLOR;
+						end
+
+						6'd34, 6'd35, 6'd36 : begin //timer sec ten
+							symbol_x_w = (display_x - 6'd34)* PIXEL_PER_GRID + grid_x;
+							symbol_y_w = display_y * PIXEL_PER_GRID + grid_y;
+							symbol_type_w = i_sec_ten;
+							n_VGA_RGB = symbol_dot_w ? 24'd0 : `STATUS_BAR_COLOR;
+						end
+
+						6'd37, 6'd38, 6'd39 : begin //timer sec one
+							symbol_x_w = (display_x - 6'd37)* PIXEL_PER_GRID + grid_x;
+							symbol_y_w = display_y * PIXEL_PER_GRID + grid_y;
+							symbol_type_w = i_sec_one;
+							n_VGA_RGB = symbol_dot_w ? 24'd0 : `STATUS_BAR_COLOR;
 						end
 
 						6'd57, 6'd58, 6'd59 : begin //shell 1 remain

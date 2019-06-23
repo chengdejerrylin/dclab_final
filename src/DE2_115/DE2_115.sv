@@ -138,18 +138,30 @@ module DE2_115(
 );
 logic CLOCK_25;
 logic RST_N;
-logic [1:0] state;
-
-assign RST_N = KEY[0];
 
 pll pll(.clk_clk(CLOCK_50), .reset_reset_n(RST_N), .altpll_0_c0_clk(CLOCK_25));
+assign RST_N = KEY[0];
+//top
+logic [1:0] state;
+
+//VGA
+logic VGA_buzy;
+
+//timer
+logic [2:0] min_ten, sec_ten;
+logic [3:0] min_one, sec_one;
 
 Debounce debounce0(.i_in(KEY[1]), .i_clk(CLOCK_50), .i_rst(RST_N), .o_debounced(state[0]));
 Debounce debounce1(.i_in(KEY[2]), .i_clk(CLOCK_50), .i_rst(RST_N), .o_debounced(state[1]));
 
 VGA vga(.clk(CLOCK_25), .rst_n(RST_N), .VGA_B(VGA_B), .VGA_BLANK_N(VGA_BLANK_N), .VGA_CLK(VGA_CLK), .VGA_G(VGA_G), 
 	.VGA_HS(VGA_HS), .VGA_R(VGA_R), .VGA_SYNC_N(VGA_SYNC_N), .VGA_VS(VGA_VS), .i_state(state), .i_tank0_x(6'd2), 
-	.i_tank0_y(6'd2), .i_tank0_dir(SW[1:0]));
+	.i_tank0_y(6'd2), .i_tank0_dir(SW[1:0]), .o_buzy(VGA_buzy), .i_min_ten(min_ten), .i_min_one(min_one), 
+	.i_sec_ten(sec_ten), .i_sec_one(sec_one));
+
+timer t(.clk(CLOCK_25), .rst_n(RST_N), .i_top_state(state), .i_VGA_buzy(VGA_buzy), .o_min_ten(min_ten), .o_min_one(min_one), 
+	.o_sec_ten(sec_ten), .o_sec_one(sec_one));
+
 
 Joystick p1(.clk(CLOCK_50), .rst_n(RST_N), .i_up(GPIO[1]), .i_down (GPIO[5]), .i_left (GPIO[9]), .i_right(GPIO[13]), 
 	.i_fire (GPIO[17]), .o_led  (LEDG[4:0]));
