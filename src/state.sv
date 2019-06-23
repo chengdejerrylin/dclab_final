@@ -122,7 +122,7 @@ module state(
     always_comb begin
         case(state)
             START: begin
-                if( ~press_fire_1 & ~press_fire_2 ) next_state = GAME;
+                if( ~press_left_1 & ~press_left_2 ) next_state = GAME;
                 else next_state = state;
 
                 //others

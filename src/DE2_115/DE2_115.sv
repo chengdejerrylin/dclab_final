@@ -136,11 +136,40 @@ module DE2_115(
 	output [16:0] HSMC_TX_D_P,
 	inout [6:0] EX_IO
 );
-logic CLOCK_25;
+/******************
+    User Input
+******************/
 logic RST_N;
+logic p1_up, p1_down, p1_left, p1_right, p1_fire;
+logic p2_up, p2_down, p2_left, p2_right, p2_fire;
+logic [4:0] p1_led, p2_led;
 
-pll pll(.clk_clk(CLOCK_50), .reset_reset_n(RST_N), .altpll_0_c0_clk(CLOCK_25));
 assign RST_N = KEY[0];
+
+assign p1_up    = GPIO[1];
+assign p1_down  = GPIO[3];
+assign p1_left  = GPIO[5];
+assign p1_right = GPIO[7];
+assign p1_fire  = GPIO[9];
+assign p1_led   = LEDG[4:0];
+
+assign p2_up    = GPIO[27];
+assign p2_down  = GPIO[29];
+assign p2_left  = GPIO[31];
+assign p2_right = GPIO[33];
+assign p2_fire  = GPIO[35];
+assign p2_led   = LEDR[4:0];
+
+/******************
+       Clock
+******************/
+logic CLOCK_25;
+pll pll(.clk_clk(CLOCK_50), .reset_reset_n(RST_N), .altpll_0_c0_clk(CLOCK_25));
+
+/******************
+       Module
+******************/
+
 //top
 logic [1:0] state;
 
@@ -157,13 +186,16 @@ Debounce debounce1(.i_in(KEY[2]), .i_clk(CLOCK_50), .i_rst(RST_N), .o_debounced(
 VGA vga(.clk(CLOCK_25), .rst_n(RST_N), .VGA_B(VGA_B), .VGA_BLANK_N(VGA_BLANK_N), .VGA_CLK(VGA_CLK), .VGA_G(VGA_G), 
 	.VGA_HS(VGA_HS), .VGA_R(VGA_R), .VGA_SYNC_N(VGA_SYNC_N), .VGA_VS(VGA_VS), .i_state({~state[1], state[0]}), .i_tank0_x(6'd2), 
 	.i_tank0_y(6'd2), .i_tank0_dir(SW[1:0]), .o_buzy(VGA_buzy), .i_min_ten(min_ten), .i_min_one(min_one), 
-	.i_sec_ten(sec_ten), .i_sec_one(sec_one));
+	.i_sec_ten(sec_ten), .i_sec_one(sec_one), .i_tank1_x(6'd32), .i_tank1_y(6'd22), .i_tank1_dir(SW[3:2]));
 
 timer t(.clk(CLOCK_25), .rst_n(RST_N), .i_top_state({~state[1], state[0]}), .i_VGA_buzy(VGA_buzy), .o_min_ten(min_ten), .o_min_one(min_one), 
 	.o_sec_ten(sec_ten), .o_sec_one(sec_one));
 
 
-Joystick p1(.clk(CLOCK_50), .rst_n(RST_N), .i_up(GPIO[1]), .i_down (GPIO[5]), .i_left (GPIO[9]), .i_right(GPIO[13]), 
-	.i_fire (GPIO[17]), .o_led  (LEDG[4:0]));
+Joystick p1(.clk(CLOCK_50), .rst_n(RST_N), .i_up(p1_up), .i_down (p1_down), .i_left (p1_left), .i_right(p1_right), 
+	.i_fire (p1_fire), .o_led  (p1_led));
+Joystick p2(.clk(CLOCK_50), .rst_n(RST_N), .i_up(p2_up), .i_down (p2_down), .i_left (p2_left), .i_right(p2_right), 
+	.i_fire (p2_fire), .o_led  (p2_led));
+
 
 endmodule
