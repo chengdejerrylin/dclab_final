@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_115
-Mon Jun 24 01:35:38 2019
+Mon Jun 24 02:01:54 2019
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
 
 
@@ -84,15 +84,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jun 24 01:35:37 2019       ;
+; Analysis & Synthesis Status        ; Successful - Mon Jun 24 02:01:53 2019       ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Full Version ;
 ; Revision Name                      ; DE2_115                                     ;
 ; Top-level Entity Name              ; DE2_115                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 1,032                                       ;
-;     Total combinational functions  ; 1,000                                       ;
-;     Dedicated logic registers      ; 171                                         ;
-; Total registers                    ; 171                                         ;
+; Total logic elements               ; 1,128                                       ;
+;     Total combinational functions  ; 1,099                                       ;
+;     Dedicated logic registers      ; 185                                         ;
+; Total registers                    ; 185                                         ;
 ; Total pins                         ; 480                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -236,7 +236,7 @@ agreement for further details.
 ; src/define.sv                                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/team06/Desktop/dclab_final/src/define.sv                                         ;         ;
 ; resource/dat/tank0_labels.dat                         ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/tank0_labels.dat                         ;         ;
 ; resource/dat/tank0_values.dat                         ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/tank0_values.dat                         ;         ;
-; src/map.dat                                           ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/src/map.dat                                           ;         ;
+; map/map.dat                                           ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/map/map.dat                                           ;         ;
 ; resource/dat/1.bmp.dat                                ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/1.bmp.dat                                ;         ;
 ; resource/dat/7.bmp.dat                                ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/7.bmp.dat                                ;         ;
 ; resource/dat/4.bmp.dat                                ; yes             ; Auto-Found Unspecified File  ; C:/Users/team06/Desktop/dclab_final/resource/dat/4.bmp.dat                                ;         ;
@@ -261,20 +261,20 @@ agreement for further details.
 +---------------------------------------------+-----------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                       ;
 +---------------------------------------------+-----------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 1,032                                                                       ;
+; Estimated Total logic elements              ; 1,128                                                                       ;
 ;                                             ;                                                                             ;
-; Total combinational functions               ; 1000                                                                        ;
+; Total combinational functions               ; 1099                                                                        ;
 ; Logic element usage by number of LUT inputs ;                                                                             ;
-;     -- 4 input functions                    ; 744                                                                         ;
-;     -- 3 input functions                    ; 139                                                                         ;
-;     -- <=2 input functions                  ; 117                                                                         ;
+;     -- 4 input functions                    ; 809                                                                         ;
+;     -- 3 input functions                    ; 152                                                                         ;
+;     -- <=2 input functions                  ; 138                                                                         ;
 ;                                             ;                                                                             ;
 ; Logic elements by mode                      ;                                                                             ;
-;     -- normal mode                          ; 907                                                                         ;
-;     -- arithmetic mode                      ; 93                                                                          ;
+;     -- normal mode                          ; 991                                                                         ;
+;     -- arithmetic mode                      ; 108                                                                         ;
 ;                                             ;                                                                             ;
-; Total registers                             ; 171                                                                         ;
-;     -- Dedicated logic registers            ; 171                                                                         ;
+; Total registers                             ; 185                                                                         ;
+;     -- Dedicated logic registers            ; 185                                                                         ;
 ;     -- I/O registers                        ; 0                                                                           ;
 ;                                             ;                                                                             ;
 ; I/O pins                                    ; 480                                                                         ;
@@ -285,9 +285,9 @@ agreement for further details.
 ;     -- PLLs                                 ; 1                                                                           ;
 ;                                             ;                                                                             ;
 ; Maximum fan-out node                        ; pll:pll|pll_altpll_0:altpll_0|pll_altpll_0_altpll_m342:sd1|wire_pll7_clk[0] ;
-; Maximum fan-out                             ; 173                                                                         ;
-; Total fan-out                               ; 4873                                                                        ;
-; Average fan-out                             ; 2.14                                                                        ;
+; Maximum fan-out                             ; 187                                                                         ;
+; Total fan-out                               ; 5268                                                                        ;
+; Average fan-out                             ; 2.21                                                                        ;
 +---------------------------------------------+-----------------------------------------------------------------------------+
 
 
@@ -296,7 +296,7 @@ agreement for further details.
 +-----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                 ; Library Name ;
 +-----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------+--------------+
-; |DE2_115                                ; 1000 (0)          ; 171 (0)      ; 0           ; 0            ; 0       ; 0         ; 480  ; 0            ; |DE2_115                                                            ; work         ;
+; |DE2_115                                ; 1099 (0)          ; 185 (0)      ; 0           ; 0            ; 0       ; 0         ; 480  ; 0            ; |DE2_115                                                            ; work         ;
 ;    |Joystick:p1|                        ; 25 (0)            ; 20 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1                                                ; work         ;
 ;       |Debounce:down|                   ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1|Debounce:down                                  ; work         ;
 ;       |Debounce:fire|                   ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1|Debounce:fire                                  ; work         ;
@@ -309,14 +309,15 @@ agreement for further details.
 ;       |Debounce:left|                   ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p2|Debounce:left                                  ; work         ;
 ;       |Debounce:right|                  ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p2|Debounce:right                                 ; work         ;
 ;       |Debounce:up|                     ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p2|Debounce:up                                    ; work         ;
-;    |VGA:vga|                            ; 889 (265)         ; 76 (76)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga                                                    ; work         ;
+;    |VGA:vga|                            ; 947 (292)         ; 89 (89)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga                                                    ; work         ;
 ;       |Colon:colon|                     ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Colon:colon                                        ; work         ;
-;       |Symbol:symbol|                   ; 608 (608)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Symbol:symbol                                      ; work         ;
-;       |shellDisplay:shell|              ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|shellDisplay:shell                                 ; work         ;
+;       |Symbol:symbol|                   ; 611 (611)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Symbol:symbol                                      ; work         ;
+;       |Wall:wall|                       ; 24 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Wall:wall                                          ; work         ;
+;       |shellDisplay:shell|              ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|shellDisplay:shell                                 ; work         ;
 ;    |pll:pll|                            ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|pll:pll                                                    ; pll          ;
 ;       |pll_altpll_0:altpll_0|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|pll:pll|pll_altpll_0:altpll_0                              ; pll          ;
 ;          |pll_altpll_0_altpll_m342:sd1| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|pll:pll|pll_altpll_0:altpll_0|pll_altpll_0_altpll_m342:sd1 ; pll          ;
-;    |state:state_1|                      ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|state:state_1                                              ; work         ;
+;    |state:state_1|                      ; 43 (43)           ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|state:state_1                                              ; work         ;
 ;    |timer:t|                            ; 59 (59)           ; 53 (53)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|timer:t                                                    ; work         ;
 +-----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -395,30 +396,36 @@ Encoding Type:  One-Hot
 ; shell:shell_1|single_shell:single_shell_2_3|state                                                                                  ; Stuck at GND due to stuck port clock    ;
 ; shell:shell_1|single_shell:single_shell_2_3|count[0..19]                                                                           ; Stuck at GND due to stuck port clock    ;
 ; shell:shell_1|single_shell:single_shell_2_3|shell_x_pos[0..5]                                                                      ; Stuck at GND due to stuck port clock    ;
+; shell:shell_1|single_shell:single_shell_2_3|shell_y_pos[0..5]                                                                      ; Stuck at GND due to stuck port clock    ;
 ; shell:shell_1|single_shell:single_shell_2_3|record_direction[0..2]                                                                 ; Stuck at GND due to stuck port clock    ;
 ; state:state_1|shell_vanish_2[3]                                                                                                    ; Lost fanout                             ;
 ; shell:shell_1|single_shell:single_shell_2_2|state                                                                                  ; Stuck at GND due to stuck port clock    ;
 ; shell:shell_1|single_shell:single_shell_2_2|count[0..19]                                                                           ; Stuck at GND due to stuck port clock    ;
 ; shell:shell_1|single_shell:single_shell_2_2|shell_x_pos[0..5]                                                                      ; Stuck at GND due to stuck port clock    ;
+; shell:shell_1|single_shell:single_shell_2_2|shell_y_pos[0..5]                                                                      ; Stuck at GND due to stuck port clock    ;
 ; shell:shell_1|single_shell:single_shell_2_2|record_direction[0..2]                                                                 ; Stuck at GND due to stuck port clock    ;
 ; state:state_1|shell_vanish_2[2]                                                                                                    ; Lost fanout                             ;
 ; shell:shell_1|single_shell:single_shell_2_1|state                                                                                  ; Stuck at GND due to stuck port clock    ;
 ; shell:shell_1|single_shell:single_shell_2_1|count[0..19]                                                                           ; Stuck at GND due to stuck port clock    ;
 ; shell:shell_1|single_shell:single_shell_2_1|shell_x_pos[0..5]                                                                      ; Stuck at GND due to stuck port clock    ;
+; shell:shell_1|single_shell:single_shell_2_1|shell_y_pos[0..5]                                                                      ; Stuck at GND due to stuck port clock    ;
 ; shell:shell_1|single_shell:single_shell_2_1|record_direction[0..2]                                                                 ; Stuck at GND due to stuck port clock    ;
 ; state:state_1|shell_vanish_2[1]                                                                                                    ; Lost fanout                             ;
 ; shell:shell_1|single_shell:single_shell_2_0|state                                                                                  ; Stuck at GND due to stuck port clock    ;
 ; shell:shell_1|single_shell:single_shell_2_0|count[0..19]                                                                           ; Stuck at GND due to stuck port clock    ;
 ; shell:shell_1|single_shell:single_shell_2_0|shell_x_pos[0..5]                                                                      ; Stuck at GND due to stuck port clock    ;
+; shell:shell_1|single_shell:single_shell_2_0|shell_y_pos[0..5]                                                                      ; Stuck at GND due to stuck port clock    ;
 ; shell:shell_1|single_shell:single_shell_2_0|record_direction[0..2]                                                                 ; Stuck at GND due to stuck port clock    ;
 ; state:state_1|shell_vanish_2[0]                                                                                                    ; Lost fanout                             ;
 ; pll:pll|pll_altpll_0:altpll_0|prev_reset                                                                                           ; Stuck at GND due to stuck port data_in  ;
 ; pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out  ; Lost fanout                             ;
 ; pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0,1] ; Lost fanout                             ;
+; state:state_1|who_wins[0]                                                                                                          ; Lost fanout                             ;
 ; state:state_1|fire_2                                                                                                               ; Lost fanout                             ;
 ; Joystick:p2|Debounce:fire|neg_r                                                                                                    ; Lost fanout                             ;
+; state:state_1|dir_1[0]                                                                                                             ; Stuck at GND due to stuck port data_in  ;
+; state:state_1|dir_2[0]                                                                                                             ; Stuck at GND due to stuck port data_in  ;
 ; state:state_1|valid_frame_2                                                                                                        ; Merged with state:state_1|valid_frame_1 ;
-; VGA:vga|VGA_R[7]                                                                                                                   ; Stuck at GND due to stuck port data_in  ;
 ; VGA:vga|frame_y[0..8]                                                                                                              ; Lost fanout                             ;
 ; tank:tank_2|state~2                                                                                                                ; Lost fanout                             ;
 ; tank:tank_2|state~3                                                                                                                ; Lost fanout                             ;
@@ -427,7 +434,7 @@ Encoding Type:  One-Hot
 ; tank:tank_2|state.STATE_1                                                                                                          ; Stuck at GND due to stuck port clock    ;
 ; tank:tank_2|state.STATE_2                                                                                                          ; Stuck at GND due to stuck port clock    ;
 ; tank:tank_2|state.STATE_3                                                                                                          ; Stuck at GND due to stuck port clock    ;
-; state:state_1|dir_2[0..2]                                                                                                          ; Lost fanout                             ;
+; state:state_1|dir_2[1,2]                                                                                                           ; Lost fanout                             ;
 ; tank:tank_1|state~2                                                                                                                ; Lost fanout                             ;
 ; tank:tank_1|state~3                                                                                                                ; Lost fanout                             ;
 ; tank:tank_1|state.STATE_4                                                                                                          ; Stuck at GND due to stuck port clock    ;
@@ -435,11 +442,11 @@ Encoding Type:  One-Hot
 ; tank:tank_1|state.STATE_1                                                                                                          ; Stuck at GND due to stuck port clock    ;
 ; tank:tank_1|state.STATE_2                                                                                                          ; Stuck at GND due to stuck port clock    ;
 ; tank:tank_1|state.STATE_3                                                                                                          ; Stuck at GND due to stuck port clock    ;
-; state:state_1|dir_1[0..2]                                                                                                          ; Lost fanout                             ;
+; state:state_1|dir_1[1,2]                                                                                                           ; Lost fanout                             ;
 ; state:state_1|valid_frame_1                                                                                                        ; Lost fanout                             ;
 ; state:state_1|state.END                                                                                                            ; Stuck at GND due to stuck port data_in  ;
 ; VGA:vga|frame_x[0]                                                                                                                 ; Merged with VGA:vga|grid_x[0]           ;
-; Total Number of Removed Registers = 235                                                                                            ;                                         ;
+; Total Number of Removed Registers = 259                                                                                            ;                                         ;
 +------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
 
 
@@ -459,7 +466,7 @@ Encoding Type:  One-Hot
 ;                                                   ;                           ; shell:shell_1|single_shell:single_shell_2_1|record_direction[0],                                                                   ;
 ;                                                   ;                           ; shell:shell_1|single_shell:single_shell_2_0|record_direction[1],                                                                   ;
 ;                                                   ;                           ; shell:shell_1|single_shell:single_shell_2_0|record_direction[0],                                                                   ;
-;                                                   ;                           ; state:state_1|fire_2, state:state_1|dir_2[0]                                                                                       ;
+;                                                   ;                           ; state:state_1|fire_2                                                                                                               ;
 ; tank:tank_2|tank_x_pos[5]                         ; Stuck at GND              ; shell:shell_1|single_shell:single_shell_2_4|shell_x_pos[5],                                                                        ;
 ;                                                   ; due to stuck port clock   ; shell:shell_1|single_shell:single_shell_2_3|shell_x_pos[5],                                                                        ;
 ;                                                   ;                           ; shell:shell_1|single_shell:single_shell_2_2|shell_x_pos[5],                                                                        ;
@@ -491,15 +498,16 @@ Encoding Type:  One-Hot
 ;                                                   ;                           ; shell:shell_1|single_shell:single_shell_2_2|shell_x_pos[0],                                                                        ;
 ;                                                   ;                           ; shell:shell_1|single_shell:single_shell_2_1|shell_x_pos[0],                                                                        ;
 ;                                                   ;                           ; shell:shell_1|single_shell:single_shell_2_0|shell_x_pos[0]                                                                         ;
-; tank:tank_1|tank_x_pos[5]                         ; Stuck at GND              ; state:state_1|dir_1[2], state:state_1|dir_1[1], state:state_1|valid_frame_1                                                        ;
-;                                                   ; due to stuck port clock   ;                                                                                                                                    ;
-; tank:tank_1|direction_last[2]                     ; Stuck at GND              ; tank:tank_1|direction_out[1], tank:tank_1|direction_out[0], state:state_1|dir_1[0]                                                 ;
-;                                                   ; due to stuck port clock   ;                                                                                                                                    ;
 ; pll:pll|pll_altpll_0:altpll_0|prev_reset          ; Stuck at GND              ; pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out, ;
 ;                                                   ; due to stuck port data_in ; pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0],  ;
-;                                                   ;                           ; pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[1]   ;
+;                                                   ;                           ; pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[1],  ;
+;                                                   ;                           ; state:state_1|dir_2[0]                                                                                                             ;
+; tank:tank_1|tank_x_pos[5]                         ; Stuck at GND              ; state:state_1|dir_1[2], state:state_1|dir_1[1], state:state_1|valid_frame_1                                                        ;
+;                                                   ; due to stuck port clock   ;                                                                                                                                    ;
 ; VGA:vga|frame_y[5]                                ; Lost Fanouts              ; VGA:vga|frame_y[6], VGA:vga|frame_y[7], VGA:vga|frame_y[8]                                                                         ;
-; tank:tank_2|tank_y_pos[0]                         ; Stuck at GND              ; VGA:vga|VGA_R[7]                                                                                                                   ;
+; tank:tank_1|direction_last[2]                     ; Stuck at GND              ; tank:tank_1|direction_out[1], tank:tank_1|direction_out[0]                                                                         ;
+;                                                   ; due to stuck port clock   ;                                                                                                                                    ;
+; tank:tank_1|tank_x_pos[0]                         ; Stuck at GND              ; state:state_1|dir_1[0]                                                                                                             ;
 ;                                                   ; due to stuck port clock   ;                                                                                                                                    ;
 ; shell:shell_1|single_shell:single_shell_2_4|state ; Stuck at GND              ; state:state_1|shell_vanish_2[4]                                                                                                    ;
 ;                                                   ; due to stuck port clock   ;                                                                                                                                    ;
@@ -519,12 +527,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 171   ;
-; Number of registers using Synchronous Clear  ; 27    ;
+; Total registers                              ; 185   ;
+; Number of registers using Synchronous Clear  ; 28    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 171   ;
+; Number of registers using Asynchronous Clear ; 185   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 65    ;
+; Number of registers using Clock Enable       ; 77    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -578,24 +586,24 @@ Encoding Type:  One-Hot
 +------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
-; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; Yes        ; |DE2_115|timer:t|clk_counter[21]  ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE2_115|timer:t|sec_one[0]       ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |DE2_115|timer:t|sec_ten[0]       ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |DE2_115|state:state_1|dir_1[1]   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |DE2_115|state:state_1|dir_2[1]   ;
-; 6:1                ; 21 bits   ; 84 LEs        ; 42 LEs               ; 42 LEs                 ; Yes        ; |DE2_115|VGA:vga|VGA_G[6]         ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |DE2_115|timer:t|min_one[2]       ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |DE2_115|timer:t|min_ten[0]       ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |DE2_115|VGA:vga|symbol_y_w[0]    ;
-; 67:1               ; 3 bits    ; 132 LEs       ; 36 LEs               ; 96 LEs                 ; No         ; |DE2_115|VGA:vga|symbol_type_w[2] ;
-; 67:1               ; 5 bits    ; 220 LEs       ; 5 LEs                ; 215 LEs                ; No         ; |DE2_115|VGA:vga|symbol_y_w[4]    ;
-; 67:1               ; 5 bits    ; 220 LEs       ; 45 LEs               ; 175 LEs                ; No         ; |DE2_115|VGA:vga|symbol_x_w[4]    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; Yes        ; |DE2_115|timer:t|clk_counter[6]        ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE2_115|timer:t|sec_one[0]            ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |DE2_115|timer:t|sec_ten[0]            ;
+; 6:1                ; 21 bits   ; 84 LEs        ; 42 LEs               ; 42 LEs                 ; Yes        ; |DE2_115|VGA:vga|VGA_R[0]              ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |DE2_115|timer:t|min_one[1]            ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |DE2_115|timer:t|min_ten[0]            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE2_115|VGA:vga|Wall:wall|o_rgb_w[1]  ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE2_115|VGA:vga|Wall:wall|o_rgb_w[16] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |DE2_115|VGA:vga|symbol_x_w[0]         ;
+; 67:1               ; 3 bits    ; 132 LEs       ; 36 LEs               ; 96 LEs                 ; No         ; |DE2_115|VGA:vga|symbol_type_w[2]      ;
+; 67:1               ; 5 bits    ; 220 LEs       ; 5 LEs                ; 215 LEs                ; No         ; |DE2_115|VGA:vga|symbol_y_w[4]         ;
+; 67:1               ; 5 bits    ; 220 LEs       ; 45 LEs               ; 175 LEs                ; No         ; |DE2_115|VGA:vga|symbol_x_w[5]         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -859,14 +867,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "state:state_1"                                                                            ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                             ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; o_is_map   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; o_who_wins ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "state:state_1"                                                                               ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; o_who_wins[1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
@@ -918,38 +925,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "VGA:vga"                                                                                                                                               ;
-+----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port           ; Type   ; Severity ; Details                                                                                                                                      ;
-+----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; i_p1_win       ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; o_request_x    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; o_request_y    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; i_is_wall      ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell0_0_x   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell0_0_y   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell0_1_x   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell0_1_y   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell0_2_x   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell0_2_y   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell0_3_x   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell0_3_y   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell0_4_x   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell0_4_y   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell0_valid ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell1_0_x   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell1_0_y   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell1_1_x   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell1_1_y   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell1_2_x   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell1_2_y   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell1_3_x   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell1_3_y   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell1_4_x   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell1_4_y   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; i_shell1_valid ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA:vga"                                                                                                                                              ;
++----------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port           ; Type  ; Severity ; Details                                                                                                                                      ;
++----------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; i_shell0_0_x   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell0_0_y   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell0_1_x   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell0_1_y   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell0_2_x   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell0_2_y   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell0_3_x   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell0_3_y   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell0_4_x   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell0_4_y   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell0_valid ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell1_0_x   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell1_0_y   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell1_1_x   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell1_1_y   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell1_2_x   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell1_2_y   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell1_3_x   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell1_3_y   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell1_4_x   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell1_4_y   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; i_shell1_valid ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++----------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -1033,26 +1036,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 480                         ;
-; cycloneiii_ff         ; 171                         ;
-;     CLR               ; 81                          ;
-;     CLR SCLR          ; 25                          ;
-;     ENA CLR           ; 63                          ;
+; cycloneiii_ff         ; 185                         ;
+;     CLR               ; 82                          ;
+;     CLR SCLR          ; 26                          ;
+;     ENA CLR           ; 75                          ;
 ;     ENA CLR SCLR      ; 2                           ;
 ; cycloneiii_io_obuf    ; 140                         ;
-; cycloneiii_lcell_comb ; 1011                        ;
-;     arith             ; 93                          ;
-;         2 data inputs ; 60                          ;
-;         3 data inputs ; 33                          ;
-;     normal            ; 918                         ;
+; cycloneiii_lcell_comb ; 1110                        ;
+;     arith             ; 108                         ;
+;         2 data inputs ; 71                          ;
+;         3 data inputs ; 37                          ;
+;     normal            ; 1002                        ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 28                          ;
-;         2 data inputs ; 39                          ;
-;         3 data inputs ; 106                         ;
-;         4 data inputs ; 744                         ;
+;         1 data inputs ; 30                          ;
+;         2 data inputs ; 47                          ;
+;         3 data inputs ; 115                         ;
+;         4 data inputs ; 809                         ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 18.00                       ;
-; Average LUT depth     ; 9.89                        ;
+; Max LUT depth         ; 19.00                       ;
+; Average LUT depth     ; 10.12                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1061,7 +1064,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:07     ;
+; Top            ; 00:00:08     ;
 +----------------+--------------+
 
 
@@ -1071,7 +1074,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
-    Info: Processing started: Mon Jun 24 01:35:22 2019
+    Info: Processing started: Mon Jun 24 02:01:37 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off dclab_final -c DE2_115
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file src/tank.sv
@@ -6397,13 +6400,10 @@ Info (12128): Elaborating entity "Debounce" for hierarchy "Joystick:p1|Debounce:
 Warning (10230): Verilog HDL assignment warning at Debounce.sv(22): truncated value with size 32 to match size of target (3)
 Warning (10230): Verilog HDL assignment warning at Debounce.sv(24): truncated value with size 32 to match size of target (3)
 Info (12128): Elaborating entity "state" for hierarchy "state:state_1"
-Warning (10850): Verilog HDL warning at state.sv(119): number of words (0) in memory file does not match the number of elements in the address range [0:43]
-Warning (10855): Verilog HDL warning at state.sv(119): initial value for variable map_mem should be constant
 Warning (10230): Verilog HDL assignment warning at state.sv(143): truncated value with size 5 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at state.sv(144): truncated value with size 5 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at state.sv(505): truncated value with size 5 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at state.sv(506): truncated value with size 5 to match size of target (1)
-Warning (10030): Net "map_mem" at state.sv(84) has no driver or initial value, using a default initial value '0'
 Info (12128): Elaborating entity "shell" for hierarchy "shell:shell_1"
 Info (12128): Elaborating entity "select_shell" for hierarchy "shell:shell_1|select_shell:select_shell_1"
 Info (12128): Elaborating entity "single_shell" for hierarchy "shell:shell_1|single_shell:single_shell_1_0"
@@ -6439,10 +6439,11 @@ Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "CLK_25" is missing source, defaulting to GND
 Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "CLK_25" is missing source, defaulting to GND
-Info (276014): Found 17 instances of uninferred RAM logic
+Info (276014): Found 18 instances of uninferred RAM logic
     Info (276004): RAM logic "VGA:vga|Tank0Display:t0|center" is uninferred due to inappropriate RAM size
     Info (276004): RAM logic "VGA:vga|Tank1Display:t1|center" is uninferred due to inappropriate RAM size
     Info (276004): RAM logic "VGA:vga|shellDisplay:shell|mem" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "VGA:vga|Wall:wall|mem" is uninferred due to inappropriate RAM size
     Info (276007): RAM logic "VGA:vga|Symbol:symbol|mem0" is uninferred due to asynchronous read logic
     Info (276007): RAM logic "VGA:vga|Symbol:symbol|mem1" is uninferred due to asynchronous read logic
     Info (276007): RAM logic "VGA:vga|Symbol:symbol|mem2" is uninferred due to asynchronous read logic
@@ -6458,6 +6459,7 @@ Info (276014): Found 17 instances of uninferred RAM logic
     Info (276007): RAM logic "VGA:vga|Tank0Display:t0|mem" is uninferred due to asynchronous read logic
     Info (276007): RAM logic "VGA:vga|Tank1Display:t1|mem" is uninferred due to asynchronous read logic
 Critical Warning (127005): Memory depth (16) in the design file differs from memory depth (10) in the Memory Initialization File "C:/Users/team06/Desktop/dclab_final/db/DE2_115.ram0_shellDisplay_e72b1a1a.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (128) in the design file differs from memory depth (100) in the Memory Initialization File "C:/Users/team06/Desktop/dclab_final/db/DE2_115.ram0_Wall_2c0c52.hdl.mif" -- setting initial value for remaining addresses to 0
 Critical Warning (127005): Memory depth (64) in the design file differs from memory depth (40) in the Memory Initialization File "C:/Users/team06/Desktop/dclab_final/db/DE2_115.ram0_Symbol_a98a3296.hdl.mif" -- setting initial value for remaining addresses to 0
 Critical Warning (127005): Memory depth (64) in the design file differs from memory depth (40) in the Memory Initialization File "C:/Users/team06/Desktop/dclab_final/db/DE2_115.ram1_Symbol_a98a3296.hdl.mif" -- setting initial value for remaining addresses to 0
 Critical Warning (127005): Memory depth (64) in the design file differs from memory depth (40) in the Memory Initialization File "C:/Users/team06/Desktop/dclab_final/db/DE2_115.ram2_Symbol_a98a3296.hdl.mif" -- setting initial value for remaining addresses to 0
@@ -6699,7 +6701,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "UART_CTS" is stuck at GND
     Warning (13410): Pin "UART_TXD" is stuck at GND
     Warning (13410): Pin "SD_CLK" is stuck at GND
-    Warning (13410): Pin "VGA_R[7]" is stuck at GND
     Warning (13410): Pin "VGA_SYNC_N" is stuck at GND
     Warning (13410): Pin "AUD_DACDAT" is stuck at GND
     Warning (13410): Pin "AUD_XCK" is stuck at GND
@@ -6829,7 +6830,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HSMC_TX_D_P[15]" is stuck at GND
     Warning (13410): Pin "HSMC_TX_D_P[16]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 30 registers lost all their fanouts during netlist optimizations.
+Info (17049): 29 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 80 input pin(s) that do not drive logic
@@ -6913,16 +6914,16 @@ Warning (21074): Design contains 80 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[14]"
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[15]"
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[16]"
-Info (21057): Implemented 1517 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1613 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 92 input pins
     Info (21059): Implemented 248 output pins
     Info (21060): Implemented 140 bidirectional pins
-    Info (21061): Implemented 1036 logic cells
+    Info (21061): Implemented 1132 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5727 warnings
-    Info: Peak virtual memory: 4881 megabytes
-    Info: Processing ended: Mon Jun 24 01:35:38 2019
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:26
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5724 warnings
+    Info: Peak virtual memory: 4882 megabytes
+    Info: Processing ended: Mon Jun 24 02:01:54 2019
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:27
 
 

@@ -493,7 +493,7 @@ module state(
                 //draw map--> next_is_map==================================================
                 //output o_is_map
                 //use    i_x_pos, i_y_pos
-                if( map_mem[i_x_pos][i_y_pos] ) next_is_map = 1'b1;
+                if( map_mem[i_y_pos][63 - i_x_pos] ) next_is_map = 1'b1;
                 else next_is_map = 1'b0;
                 
             end

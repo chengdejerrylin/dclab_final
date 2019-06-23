@@ -213,7 +213,7 @@ VGA vga(.clk(CLOCK_25), .rst_n(RST_N), .VGA_B(VGA_B), .VGA_BLANK_N(VGA_BLANK_N),
 	.i_state(game_state), .i_tank0_x(tank_1_pos_x), .i_tank0_y(tank_1_pos_y), 
 	.i_tank0_dir(direction_tank_1), .o_buzy(VGA_busy), .i_min_ten(min_ten), .i_min_one(min_one), 
 	.i_sec_ten(sec_ten), .i_sec_one(sec_one), .i_tank1_x(tank_2_pos_x), .i_tank1_y(tank_2_pos_y), 
-	.i_tank1_dir(direction_tank_2));
+	.i_tank1_dir(direction_tank_2), .i_is_wall(is_map), .o_request_x(x_pos_vga_state), .o_request_y(y_pos_vga_state), .i_p1_win(who_wins[0]));
 
 timer t(.clk(CLOCK_25), .rst_n(RST_N), .i_top_state(game_state), .i_VGA_buzy(VGA_busy), .o_min_ten(min_ten), .o_min_one(min_one), 
 	.o_sec_ten(sec_ten), .o_sec_one(sec_one));
