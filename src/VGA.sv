@@ -22,12 +22,43 @@ module VGA(
     input i_is_wall,
 
     //tank
+    input [5:0] i_tank0_x,
+    input [5:0] i_tank0_y,
+    input [1:0] i_tank0_dir,
     input [5:0] i_tank1_x,
     input [5:0] i_tank1_y,
     input [1:0] i_tank1_dir,
-    input [5:0] i_tank2_x,
-    input [5:0] i_tank2_y,
-    input [1:0] i_tank2_dir
+
+    //shell
+    input [5:0] i_shell0_0_x,
+    input [5:0] i_shell0_0_y,
+    input       i_shell0_0_valid,
+    input [5:0] i_shell0_1_x,
+    input [5:0] i_shell0_1_y,
+    input       i_shell0_1_valid,
+    input [5:0] i_shell0_2_x,
+    input [5:0] i_shell0_2_y,
+    input       i_shell0_2_valid,
+    input [5:0] i_shell0_3_x,
+    input [5:0] i_shell0_3_y,
+    input       i_shell0_3_valid,
+    input [5:0] i_shell0_4_x,
+    input [5:0] i_shell0_4_y,
+
+    input [5:0] i_shell1_0_x,
+    input [5:0] i_shell1_0_y,
+    input       i_shell1_0_valid,
+    input [5:0] i_shell1_1_x,
+    input [5:0] i_shell1_1_y,
+    input       i_shell1_1_valid,
+    input [5:0] i_shell1_2_x,
+    input [5:0] i_shell1_2_y,
+    input       i_shell1_2_valid,
+    input [5:0] i_shell1_3_x,
+    input [5:0] i_shell1_3_y,
+    input       i_shell1_3_valid,
+    input [5:0] i_shell1_4_x,
+    input [5:0] i_shell1_4_y
 );
 
 //protocal
@@ -76,8 +107,10 @@ logic [23:0] start_rgb;
 logic [5:0] symbol_x_w;
 logic [5:0] symbol_y_w;
 logic [3:0] symbol_type_w;
+
 logic symbol_dot_w;
 logic colon_dot_w;
+logic tank0_rgb_w;
 
 /**************************
           assignment
@@ -135,7 +168,7 @@ always_comb begin
 					endcase
 				end
 				else begin
-					n_VGA_RGB = `GROUND_COLOR;
+					n_VGA_RGB = tank0_rgb_w ? tank0_rgb_w : `GROUND_COLOR;
 				end
 			end
 		end
@@ -183,7 +216,8 @@ end
 StartFrame sf(.i_x(frame_x), .i_y(frame_y), .o_rgb(start_rgb));
 Symbol symbol(.i_x(symbol_x_w[4:0]), .i_y(symbol_y_w), .i_type(symbol_type_w), .o_dot(symbol_dot_w));
 Colon colon (.i_x(symbol_x_w), .i_y(symbol_y_w), .o_dot(colon_dot_w));
-
+Tank0Display t0(.i_game_x  (display_x), .i_game_y  (display_y - STATUS_BAR_HEIGHT), .i_grid_x  (grid_x), 
+	.i_grid_y  (grid_y), .i_tank_x(i_tank0_x), .i_tank_y(i_tank0_y), .i_tank_dir(i_tank0_dir), .o_rgb_w(tank0_rgb_w));
 always_ff @(posedge clk or negedge rst_n) begin
 	if(~rst_n) begin
 		//control
@@ -227,7 +261,6 @@ always_ff @(posedge clk or negedge rst_n) begin
 		VGA_VS <= n_VGA_VS;
 		VGA_BLANK_N <= n_VGA_BLANK_N;
 
-		//IO
 		//IO
 		o_request_x <= n_o_request_x;
 		o_request_y <= n_o_request_y;
