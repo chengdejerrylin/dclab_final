@@ -1,3 +1,5 @@
+`include "src/define.sv"
+
 module DE2_115(
 	input CLOCK_50,
 	input CLOCK2_50,
@@ -144,31 +146,36 @@ logic p1_up, p1_down, p1_left, p1_right, p1_fire;
 logic p2_up, p2_down, p2_left, p2_right, p2_fire;
 logic [4:0] p1_led, p2_led;
 
-
-
 assign RST_N = KEY[0];
-// assign p1_up     = GPIO[1];
-// assign p1_down   = GPIO[3];
-// assign p1_left   = GPIO[5];
-// assign p1_right  = GPIO[7];
-// assign p1_fire   = GPIO[9];
-assign p1_up     = SW[3];
-assign p1_down   = SW[2];
-assign p1_left   = SW[4];
-assign p1_right  = SW[1];
-assign p1_fire   = SW[0];
-assign LEDG[4:0] = p1_led;
 
-// assign p2_up     = GPIO[27];
-// assign p2_down   = GPIO[29];
-// assign p2_left   = GPIO[31];
-// assign p2_right  = GPIO[33];
-// assign p2_fire   = GPIO[35];
+`ifdef USE_SWITCH
+assign p1_up     = SW[2];
+assign p1_down   = SW[1];
+assign p1_left   = SW[3];
+assign p1_right  = SW[0];
+assign p1_fire   = SW[4];
+
 assign p2_up     = SW[15];
 assign p2_down   = SW[14];
 assign p2_left   = SW[16];
 assign p2_right  = SW[13];
 assign p2_fire   = SW[17];
+
+`else 
+assign p1_up     = GPIO[1];
+assign p1_down   = GPIO[3];
+assign p1_left   = GPIO[5];
+assign p1_right  = GPIO[7];
+assign p1_fire   = GPIO[9];
+
+assign p2_up     = GPIO[27];
+assign p2_down   = GPIO[29];
+assign p2_left   = GPIO[31];
+assign p2_right  = GPIO[33];
+assign p2_fire   = GPIO[35];
+`endif
+
+assign LEDG[4:0] = p1_led;
 assign LEDR[4:0] = p2_led;
 
 /******************
