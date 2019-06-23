@@ -17,26 +17,26 @@ module shell(
     input [5:0] tank_2_x_pos,
     input [5:0] tank_2_y_pos,
     //////To Game and VGA//////
-    output logic [5:0] shell_1_1_x_pos,// tank 1 shell 1 x pos
-    output logic [5:0] shell_1_1_y_pos,// tank 1 shell 1 y pos
-    output logic [5:0] shell_1_2_x_pos,// tank 1 shell 2 x pos
-    output logic [5:0] shell_1_2_y_pos,// tank 1 shell 2 y pos
-    output logic [5:0] shell_1_3_x_pos,// tank 1 shell 3 x pos
-    output logic [5:0] shell_1_3_y_pos,// tank 1 shell 3 y pos
-    output logic [5:0] shell_1_4_x_pos,// tank 1 shell 4 x pos
-    output logic [5:0] shell_1_4_y_pos,// tank 1 shell 4 y pos
-    output logic [5:0] shell_1_5_x_pos,// tank 1 shell 5 x pos
-    output logic [5:0] shell_1_5_y_pos,// tank 1 shell 5 y pos
-    output logic [5:0] shell_2_1_x_pos,// tank 1 shell 1 x pos
-    output logic [5:0] shell_2_1_y_pos,// tank 1 shell 1 y pos
-    output logic [5:0] shell_2_2_x_pos,// tank 1 shell 2 x pos
-    output logic [5:0] shell_2_2_y_pos,// tank 1 shell 2 y pos
-    output logic [5:0] shell_2_3_x_pos,// tank 1 shell 3 x pos
-    output logic [5:0] shell_2_3_y_pos,// tank 1 shell 3 y pos
-    output logic [5:0] shell_2_4_x_pos,// tank 1 shell 4 x pos
-    output logic [5:0] shell_2_4_y_pos,// tank 1 shell 4 y pos
-    output logic [5:0] shell_2_5_x_pos,// tank 1 shell 5 x pos
-    output logic [5:0] shell_2_5_y_pos,// tank 1 shell 5 y pos
+    output logic [5:0] shell_1_0_x_pos,// tank 1 shell 1 x pos
+    output logic [5:0] shell_1_0_y_pos,// tank 1 shell 1 y pos
+    output logic [5:0] shell_1_1_x_pos,// tank 1 shell 2 x pos
+    output logic [5:0] shell_1_1_y_pos,// tank 1 shell 2 y pos
+    output logic [5:0] shell_1_2_x_pos,// tank 1 shell 3 x pos
+    output logic [5:0] shell_1_2_y_pos,// tank 1 shell 3 y pos
+    output logic [5:0] shell_1_3_x_pos,// tank 1 shell 4 x pos
+    output logic [5:0] shell_1_3_y_pos,// tank 1 shell 4 y pos
+    output logic [5:0] shell_1_4_x_pos,// tank 1 shell 5 x pos
+    output logic [5:0] shell_1_4_y_pos,// tank 1 shell 5 y pos
+    output logic [5:0] shell_2_0_x_pos,// tank 1 shell 1 x pos
+    output logic [5:0] shell_2_0_y_pos,// tank 1 shell 1 y pos
+    output logic [5:0] shell_2_1_x_pos,// tank 1 shell 2 x pos
+    output logic [5:0] shell_2_1_y_pos,// tank 1 shell 2 y pos
+    output logic [5:0] shell_2_2_x_pos,// tank 1 shell 3 x pos
+    output logic [5:0] shell_2_2_y_pos,// tank 1 shell 3 y pos
+    output logic [5:0] shell_2_3_x_pos,// tank 1 shell 4 x pos
+    output logic [5:0] shell_2_3_y_pos,// tank 1 shell 4 y pos
+    output logic [5:0] shell_2_4_x_pos,// tank 1 shell 5 x pos
+    output logic [5:0] shell_2_4_y_pos,// tank 1 shell 5 y pos
     output logic [4:0] valid_1_shell, //1 means valid, 0 means used
     output logic [4:0] valid_2_shell //1 means valid, 0 means used
     );
@@ -47,56 +47,56 @@ module shell(
     select_shell select_shell_2(.fire(fire_2), .valid_give_shell(valid_give_shell_2),
                                 .valid_shell(valid_2_shell), .fire_out(fire_2_out));
 
-    single_shell single_shell_1_1(.clk(clk), .rst_n(rst_n), .vanish(vanish_1[0]), 
+    single_shell single_shell_1_0(.clk(clk), .rst_n(rst_n), .vanish(vanish_1[0]), 
                                   .fire(fire_1_out[0]), .direction_in(direction_1_in), 
                                   .tank_x_pos(tank_1_x_pos), .tank_y_pos(tank_1_y_pos), 
-                                  .shell_x_pos(shell_1_1_x_pos), .shell_y_pos(shell_1_1_y_pos), 
+                                  .shell_x_pos(shell_1_0_x_pos), .shell_y_pos(shell_1_0_y_pos), 
                                   .valid_shell(valid_1_shell[0]));
-    single_shell single_shell_1_2(.clk(clk), .rst_n(rst_n), .vanish(vanish_1[1]), 
+    single_shell single_shell_1_1(.clk(clk), .rst_n(rst_n), .vanish(vanish_1[1]), 
                                   .fire(fire_1_out[1]), .direction_in(direction_1_in), 
                                   .tank_x_pos(tank_1_x_pos), .tank_y_pos(tank_1_y_pos), 
-                                  .shell_x_pos(shell_1_2_x_pos), .shell_y_pos(shell_1_2_y_pos), 
+                                  .shell_x_pos(shell_1_1_x_pos), .shell_y_pos(shell_1_1_y_pos), 
                                   .valid_shell(valid_1_shell[1]));
-    single_shell single_shell_1_3(.clk(clk), .rst_n(rst_n), .vanish(vanish_1[2]), 
+    single_shell single_shell_1_2(.clk(clk), .rst_n(rst_n), .vanish(vanish_1[2]), 
                                   .fire(fire_1_out[2]), .direction_in(direction_1_in), 
                                   .tank_x_pos(tank_1_x_pos), .tank_y_pos(tank_1_y_pos), 
-                                  .shell_x_pos(shell_1_3_x_pos), .shell_y_pos(shell_1_3_y_pos), 
+                                  .shell_x_pos(shell_1_2_x_pos), .shell_y_pos(shell_1_2_y_pos), 
                                   .valid_shell(valid_1_shell[2]));
-    single_shell single_shell_1_4(.clk(clk), .rst_n(rst_n), .vanish(vanish_1[3]), 
+    single_shell single_shell_1_3(.clk(clk), .rst_n(rst_n), .vanish(vanish_1[3]), 
                                   .fire(fire_1_out[3]), .direction_in(direction_1_in), 
                                   .tank_x_pos(tank_1_x_pos), .tank_y_pos(tank_1_y_pos), 
-                                  .shell_x_pos(shell_1_4_x_pos), .shell_y_pos(shell_1_4_y_pos), 
+                                  .shell_x_pos(shell_1_3_x_pos), .shell_y_pos(shell_1_3_y_pos), 
                                   .valid_shell(valid_1_shell[3]));
-    single_shell single_shell_1_5(.clk(clk), .rst_n(rst_n), .vanish(vanish_1[4]), 
+    single_shell single_shell_1_4(.clk(clk), .rst_n(rst_n), .vanish(vanish_1[4]), 
                                   .fire(fire_1_out[4]), .direction_in(direction_1_in), 
                                   .tank_x_pos(tank_1_x_pos), .tank_y_pos(tank_1_y_pos), 
-                                  .shell_x_pos(shell_1_5_x_pos), .shell_y_pos(shell_1_5_y_pos), 
+                                  .shell_x_pos(shell_1_4_x_pos), .shell_y_pos(shell_1_4_y_pos), 
                                   .valid_shell(valid_1_shell[4]));
 
-    single_shell single_shell_2_1(.clk(clk), .rst_n(rst_n), .vanish(vanish_2[0]), 
+    single_shell single_shell_2_0(.clk(clk), .rst_n(rst_n), .vanish(vanish_2[0]), 
                                   .fire(fire_2_out[0]), .direction_in(direction_2_in), 
                                   .tank_x_pos(tank_2_x_pos), .tank_y_pos(tank_2_y_pos), 
-                                  .shell_x_pos(shell_2_1_x_pos), .shell_y_pos(shell_2_1_y_pos), 
+                                  .shell_x_pos(shell_2_0_x_pos), .shell_y_pos(shell_2_0_y_pos), 
                                   .valid_shell(valid_2_shell[0]));
-    single_shell single_shell_2_2(.clk(clk), .rst_n(rst_n), .vanish(vanish_2[1]), 
+    single_shell single_shell_2_1(.clk(clk), .rst_n(rst_n), .vanish(vanish_2[1]), 
                                   .fire(fire_2_out[1]), .direction_in(direction_2_in), 
                                   .tank_x_pos(tank_2_x_pos), .tank_y_pos(tank_2_y_pos), 
-                                  .shell_x_pos(shell_2_2_x_pos), .shell_y_pos(shell_2_2_y_pos), 
+                                  .shell_x_pos(shell_2_1_x_pos), .shell_y_pos(shell_2_1_y_pos), 
                                   .valid_shell(valid_2_shell[1]));
-    single_shell single_shell_2_3(.clk(clk), .rst_n(rst_n), .vanish(vanish_2[2]), 
+    single_shell single_shell_2_2(.clk(clk), .rst_n(rst_n), .vanish(vanish_2[2]), 
                                   .fire(fire_2_out[2]), .direction_in(direction_2_in), 
                                   .tank_x_pos(tank_2_x_pos), .tank_y_pos(tank_2_y_pos), 
-                                  .shell_x_pos(shell_2_3_x_pos), .shell_y_pos(shell_2_3_y_pos), 
+                                  .shell_x_pos(shell_2_2_x_pos), .shell_y_pos(shell_2_2_y_pos), 
                                   .valid_shell(valid_2_shell[2]));
-    single_shell single_shell_2_4(.clk(clk), .rst_n(rst_n), .vanish(vanish_2[3]), 
+    single_shell single_shell_2_3(.clk(clk), .rst_n(rst_n), .vanish(vanish_2[3]), 
                                   .fire(fire_2_out[3]), .direction_in(direction_2_in), 
                                   .tank_x_pos(tank_2_x_pos), .tank_y_pos(tank_2_y_pos), 
-                                  .shell_x_pos(shell_2_4_x_pos), .shell_y_pos(shell_2_4_y_pos), 
+                                  .shell_x_pos(shell_2_3_x_pos), .shell_y_pos(shell_2_3_y_pos), 
                                   .valid_shell(valid_2_shell[3]));
-    single_shell single_shell_2_5(.clk(clk), .rst_n(rst_n), .vanish(vanish_2[4]), 
+    single_shell single_shell_2_4(.clk(clk), .rst_n(rst_n), .vanish(vanish_2[4]), 
                                   .fire(fire_2_out[4]), .direction_in(direction_2_in), 
                                   .tank_x_pos(tank_2_x_pos), .tank_y_pos(tank_2_y_pos), 
-                                  .shell_x_pos(shell_2_5_x_pos), .shell_y_pos(shell_2_5_y_pos), 
+                                  .shell_x_pos(shell_2_4_x_pos), .shell_y_pos(shell_2_4_y_pos), 
                                   .valid_shell(valid_2_shell[4]));
 endmodule
 
