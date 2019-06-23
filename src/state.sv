@@ -1,4 +1,4 @@
-`define MAP     "./map.dat"     //name for map
+`define MAP     "./map/map.dat"     //name for map
 
 module state(
     input clk,
@@ -121,8 +121,21 @@ module state(
     //combinational part===============================================================================
     always_comb begin
         case(state)
+            default: begin
+                next_state = state;
+                next_valid_frame_1 = valid_frame_1;
+                next_valid_frame_2 = valid_frame_2;
+                next_dir_1 = dir_1;
+                next_dir_2 = dir_2;
+                next_fire_1 = fire_1;
+                next_fire_2 = fire_2;
+                next_shell_vanish_1 = shell_vanish_1;
+                next_shell_vanish_2 = shell_vanish_2;
+                next_is_map = is_map;
+                next_who_wins = who_wins;
+            end
             START: begin
-                if( ~press_left_1 & ~press_left_2 ) next_state = GAME;
+                if( (~press_left_1)& (~press_left_2) ) next_state = GAME;
                 else next_state = state;
 
                 //others
@@ -454,15 +467,15 @@ module state(
                     next_who_wins = who_wins;
                 end
                 //----------------------------tank_2, shell_4---------------------------------
-                if( i_valid_shell_1[4] ) begin
+                if( i_valid_shell_2[4] ) begin
                     //shell hit wall
-                    if( map_mem[shell_1_4_pos_x][shell_1_4_pos_y] ) next_shell_vanish_1[4] = 1'b1;
-                    else next_shell_vanish_1[4] = 1'b0;
+                    if( map_mem[shell_2_4_pos_x][shell_2_4_pos_y] ) next_shell_vanish_2[4] = 1'b1;
+                    else next_shell_vanish_2[4] = 1'b0;
                     //shell hit car
-                    if( shell_1_4_pos_x >= tank_2_pos_x - 2 
-                      & shell_1_4_pos_x <= tank_2_pos_x + 2  
-                      & shell_1_4_pos_y >= tank_2_pos_y - 2
-                      & shell_1_4_pos_y <= tank_2_pos_y + 2 ) begin
+                    if( shell_2_4_pos_x >= tank_2_pos_x - 2 
+                      & shell_2_4_pos_x <= tank_2_pos_x + 2  
+                      & shell_2_4_pos_y >= tank_2_pos_y - 2
+                      & shell_2_4_pos_y <= tank_2_pos_y + 2 ) begin
                         next_state = END;
                         next_who_wins = 2'b01;
                     end
@@ -472,7 +485,7 @@ module state(
                     end
                 end
                 else begin
-                    next_shell_vanish_1[4] = 1'b0;
+                    next_shell_vanish_2[4] = 1'b0;
                     next_state = state;
                     next_who_wins = who_wins;
                 end

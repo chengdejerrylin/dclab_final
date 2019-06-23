@@ -147,18 +147,28 @@ logic [4:0] p1_led, p2_led;
 
 
 assign RST_N = KEY[0];
-assign p1_up     = GPIO[1];
-assign p1_down   = GPIO[3];
-assign p1_left   = GPIO[5];
-assign p1_right  = GPIO[7];
-assign p1_fire   = GPIO[9];
+// assign p1_up     = GPIO[1];
+// assign p1_down   = GPIO[3];
+// assign p1_left   = GPIO[5];
+// assign p1_right  = GPIO[7];
+// assign p1_fire   = GPIO[9];
+assign p1_up     = SW[3];
+assign p1_down   = SW[2];
+assign p1_left   = SW[4];
+assign p1_right  = SW[1];
+assign p1_fire   = SW[0];
 assign LEDG[4:0] = p1_led;
 
-assign p2_up     = GPIO[27];
-assign p2_down   = GPIO[29];
-assign p2_left   = GPIO[31];
-assign p2_right  = GPIO[33];
-assign p2_fire   = GPIO[35];
+// assign p2_up     = GPIO[27];
+// assign p2_down   = GPIO[29];
+// assign p2_left   = GPIO[31];
+// assign p2_right  = GPIO[33];
+// assign p2_fire   = GPIO[35];
+assign p2_up     = SW[15];
+assign p2_down   = SW[14];
+assign p2_left   = SW[16];
+assign p2_right  = SW[13];
+assign p2_fire   = SW[17];
 assign LEDR[4:0] = p2_led;
 
 /******************
@@ -222,7 +232,7 @@ state state_1(.clk(CLOCK_25), .rst_n(RST_N), .press_up_1(up_1_joy_state), .press
 			  .press_left_1(left_1_joy_state), .press_right_1(right_1_joy_state), 
 			  .press_fire_1(fire_1_joy_state), .press_up_2(up_2_joy_state),
 			  .press_down_2(down_2_joy_state), .press_left_2(left_2_joy_state),
-			  .press_right_2(right_2_joy_state), .press_fire_2(.fire_2_joy_state),
+			  .press_right_2(right_2_joy_state), .press_fire_2(fire_2_joy_state),
 			  .tank_1_pos_x(tank_1_pos_x), .tank_1_pos_y(tank_1_pos_y), .tank_2_pos_x(tank_2_pos_x),
 			  .tank_2_pos_y(tank_2_pos_y), .o_init_tank_1_pos_x(o_init_tank_1_pos_x),
 			  .o_init_tank_1_pos_y(o_init_tank_1_pos_y), .o_init_tank_2_pos_x(o_init_tank_2_pos_x),
@@ -247,26 +257,26 @@ state state_1(.clk(CLOCK_25), .rst_n(RST_N), .press_up_1(up_1_joy_state), .press
 shell shell_1(.clk(CLK_25), .rst_n(RST_N), .fire_1(fire_1), .fire_2(fire_2),
 			  .valid_give_shell_1(valid_frame_1), .valid_give_shell_2(valid_frame_2),
 			  .vanish_1(shell_vanish_1), .vanish_2(shell_vanish_2), .direction_1_in(direction_tank_1),
-			  .direction_2_in(direction_tank_2), .tank_1_x_pos(tank_1_pos_x), .tank_2_x_pos(tank_2_x_pos),
-			  .tank_2_y_pos(tank_2_y_pos), .shell_1_0_pos_x(shell_1_0_pos_x), 
-			  .shell_1_0_pos_y(shell_1_0_pos_y), .shell_1_1_pos_x(shell_1_1_pos_x), 
-			  .shell_1_1_pos_y(shell_1_1_pos_y), .shell_1_2_pos_x(shell_1_2_pos_x),
-			  .shell_1_2_pos_y(shell_1_2_pos_y), .shell_1_3_pos_x(shell_1_3_pos_x), 
-			  .shell_1_3_pos_y(shell_1_3_pos_y), .shell_1_4_pos_x(shell_1_4_pos_x),
-			  .shell_1_4_pos_y(shell_1_4_pos_y), .shell_2_0_pos_x(shell_2_0_pos_x), 
-			  .shell_2_0_pos_y(shell_2_0_pos_y), .shell_2_1_pos_x(shell_2_1_pos_x),
-			  .shell_2_1_pos_y(shell_2_1_pos_y), .shell_2_2_pos_x(shell_2_2_pos_x),
-			  .shell_2_2_pos_y(shell_2_2_pos_y), .shell_2_3_pos_x(shell_2_3_pos_x),
-			  .shell_2_3_pos_y(shell_2_3_pos_y), .shell_2_4_pos_x(shell_2_4_pos_x),
-			  .shell_2_4_pos_y(shell_2_4_pos_y), .valid_1_shell(valid_1_shell), 
+			  .direction_2_in(direction_tank_2), .tank_1_x_pos(tank_1_pos_x), .tank_1_y_pos(tank_1_pos_y), 
+			  .tank_2_x_pos(tank_2_pos_x), .tank_2_y_pos(tank_2_y_pos), .shell_1_0_x_pos(shell_1_0_pos_x), 
+			  .shell_1_0_y_pos(shell_1_0_pos_y), .shell_1_1_x_pos(shell_1_1_pos_x), 
+			  .shell_1_1_y_pos(shell_1_1_pos_y), .shell_1_2_x_pos(shell_1_2_pos_x),
+			  .shell_1_2_y_pos(shell_1_2_pos_y), .shell_1_3_x_pos(shell_1_3_pos_x), 
+			  .shell_1_3_y_pos(shell_1_3_pos_y), .shell_1_4_x_pos(shell_1_4_pos_x),
+			  .shell_1_4_y_pos(shell_1_4_pos_y), .shell_2_0_x_pos(shell_2_0_pos_x), 
+			  .shell_2_0_y_pos(shell_2_0_pos_y), .shell_2_1_x_pos(shell_2_1_pos_x),
+			  .shell_2_1_y_pos(shell_2_1_pos_y), .shell_2_2_x_pos(shell_2_2_pos_x),
+			  .shell_2_2_y_pos(shell_2_2_pos_y), .shell_2_3_x_pos(shell_2_3_pos_x),
+			  .shell_2_3_y_pos(shell_2_3_pos_y), .shell_2_4_x_pos(shell_2_4_pos_x),
+			  .shell_2_4_y_pos(shell_2_4_pos_y), .valid_1_shell(valid_1_shell), 
 			  .valid_2_shell(valid_2_shell));
 
-tank tank_1(.clk(CLK_25), rst_n(RST_N), .initial_x(o_init_tank_1_pos_x), 
+tank tank_1(.clk(CLK_25), .rst_n(RST_N), .initial_x(o_init_tank_1_pos_x), 
 			.initial_y(o_init_tank_1_pos_y), .initial_direction(2'd3), 
 			.direction_in(direction_1_state_tank), .valid_take_direction(valid_frame_1), 
 			.tank_x_pos(tank_1_pos_x), .tank_y_pos(tank_1_pos_y), .direction_out(direction_tank_1));
     
-tank tank_2(.clk(CLK_25), rst_n(RST_N), .initial_x(o_init_tank_2_pos_x), 
+tank tank_2(.clk(CLK_25), .rst_n(RST_N), .initial_x(o_init_tank_2_pos_x), 
 			.initial_y(o_init_tank_2_pos_y), .initial_direction(2'd2), 
 			.direction_in(direction_2_state_tank), .valid_take_direction(valid_frame_2), 
 			.tank_x_pos(tank_2_pos_x), .tank_y_pos(tank_2_pos_y), .direction_out(direction_tank_2));

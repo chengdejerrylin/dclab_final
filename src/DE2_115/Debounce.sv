@@ -34,8 +34,8 @@ module Debounce(
 
 	always_ff @(posedge i_clk or negedge i_rst) begin
 		if (!i_rst) begin
-			o_debounced_r <= '0;
-			counter_r <= '0;
+			o_debounced_r <= '1;
+			counter_r <= '1;
 			neg_r <= '0;
 			pos_r <= '0;
 		end else begin
