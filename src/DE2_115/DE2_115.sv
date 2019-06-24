@@ -220,7 +220,19 @@ VGA vga(.clk(CLOCK_25), .rst_n(RST_N), .VGA_B(VGA_B), .VGA_BLANK_N(VGA_BLANK_N),
 	.i_state(game_state), .i_tank0_x(tank_1_pos_x), .i_tank0_y(tank_1_pos_y), 
 	.i_tank0_dir(direction_tank_1), .o_buzy(VGA_busy), .i_min_ten(min_ten), .i_min_one(min_one), 
 	.i_sec_ten(sec_ten), .i_sec_one(sec_one), .i_tank1_x(tank_2_pos_x), .i_tank1_y(tank_2_pos_y), 
-	.i_tank1_dir(direction_tank_2), .i_is_wall(is_map), .o_request_x(x_pos_vga_state), .o_request_y(y_pos_vga_state), .i_p1_win(who_wins[0]));
+	.i_tank1_dir(direction_tank_2), .i_is_wall(is_map), .o_request_x(x_pos_vga_state), 
+	.o_request_y(y_pos_vga_state), .i_p1_win(who_wins[0]), 
+	.i_shell0_0_x(shell_1_0_pos_x), .i_shell0_0_y(shell_1_0_pos_y), 
+	.i_shell0_1_x(shell_1_1_pos_x), .i_shell0_1_y(shell_1_1_pos_y), 
+	.i_shell0_2_x(shell_1_2_pos_x), .i_shell0_2_y(shell_1_2_pos_y), 
+	.i_shell0_3_x(shell_1_3_pos_x), .i_shell0_3_y(shell_1_3_pos_y), 
+	.i_shell0_4_x(shell_1_4_pos_x), .i_shell0_4_y(shell_1_4_pos_y), 
+	.i_shell1_0_x(shell_2_0_pos_x), .i_shell1_0_y(shell_2_0_pos_y), 
+	.i_shell1_1_x(shell_2_1_pos_x), .i_shell1_1_y(shell_2_1_pos_y), 
+	.i_shell1_2_x(shell_2_2_pos_x), .i_shell1_2_y(shell_2_2_pos_y), 
+	.i_shell1_3_x(shell_2_3_pos_x), .i_shell1_3_y(shell_2_3_pos_y), 
+	.i_shell1_4_x(shell_2_4_pos_x), .i_shell1_4_y(shell_2_4_pos_y), 
+	.i_shell0_valid(valid_1_shell), .i_shell1_valid(valid_2_shell));
 
 timer t(.clk(CLOCK_25), .rst_n(RST_N), .i_top_state(game_state), .i_VGA_buzy(VGA_busy), .o_min_ten(min_ten), .o_min_one(min_one), 
 	.o_sec_ten(sec_ten), .o_sec_one(sec_one));
@@ -288,5 +300,15 @@ tank tank_2(.clk(CLOCK_25), .rst_n(RST_N), .initial_x(o_init_tank_2_pos_x),
 			.direction_in(direction_2_state_tank), .valid_take_direction(valid_frame_2), 
 			.tank_x_pos(tank_2_pos_x), .tank_y_pos(tank_2_pos_y), .direction_out(direction_tank_2));
 
-assign LEDR[5 +:6] = tank_2_pos_x;
+/******************
+       Debug
+******************/
+SevenHexDecoder t1x(.i_data(tank_1_pos_x), .o_seven_ten(HEX7), .o_seven_one(HEX6));
+SevenHexDecoder t1y(.i_data(tank_1_pos_y), .o_seven_ten(HEX5), .o_seven_one(HEX4));
+SevenHexDecoder t2x(.i_data(tank_2_pos_x), .o_seven_ten(HEX3), .o_seven_one(HEX2));
+SevenHexDecoder t2y(.i_data(tank_2_pos_y), .o_seven_ten(HEX1), .o_seven_one(HEX0));
+
+assign LEDR[17:13] = valid_1_shell;
+assign LEDR[11: 7] = valid_2_shell;
+
 endmodule
