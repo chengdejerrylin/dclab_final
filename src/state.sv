@@ -202,7 +202,7 @@ module state(
                     if( map_mem[tank_1_pos_y - 2][63 - (tank_1_pos_x + 3)]
                       | map_mem[tank_1_pos_y - 1][63 - (tank_1_pos_x + 3)]
                       | map_mem[tank_1_pos_y][63 - (tank_1_pos_x + 3)]
-                      | map_mem[tank_1_pos_y + 1][63 - tank_1_pos_x + 3)]
+                      | map_mem[tank_1_pos_y + 1][63 - (tank_1_pos_x + 3)]
                       | map_mem[tank_1_pos_y + 2][63 - (tank_1_pos_x + 3)] )   //collision
                         next_dir_1 = 3'b100;
                     else next_dir_1 = 3'b011;
