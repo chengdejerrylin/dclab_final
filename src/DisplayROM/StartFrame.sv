@@ -21,8 +21,8 @@ assign current_pixel = mem[addr];
 assign o_rgb = center[current_pixel];
 
 `ifdef COMPILE_FRAME
-initial $readmemh("resource/dat/road_8_labels.dat",mem);
-initial $readmemh("resource/dat/road_8_values.dat",center);
+initial $readmemh("resource/dat/startPicture_labels.dat",mem);
+initial $readmemh("resource/dat/startPicture_values.dat",center);
 `endif
 
 endmodule

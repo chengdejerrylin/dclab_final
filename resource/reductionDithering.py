@@ -9,7 +9,7 @@ parser.add_argument('pic', help='Input pucture.')
 parser.add_argument('-o', dest="out", default="", help='output prefix.')
 parser.add_argument('-b', dest="bit", type=int, default=3, help='bits of label.')
 parser.add_argument('-no-fix', dest="fix", action="store_false", help='use randome seed.')
-parser.add_argument('-d', dest="dither", action="store_true", help='no dithering algorithm.')
+parser.add_argument('-d', dest="dither", action="store_true", help='dithering algorithm.')
 parser.add_argument('-m', dest="mode", default="sierra", help='dithering algorithm. \'sierra\', \'JJN\'')
 
 #parse data
@@ -27,7 +27,7 @@ if args.mode == "sierra" :
 	transmission = [[0.0/32, 0.0/32, 0.0/32, 5.0/32, 3.0/32], \
 					[2.0/32, 4.0/32, 5.0/32, 4.0/32, 2.0/32], \
 					[0.0/32, 2.0/32, 3.0/32, 2.0/32, 0.0/32] ]
-if args.mode == "JJN" : 
+elif args.mode == "JJN" : 
 	transmission = [[0.0/48, 0.0/48, 0.0/48, 7.0/48, 5.0/48], \
 					[3.0/48, 5.0/48, 7.0/48, 5.0/48, 3.0/48], \
 					[1.0/48, 3.0/48, 5.0/48, 3.0/48, 1.0/48] ]
