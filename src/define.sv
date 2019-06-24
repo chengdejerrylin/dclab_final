@@ -3,7 +3,7 @@
 ***************************/
 
 `define USE_SWITCH
-`define COMPILE_FRAME
+//`define COMPILE_FRAME
 `define COMPILE_SMALL
 
 /**************************
