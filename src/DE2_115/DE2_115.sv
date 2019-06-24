@@ -272,7 +272,8 @@ state state_1(.clk(CLOCK_25), .rst_n(RST_N), .press_up_1(up_1_joy_state), .press
 			  .o_dir_2(direction_2_state_tank), .o_fire_1(fire_1), .o_fire_2(fire_2), 
 			  .i_x_pos(x_pos_vga_state), .i_y_pos(y_pos_vga_state), .i_busy(VGA_busy),
 			  .o_is_map(is_map), .o_state(game_state), .o_who_wins(who_wins), 
-			  .press_start_1(start_1_joy_state), .press_start_2(start_2_joy_state));
+			  .press_start_1(start_1_joy_state), .press_start_2(start_2_joy_state), 
+			  .tank_1_dir(direction_tank_1), .tank_2_dir(direction_tank_2));
 
 shell shell_1(.clk(CLOCK_25), .rst_n(RST_N), .fire_1(fire_1), .fire_2(fire_2),
 			  .valid_give_shell_1(valid_frame_1), .valid_give_shell_2(valid_frame_2),

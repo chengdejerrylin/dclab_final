@@ -24,6 +24,8 @@ module state(
     input[5:0] tank_1_pos_y,
     input[5:0] tank_2_pos_x,
     input[5:0] tank_2_pos_y,
+    input[1:0] tank_1_dir,
+    input[1:0] tank_2_dir,
 
     output[5:0] o_init_tank_1_pos_x,
     output[5:0] o_init_tank_1_pos_y,
@@ -178,7 +180,8 @@ module state(
 
 
                 if( ~press_up_1 ) begin
-                    if( map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x - 2)] 
+                    if(tank_1_dir != 2'b00)next_dir_1 = 3'b000;
+                    else if( map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x - 2)] 
                       | map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x - 1)]
                       | map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x)]
                       | map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x + 1)]
@@ -189,7 +192,8 @@ module state(
                     else next_dir_1 = 3'b000;
                 end
                 else if( ~press_down_1 ) begin
-                    if( map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x - 2)] 
+                    if(tank_1_dir != 2'b01)next_dir_1 = 3'b001;
+                    else if( map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x - 2)] 
                       | map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x - 1)]
                       | map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x)]
                       | map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x + 1)]
@@ -200,7 +204,8 @@ module state(
                     else next_dir_1 = 3'b001;
                 end
                 else if( ~press_left_1 ) begin
-                    if( map_mem[tank_1_pos_y - 2][63 - (tank_1_pos_x - 3)]
+                    if(tank_1_dir != 2'b10)next_dir_1 = 3'b010;
+                    else if( map_mem[tank_1_pos_y - 2][63 - (tank_1_pos_x - 3)]
                       | map_mem[tank_1_pos_y - 1][63 - (tank_1_pos_x - 3)]
                       | map_mem[tank_1_pos_y][63 - (tank_1_pos_x - 3)]
                       | map_mem[tank_1_pos_y + 1][63 - (tank_1_pos_x - 3)]
@@ -211,7 +216,8 @@ module state(
                     else next_dir_1 = 3'b010;
                 end
                 else if( ~press_right_1 ) begin
-                    if( map_mem[tank_1_pos_y - 2][63 - (tank_1_pos_x + 3)]
+                    if(tank_1_dir != 2'b11)next_dir_1 = 3'b011;
+                    else if( map_mem[tank_1_pos_y - 2][63 - (tank_1_pos_x + 3)]
                       | map_mem[tank_1_pos_y - 1][63 - (tank_1_pos_x + 3)]
                       | map_mem[tank_1_pos_y][63 - (tank_1_pos_x + 3)]
                       | map_mem[tank_1_pos_y + 1][63 - (tank_1_pos_x + 3)]
@@ -231,7 +237,8 @@ module state(
                 else next_fire_2 = ~valid_frame_2;
 
                 if( ~press_up_2 ) begin
-                    if( map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x - 2)] 
+                    if(tank_2_dir != 2'b00)next_dir_2 = 3'b000;
+                    else if( map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x - 2)] 
                       | map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x - 1)]
                       | map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x)]
                       | map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x + 1)]
@@ -242,7 +249,8 @@ module state(
                     else next_dir_2 = 3'b000;
                 end
                 else if( ~press_down_2 ) begin
-                    if( map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x - 2)] 
+                    if(tank_2_dir != 2'b01)next_dir_2 = 3'b001;
+                    else if( map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x - 2)] 
                       | map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x - 1)]
                       | map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x)]
                       | map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x + 1)]
@@ -253,7 +261,8 @@ module state(
                     else next_dir_2 = 3'b001;
                 end
                 else if( ~press_left_2 ) begin
-                    if( map_mem[tank_2_pos_y - 2][63 - (tank_2_pos_x - 3)]
+                    if(tank_2_dir != 2'b10)next_dir_2 = 3'b010;
+                    else if( map_mem[tank_2_pos_y - 2][63 - (tank_2_pos_x - 3)]
                       | map_mem[tank_2_pos_y - 1][63 - (tank_2_pos_x - 3)]
                       | map_mem[tank_2_pos_y][63 - (tank_2_pos_x - 3)]
                       | map_mem[tank_2_pos_y + 1][63 - (tank_2_pos_x - 3)]
@@ -264,7 +273,8 @@ module state(
                     else next_dir_2 = 3'b010;
                 end
                 else if( ~press_right_2 ) begin
-                    if( map_mem[tank_2_pos_y - 2][63 - (tank_2_pos_x + 3)]
+                    if(tank_2_dir != 2'b11)next_dir_2 = 3'b011;
+                    else if( map_mem[tank_2_pos_y - 2][63 - (tank_2_pos_x + 3)]
                       | map_mem[tank_2_pos_y - 1][63 - (tank_2_pos_x + 3)]
                       | map_mem[tank_2_pos_y][63 - (tank_2_pos_x + 3)]
                       | map_mem[tank_2_pos_y + 1][63 - (tank_2_pos_x + 3)]
