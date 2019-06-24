@@ -48,6 +48,7 @@ module tank(
 					direction_last_n = direction_last;
 				end
 				else begin
+					if(direction_in != 3'd4)direction_out_n = direction_in[1:0];
 					if (direction_last != direction_in) begin
 						state_n = STATE_0;
 						tank_x_pos_n = tank_x_pos;
@@ -153,19 +154,19 @@ module tank(
 						tank_x_pos_n = tank_x_pos;
 						tank_y_pos_n = tank_y_pos;
 						if (direction_last == UP) begin
-							tank_y_pos_n = direction_out == direction_last ? tank_y_pos - 1 : tank_y_pos;
+							tank_y_pos_n = tank_y_pos - 1;
 							direction_out_n = direction_last [1:0];
 						end
 						else if (direction_last == DOWN) begin
-							tank_y_pos_n = direction_out == direction_last ? tank_y_pos + 1 : tank_y_pos;
+							tank_y_pos_n = tank_y_pos + 1;
 							direction_out_n = direction_last [1:0];
 						end
 						else if (direction_last == LEFT) begin
-							tank_x_pos_n = direction_out == direction_last ? tank_x_pos - 1 : tank_x_pos;
+							tank_x_pos_n = tank_x_pos - 1;
 							direction_out_n = direction_last [1:0];
 						end
 						else if (direction_last == RIGHT) begin
-							tank_x_pos_n = direction_out == direction_last ? tank_x_pos + 1 : tank_x_pos;
+							tank_x_pos_n = tank_x_pos + 1;
 							direction_out_n = direction_last [1:0];
 						end
 					end
