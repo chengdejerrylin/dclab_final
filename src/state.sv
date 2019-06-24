@@ -280,13 +280,13 @@ module state(
                 //output next_shell_vanish_1[0:4], next_shell_vanish_2[0:4], next_state, next_who_wins
                 //use    i_valid_shell_1, i_valid_shell_2
                 //----------------------------tank_1, shell_0---------------------------------
-                if( i_valid_shell_1[0] ) begin
+                if( ~i_valid_shell_1[0] ) begin
                     //shell hit wall
                     if( map_mem[shell_1_0_pos_y][63 - shell_1_0_pos_x] ) next_shell_vanish_1[0] = 1'b1;
                     else next_shell_vanish_1[0] = 1'b0;
                     //shell hit car
-                    if( 63 - shell_1_0_pos_x >= 63 - (tank_2_pos_x - 2)
-                      & 63 - shell_1_0_pos_x <= 63 - (tank_2_pos_x + 2)
+                    if( shell_1_0_pos_x >= (tank_2_pos_x - 2)
+                      & shell_1_0_pos_x <= (tank_2_pos_x + 2)
                       & shell_1_0_pos_y >= tank_2_pos_y - 2
                       & shell_1_0_pos_y <= tank_2_pos_y + 2 ) begin
                         next_state = END;
@@ -303,13 +303,13 @@ module state(
                     next_who_wins = who_wins;
                 end
                 //----------------------------tank_1, shell_1---------------------------------
-                if( i_valid_shell_1[1] ) begin
+                if( ~i_valid_shell_1[1] ) begin
                     //shell hit wall
                     if( map_mem[shell_1_1_pos_y][63 - shell_1_1_pos_x] ) next_shell_vanish_1[1] = 1'b1;
                     else next_shell_vanish_1[1] = 1'b0;
                     //shell hit car
-                    if( 63 - shell_1_1_pos_x >= 63 - (tank_2_pos_x - 2)
-                      & 63 - shell_1_1_pos_x <= 63 - (tank_2_pos_x + 2)
+                    if( shell_1_1_pos_x >= (tank_2_pos_x - 2)
+                      & shell_1_1_pos_x <= (tank_2_pos_x + 2)
                       & shell_1_1_pos_y >= tank_2_pos_y - 2
                       & shell_1_1_pos_y <= tank_2_pos_y + 2 ) begin
                         next_state = END;
@@ -326,13 +326,13 @@ module state(
                     next_who_wins = who_wins;
                 end
                 //----------------------------tank_1, shell_2---------------------------------
-                if( i_valid_shell_1[2] ) begin
+                if( ~i_valid_shell_1[2] ) begin
                     //shell hit wall
                     if( map_mem[shell_1_2_pos_y][63 - shell_1_2_pos_x] ) next_shell_vanish_1[2] = 1'b1;
                     else next_shell_vanish_1[2] = 1'b0;
                     //shell hit car
-                    if( 63 - shell_1_2_pos_x >= 63 - (tank_2_pos_x - 2)
-                      & 63 - shell_1_2_pos_x <= 63 - (tank_2_pos_x + 2)
+                    if( shell_1_2_pos_x >= (tank_2_pos_x - 2)
+                      & shell_1_2_pos_x <= (tank_2_pos_x + 2)
                       & shell_1_2_pos_y >= tank_2_pos_y - 2
                       & shell_1_2_pos_y <= tank_2_pos_y + 2 ) begin
                         next_state = END;
@@ -349,13 +349,13 @@ module state(
                     next_who_wins = who_wins;
                 end
                 //----------------------------tank_1, shell_3---------------------------------
-                if( i_valid_shell_1[3] ) begin
+                if( ~i_valid_shell_1[3] ) begin
                     //shell hit wall
                     if( map_mem[shell_1_3_pos_y][63 - shell_1_3_pos_x] ) next_shell_vanish_1[3] = 1'b1;
                     else next_shell_vanish_1[3] = 1'b0;
                     //shell hit car
-                    if( 63 - shell_1_3_pos_x >= 63 - (tank_2_pos_x - 2)
-                      & 63 - shell_1_3_pos_x <= 63 - (tank_2_pos_x + 2)
+                    if( shell_1_3_pos_x >= (tank_2_pos_x - 2)
+                      & shell_1_3_pos_x <= (tank_2_pos_x + 2)
                       & shell_1_3_pos_y >= tank_2_pos_y - 2
                       & shell_1_3_pos_y <= tank_2_pos_y + 2 ) begin
                         next_state = END;
@@ -372,13 +372,13 @@ module state(
                     next_who_wins = who_wins;
                 end
                 //----------------------------tank_1, shell_4---------------------------------
-                if( i_valid_shell_1[4] ) begin
+                if( ~i_valid_shell_1[4] ) begin
                     //shell hit wall
                     if( map_mem[shell_1_4_pos_y][63 - shell_1_4_pos_x] ) next_shell_vanish_1[4] = 1'b1;
                     else next_shell_vanish_1[4] = 1'b0;
                     //shell hit car
-                    if( 63 - shell_1_4_pos_x >= 63 - (tank_2_pos_x - 2)
-                      & 63 - shell_1_4_pos_x <= 63 - (tank_2_pos_x + 2)
+                    if( shell_1_4_pos_x >= (tank_2_pos_x - 2)
+                      & shell_1_4_pos_x <= (tank_2_pos_x + 2)
                       & shell_1_4_pos_y >= tank_2_pos_y - 2
                       & shell_1_4_pos_y <= tank_2_pos_y + 2 ) begin
                         next_state = END;
@@ -395,13 +395,13 @@ module state(
                     next_who_wins = who_wins;
                 end
                 //----------------------------tank_2, shell_0---------------------------------
-                if( i_valid_shell_2[0] ) begin
+                if( ~i_valid_shell_2[0] ) begin
                     //shell hit wall
                     if( map_mem[shell_2_0_pos_y][63 - shell_2_0_pos_x] ) next_shell_vanish_2[0] = 1'b1;
                     else next_shell_vanish_2[0] = 1'b0;
                     //shell hit car
-                    if( 63 - shell_2_0_pos_x >= 63 - (tank_1_pos_x - 2) 
-                      & 63 - shell_2_0_pos_x <= 63 - (tank_1_pos_x + 2)  
+                    if( shell_2_0_pos_x >= (tank_1_pos_x - 2) 
+                      & shell_2_0_pos_x <= (tank_1_pos_x + 2)  
                       & shell_2_0_pos_y >= tank_1_pos_y - 2
                       & shell_2_0_pos_y <= tank_1_pos_y + 2 ) begin
                         next_state = END;
@@ -418,13 +418,13 @@ module state(
                     next_who_wins = who_wins;
                 end
                 //----------------------------tank_2, shell_1---------------------------------
-                if( i_valid_shell_2[1] ) begin
+                if( ~i_valid_shell_2[1] ) begin
                     //shell hit wall
                     if( map_mem[shell_2_1_pos_y][63 - shell_2_1_pos_x] ) next_shell_vanish_2[1] = 1'b1;
                     else next_shell_vanish_2[1] = 1'b0;
                     //shell hit car
-                    if( 63 - shell_2_1_pos_x >= 63 - (tank_1_pos_x - 2) 
-                      & 63 - shell_2_1_pos_x <= 63 - (tank_1_pos_x + 2)  
+                    if( shell_2_1_pos_x >= (tank_1_pos_x - 2) 
+                      & shell_2_1_pos_x <= (tank_1_pos_x + 2)  
                       & shell_2_1_pos_y >= tank_1_pos_y - 2
                       & shell_2_1_pos_y <= tank_1_pos_y + 2 ) begin
                         next_state = END;
@@ -441,13 +441,13 @@ module state(
                     next_who_wins = who_wins;
                 end
                 //----------------------------tank_2, shell_2---------------------------------
-                if( i_valid_shell_2[2] ) begin
+                if( ~i_valid_shell_2[2] ) begin
                     //shell hit wall
                     if( map_mem[shell_2_2_pos_y][63 - shell_2_2_pos_x] ) next_shell_vanish_2[2] = 1'b1;
                     else next_shell_vanish_2[2] = 1'b0;
                     //shell hit car
-                    if( 63 - shell_2_2_pos_x >= 63 - (tank_1_pos_x - 2) 
-                      & 63 - shell_2_2_pos_x <= 63 - (tank_1_pos_x + 2)  
+                    if( shell_2_2_pos_x >= (tank_1_pos_x - 2) 
+                      & shell_2_2_pos_x <= (tank_1_pos_x + 2)  
                       & shell_2_2_pos_y >= tank_1_pos_y - 2
                       & shell_2_2_pos_y <= tank_1_pos_y + 2 ) begin
                         next_state = END;
@@ -464,13 +464,13 @@ module state(
                     next_who_wins = who_wins;
                 end
                 //----------------------------tank_2, shell_3---------------------------------
-                if( i_valid_shell_2[3] ) begin
+                if( ~i_valid_shell_2[3] ) begin
                     //shell hit wall
                     if( map_mem[shell_2_3_pos_y][63 - shell_2_3_pos_x] ) next_shell_vanish_2[3] = 1'b1;
                     else next_shell_vanish_2[3] = 1'b0;
                     //shell hit car
-                    if( 63 - shell_2_3_pos_x >= 63 - (tank_1_pos_x - 2) 
-                      & 63 - shell_2_3_pos_x <= 63 - (tank_1_pos_x + 2)  
+                    if( shell_2_3_pos_x >= (tank_1_pos_x - 2) 
+                      & shell_2_3_pos_x <= (tank_1_pos_x + 2)  
                       & shell_2_3_pos_y >= tank_1_pos_y - 2
                       & shell_2_3_pos_y <= tank_1_pos_y + 2 ) begin
                         next_state = END;
@@ -487,13 +487,13 @@ module state(
                     next_who_wins = who_wins;
                 end
                 //----------------------------tank_2, shell_4---------------------------------
-                if( i_valid_shell_2[4] ) begin
+                if( ~i_valid_shell_2[4] ) begin
                     //shell hit wall
                     if( map_mem[shell_2_4_pos_y][63 - shell_2_4_pos_x] ) next_shell_vanish_2[4] = 1'b1;
                     else next_shell_vanish_2[4] = 1'b0;
                     //shell hit car
-                    if( 63 - shell_2_4_pos_x >= 63 - (tank_1_pos_x - 2) 
-                      & 63 - shell_2_4_pos_x <= 63 - (tank_1_pos_x + 2)  
+                    if( shell_2_4_pos_x >= (tank_1_pos_x - 2) 
+                      & shell_2_4_pos_x <= (tank_1_pos_x + 2)  
                       & shell_2_4_pos_y >= tank_1_pos_y - 2
                       & shell_2_4_pos_y <= tank_1_pos_y + 2 ) begin
                         next_state = END;
