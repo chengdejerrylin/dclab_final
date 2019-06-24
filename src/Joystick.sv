@@ -17,7 +17,7 @@ module Joystick (
 );
 wire fire_debounced, fire_neg;
 
-assign o_led = {o_up, o_down, o_left, o_right, fire_debounced};
+assign o_led = {fire_debounced, o_left, o_up, o_down, o_right};
 assign o_fire = ~fire_neg;
 
 Debounce up   (.i_in(i_up)   , .i_clk(clk), .i_rst(rst_n), .o_debounced(o_up   ));
