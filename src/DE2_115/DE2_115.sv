@@ -149,17 +149,17 @@ logic [4:0] p1_led, p2_led;
 assign RST_N = KEY[0];
 
 `ifdef USE_SWITCH
-assign p1_up     = SW[2];
-assign p1_down   = SW[1];
-assign p1_left   = SW[3];
-assign p1_right  = SW[0];
-assign p1_fire   = SW[4];
+assign p2_up     = SW[2];
+assign p2_down   = SW[1];
+assign p2_left   = SW[3];
+assign p2_right  = SW[0];
+assign p2_fire   = SW[4];
 
-assign p2_up     = SW[15];
-assign p2_down   = SW[14];
-assign p2_left   = SW[16];
-assign p2_right  = SW[13];
-assign p2_fire   = SW[17];
+assign p1_up     = SW[15];
+assign p1_down   = SW[14];
+assign p1_left   = SW[16];
+assign p1_right  = SW[13];
+assign p1_fire   = SW[17];
 
 `else 
 assign p1_up     = GPIO[1];
@@ -175,8 +175,8 @@ assign p2_right  = GPIO[33];
 assign p2_fire   = GPIO[35];
 `endif
 
-assign LEDG[4:0] = p1_led;
 assign LEDR[4:0] = p2_led;
+assign LEDR[17:13] = p2_led;
 
 /******************
        Clock
@@ -308,7 +308,7 @@ SevenHexDecoder t1y(.i_data(tank_1_pos_y), .o_seven_ten(HEX5), .o_seven_one(HEX4
 SevenHexDecoder t2x(.i_data(tank_2_pos_x), .o_seven_ten(HEX3), .o_seven_one(HEX2));
 SevenHexDecoder t2y(.i_data(tank_2_pos_y), .o_seven_ten(HEX1), .o_seven_one(HEX0));
 
-assign LEDR[17:13] = valid_1_shell;
-assign LEDR[11: 7] = valid_2_shell;
+assign LEDG[ 4: 0] = valid_2_shell;
+assign LEDR[11: 7] = valid_1_shell;
 
 endmodule

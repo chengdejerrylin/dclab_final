@@ -89,6 +89,8 @@ module state(
     logic [2:0]    dir_2, next_dir_2;
     logic          fire_1, next_fire_1;
     logic          fire_2, next_fire_2;
+    logic          save_fire_1, save_next_fire_1;
+    logic          save_fire_2, save_next_fire_2;
     logic [4:0]    shell_vanish_1, next_shell_vanish_1;
     logic [4:0]    shell_vanish_2, next_shell_vanish_2;
     //for VGA
@@ -168,15 +170,19 @@ module state(
                 //use    i_busy, map_mem 
                 //----------------------------tank_1-------------------------------------
                 //shoot
-                if( ~press_fire_1 ) next_fire_1 = 1'b1;
-                else next_fire_1 = 1'b0;
+                if( ~fire_1 ) next_fire_1 = ~press_fire_1;
+                else next_fire_1 = i_busy;
+
+
 
                 if( ~press_up_1 ) begin
                     if( map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x - 2)] 
                       | map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x - 1)]
                       | map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x)]
                       | map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x + 1)]
-                      | map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x + 2)] )    //collision
+                      | map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x + 2)]     //collision with wall
+                      | (( tank_1_pos_y - 3 == tank_2_pos_y + 3 )&&((tank_2_pos_x > tank_1_pos_x - 4) && (tank_2_pos_x < tank_1_pos_x + 4))) )    
+                            //collision with tank
                         next_dir_1 = 3'b100;
                     else next_dir_1 = 3'b000;
                 end
@@ -185,7 +191,9 @@ module state(
                       | map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x - 1)]
                       | map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x)]
                       | map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x + 1)]
-                      | map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x + 2)] )    //collision
+                      | map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x + 2)]     //collision
+                      | (( tank_1_pos_y + 3 == tank_2_pos_y - 3 )&&((tank_2_pos_x > tank_1_pos_x - 4) && (tank_2_pos_x < tank_1_pos_x + 4))) )    
+                            //collision with tank
                         next_dir_1 = 3'b100;
                     else next_dir_1 = 3'b001;
                 end
@@ -194,7 +202,9 @@ module state(
                       | map_mem[tank_1_pos_y - 1][63 - (tank_1_pos_x - 3)]
                       | map_mem[tank_1_pos_y][63 - (tank_1_pos_x - 3)]
                       | map_mem[tank_1_pos_y + 1][63 - (tank_1_pos_x - 3)]
-                      | map_mem[tank_1_pos_y + 2][63 - (tank_1_pos_x - 3)] )   //collision
+                      | map_mem[tank_1_pos_y + 2][63 - (tank_1_pos_x - 3)]    //collision
+                      | (( tank_1_pos_x - 3 == tank_2_pos_x + 3 )&&((tank_2_pos_y < tank_1_pos_y + 4) && (tank_2_pos_y > tank_1_pos_y - 4))) )    
+                            //collision with tank
                         next_dir_1 = 3'b100;
                     else next_dir_1 = 3'b010;
                 end
@@ -203,7 +213,9 @@ module state(
                       | map_mem[tank_1_pos_y - 1][63 - (tank_1_pos_x + 3)]
                       | map_mem[tank_1_pos_y][63 - (tank_1_pos_x + 3)]
                       | map_mem[tank_1_pos_y + 1][63 - (tank_1_pos_x + 3)]
-                      | map_mem[tank_1_pos_y + 2][63 - (tank_1_pos_x + 3)] )   //collision
+                      | map_mem[tank_1_pos_y + 2][63 - (tank_1_pos_x + 3)]    //collision
+                      | (( tank_1_pos_x + 3 == tank_2_pos_x - 3 )&&((tank_2_pos_y < tank_1_pos_y + 4) && (tank_2_pos_y > tank_1_pos_y - 4))) )    
+                            //collision with tank
                         next_dir_1 = 3'b100;
                     else next_dir_1 = 3'b011;
                 end
@@ -213,15 +225,17 @@ module state(
 
                 //----------------------------tank_2------------------------------------
                  //shoot
-                if( ~press_fire_2 ) next_fire_2 = 1'b1;
-                else next_fire_2 = 1'b0;
+                if( ~fire_2 ) next_fire_2 = ~press_fire_2;
+                else next_fire_2 = i_busy;
 
                 if( ~press_up_2 ) begin
                     if( map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x - 2)] 
                       | map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x - 1)]
                       | map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x)]
                       | map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x + 1)]
-                      | map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x + 2)])    //collision
+                      | map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x + 2)]    //collision
+                      | (( tank_2_pos_y - 3 == tank_1_pos_y + 3 )&&((tank_1_pos_x > tank_2_pos_x - 4) && (tank_1_pos_x < tank_2_pos_x + 4))) )    
+                            //collision with tank
                         next_dir_2 = 3'b100;
                     else next_dir_2 = 3'b000;
                 end
@@ -230,7 +244,9 @@ module state(
                       | map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x - 1)]
                       | map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x)]
                       | map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x + 1)]
-                      | map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x + 2)])    //collision
+                      | map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x + 2)]    //collision
+                      | (( tank_2_pos_y + 3 == tank_1_pos_y - 3 )&&((tank_1_pos_x > tank_2_pos_x - 4) && (tank_1_pos_x < tank_2_pos_x + 4))) )    
+                            //collision with tank
                         next_dir_2 = 3'b100;
                     else next_dir_2 = 3'b001;
                 end
@@ -239,7 +255,9 @@ module state(
                       | map_mem[tank_2_pos_y - 1][63 - (tank_2_pos_x - 3)]
                       | map_mem[tank_2_pos_y][63 - (tank_2_pos_x - 3)]
                       | map_mem[tank_2_pos_y + 1][63 - (tank_2_pos_x - 3)]
-                      | map_mem[tank_2_pos_y + 2][63 - (tank_2_pos_x - 3)] )   //collision
+                      | map_mem[tank_2_pos_y + 2][63 - (tank_2_pos_x - 3)]   //collision
+                      | (( tank_2_pos_x - 3 == tank_1_pos_x + 3 )&&((tank_1_pos_y < tank_2_pos_y + 4) && (tank_1_pos_y > tank_2_pos_y - 4))) )    
+                            //collision with tank
                         next_dir_2 = 3'b100;
                     else next_dir_2 = 3'b010;
                 end
@@ -248,7 +266,9 @@ module state(
                       | map_mem[tank_2_pos_y - 1][63 - (tank_2_pos_x + 3)]
                       | map_mem[tank_2_pos_y][63 - (tank_2_pos_x + 3)]
                       | map_mem[tank_2_pos_y + 1][63 - (tank_2_pos_x + 3)]
-                      | map_mem[tank_2_pos_y + 2][63 - (tank_2_pos_x + 3)] )   //collision
+                      | map_mem[tank_2_pos_y + 2][63 - (tank_2_pos_x + 3)]    //collision
+                      | (( tank_2_pos_x + 3 == tank_1_pos_x - 3 )&&((tank_1_pos_y < tank_2_pos_y + 4) && (tank_1_pos_y > tank_2_pos_y - 4))) )    
+                            //collision with tank
                         next_dir_2 = 3'b100;
                     else next_dir_2 = 3'b011;
                 end
