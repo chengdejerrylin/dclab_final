@@ -261,7 +261,7 @@ state state_1(.clk(CLOCK_25), .rst_n(RST_N), .press_up_1(up_1_joy_state), .press
 			  .i_x_pos(x_pos_vga_state), .i_y_pos(y_pos_vga_state), .i_busy(VGA_busy),
 			  .o_is_map(is_map), .o_state(game_state), .o_who_wins(who_wins));
 
-shell shell_1(.clk(CLK_25), .rst_n(RST_N), .fire_1(fire_1), .fire_2(fire_2),
+shell shell_1(.clk(CLOCK_25), .rst_n(RST_N), .fire_1(fire_1), .fire_2(fire_2),
 			  .valid_give_shell_1(valid_frame_1), .valid_give_shell_2(valid_frame_2),
 			  .vanish_1(shell_vanish_1), .vanish_2(shell_vanish_2), .direction_1_in(direction_tank_1),
 			  .direction_2_in(direction_tank_2), .tank_1_x_pos(tank_1_pos_x), .tank_1_y_pos(tank_1_pos_y), 
@@ -278,13 +278,15 @@ shell shell_1(.clk(CLK_25), .rst_n(RST_N), .fire_1(fire_1), .fire_2(fire_2),
 			  .shell_2_4_y_pos(shell_2_4_pos_y), .valid_1_shell(valid_1_shell), 
 			  .valid_2_shell(valid_2_shell));
 
-tank tank_1(.clk(CLK_25), .rst_n(RST_N), .initial_x(o_init_tank_1_pos_x), 
+tank tank_1(.clk(CLOCK_25), .rst_n(RST_N), .initial_x(o_init_tank_1_pos_x), 
 			.initial_y(o_init_tank_1_pos_y), .initial_direction(2'd3), 
 			.direction_in(direction_1_state_tank), .valid_take_direction(valid_frame_1), 
 			.tank_x_pos(tank_1_pos_x), .tank_y_pos(tank_1_pos_y), .direction_out(direction_tank_1));
     
-tank tank_2(.clk(CLK_25), .rst_n(RST_N), .initial_x(o_init_tank_2_pos_x), 
+tank tank_2(.clk(CLOCK_25), .rst_n(RST_N), .initial_x(o_init_tank_2_pos_x), 
 			.initial_y(o_init_tank_2_pos_y), .initial_direction(2'd2), 
 			.direction_in(direction_2_state_tank), .valid_take_direction(valid_frame_2), 
 			.tank_x_pos(tank_2_pos_x), .tank_y_pos(tank_2_pos_y), .direction_out(direction_tank_2));
+
+assign LEDR[5 +:6] = tank_2_pos_x;
 endmodule

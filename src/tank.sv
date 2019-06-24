@@ -61,6 +61,7 @@ module tank(
 						direction_last_n = direction_in;
 					end
 				end
+				
 			end
 
 			STATE_1: begin
@@ -152,11 +153,11 @@ module tank(
 						tank_x_pos_n = tank_x_pos;
 						tank_y_pos_n = tank_y_pos;
 						if (direction_last == UP) begin
-							tank_y_pos_n = tank_y_pos + 1;
+							tank_y_pos_n = tank_y_pos - 1;
 							direction_out_n = direction_last [1:0];
 						end
 						else if (direction_last == DOWN) begin
-							tank_y_pos_n = tank_y_pos - 1;
+							tank_y_pos_n = tank_y_pos + 1;
 							direction_out_n = direction_last [1:0];
 						end
 						else if (direction_last == LEFT) begin
@@ -170,10 +171,17 @@ module tank(
 					end
 				end
 			end
+
+			default : begin
+				state_n = state;
+				tank_x_pos_n = tank_x_pos;
+				tank_y_pos_n = tank_y_pos;
+				direction_last_n = direction_last;
+			end
 		endcase // state
 	end
 
-	always_ff @(posedge clk) begin
+	always_ff @(posedge clk or negedge rst_n) begin
 		if (~rst_n) begin
 			state <= STATE_0;
 			tank_x_pos <= initial_x;

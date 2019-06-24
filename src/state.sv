@@ -98,10 +98,10 @@ module state(
 
     //assign output==================================================================================
     //for object
-    assign o_init_tank_1_pos_y = 6'd5;
-    assign o_init_tank_1_pos_x = 6'd63 - 6'd39;
-    assign o_init_tank_2_pos_y = 6'd58;
-    assign o_init_tank_2_pos_x = 6'd63 - 6'd4;
+    assign o_init_tank_1_pos_y = 6'd38;
+    assign o_init_tank_1_pos_x = 6'd6;
+    assign o_init_tank_2_pos_y = 6'd6;
+    assign o_init_tank_2_pos_x = 6'd57;
     assign o_valid_frame_1 = valid_frame_1;
     assign o_valid_frame_2 = valid_frame_2;
     assign o_dir_1 = dir_1;
