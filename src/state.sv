@@ -10,12 +10,14 @@ module state(
     input press_left_1,
     input press_right_1,
     input press_fire_1,
+    input press_start_1,
 
     input press_up_2,
     input press_down_2,
     input press_left_2,
     input press_right_2,
     input press_fire_2,
+    input press_start_2,
     
     //object
     input[5:0] tank_1_pos_x,
@@ -137,7 +139,7 @@ module state(
                 next_who_wins = who_wins;
             end
             START: begin
-                if( (~press_left_1)& (~press_left_2) ) next_state = GAME;
+                if( (~press_start_1)& (~press_start_2) ) next_state = GAME;
                 else next_state = state;
 
                 //others
@@ -518,7 +520,7 @@ module state(
                 
             end
             END: begin
-                if( ~press_right_1 & ~press_right_2 ) next_state = START;
+                if( ~press_start_1 & ~press_start_2 ) next_state = START;
                 else next_state = state;
                 //others
                 //object
@@ -532,7 +534,7 @@ module state(
                 next_shell_vanish_2 = 5'b0;
                 //VGA
                 next_is_map         = 1'b0;
-                next_who_wins       = 2'b00;
+                next_who_wins       = who_wins;
             end
         endcase
     end

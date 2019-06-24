@@ -187,8 +187,8 @@ pll pll(.clk_clk(CLOCK_50), .reset_reset_n(RST_N), .altpll_0_c0_clk(CLOCK_25));
 /******************
        Module
 ******************/
-logic up_1_joy_state, down_1_joy_state, left_1_joy_state, right_1_joy_state, fire_1_joy_state;
-logic up_2_joy_state, down_2_joy_state, left_2_joy_state, right_2_joy_state, fire_2_joy_state;
+logic up_1_joy_state, down_1_joy_state, left_1_joy_state, right_1_joy_state, fire_1_joy_state, start_1_joy_state;
+logic up_2_joy_state, down_2_joy_state, left_2_joy_state, right_2_joy_state, fire_2_joy_state, start_2_joy_state;
 logic [5:0] tank_1_pos_x, tank_1_pos_y, tank_2_pos_x, tank_2_pos_y;
 logic [5:0] o_init_tank_1_pos_x, o_init_tank_1_pos_y, o_init_tank_2_pos_x, o_init_tank_2_pos_y;
 logic [4:0] valid_shell_1, valid_shell_2;
@@ -241,11 +241,11 @@ timer t(.clk(CLOCK_25), .rst_n(RST_N), .i_top_state(game_state), .i_VGA_buzy(VGA
 Joystick p1(.clk(CLOCK_25), .rst_n(RST_N), .i_up(p1_up), .i_down (p1_down), .i_left (p1_left), 
 			.i_right(p1_right), .i_fire (p1_fire), .o_up(up_1_joy_state), .o_down(down_1_joy_state),
 			.o_left(left_1_joy_state), .o_right(right_1_joy_state), .o_fire(fire_1_joy_state),
-			.o_led(p1_led));
+			.o_led(p1_led), .o_start(start_1_joy_state));
 Joystick p2(.clk(CLOCK_25), .rst_n(RST_N), .i_up(p2_up), .i_down (p2_down), .i_left (p2_left), 
 			.i_right(p2_right), .i_fire (p2_fire), .o_up(up_2_joy_state), .o_down(down_2_joy_state),
 			.o_left(left_2_joy_state), .o_right(right_2_joy_state), .o_fire(fire_2_joy_state), 
-			.o_led  (p2_led));
+			.o_led(p2_led), .o_start(start_2_joy_state));
 
 state state_1(.clk(CLOCK_25), .rst_n(RST_N), .press_up_1(up_1_joy_state), .press_down_1(down_1_joy_state),
 			  .press_left_1(left_1_joy_state), .press_right_1(right_1_joy_state), 
@@ -271,7 +271,8 @@ state state_1(.clk(CLOCK_25), .rst_n(RST_N), .press_up_1(up_1_joy_state), .press
 			  .o_valid_frame_2(valid_frame_2), .o_dir_1(direction_1_state_tank),
 			  .o_dir_2(direction_2_state_tank), .o_fire_1(fire_1), .o_fire_2(fire_2), 
 			  .i_x_pos(x_pos_vga_state), .i_y_pos(y_pos_vga_state), .i_busy(VGA_busy),
-			  .o_is_map(is_map), .o_state(game_state), .o_who_wins(who_wins));
+			  .o_is_map(is_map), .o_state(game_state), .o_who_wins(who_wins), 
+			  .press_start_1(start_1_joy_state), .press_start_2(start_2_joy_state));
 
 shell shell_1(.clk(CLOCK_25), .rst_n(RST_N), .fire_1(fire_1), .fire_2(fire_2),
 			  .valid_give_shell_1(valid_frame_1), .valid_give_shell_2(valid_frame_2),
@@ -310,5 +311,6 @@ SevenHexDecoder t2y(.i_data(tank_2_pos_y), .o_seven_ten(HEX1), .o_seven_one(HEX0
 
 assign LEDG[ 4: 0] = valid_2_shell;
 assign LEDR[11: 7] = valid_1_shell;
+assign LEDG[ 7: 6] = game_state;
 
 endmodule
