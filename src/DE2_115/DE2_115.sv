@@ -176,7 +176,7 @@ assign p2_fire   = GPIO[35];
 `endif
 
 assign LEDR[4:0] = p2_led;
-assign LEDR[17:13] = p2_led;
+assign LEDR[17:13] = p1_led;
 
 /******************
        Clock
@@ -277,7 +277,7 @@ shell shell_1(.clk(CLOCK_25), .rst_n(RST_N), .fire_1(fire_1), .fire_2(fire_2),
 			  .valid_give_shell_1(valid_frame_1), .valid_give_shell_2(valid_frame_2),
 			  .vanish_1(shell_vanish_1), .vanish_2(shell_vanish_2), .direction_1_in(direction_tank_1),
 			  .direction_2_in(direction_tank_2), .tank_1_x_pos(tank_1_pos_x), .tank_1_y_pos(tank_1_pos_y), 
-			  .tank_2_x_pos(tank_2_pos_x), .tank_2_y_pos(tank_2_y_pos), .shell_1_0_x_pos(shell_1_0_pos_x), 
+			  .tank_2_x_pos(tank_2_pos_x), .tank_2_y_pos(tank_2_pos_y), .shell_1_0_x_pos(shell_1_0_pos_x), 
 			  .shell_1_0_y_pos(shell_1_0_pos_y), .shell_1_1_x_pos(shell_1_1_pos_x), 
 			  .shell_1_1_y_pos(shell_1_1_pos_y), .shell_1_2_x_pos(shell_1_2_pos_x),
 			  .shell_1_2_y_pos(shell_1_2_pos_y), .shell_1_3_x_pos(shell_1_3_pos_x), 

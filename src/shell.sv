@@ -184,14 +184,14 @@ module single_shell(
         case(state) 
             IDLE: begin
                 count_n = 0;
-                shell_x_pos_n = tank_x_pos;
-                shell_y_pos_n = tank_y_pos;
+                shell_x_pos_n = tank_x_pos;//tank_x_pos;
+                shell_y_pos_n = tank_y_pos;//tank_y_pos;
                 state_n = state;
                 valid_shell = 1;
                 record_direction_n = STAND;
                 if (fire) begin
                     state_n = SHOOT;
-                    valid_shell = 0;
+                    valid_shell = 1;/////////
                     record_direction_n = direction_in;
                 end
             end
@@ -206,10 +206,10 @@ module single_shell(
                 if (count == 20'd400000) begin
                     count_n = 0;
                     if (record_direction == UP) begin
-                        shell_y_pos_n = shell_y_pos + 1;
+                        shell_y_pos_n = shell_y_pos - 1;
                     end
                     else if (record_direction == DOWN) begin
-                        shell_y_pos_n = shell_y_pos - 1;
+                        shell_y_pos_n = shell_y_pos + 1;
                     end
                     else if (record_direction == LEFT) begin
                         shell_x_pos_n = shell_x_pos - 1;

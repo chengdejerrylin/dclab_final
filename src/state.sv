@@ -171,7 +171,7 @@ module state(
                 //----------------------------tank_1-------------------------------------
                 //shoot
                 if( ~fire_1 ) next_fire_1 = ~press_fire_1;
-                else next_fire_1 = i_busy;
+                else next_fire_1 = ~valid_frame_1;
 
 
 
@@ -226,7 +226,7 @@ module state(
                 //----------------------------tank_2------------------------------------
                  //shoot
                 if( ~fire_2 ) next_fire_2 = ~press_fire_2;
-                else next_fire_2 = i_busy;
+                else next_fire_2 = ~valid_frame_2;
 
                 if( ~press_up_2 ) begin
                     if( map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x - 2)] 

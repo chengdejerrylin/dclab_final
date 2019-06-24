@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_115
-Mon Jun 24 21:28:40 2019
+Mon Jun 24 22:24:28 2019
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
 
 
@@ -17,65 +17,62 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
   9. State Machine - |DE2_115|tank:tank_2|state
  10. State Machine - |DE2_115|tank:tank_1|state
  11. State Machine - |DE2_115|state:state_1|state
- 12. Logic Cells Representing Combinational Loops
- 13. Registers Removed During Synthesis
- 14. Removed Registers Triggering Further Register Optimizations
- 15. General Register Statistics
- 16. Inverted Register Statistics
- 17. Multiplexer Restructuring Statistics (Restructuring Performed)
- 18. Source assignments for pll:pll|pll_altpll_0:altpll_0
- 19. Source assignments for pll:pll|pll_altpll_0:altpll_0|pll_altpll_0_stdsync_sv6:stdsync2|pll_altpll_0_dffpipe_l2c:dffpipe3
- 20. Source assignments for pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
- 21. Source assignments for pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
- 22. Parameter Settings for User Entity Instance: pll:pll|altera_reset_controller:rst_controller
- 23. Parameter Settings for User Entity Instance: pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
- 24. Parameter Settings for User Entity Instance: pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
- 25. Parameter Settings for User Entity Instance: VGA:vga
- 26. Parameter Settings for User Entity Instance: Joystick:p1|Debounce:up
- 27. Parameter Settings for User Entity Instance: Joystick:p1|Debounce:down
- 28. Parameter Settings for User Entity Instance: Joystick:p1|Debounce:left
- 29. Parameter Settings for User Entity Instance: Joystick:p1|Debounce:right
- 30. Parameter Settings for User Entity Instance: Joystick:p1|Debounce:fire
- 31. Parameter Settings for User Entity Instance: Joystick:p2|Debounce:up
- 32. Parameter Settings for User Entity Instance: Joystick:p2|Debounce:down
- 33. Parameter Settings for User Entity Instance: Joystick:p2|Debounce:left
- 34. Parameter Settings for User Entity Instance: Joystick:p2|Debounce:right
- 35. Parameter Settings for User Entity Instance: Joystick:p2|Debounce:fire
- 36. Parameter Settings for User Entity Instance: state:state_1
- 37. Parameter Settings for User Entity Instance: SevenHexDecoder:t1x
- 38. Parameter Settings for User Entity Instance: SevenHexDecoder:t1y
- 39. Parameter Settings for User Entity Instance: SevenHexDecoder:t2x
- 40. Parameter Settings for User Entity Instance: SevenHexDecoder:t2y
- 41. Parameter Settings for Inferred Entity Instance: SevenHexDecoder:t2y|lpm_divide:Mod0
- 42. Parameter Settings for Inferred Entity Instance: SevenHexDecoder:t2x|lpm_divide:Mod0
- 43. Parameter Settings for Inferred Entity Instance: SevenHexDecoder:t1y|lpm_divide:Mod0
- 44. Parameter Settings for Inferred Entity Instance: SevenHexDecoder:t1x|lpm_divide:Mod0
- 45. Parameter Settings for Inferred Entity Instance: VGA:vga|Tank0Display:t0|lpm_mult:Mult2
- 46. Parameter Settings for Inferred Entity Instance: VGA:vga|Tank0Display:t0|lpm_mult:Mult1
- 47. Parameter Settings for Inferred Entity Instance: VGA:vga|Tank0Display:t0|lpm_mult:Mult0
- 48. Parameter Settings for Inferred Entity Instance: VGA:vga|Tank0Display:t0|lpm_mult:Mult3
- 49. Parameter Settings for Inferred Entity Instance: VGA:vga|Tank1Display:t1|lpm_mult:Mult1
- 50. Parameter Settings for Inferred Entity Instance: VGA:vga|Tank1Display:t1|lpm_mult:Mult2
- 51. Parameter Settings for Inferred Entity Instance: VGA:vga|Tank1Display:t1|lpm_mult:Mult0
- 52. Parameter Settings for Inferred Entity Instance: VGA:vga|Tank1Display:t1|lpm_mult:Mult3
- 53. lpm_mult Parameter Settings by Entity Instance
- 54. Port Connectivity Checks: "tank:tank_2"
- 55. Port Connectivity Checks: "tank:tank_1"
- 56. Port Connectivity Checks: "shell:shell_1"
- 57. Port Connectivity Checks: "state:state_1"
- 58. Port Connectivity Checks: "Joystick:p1|Debounce:fire"
- 59. Port Connectivity Checks: "Joystick:p1|Debounce:right"
- 60. Port Connectivity Checks: "Joystick:p1|Debounce:left"
- 61. Port Connectivity Checks: "Joystick:p1|Debounce:down"
- 62. Port Connectivity Checks: "Joystick:p1|Debounce:up"
- 63. Port Connectivity Checks: "Joystick:p1"
- 64. Port Connectivity Checks: "pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1"
- 65. Port Connectivity Checks: "pll:pll|altera_reset_controller:rst_controller"
- 66. Port Connectivity Checks: "pll:pll|pll_altpll_0:altpll_0|pll_altpll_0_altpll_m342:sd1"
- 67. Port Connectivity Checks: "pll:pll|pll_altpll_0:altpll_0"
- 68. Post-Synthesis Netlist Statistics for Top Partition
- 69. Elapsed Time Per Partition
- 70. Analysis & Synthesis Messages
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Source assignments for pll:pll|pll_altpll_0:altpll_0
+ 18. Source assignments for pll:pll|pll_altpll_0:altpll_0|pll_altpll_0_stdsync_sv6:stdsync2|pll_altpll_0_dffpipe_l2c:dffpipe3
+ 19. Source assignments for pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
+ 20. Source assignments for pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
+ 21. Parameter Settings for User Entity Instance: pll:pll|altera_reset_controller:rst_controller
+ 22. Parameter Settings for User Entity Instance: pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
+ 23. Parameter Settings for User Entity Instance: pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
+ 24. Parameter Settings for User Entity Instance: VGA:vga
+ 25. Parameter Settings for User Entity Instance: Joystick:p1|Debounce:up
+ 26. Parameter Settings for User Entity Instance: Joystick:p1|Debounce:down
+ 27. Parameter Settings for User Entity Instance: Joystick:p1|Debounce:left
+ 28. Parameter Settings for User Entity Instance: Joystick:p1|Debounce:right
+ 29. Parameter Settings for User Entity Instance: Joystick:p1|Debounce:fire
+ 30. Parameter Settings for User Entity Instance: Joystick:p2|Debounce:up
+ 31. Parameter Settings for User Entity Instance: Joystick:p2|Debounce:down
+ 32. Parameter Settings for User Entity Instance: Joystick:p2|Debounce:left
+ 33. Parameter Settings for User Entity Instance: Joystick:p2|Debounce:right
+ 34. Parameter Settings for User Entity Instance: Joystick:p2|Debounce:fire
+ 35. Parameter Settings for User Entity Instance: state:state_1
+ 36. Parameter Settings for User Entity Instance: SevenHexDecoder:t1x
+ 37. Parameter Settings for User Entity Instance: SevenHexDecoder:t1y
+ 38. Parameter Settings for User Entity Instance: SevenHexDecoder:t2x
+ 39. Parameter Settings for User Entity Instance: SevenHexDecoder:t2y
+ 40. Parameter Settings for Inferred Entity Instance: SevenHexDecoder:t2y|lpm_divide:Mod0
+ 41. Parameter Settings for Inferred Entity Instance: SevenHexDecoder:t2x|lpm_divide:Mod0
+ 42. Parameter Settings for Inferred Entity Instance: SevenHexDecoder:t1y|lpm_divide:Mod0
+ 43. Parameter Settings for Inferred Entity Instance: SevenHexDecoder:t1x|lpm_divide:Mod0
+ 44. Parameter Settings for Inferred Entity Instance: VGA:vga|Tank0Display:t0|lpm_mult:Mult2
+ 45. Parameter Settings for Inferred Entity Instance: VGA:vga|Tank0Display:t0|lpm_mult:Mult1
+ 46. Parameter Settings for Inferred Entity Instance: VGA:vga|Tank0Display:t0|lpm_mult:Mult0
+ 47. Parameter Settings for Inferred Entity Instance: VGA:vga|Tank0Display:t0|lpm_mult:Mult3
+ 48. Parameter Settings for Inferred Entity Instance: VGA:vga|Tank1Display:t1|lpm_mult:Mult1
+ 49. Parameter Settings for Inferred Entity Instance: VGA:vga|Tank1Display:t1|lpm_mult:Mult2
+ 50. Parameter Settings for Inferred Entity Instance: VGA:vga|Tank1Display:t1|lpm_mult:Mult0
+ 51. Parameter Settings for Inferred Entity Instance: VGA:vga|Tank1Display:t1|lpm_mult:Mult3
+ 52. lpm_mult Parameter Settings by Entity Instance
+ 53. Port Connectivity Checks: "tank:tank_2"
+ 54. Port Connectivity Checks: "tank:tank_1"
+ 55. Port Connectivity Checks: "state:state_1"
+ 56. Port Connectivity Checks: "Joystick:p1|Debounce:fire"
+ 57. Port Connectivity Checks: "Joystick:p1|Debounce:right"
+ 58. Port Connectivity Checks: "Joystick:p1|Debounce:left"
+ 59. Port Connectivity Checks: "Joystick:p1|Debounce:down"
+ 60. Port Connectivity Checks: "Joystick:p1|Debounce:up"
+ 61. Port Connectivity Checks: "pll:pll|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1"
+ 62. Port Connectivity Checks: "pll:pll|altera_reset_controller:rst_controller"
+ 63. Port Connectivity Checks: "pll:pll|pll_altpll_0:altpll_0|pll_altpll_0_altpll_m342:sd1"
+ 64. Port Connectivity Checks: "pll:pll|pll_altpll_0:altpll_0"
+ 65. Post-Synthesis Netlist Statistics for Top Partition
+ 66. Elapsed Time Per Partition
+ 67. Analysis & Synthesis Messages
 
 
 
@@ -102,13 +99,13 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jun 24 21:28:40 2019       ;
+; Analysis & Synthesis Status        ; Successful - Mon Jun 24 22:24:27 2019       ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Full Version ;
 ; Revision Name                      ; DE2_115                                     ;
 ; Top-level Entity Name              ; DE2_115                                     ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 4,228                                       ;
-;     Total combinational functions  ; 4,207                                       ;
+; Total logic elements               ; 4,243                                       ;
+;     Total combinational functions  ; 4,222                                       ;
 ;     Dedicated logic registers      ; 600                                         ;
 ; Total registers                    ; 600                                         ;
 ; Total pins                         ; 480                                         ;
@@ -311,16 +308,16 @@ agreement for further details.
 +---------------------------------------------+-----------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                       ;
 +---------------------------------------------+-----------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 4,228                                                                       ;
+; Estimated Total logic elements              ; 4,243                                                                       ;
 ;                                             ;                                                                             ;
-; Total combinational functions               ; 4207                                                                        ;
+; Total combinational functions               ; 4222                                                                        ;
 ; Logic element usage by number of LUT inputs ;                                                                             ;
-;     -- 4 input functions                    ; 2628                                                                        ;
-;     -- 3 input functions                    ; 833                                                                         ;
-;     -- <=2 input functions                  ; 746                                                                         ;
+;     -- 4 input functions                    ; 2638                                                                        ;
+;     -- 3 input functions                    ; 843                                                                         ;
+;     -- <=2 input functions                  ; 741                                                                         ;
 ;                                             ;                                                                             ;
 ; Logic elements by mode                      ;                                                                             ;
-;     -- normal mode                          ; 3445                                                                        ;
+;     -- normal mode                          ; 3460                                                                        ;
 ;     -- arithmetic mode                      ; 762                                                                         ;
 ;                                             ;                                                                             ;
 ; Total registers                             ; 600                                                                         ;
@@ -336,7 +333,7 @@ agreement for further details.
 ;                                             ;                                                                             ;
 ; Maximum fan-out node                        ; pll:pll|pll_altpll_0:altpll_0|pll_altpll_0_altpll_m342:sd1|wire_pll7_clk[0] ;
 ; Maximum fan-out                             ; 602                                                                         ;
-; Total fan-out                               ; 17283                                                                       ;
+; Total fan-out                               ; 17381                                                                       ;
 ; Average fan-out                             ; 2.93                                                                        ;
 +---------------------------------------------+-----------------------------------------------------------------------------+
 
@@ -346,7 +343,7 @@ agreement for further details.
 +------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                     ; Library Name ;
 +------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DE2_115                                             ; 4207 (0)          ; 600 (0)      ; 0           ; 0            ; 0       ; 0         ; 480  ; 0            ; |DE2_115                                                                                                                                                ; work         ;
+; |DE2_115                                             ; 4222 (0)          ; 600 (0)      ; 0           ; 0            ; 0       ; 0         ; 480  ; 0            ; |DE2_115                                                                                                                                                ; work         ;
 ;    |Joystick:p1|                                     ; 26 (0)            ; 21 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1                                                                                                                                    ; work         ;
 ;       |Debounce:down|                                ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1|Debounce:down                                                                                                                      ; work         ;
 ;       |Debounce:fire|                                ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Joystick:p1|Debounce:fire                                                                                                                      ; work         ;
@@ -379,7 +376,7 @@ agreement for further details.
 ;          |lpm_divide_k9m:auto_generated|             ; 33 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|SevenHexDecoder:t2y|lpm_divide:Mod0|lpm_divide_k9m:auto_generated                                                                              ; work         ;
 ;             |sign_div_unsign_9kh:divider|            ; 33 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|SevenHexDecoder:t2y|lpm_divide:Mod0|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider                                                  ; work         ;
 ;                |alt_u_div_64f:divider|               ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|SevenHexDecoder:t2y|lpm_divide:Mod0|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_64f:divider                            ; work         ;
-;    |VGA:vga|                                         ; 2444 (388)        ; 89 (89)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga                                                                                                                                        ; work         ;
+;    |VGA:vga|                                         ; 2459 (392)        ; 89 (89)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga                                                                                                                                        ; work         ;
 ;       |Colon:colon|                                  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Colon:colon                                                                                                                            ; work         ;
 ;       |Symbol:symbol|                                ; 592 (592)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Symbol:symbol                                                                                                                          ; work         ;
 ;       |Tank0Display:t0|                              ; 702 (626)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0                                                                                                                        ; work         ;
@@ -409,7 +406,7 @@ agreement for further details.
 ;                   |mpar_add:sub_par_add|             ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                 ; work         ;
 ;                      |lpm_add_sub:adder[0]|          ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                            ; work         ;
 ;                         |add_sub_ngh:auto_generated| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank0Display:t0|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_ngh:auto_generated ; work         ;
-;       |Tank1Display:t1|                              ; 635 (561)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank1Display:t1                                                                                                                        ; work         ;
+;       |Tank1Display:t1|                              ; 645 (571)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank1Display:t1                                                                                                                        ; work         ;
 ;          |lpm_mult:Mult0|                            ; 14 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank1Display:t1|lpm_mult:Mult0                                                                                                         ; work         ;
 ;             |multcore:mult_core|                     ; 14 (7)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank1Display:t1|lpm_mult:Mult0|multcore:mult_core                                                                                      ; work         ;
 ;                |mpar_add:padder|                     ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank1Display:t1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                      ; work         ;
@@ -436,27 +433,27 @@ agreement for further details.
 ;                   |mpar_add:sub_par_add|             ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank1Display:t1|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                 ; work         ;
 ;                      |lpm_add_sub:adder[0]|          ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank1Display:t1|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                            ; work         ;
 ;                         |add_sub_ngh:auto_generated| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Tank1Display:t1|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_ngh:auto_generated ; work         ;
-;       |Wall:wall|                                    ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Wall:wall                                                                                                                              ; work         ;
-;       |shellDisplay:shell|                           ; 97 (97)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|shellDisplay:shell                                                                                                                     ; work         ;
+;       |Wall:wall|                                    ; 25 (25)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|Wall:wall                                                                                                                              ; work         ;
+;       |shellDisplay:shell|                           ; 100 (100)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|VGA:vga|shellDisplay:shell                                                                                                                     ; work         ;
 ;    |pll:pll|                                         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|pll:pll                                                                                                                                        ; pll          ;
 ;       |pll_altpll_0:altpll_0|                        ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|pll:pll|pll_altpll_0:altpll_0                                                                                                                  ; pll          ;
 ;          |pll_altpll_0_altpll_m342:sd1|              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|pll:pll|pll_altpll_0:altpll_0|pll_altpll_0_altpll_m342:sd1                                                                                     ; pll          ;
-;    |shell:shell_1|                                   ; 504 (0)           ; 360 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1                                                                                                                                  ; work         ;
-;       |select_shell:select_shell_1|                  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|select_shell:select_shell_1                                                                                                      ; work         ;
-;       |select_shell:select_shell_2|                  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|select_shell:select_shell_2                                                                                                      ; work         ;
-;       |single_shell:single_shell_1_0|                ; 50 (50)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|single_shell:single_shell_1_0                                                                                                    ; work         ;
-;       |single_shell:single_shell_1_1|                ; 50 (50)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|single_shell:single_shell_1_1                                                                                                    ; work         ;
-;       |single_shell:single_shell_1_2|                ; 52 (52)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|single_shell:single_shell_1_2                                                                                                    ; work         ;
-;       |single_shell:single_shell_1_3|                ; 49 (49)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|single_shell:single_shell_1_3                                                                                                    ; work         ;
+;    |shell:shell_1|                                   ; 488 (0)           ; 360 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1                                                                                                                                  ; work         ;
+;       |select_shell:select_shell_1|                  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|select_shell:select_shell_1                                                                                                      ; work         ;
+;       |select_shell:select_shell_2|                  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|select_shell:select_shell_2                                                                                                      ; work         ;
+;       |single_shell:single_shell_1_0|                ; 49 (49)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|single_shell:single_shell_1_0                                                                                                    ; work         ;
+;       |single_shell:single_shell_1_1|                ; 48 (48)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|single_shell:single_shell_1_1                                                                                                    ; work         ;
+;       |single_shell:single_shell_1_2|                ; 49 (49)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|single_shell:single_shell_1_2                                                                                                    ; work         ;
+;       |single_shell:single_shell_1_3|                ; 48 (48)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|single_shell:single_shell_1_3                                                                                                    ; work         ;
 ;       |single_shell:single_shell_1_4|                ; 49 (49)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|single_shell:single_shell_1_4                                                                                                    ; work         ;
-;       |single_shell:single_shell_2_0|                ; 50 (50)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|single_shell:single_shell_2_0                                                                                                    ; work         ;
-;       |single_shell:single_shell_2_1|                ; 50 (50)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|single_shell:single_shell_2_1                                                                                                    ; work         ;
-;       |single_shell:single_shell_2_2|                ; 52 (52)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|single_shell:single_shell_2_2                                                                                                    ; work         ;
-;       |single_shell:single_shell_2_3|                ; 49 (49)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|single_shell:single_shell_2_3                                                                                                    ; work         ;
+;       |single_shell:single_shell_2_0|                ; 49 (49)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|single_shell:single_shell_2_0                                                                                                    ; work         ;
+;       |single_shell:single_shell_2_1|                ; 48 (48)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|single_shell:single_shell_2_1                                                                                                    ; work         ;
+;       |single_shell:single_shell_2_2|                ; 49 (49)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|single_shell:single_shell_2_2                                                                                                    ; work         ;
+;       |single_shell:single_shell_2_3|                ; 48 (48)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|single_shell:single_shell_2_3                                                                                                    ; work         ;
 ;       |single_shell:single_shell_2_4|                ; 49 (49)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|shell:shell_1|single_shell:single_shell_2_4                                                                                                    ; work         ;
-;    |state:state_1|                                   ; 843 (843)         ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|state:state_1                                                                                                                                  ; work         ;
+;    |state:state_1|                                   ; 857 (857)         ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|state:state_1                                                                                                                                  ; work         ;
 ;    |tank:tank_1|                                     ; 37 (37)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|tank:tank_1                                                                                                                                    ; work         ;
-;    |tank:tank_2|                                     ; 36 (36)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|tank:tank_2                                                                                                                                    ; work         ;
+;    |tank:tank_2|                                     ; 38 (38)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|tank:tank_2                                                                                                                                    ; work         ;
 ;    |timer:t|                                         ; 59 (59)           ; 53 (53)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|timer:t                                                                                                                                        ; work         ;
 +------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -513,26 +510,6 @@ Encoding Type:  One-Hot
 +-------------+-------------+-----------+------------+
 
 
-+----------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops                   ;
-+-----------------------------------------------------------+----+
-; Logic Cell Name                                           ;    ;
-+-----------------------------------------------------------+----+
-; shell:shell_1|single_shell:single_shell_2_0|valid_shell~0 ;    ;
-; shell:shell_1|single_shell:single_shell_2_1|valid_shell~0 ;    ;
-; shell:shell_1|single_shell:single_shell_2_2|valid_shell~0 ;    ;
-; shell:shell_1|single_shell:single_shell_2_3|valid_shell~0 ;    ;
-; shell:shell_1|single_shell:single_shell_2_4|valid_shell~0 ;    ;
-; shell:shell_1|single_shell:single_shell_1_0|valid_shell~0 ;    ;
-; shell:shell_1|single_shell:single_shell_1_1|valid_shell~0 ;    ;
-; shell:shell_1|single_shell:single_shell_1_2|valid_shell~0 ;    ;
-; shell:shell_1|single_shell:single_shell_1_3|valid_shell~0 ;    ;
-; shell:shell_1|single_shell:single_shell_1_4|valid_shell~0 ;    ;
-; Number of logic cells representing combinational loops    ; 10 ;
-+-----------------------------------------------------------+----+
-Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Registers Removed During Synthesis                                                                                                                                           ;
 +------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+
@@ -574,8 +551,8 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 600   ;
-; Number of registers using Synchronous Clear  ; 274   ;
-; Number of registers using Synchronous Load   ; 100   ;
+; Number of registers using Synchronous Clear  ; 244   ;
+; Number of registers using Synchronous Load   ; 130   ;
 ; Number of registers using Asynchronous Clear ; 240   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 259   ;
@@ -588,21 +565,26 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +------------------------------------------+---------+
 ; Inverted Register                        ; Fan out ;
 +------------------------------------------+---------+
-; Joystick:p2|Debounce:right|o_debounced_r ; 7       ;
-; Joystick:p2|Debounce:down|o_debounced_r  ; 10      ;
-; Joystick:p2|Debounce:up|o_debounced_r    ; 10      ;
-; Joystick:p2|Debounce:left|o_debounced_r  ; 10      ;
-; Joystick:p2|Debounce:fire|o_debounced_r  ; 7       ;
-; tank:tank_2|tank_y_pos[2]                ; 47      ;
-; tank:tank_2|tank_y_pos[1]                ; 56      ;
-; tank:tank_2|tank_x_pos[0]                ; 64      ;
+; Joystick:p2|Debounce:right|o_debounced_r ; 6       ;
+; Joystick:p2|Debounce:down|o_debounced_r  ; 9       ;
+; Joystick:p2|Debounce:up|o_debounced_r    ; 8       ;
+; Joystick:p2|Debounce:left|o_debounced_r  ; 9       ;
+; Joystick:p2|Debounce:fire|o_debounced_r  ; 6       ;
+; Joystick:p1|Debounce:right|o_debounced_r ; 6       ;
+; Joystick:p1|Debounce:down|o_debounced_r  ; 9       ;
+; Joystick:p1|Debounce:up|o_debounced_r    ; 9       ;
+; Joystick:p1|Debounce:left|o_debounced_r  ; 9       ;
+; Joystick:p1|Debounce:fire|o_debounced_r  ; 6       ;
+; tank:tank_2|tank_y_pos[2]                ; 50      ;
+; tank:tank_2|tank_y_pos[1]                ; 57      ;
+; tank:tank_2|tank_x_pos[0]                ; 66      ;
 ; tank:tank_2|tank_x_pos[5]                ; 65      ;
-; tank:tank_2|tank_x_pos[4]                ; 81      ;
-; tank:tank_2|tank_x_pos[3]                ; 87      ;
-; tank:tank_1|tank_y_pos[5]                ; 56      ;
-; tank:tank_1|tank_y_pos[2]                ; 47      ;
-; tank:tank_1|tank_y_pos[1]                ; 55      ;
-; tank:tank_1|tank_x_pos[2]                ; 93      ;
+; tank:tank_2|tank_x_pos[4]                ; 84      ;
+; tank:tank_2|tank_x_pos[3]                ; 89      ;
+; tank:tank_1|tank_y_pos[5]                ; 58      ;
+; tank:tank_1|tank_y_pos[2]                ; 45      ;
+; tank:tank_1|tank_y_pos[1]                ; 56      ;
+; tank:tank_1|tank_x_pos[2]                ; 91      ;
 ; tank:tank_1|tank_x_pos[1]                ; 84      ;
 ; Joystick:p2|Debounce:right|counter_r[2]  ; 2       ;
 ; Joystick:p2|Debounce:right|counter_r[1]  ; 3       ;
@@ -619,33 +601,28 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; Joystick:p2|Debounce:fire|counter_r[2]   ; 3       ;
 ; Joystick:p2|Debounce:fire|counter_r[1]   ; 4       ;
 ; Joystick:p2|Debounce:fire|counter_r[0]   ; 5       ;
+; Joystick:p1|Debounce:right|counter_r[2]  ; 2       ;
+; Joystick:p1|Debounce:right|counter_r[1]  ; 3       ;
+; Joystick:p1|Debounce:right|counter_r[0]  ; 4       ;
+; Joystick:p1|Debounce:down|counter_r[2]   ; 2       ;
+; Joystick:p1|Debounce:down|counter_r[1]   ; 3       ;
+; Joystick:p1|Debounce:down|counter_r[0]   ; 4       ;
+; Joystick:p1|Debounce:up|counter_r[2]     ; 2       ;
+; Joystick:p1|Debounce:up|counter_r[1]     ; 3       ;
+; Joystick:p1|Debounce:up|counter_r[0]     ; 4       ;
+; Joystick:p1|Debounce:left|counter_r[2]   ; 2       ;
+; Joystick:p1|Debounce:left|counter_r[1]   ; 3       ;
+; Joystick:p1|Debounce:left|counter_r[0]   ; 4       ;
+; Joystick:p1|Debounce:fire|counter_r[2]   ; 3       ;
+; Joystick:p1|Debounce:fire|counter_r[1]   ; 4       ;
+; Joystick:p1|Debounce:fire|counter_r[0]   ; 5       ;
 ; tank:tank_2|direction_last[2]            ; 9       ;
 ; state:state_1|dir_2[2]                   ; 7       ;
 ; tank:tank_1|direction_last[2]            ; 9       ;
 ; state:state_1|dir_1[2]                   ; 7       ;
-; tank:tank_1|direction_out[0]             ; 21      ;
-; tank:tank_1|direction_out[1]             ; 22      ;
-; tank:tank_2|direction_out[1]             ; 21      ;
-; Joystick:p1|Debounce:up|o_debounced_r    ; 8       ;
-; Joystick:p1|Debounce:down|o_debounced_r  ; 8       ;
-; Joystick:p1|Debounce:left|o_debounced_r  ; 8       ;
-; Joystick:p1|Debounce:right|o_debounced_r ; 5       ;
-; Joystick:p1|Debounce:fire|counter_r[2]   ; 3       ;
-; Joystick:p1|Debounce:fire|counter_r[1]   ; 4       ;
-; Joystick:p1|Debounce:fire|counter_r[0]   ; 5       ;
-; Joystick:p1|Debounce:fire|o_debounced_r  ; 5       ;
-; Joystick:p1|Debounce:up|counter_r[2]     ; 2       ;
-; Joystick:p1|Debounce:up|counter_r[1]     ; 3       ;
-; Joystick:p1|Debounce:up|counter_r[0]     ; 4       ;
-; Joystick:p1|Debounce:down|counter_r[2]   ; 2       ;
-; Joystick:p1|Debounce:down|counter_r[1]   ; 3       ;
-; Joystick:p1|Debounce:down|counter_r[0]   ; 4       ;
-; Joystick:p1|Debounce:left|counter_r[2]   ; 2       ;
-; Joystick:p1|Debounce:left|counter_r[1]   ; 3       ;
-; Joystick:p1|Debounce:left|counter_r[0]   ; 4       ;
-; Joystick:p1|Debounce:right|counter_r[2]  ; 2       ;
-; Joystick:p1|Debounce:right|counter_r[1]  ; 3       ;
-; Joystick:p1|Debounce:right|counter_r[0]  ; 4       ;
+; tank:tank_1|direction_out[0]             ; 23      ;
+; tank:tank_1|direction_out[1]             ; 24      ;
+; tank:tank_2|direction_out[1]             ; 23      ;
 ; Total number of inverted registers = 58  ;         ;
 +------------------------------------------+---------+
 
@@ -655,98 +632,98 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |DE2_115|tank:tank_2|tank_y_pos[4]                                       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |DE2_115|tank:tank_2|tank_y_pos[3]                                       ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; Yes        ; |DE2_115|tank:tank_2|tank_x_pos[2]                                       ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |DE2_115|tank:tank_1|tank_y_pos[0]                                       ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |DE2_115|tank:tank_1|tank_x_pos[5]                                       ;
-; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; Yes        ; |DE2_115|timer:t|clk_counter[19]                                         ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_0|record_direction[1] ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_1|record_direction[0] ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_2|record_direction[0] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |DE2_115|tank:tank_1|tank_y_pos[3]                                       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |DE2_115|tank:tank_1|tank_x_pos[0]                                       ;
+; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; Yes        ; |DE2_115|timer:t|clk_counter[12]                                         ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_0|record_direction[0] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_1|record_direction[1] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_2|record_direction[1] ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_3|record_direction[0] ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_4|record_direction[0] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_4|record_direction[1] ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_0|record_direction[0] ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_1|record_direction[0] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_1|record_direction[1] ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_2|record_direction[0] ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_3|record_direction[0] ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_4|record_direction[0] ;
-; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_0|count[5]            ;
-; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_1|count[19]           ;
-; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_2|count[3]            ;
-; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_3|count[3]            ;
-; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_4|count[18]           ;
-; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_0|count[16]           ;
-; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_1|count[6]            ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_4|record_direction[1] ;
+; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_0|count[3]            ;
+; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_1|count[11]           ;
+; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_2|count[0]            ;
+; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_3|count[6]            ;
+; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_4|count[11]           ;
+; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_0|count[11]           ;
+; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_1|count[11]           ;
 ; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_2|count[14]           ;
-; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_3|count[6]            ;
-; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_4|count[3]            ;
+; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_3|count[8]            ;
+; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_4|count[16]           ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE2_115|timer:t|sec_one[3]                                              ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |DE2_115|tank:tank_2|direction_last[0]                                   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |DE2_115|tank:tank_1|direction_last[0]                                   ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |DE2_115|tank:tank_2|direction_last[1]                                   ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |DE2_115|tank:tank_1|direction_last[1]                                   ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |DE2_115|timer:t|sec_ten[0]                                              ;
-; 6:1                ; 21 bits   ; 84 LEs        ; 42 LEs               ; 42 LEs                 ; Yes        ; |DE2_115|VGA:vga|VGA_B[4]                                                ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_0|shell_y_pos[1]      ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_1|shell_y_pos[5]      ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_2|shell_y_pos[0]      ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_3|shell_y_pos[1]      ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_4|shell_y_pos[4]      ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_0|shell_y_pos[2]      ;
+; 6:1                ; 21 bits   ; 84 LEs        ; 42 LEs               ; 42 LEs                 ; Yes        ; |DE2_115|VGA:vga|VGA_G[4]                                                ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_0|shell_y_pos[2]      ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_1|shell_y_pos[2]      ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_2|shell_y_pos[1]      ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_3|shell_y_pos[5]      ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_4|shell_y_pos[5]      ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_0|shell_y_pos[5]      ;
 ; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_1|shell_y_pos[5]      ;
 ; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_2|shell_y_pos[0]      ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_3|shell_y_pos[5]      ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_4|shell_y_pos[5]      ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |DE2_115|timer:t|min_one[3]                                              ;
-; 11:1               ; 6 bits    ; 42 LEs        ; 12 LEs               ; 30 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_0|shell_x_pos[4]      ;
-; 11:1               ; 6 bits    ; 42 LEs        ; 12 LEs               ; 30 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_1|shell_x_pos[2]      ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_3|shell_y_pos[0]      ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_4|shell_y_pos[0]      ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |DE2_115|timer:t|min_one[0]                                              ;
+; 11:1               ; 6 bits    ; 42 LEs        ; 12 LEs               ; 30 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_0|shell_x_pos[2]      ;
+; 11:1               ; 6 bits    ; 42 LEs        ; 12 LEs               ; 30 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_1|shell_x_pos[3]      ;
 ; 11:1               ; 6 bits    ; 42 LEs        ; 12 LEs               ; 30 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_2|shell_x_pos[5]      ;
-; 11:1               ; 6 bits    ; 42 LEs        ; 12 LEs               ; 30 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_3|shell_x_pos[0]      ;
-; 11:1               ; 6 bits    ; 42 LEs        ; 12 LEs               ; 30 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_4|shell_x_pos[5]      ;
-; 11:1               ; 6 bits    ; 42 LEs        ; 12 LEs               ; 30 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_0|shell_x_pos[1]      ;
-; 11:1               ; 6 bits    ; 42 LEs        ; 12 LEs               ; 30 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_1|shell_x_pos[0]      ;
-; 11:1               ; 6 bits    ; 42 LEs        ; 12 LEs               ; 30 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_2|shell_x_pos[2]      ;
-; 11:1               ; 6 bits    ; 42 LEs        ; 12 LEs               ; 30 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_3|shell_x_pos[5]      ;
-; 11:1               ; 6 bits    ; 42 LEs        ; 12 LEs               ; 30 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_4|shell_x_pos[0]      ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |DE2_115|timer:t|min_ten[0]                                              ;
+; 11:1               ; 6 bits    ; 42 LEs        ; 12 LEs               ; 30 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_3|shell_x_pos[5]      ;
+; 11:1               ; 6 bits    ; 42 LEs        ; 12 LEs               ; 30 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_2_4|shell_x_pos[2]      ;
+; 11:1               ; 6 bits    ; 42 LEs        ; 12 LEs               ; 30 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_0|shell_x_pos[3]      ;
+; 11:1               ; 6 bits    ; 42 LEs        ; 12 LEs               ; 30 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_1|shell_x_pos[3]      ;
+; 11:1               ; 6 bits    ; 42 LEs        ; 12 LEs               ; 30 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_2|shell_x_pos[0]      ;
+; 11:1               ; 6 bits    ; 42 LEs        ; 12 LEs               ; 30 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_3|shell_x_pos[3]      ;
+; 11:1               ; 6 bits    ; 42 LEs        ; 12 LEs               ; 30 LEs                 ; Yes        ; |DE2_115|shell:shell_1|single_shell:single_shell_1_4|shell_x_pos[4]      ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |DE2_115|timer:t|min_ten[2]                                              ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; Yes        ; |DE2_115|tank:tank_2|tank_y_pos[1]                                       ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |DE2_115|tank:tank_2|tank_x_pos[0]                                       ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |DE2_115|tank:tank_1|tank_y_pos[1]                                       ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; Yes        ; |DE2_115|tank:tank_1|tank_x_pos[1]                                       ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |DE2_115|tank:tank_1|tank_y_pos[5]                                       ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; Yes        ; |DE2_115|tank:tank_1|tank_x_pos[2]                                       ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux139                                            ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux139                                            ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux139                                            ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux139                                            ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux139                                            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux139                                            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux139                                            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux63                                             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux126                                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux126                                            ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux63                                             ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux63                                             ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux63                                             ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux63                                             ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux50                                             ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux63                                             ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |DE2_115|VGA:vga|Tank0Display:t0|Mux5                                    ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |DE2_115|VGA:vga|Tank1Display:t1|Mux0                                    ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE2_115|VGA:vga|Wall:wall|o_rgb_w[1]                                    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux50                                             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux50                                             ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |DE2_115|VGA:vga|Tank0Display:t0|Mux2                                    ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |DE2_115|VGA:vga|Tank1Display:t1|Mux9                                    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE2_115|VGA:vga|Wall:wall|o_rgb_w[17]                                   ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux139                                            ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux139                                            ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux126                                            ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux139                                            ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux138                                            ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux50                                             ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux63                                             ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux63                                             ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux63                                             ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux50                                             ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux62                                             ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE2_115|VGA:vga|Wall:wall|o_rgb_w[0]                                    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE2_115|VGA:vga|Wall:wall|o_rgb_w[16]                                   ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |DE2_115|VGA:vga|symbol_y_w[0]                                           ;
 ; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux139                                            ;
 ; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |DE2_115|state:state_1|Mux50                                             ;
 ; 64:1               ; 5 bits    ; 210 LEs       ; 35 LEs               ; 175 LEs                ; No         ; |DE2_115|state:state_1|Mux107                                            ;
-; 64:1               ; 5 bits    ; 210 LEs       ; 35 LEs               ; 175 LEs                ; No         ; |DE2_115|state:state_1|Mux3                                              ;
-; 64:1               ; 5 bits    ; 210 LEs       ; 35 LEs               ; 175 LEs                ; No         ; |DE2_115|state:state_1|Mux80                                             ;
-; 64:1               ; 5 bits    ; 210 LEs       ; 35 LEs               ; 175 LEs                ; No         ; |DE2_115|state:state_1|Mux22                                             ;
+; 64:1               ; 5 bits    ; 210 LEs       ; 35 LEs               ; 175 LEs                ; No         ; |DE2_115|state:state_1|Mux2                                              ;
+; 64:1               ; 5 bits    ; 210 LEs       ; 35 LEs               ; 175 LEs                ; No         ; |DE2_115|state:state_1|Mux77                                             ;
+; 64:1               ; 5 bits    ; 210 LEs       ; 35 LEs               ; 175 LEs                ; No         ; |DE2_115|state:state_1|Mux49                                             ;
 ; 67:1               ; 3 bits    ; 132 LEs       ; 36 LEs               ; 96 LEs                 ; No         ; |DE2_115|VGA:vga|symbol_type_w[2]                                        ;
-; 67:1               ; 5 bits    ; 220 LEs       ; 5 LEs                ; 215 LEs                ; No         ; |DE2_115|VGA:vga|symbol_y_w[1]                                           ;
-; 67:1               ; 5 bits    ; 220 LEs       ; 45 LEs               ; 175 LEs                ; No         ; |DE2_115|VGA:vga|symbol_x_w[2]                                           ;
+; 67:1               ; 5 bits    ; 220 LEs       ; 5 LEs                ; 215 LEs                ; No         ; |DE2_115|VGA:vga|symbol_y_w[5]                                           ;
+; 67:1               ; 5 bits    ; 220 LEs       ; 45 LEs               ; 175 LEs                ; No         ; |DE2_115|VGA:vga|symbol_x_w[4]                                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
 
 
@@ -1549,15 +1526,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "shell:shell_1"                                                                                                                                              ;
-+--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port         ; Type  ; Severity ; Details                                                                                                                                              ;
-+--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; tank_2_y_pos ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (6 bits) it drives.  Extra input bit(s) "tank_2_y_pos[5..1]" will be connected to GND. ;
-+--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +-------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "state:state_1"                                                                               ;
 +---------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -1614,15 +1582,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; o_neg ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
 ; o_pos ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
 +-------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Joystick:p1"                                                                         ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; o_led ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -1712,25 +1671,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA               ; 20                          ;
 ;     ENA CLR           ; 117                         ;
 ;     ENA CLR SCLR      ; 2                           ;
-;     ENA SCLR          ; 30                          ;
-;     ENA SLD           ; 90                          ;
+;     ENA SLD           ; 120                         ;
 ;     SCLR              ; 210                         ;
 ;     SLD               ; 10                          ;
 ; cycloneiii_io_obuf    ; 140                         ;
-; cycloneiii_lcell_comb ; 4225                        ;
+; cycloneiii_lcell_comb ; 4255                        ;
 ;     arith             ; 762                         ;
 ;         2 data inputs ; 357                         ;
 ;         3 data inputs ; 405                         ;
-;     normal            ; 3463                        ;
+;     normal            ; 3493                        ;
 ;         0 data inputs ; 13                          ;
-;         1 data inputs ; 102                         ;
-;         2 data inputs ; 292                         ;
-;         3 data inputs ; 428                         ;
-;         4 data inputs ; 2628                        ;
+;         1 data inputs ; 109                         ;
+;         2 data inputs ; 295                         ;
+;         3 data inputs ; 438                         ;
+;         4 data inputs ; 2638                        ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 23.10                       ;
-; Average LUT depth     ; 11.78                       ;
+; Max LUT depth         ; 22.10                       ;
+; Average LUT depth     ; 11.80                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1749,7 +1707,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
-    Info: Processing started: Mon Jun 24 21:28:12 2019
+    Info: Processing started: Mon Jun 24 22:24:00 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off dclab_final -c DE2_115
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file src/tank.sv
@@ -1813,7 +1771,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file src/joy
     Info (12023): Found entity 1: Joystick
 Info (12021): Found 0 design units, including 0 entities, in source file src/define.sv
 Warning (10236): Verilog HDL Implicit Net warning at I2S.sv(223): created implicit net for "n_adc_valid"
-Warning (10236): Verilog HDL Implicit Net warning at DE2_115.sv(280): created implicit net for "tank_2_y_pos"
 Info (12127): Elaborating entity "DE2_115" for the top level hierarchy
 Warning (10034): Output port "LEDG[8..5]" at DE2_115.sv(10) has no driver
 Warning (10034): Output port "LEDR[12]" at DE2_115.sv(11) has no driver
@@ -7193,7 +7150,7 @@ Info (12131): Elaborated megafunction instantiation "VGA:vga|Tank0Display:t0|lpm
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_ngh.tdf
     Info (12023): Found entity 1: add_sub_ngh
 Info (12131): Elaborated megafunction instantiation "VGA:vga|Tank0Display:t0|lpm_mult:Mult1|altshift:external_latency_ffs", which is child of megafunction instantiation "VGA:vga|Tank0Display:t0|lpm_mult:Mult1"
-Warning (12241): 8 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "LCD_DATA[0]" has no driver
     Warning (13040): bidirectional pin "LCD_DATA[1]" has no driver
@@ -7567,15 +7524,15 @@ Warning (21074): Design contains 80 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[14]"
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[15]"
     Warning (15610): No output dependent on input pin "HSMC_RX_D_P[16]"
-Info (21057): Implemented 4712 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4731 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 92 input pins
     Info (21059): Implemented 248 output pins
     Info (21060): Implemented 140 bidirectional pins
-    Info (21061): Implemented 4231 logic cells
+    Info (21061): Implemented 4250 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5637 warnings
-    Info: Peak virtual memory: 4912 megabytes
-    Info: Processing ended: Mon Jun 24 21:28:40 2019
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5636 warnings
+    Info: Peak virtual memory: 4913 megabytes
+    Info: Processing ended: Mon Jun 24 22:24:28 2019
     Info: Elapsed time: 00:00:28
     Info: Total CPU time (on all processors): 00:00:38
 
