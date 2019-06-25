@@ -24,7 +24,7 @@ assign pixel = center[current_pixel];
 
 always_comb begin
 	if(pixel) o_rgb = pixel;
-	else o_rgb = i_is_p1_win ? `SHELL_0, `SHELL_1;
+	else o_rgb = i_is_p1_win ? `SHELL_0 : `SHELL_1;
 end
 
 `ifdef COMPILE_FRAME

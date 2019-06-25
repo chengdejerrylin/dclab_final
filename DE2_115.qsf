@@ -1110,6 +1110,7 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name SYSTEMVERILOG_FILE src/DisplayROM/EndFrame.sv
 set_global_assignment -name SYSTEMVERILOG_FILE src/tank.sv
 set_global_assignment -name SYSTEMVERILOG_FILE src/state.sv
 set_global_assignment -name SYSTEMVERILOG_FILE src/shell.sv
@@ -1117,8 +1118,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE src/DisplayROM/GameBackground.sv
 set_global_assignment -name SYSTEMVERILOG_FILE src/DisplayROM/Wall.sv
 set_global_assignment -name SYSTEMVERILOG_FILE src/DisplayROM/Tank1Display.sv
 set_global_assignment -name SYSTEMVERILOG_FILE src/DisplayROM/shellDisplay.sv
-set_global_assignment -name SYSTEMVERILOG_FILE src/DisplayROM/p2Frame.sv
-set_global_assignment -name SYSTEMVERILOG_FILE src/DisplayROM/p1Frame.sv
 set_global_assignment -name SYSTEMVERILOG_FILE src/timer.sv
 set_global_assignment -name VERILOG_FILE qsys/synthesis/pll.v -library pll
 set_global_assignment -name QIP_FILE qsys/synthesis/pll.qip

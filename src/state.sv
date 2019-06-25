@@ -185,49 +185,49 @@ module state(
 
 
                 if( ~press_up_1 ) begin
-                    if(tank_1_dir != 2'b00)next_dir_1 = 3'b000;
-                    else if( map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x - 2)] 
+                    if( map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x - 2)] 
                       | map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x - 1)]
                       | map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x)]
                       | map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x + 1)]
                       | map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x + 2)]     //collision with wall
-                      | (( tank_1_pos_y - 3 == tank_2_pos_y + 3 )&&((tank_2_pos_x > tank_1_pos_x - 4) && (tank_2_pos_x < tank_1_pos_x + 4))) )    
+                      | (( tank_1_pos_y < 7 + tank_2_pos_y )&&(tank_2_pos_y < tank_1_pos_y)
+                        &&((tank_2_pos_x + 6 > tank_1_pos_x) && (tank_2_pos_x < tank_1_pos_x + 6))) )    
                             //collision with tank
                         next_dir_1 = 3'b100;
                     else next_dir_1 = 3'b000;
                 end
                 else if( ~press_down_1 ) begin
-                    if(tank_1_dir != 2'b01)next_dir_1 = 3'b001;
-                    else if( map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x - 2)] 
+                    if( map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x - 2)] 
                       | map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x - 1)]
                       | map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x)]
                       | map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x + 1)]
                       | map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x + 2)]     //collision
-                      | (( tank_1_pos_y + 3 == tank_2_pos_y - 3 )&&((tank_2_pos_x > tank_1_pos_x - 4) && (tank_2_pos_x < tank_1_pos_x + 4))) )    
+                      | (( tank_2_pos_y < 7 + tank_1_pos_y)&&(tank_1_pos_y < tank_2_pos_y)
+                     &&((tank_2_pos_x + 6> tank_1_pos_x) && (tank_2_pos_x < tank_1_pos_x + 6))) )    
                             //collision with tank
                         next_dir_1 = 3'b100;
                     else next_dir_1 = 3'b001;
                 end
                 else if( ~press_left_1 ) begin
-                    if(tank_1_dir != 2'b10)next_dir_1 = 3'b010;
-                    else if( map_mem[tank_1_pos_y - 2][63 - (tank_1_pos_x - 3)]
+                    if( map_mem[tank_1_pos_y - 2][63 - (tank_1_pos_x - 3)]
                       | map_mem[tank_1_pos_y - 1][63 - (tank_1_pos_x - 3)]
                       | map_mem[tank_1_pos_y][63 - (tank_1_pos_x - 3)]
                       | map_mem[tank_1_pos_y + 1][63 - (tank_1_pos_x - 3)]
                       | map_mem[tank_1_pos_y + 2][63 - (tank_1_pos_x - 3)]    //collision
-                      | (( tank_1_pos_x - 3 == tank_2_pos_x + 3 )&&((tank_2_pos_y < tank_1_pos_y + 4) && (tank_2_pos_y > tank_1_pos_y - 4))) )    
+                      | (( tank_1_pos_x < 7 + tank_2_pos_x )&&(tank_2_pos_x < tank_1_pos_x)
+                        &&((tank_2_pos_y < tank_1_pos_y + 6) && (tank_2_pos_y + 6 > tank_1_pos_y))) )    
                             //collision with tank
                         next_dir_1 = 3'b100;
                     else next_dir_1 = 3'b010;
                 end
                 else if( ~press_right_1 ) begin
-                    if(tank_1_dir != 2'b11)next_dir_1 = 3'b011;
-                    else if( map_mem[tank_1_pos_y - 2][63 - (tank_1_pos_x + 3)]
+                    if( map_mem[tank_1_pos_y - 2][63 - (tank_1_pos_x + 3)]
                       | map_mem[tank_1_pos_y - 1][63 - (tank_1_pos_x + 3)]
                       | map_mem[tank_1_pos_y][63 - (tank_1_pos_x + 3)]
                       | map_mem[tank_1_pos_y + 1][63 - (tank_1_pos_x + 3)]
                       | map_mem[tank_1_pos_y + 2][63 - (tank_1_pos_x + 3)]    //collision
-                      | (( tank_1_pos_x + 3 == tank_2_pos_x - 3 )&&((tank_2_pos_y < tank_1_pos_y + 4) && (tank_2_pos_y > tank_1_pos_y - 4))) )    
+                      | (( tank_2_pos_x < 7 + tank_1_pos_x)&&(tank_1_pos_x < tank_2_pos_x)
+                        &&((tank_2_pos_y < tank_1_pos_y + 6) && (tank_2_pos_y + 6 > tank_1_pos_y))) )    
                             //collision with tank
                         next_dir_1 = 3'b100;
                     else next_dir_1 = 3'b011;
@@ -242,49 +242,49 @@ module state(
                 else next_fire_2 = ~valid_frame_2;
 
                 if( ~press_up_2 ) begin
-                    if(tank_2_dir != 2'b00)next_dir_2 = 3'b000;
-                    else if( map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x - 2)] 
+                    if( map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x - 2)] 
                       | map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x - 1)]
                       | map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x)]
                       | map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x + 1)]
                       | map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x + 2)]    //collision
-                      | (( tank_2_pos_y - 3 == tank_1_pos_y + 3 )&&((tank_1_pos_x > tank_2_pos_x - 4) && (tank_1_pos_x < tank_2_pos_x + 4))) )    
+                      | (( tank_2_pos_y  < 7 + tank_1_pos_y)&&(tank_1_pos_y < tank_2_pos_y)
+                        &&((tank_1_pos_x +6 > tank_2_pos_x ) && (tank_1_pos_x < tank_2_pos_x + 6))) )    
                             //collision with tank
                         next_dir_2 = 3'b100;
                     else next_dir_2 = 3'b000;
                 end
                 else if( ~press_down_2 ) begin
-                    if(tank_2_dir != 2'b01)next_dir_2 = 3'b001;
-                    else if( map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x - 2)] 
+                    if( map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x - 2)] 
                       | map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x - 1)]
                       | map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x)]
                       | map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x + 1)]
                       | map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x + 2)]    //collision
-                      | (( tank_2_pos_y + 3 == tank_1_pos_y - 3 )&&((tank_1_pos_x > tank_2_pos_x - 4) && (tank_1_pos_x < tank_2_pos_x + 4))) )    
+                      | (( tank_1_pos_y < 7 + tank_2_pos_y)&&(tank_2_pos_y < tank_1_pos_y)
+                        &&((tank_1_pos_x +6 > tank_2_pos_x) && (tank_1_pos_x < tank_2_pos_x + 6))) )    
                             //collision with tank
                         next_dir_2 = 3'b100;
                     else next_dir_2 = 3'b001;
                 end
                 else if( ~press_left_2 ) begin
-                    if(tank_2_dir != 2'b10)next_dir_2 = 3'b010;
-                    else if( map_mem[tank_2_pos_y - 2][63 - (tank_2_pos_x - 3)]
+                    if( map_mem[tank_2_pos_y - 2][63 - (tank_2_pos_x - 3)]
                       | map_mem[tank_2_pos_y - 1][63 - (tank_2_pos_x - 3)]
                       | map_mem[tank_2_pos_y][63 - (tank_2_pos_x - 3)]
                       | map_mem[tank_2_pos_y + 1][63 - (tank_2_pos_x - 3)]
                       | map_mem[tank_2_pos_y + 2][63 - (tank_2_pos_x - 3)]   //collision
-                      | (( tank_2_pos_x - 3 == tank_1_pos_x + 3 )&&((tank_1_pos_y < tank_2_pos_y + 4) && (tank_1_pos_y > tank_2_pos_y - 4))) )    
+                      | (( tank_2_pos_x < 7 + tank_1_pos_x)&&(tank_1_pos_x < tank_2_pos_x)
+                        &&((tank_1_pos_y < tank_2_pos_y + 6) && (tank_1_pos_y + 6 > tank_2_pos_y))) )    
                             //collision with tank
                         next_dir_2 = 3'b100;
                     else next_dir_2 = 3'b010;
                 end
                 else if( ~press_right_2 ) begin
-                    if(tank_2_dir != 2'b11)next_dir_2 = 3'b011;
-                    else if( map_mem[tank_2_pos_y - 2][63 - (tank_2_pos_x + 3)]
+                    if( map_mem[tank_2_pos_y - 2][63 - (tank_2_pos_x + 3)]
                       | map_mem[tank_2_pos_y - 1][63 - (tank_2_pos_x + 3)]
                       | map_mem[tank_2_pos_y][63 - (tank_2_pos_x + 3)]
                       | map_mem[tank_2_pos_y + 1][63 - (tank_2_pos_x + 3)]
                       | map_mem[tank_2_pos_y + 2][63 - (tank_2_pos_x + 3)]    //collision
-                      | (( tank_2_pos_x + 3 == tank_1_pos_x - 3 )&&((tank_1_pos_y < tank_2_pos_y + 4) && (tank_1_pos_y > tank_2_pos_y - 4))) )    
+                      | (( tank_1_pos_x < 7 + tank_2_pos_x)&&(tank_2_pos_x < tank_1_pos_x)
+                        &&((tank_1_pos_y < tank_2_pos_y + 6) && (tank_1_pos_y + 6 > tank_2_pos_y))) )    
                             //collision with tank
                         next_dir_2 = 3'b100;
                     else next_dir_2 = 3'b011;
@@ -307,17 +307,14 @@ module state(
                       & shell_1_0_pos_y >= tank_2_pos_y - 2
                       & shell_1_0_pos_y <= tank_2_pos_y + 2 )) begin
                         next_shell_hit_1[0] = 1'b1;
-                        next_who_wins = 2'b01;
                     end
                     else begin
                         next_shell_hit_1[0] = 1'b0;
-                        next_who_wins = 2'b00;
                     end
                 end
                 else begin
                     next_shell_vanish_1[0] = 1'b0;
                     next_shell_hit_1[0] = 1'b0;
-                    next_who_wins = who_wins;
                 end
                 //----------------------------tank_1, shell_1---------------------------------
                 if( ~i_valid_shell_1[1] ) begin
@@ -330,17 +327,14 @@ module state(
                       & shell_1_1_pos_y >= tank_2_pos_y - 2
                       & shell_1_1_pos_y <= tank_2_pos_y + 2 )) begin
                         next_shell_hit_1[1] = 1'b1;
-                        next_who_wins = 2'b01;
                     end
                     else begin
                         next_shell_hit_1[1] = 1'b0;
-                        next_who_wins = 2'b00;
                     end
                 end
                 else begin
                     next_shell_vanish_1[1] = 1'b0;
                     next_shell_hit_1[1] = 1'b0;
-                    next_who_wins = who_wins;
                 end
                 //----------------------------tank_1, shell_2---------------------------------
                 if( ~i_valid_shell_1[2] ) begin
@@ -353,17 +347,14 @@ module state(
                       & shell_1_2_pos_y >= tank_2_pos_y - 2
                       & shell_1_2_pos_y <= tank_2_pos_y + 2 )) begin
                         next_shell_hit_1[2] = 1'b1;
-                        next_who_wins = 2'b01;
                     end
                     else begin
                         next_shell_hit_1[2] = 1'b0;
-                        next_who_wins = 2'b00;
                     end
                 end
                 else begin
                     next_shell_vanish_1[2] = 1'b0;
                     next_shell_hit_1[2] = 1'b0;
-                    next_who_wins = who_wins;
                 end
                 //----------------------------tank_1, shell_3---------------------------------
                 if( ~i_valid_shell_1[3] ) begin
@@ -376,17 +367,14 @@ module state(
                       & shell_1_3_pos_y >= tank_2_pos_y - 2
                       & shell_1_3_pos_y <= tank_2_pos_y + 2 )) begin
                         next_shell_hit_1[3] = 1'b1;
-                        next_who_wins = 2'b01;
                     end
                     else begin
                         next_shell_hit_1[3] = 1'b0;
-                        next_who_wins = 2'b00;
                     end
                 end
                 else begin
                     next_shell_vanish_1[3] = 1'b0;
                     next_shell_hit_1[3] = 1'b0;
-                    next_who_wins = who_wins;
                 end
                 //----------------------------tank_1, shell_4---------------------------------
                 if( ~i_valid_shell_1[4] ) begin
@@ -399,17 +387,14 @@ module state(
                       & shell_1_4_pos_y >= tank_2_pos_y - 2
                       & shell_1_4_pos_y <= tank_2_pos_y + 2 )) begin
                         next_shell_hit_1[4] = 1'b1;
-                        next_who_wins = 2'b01;
                     end
                     else begin
                         next_shell_hit_1[4] = 1'b0;
-                        next_who_wins = 2'b00;
                     end
                 end
                 else begin
                     next_shell_vanish_1[4] = 1'b0;
                     next_shell_hit_1[4] = 1'b0;
-                    next_who_wins = who_wins;
                 end
                 //----------------------------tank_2, shell_0---------------------------------
                 if( ~i_valid_shell_2[0] ) begin
@@ -422,17 +407,14 @@ module state(
                       & shell_2_0_pos_y >= tank_1_pos_y - 2
                       & shell_2_0_pos_y <= tank_1_pos_y + 2 )) begin
                         next_shell_hit_2[0] = 1'b1;
-                        next_who_wins = 2'b10;
                     end
                     else begin
                         next_shell_hit_2[0] = 1'b0;
-                        next_who_wins = 2'b00;
                     end
                 end
                 else begin
                     next_shell_vanish_2[0] = 1'b0;
                     next_shell_hit_2[0] = 1'b0;
-                    next_who_wins = who_wins;
                 end
                 //----------------------------tank_2, shell_1---------------------------------
                 if( ~i_valid_shell_2[1] ) begin
@@ -445,17 +427,14 @@ module state(
                       & shell_2_1_pos_y >= tank_1_pos_y - 2
                       & shell_2_1_pos_y <= tank_1_pos_y + 2 )) begin
                         next_shell_hit_2[1] = 1'b1;
-                        next_who_wins = 2'b10;
                     end
                     else begin
                         next_shell_hit_2[1] = 1'b0;
-                        next_who_wins = 2'b00;
                     end
                 end
                 else begin
                     next_shell_vanish_2[1] = 1'b0;
                     next_shell_hit_2[1] = 1'b0;
-                    next_who_wins = who_wins;
                 end
                 //----------------------------tank_2, shell_2---------------------------------
                 if( ~i_valid_shell_2[2] ) begin
@@ -468,17 +447,14 @@ module state(
                       & shell_2_2_pos_y >= tank_1_pos_y - 2
                       & shell_2_2_pos_y <= tank_1_pos_y + 2 )) begin
                         next_shell_hit_2[2] = 1'b1;
-                        next_who_wins = 2'b10;
                     end
                     else begin
                         next_shell_hit_2[2] = 1'b0;
-                        next_who_wins = 2'b00;
                     end
                 end
                 else begin
                     next_shell_vanish_2[2] = 1'b0;
                     next_shell_hit_2[2] = 1'b0;
-                    next_who_wins = who_wins;
                 end
                 //----------------------------tank_2, shell_3---------------------------------
                 if( ~i_valid_shell_2[3] ) begin
@@ -491,17 +467,14 @@ module state(
                       & shell_2_3_pos_y >= tank_1_pos_y - 2
                       & shell_2_3_pos_y <= tank_1_pos_y + 2 )) begin
                         next_shell_hit_2[3] = 1'b1;
-                        next_who_wins = 2'b10;
                     end
                     else begin
                         next_shell_hit_2[3] = 1'b0;
-                        next_who_wins = 2'b00;
                     end
                 end
                 else begin
                     next_shell_vanish_2[3] = 1'b0;
                     next_shell_hit_2[3] = 1'b0;
-                    next_who_wins = who_wins;
                 end
                 //----------------------------tank_2, shell_4---------------------------------
                 if( ~i_valid_shell_2[4] ) begin
@@ -514,23 +487,26 @@ module state(
                       & shell_2_4_pos_y >= tank_1_pos_y - 2
                       & shell_2_4_pos_y <= tank_1_pos_y + 2 )) begin
                         next_shell_hit_2[4] = 1'b1;
-                        next_who_wins = 2'b10;
                     end
                     else begin
                         next_shell_hit_2[4] = 1'b0;
-                        next_who_wins = 2'b00;
                     end
                 end
                 else begin
                     next_shell_vanish_2[4] = 1'b0;
                     next_shell_hit_2[4] = 1'b0;
-                    next_who_wins = who_wins;
                 end
 
                 if( next_shell_hit_1[0] | next_shell_hit_1[1] | next_shell_hit_1[2] | next_shell_hit_1[3] | next_shell_hit_1[4]
                   | next_shell_hit_2[0] | next_shell_hit_2[1] | next_shell_hit_2[2] | next_shell_hit_2[3] | next_shell_hit_2[4] )
                     next_state = END;
                 else next_state = state;
+
+                if( next_shell_hit_1[0] | next_shell_hit_1[1] | next_shell_hit_1[2] | next_shell_hit_1[3] | next_shell_hit_1[4] )
+                    next_who_wins = 2'b01;
+                else if( next_shell_hit_2[0] | next_shell_hit_2[1] | next_shell_hit_2[2] | next_shell_hit_2[3] | next_shell_hit_2[4] )
+                    next_who_wins = 2'b10;
+                else next_who_wins = 2'b00;
 
 
                 //draw map--> next_is_map==================================================

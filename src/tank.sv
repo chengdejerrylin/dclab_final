@@ -50,7 +50,7 @@ module tank(
 					direction_last_n = direction_last;
 				end
 				else begin
-					if(direction_in != 3'd4)direction_out_n = direction_in[1:0];
+					// if(direction_in != 3'd4)direction_out_n = direction_in[1:0];
 					if (direction_last != direction_in) begin
 						state_n = STATE_0;
 						tank_x_pos_n = tank_x_pos;
