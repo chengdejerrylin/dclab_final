@@ -22,7 +22,7 @@ assign o_rgb = center[current_pixel];
 
 `ifdef COMPILE_FRAME
 initial $readmemh("resource/dat/sandBackground_labels.dat",mem);
-initial $readmemh("resource/dat/sandBackground__values.dat",center);
+initial $readmemh("resource/dat/sandBackground_values.dat",center);
 `endif
 
 endmodule
