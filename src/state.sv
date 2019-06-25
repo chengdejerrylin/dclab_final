@@ -1,4 +1,5 @@
 `define MAP     "./map/map.dat"     //name for map
+`include "src/define.sv"
 
 module state(
     input clk,
@@ -128,7 +129,20 @@ module state(
     assign o_who_wins = who_wins;
 
     //read from map====================================================================================
+    `ifdef COMPILE_MULTIPLE_MAPS
+    logic [64*44-1 : 0] map;
+    RandomMap randomMap(.clk(clk), .rst_n(rst_n), .i_top_state(o_state), .o_map(map));
+
+    genvar idx;
+    generate
+        for (idx = 0; idx < 44; idx = idx +1) begin : decode
+            assign map_mem[idx] = map[64*idx +: 64];
+        end
+    endgenerate
+
+    `else 
     initial $readmemb (`MAP,  map_mem);    
+    `endif
 
     //combinational part===============================================================================
     always_comb begin
