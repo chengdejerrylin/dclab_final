@@ -9,10 +9,13 @@ module tank(
     input [2:0] initial_direction,
     input [2:0] direction_in, //0_UP, 1_DOWN, 2_LEFT, 3_RIGHT, 4_STAND
     input valid_take_direction,
+    input [1:0] game_state,
+    input is_hurt,
     
     //////To Game and VGA///////
     output logic [5:0] tank_x_pos,// tank central x pos
     output logic [5:0] tank_y_pos,// tank central y pos
+    output logic [2:0] tank_life,
     
     //////To VGA(Genn)//////
     output logic [1:0] direction_out
@@ -32,13 +35,19 @@ module tank(
 	localparam STATE_3 = 3;
 	localparam STATE_4 = 4;
 
+	//life
+	localparam LIFE_MAX = 5;
+
 	reg [2:0] state, state_n;
 	reg [5:0] tank_x_pos_n, tank_y_pos_n;
 	reg [2:0] direction_last, direction_last_n; //record the direction of last frame(not cycle!)
 	reg [1:0] direction_out_n;
+	reg [2:0] tank_life_n;
 
 	always_comb begin
-		direction_out_n = direction_out; 
+		direction_out_n = direction_out;
+		tank_life_n = is_hurt ? tank_life -3'd1 : tank_life;
+
 		case(state)
 			STATE_0: begin
 				if (~valid_take_direction) begin
@@ -126,15 +135,31 @@ module tank(
 						direction_last_n = direction_in;
 					end
 					else begin
-						state_n = STATE_4;
+						state_n = STATE_0;
+						direction_last_n = direction_in;
 						tank_x_pos_n = tank_x_pos;
 						tank_y_pos_n = tank_y_pos;
-						direction_last_n = direction_in;
+						if (direction_last == UP) begin
+							tank_y_pos_n = tank_y_pos - 1;
+							direction_out_n = direction_last [1:0];
+						end
+						else if (direction_last == DOWN) begin
+							tank_y_pos_n = tank_y_pos + 1;
+							direction_out_n = direction_last [1:0];
+						end
+						else if (direction_last == LEFT) begin
+							tank_x_pos_n = tank_x_pos - 1;
+							direction_out_n = direction_last [1:0];
+						end
+						else if (direction_last == RIGHT) begin
+							tank_x_pos_n = tank_x_pos + 1;
+							direction_out_n = direction_last [1:0];
+						end
 					end
 				end
 			end
 
-			STATE_4: begin
+			/*STATE_4: begin
 				if (~valid_take_direction) begin
 					state_n = state;
 					tank_x_pos_n = tank_x_pos;
@@ -171,7 +196,7 @@ module tank(
 						end
 					end
 				end
-			end
+			end*/
 
 			default : begin
 				state_n = state;
@@ -180,6 +205,12 @@ module tank(
 				direction_last_n = direction_last;
 			end
 		endcase // state
+
+		if (game_state == 2'b10) begin
+			tank_x_pos_n = initial_x;
+			tank_y_pos_n = initial_y;
+			tank_life_n = LIFE_MAX;
+		end
 	end
 
 	always_ff @(posedge clk or negedge rst_n) begin
@@ -189,6 +220,7 @@ module tank(
 			tank_y_pos <= initial_y;
 			direction_last <= STAND;
 			direction_out <= initial_direction;
+			tank_life <= LIFE_MAX;
 		end
 
 		else begin
@@ -197,6 +229,7 @@ module tank(
 			tank_y_pos <= tank_y_pos_n;
 			direction_last <= direction_last_n;
 			direction_out <= direction_out_n;
+			tank_life <= tank_life_n;
 		end
 	end
 

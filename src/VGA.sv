@@ -26,9 +26,11 @@ module VGA(
     input [5:0] i_tank0_x,
     input [5:0] i_tank0_y,
     input [1:0] i_tank0_dir,
+    input [2:0] i_tank0_life,
     input [5:0] i_tank1_x,
     input [5:0] i_tank1_y,
     input [1:0] i_tank1_dir,
+    input [2:0] i_tank1_life,
 
     //shell
     input [5:0] i_shell0_0_x,
@@ -102,7 +104,7 @@ logic [5:0] n_o_request_x, n_o_request_y;
 logic n_o_buzy;
 
 //frame
-logic [23:0] start_rgb, p1_rgb, p2_rgb, gameBackground_rgb;
+logic [23:0] start_rgb, end_rgb, gameBackground_rgb;
 
 //symbol
 logic [5:0] symbol_x_w;
@@ -164,7 +166,8 @@ always_comb begin
 						6'd4, 6'd5, 6'd6 : begin //shell 0 remain
 							symbol_x_w = (display_x - 6'd4)* PIXEL_PER_GRID + grid_x;
 							symbol_y_w = display_y * PIXEL_PER_GRID + grid_y;
-							symbol_type_w = remain(i_shell0_valid);
+							//symbol_type_w = remain(i_shell0_valid);
+							symbol_type_w = i_tank0_life;
 							n_VGA_RGB = symbol_dot_w ? 24'd0 : `STATUS_BAR_COLOR;
 						end
 
@@ -205,7 +208,8 @@ always_comb begin
 						6'd57, 6'd58, 6'd59 : begin //shell 1 remain
 							symbol_x_w = (display_x - 6'd57)* PIXEL_PER_GRID + grid_x;
 							symbol_y_w = display_y * PIXEL_PER_GRID + grid_y;
-							symbol_type_w = remain(i_shell1_valid);
+							//symbol_type_w = remain(i_shell1_valid);
+							symbol_type_w = i_tank1_life;
 							n_VGA_RGB = symbol_dot_w ? 24'd0 : `STATUS_BAR_COLOR;
 						end 
 
@@ -225,7 +229,7 @@ always_comb begin
 			end
 		end//game
 
-		2'b10 : n_VGA_RGB = i_p1_win ? p1_rgb : p2_rgb; 
+		2'b10 : n_VGA_RGB = end_rgb; 
 		default : n_VGA_RGB = {frame_y[7:0], ~frame_y[7:0], frame_x[7:0]};
 	endcase
 end
@@ -268,8 +272,7 @@ always_comb begin
 end
 
 StartFrame sf(.i_x(frame_x), .i_y(frame_y), .o_rgb(start_rgb));
-p1Frame p1(.i_x(frame_x), .i_y(frame_y), .o_rgb(p1_rgb));
-p2Frame p2(.i_x(frame_x), .i_y(frame_y), .o_rgb(p2_rgb));
+EndFrame ef(.i_x(frame_x), .i_y(frame_y), .i_is_p1_win(i_p1_win), .o_rgb(end_rgb));
 GameBackground gb(.i_x(frame_x), .i_y(frame_y - STATUS_BAR_HEIGHT * PIXEL_PER_GRID), .o_rgb(gameBackground_rgb));
 
 Symbol symbol(.i_x(symbol_x_w[4:0]), .i_y(symbol_y_w), .i_type(symbol_type_w), .o_dot(symbol_dot_w));
@@ -288,7 +291,7 @@ shellDisplay shell(.i_display_x(display_x), .i_display_y(display_y - STATUS_BAR_
 	.i_shell1_2_x  (i_shell1_2_x), .i_shell1_2_y(i_shell1_2_y), .i_shell1_3_x(i_shell1_3_x), .i_shell1_3_y(i_shell1_3_y), 
 	.i_shell1_4_x  (i_shell1_4_x), .i_shell1_4_y(i_shell1_4_y), .i_shell1_valid(i_shell1_valid), .o_rgb_w(shell_rgb_w));
 
-Wall wall(.i_x(grid_x), .i_y(grid_y), .i_is_wall(i_is_wall), .i_sel(display_y[0] ^ display_x[0]), .o_rgb_w  (wall_rgb_w));
+Wall wall(.i_x(grid_x), .i_y(grid_y), .i_is_wall(i_is_wall), .i_sel(display_y[1:0] ^ display_x[1:0]), .o_rgb_w  (wall_rgb_w));
 always_ff @(posedge clk or negedge rst_n) begin
 	if(~rst_n) begin
 		//control

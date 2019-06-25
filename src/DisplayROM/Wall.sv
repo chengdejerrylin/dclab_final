@@ -4,7 +4,7 @@ module Wall(
 	input [3:0] i_x,
 	input [3:0] i_y,
 	input i_is_wall,
-	input i_sel,
+	input [1:0] i_sel,
 	output logic [23:0] o_rgb_w
 );
 
@@ -18,7 +18,14 @@ always_comb begin
 		case (pixel)
 			2'd0 : o_rgb_w = 24'h0;
 			2'd1 : o_rgb_w = 24'h010101;
-			2'd2 : o_rgb_w = i_sel ? `WALL_0 : `WALL_1;
+			2'd2 : begin
+				case (i_sel)
+					2'b00 : o_rgb_w = `WALL_0;
+					2'b01 : o_rgb_w = `WALL_1;
+					2'b10 : o_rgb_w = `WALL_2;
+					2'b11 : o_rgb_w = `WALL_3;
+				endcase
+			end
 			default : o_rgb_w = 24'h0;
 		endcase
 	end else o_rgb_w = 24'h0;
