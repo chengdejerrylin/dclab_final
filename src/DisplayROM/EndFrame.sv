@@ -24,12 +24,12 @@ assign pixel = center[current_pixel];
 
 always_comb begin
 	if(pixel) o_rgb = pixel;
-	else o_rgb = i_is_p1_win ? `SHELL_0 : `SHELL_1;
+	else o_rgb = i_is_p1_win ? 24'h8b0403 : 24'h04038b;
 end
 
 `ifdef COMPILE_FRAME
-initial $readmemh("resource/dat/victory_labels.dat",mem);
-initial $readmemh("resource/dat/victory_values.dat",center);
+initial $readmemh("resource/dat/tankVictory_labels.dat",mem);
+initial $readmemh("resource/dat/tankVictory_values.dat",center);
 `endif
 
 endmodule
