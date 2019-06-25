@@ -135,7 +135,7 @@ assign n_VGA_VS = (v_counter >= V_SYNC);
 assign n_VGA_BLANK_N = is_display_w;
 
 //IO
-assign n_o_buzy = (v_counter >= V_SYNC + V_BACK) && (v_counter < V_SYNC + V_BACK + V_DISP);
+assign n_o_buzy = ~((h_counter == H_SYNC + H_BACK + H_DISP) && (v_counter == V_SYNC + V_BACK + V_DISP));
 
 //display
 assign game_rgb_w = (tank0_rgb_w | tank1_rgb_w) | (shell_rgb_w | wall_rgb_w);

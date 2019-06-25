@@ -9,6 +9,7 @@ module shell(
     input valid_give_shell_2,
     input [4:0] vanish_1,
     input [4:0] vanish_2,
+    input [1:0] game_state,
     //////From Tank(Me)//////
     input [1:0] direction_1_in, //0_up, 1_down, 2_left, 3_right
     input [1:0] direction_2_in, //0_up, 1_down, 2_left, 3_right
@@ -49,53 +50,63 @@ module shell(
 
     single_shell single_shell_1_0(.clk(clk), .rst_n(rst_n), .vanish(vanish_1[0]), 
                                   .fire(fire_1_out[0]), .direction_in(direction_1_in), 
-                                  .tank_x_pos(tank_1_x_pos), .tank_y_pos(tank_1_y_pos), 
+                                  .tank_x_pos(tank_1_x_pos), .tank_y_pos(tank_1_y_pos),
+                                  .game_state(game_state), 
                                   .shell_x_pos(shell_1_0_x_pos), .shell_y_pos(shell_1_0_y_pos), 
                                   .valid_shell(valid_1_shell[0]));
     single_shell single_shell_1_1(.clk(clk), .rst_n(rst_n), .vanish(vanish_1[1]), 
                                   .fire(fire_1_out[1]), .direction_in(direction_1_in), 
-                                  .tank_x_pos(tank_1_x_pos), .tank_y_pos(tank_1_y_pos), 
+                                  .tank_x_pos(tank_1_x_pos), .tank_y_pos(tank_1_y_pos),
+                                  .game_state(game_state), 
                                   .shell_x_pos(shell_1_1_x_pos), .shell_y_pos(shell_1_1_y_pos), 
                                   .valid_shell(valid_1_shell[1]));
     single_shell single_shell_1_2(.clk(clk), .rst_n(rst_n), .vanish(vanish_1[2]), 
                                   .fire(fire_1_out[2]), .direction_in(direction_1_in), 
-                                  .tank_x_pos(tank_1_x_pos), .tank_y_pos(tank_1_y_pos), 
+                                  .tank_x_pos(tank_1_x_pos), .tank_y_pos(tank_1_y_pos),
+                                  .game_state(game_state), 
                                   .shell_x_pos(shell_1_2_x_pos), .shell_y_pos(shell_1_2_y_pos), 
                                   .valid_shell(valid_1_shell[2]));
     single_shell single_shell_1_3(.clk(clk), .rst_n(rst_n), .vanish(vanish_1[3]), 
                                   .fire(fire_1_out[3]), .direction_in(direction_1_in), 
-                                  .tank_x_pos(tank_1_x_pos), .tank_y_pos(tank_1_y_pos), 
+                                  .tank_x_pos(tank_1_x_pos), .tank_y_pos(tank_1_y_pos),
+                                  .game_state(game_state), 
                                   .shell_x_pos(shell_1_3_x_pos), .shell_y_pos(shell_1_3_y_pos), 
                                   .valid_shell(valid_1_shell[3]));
     single_shell single_shell_1_4(.clk(clk), .rst_n(rst_n), .vanish(vanish_1[4]), 
                                   .fire(fire_1_out[4]), .direction_in(direction_1_in), 
-                                  .tank_x_pos(tank_1_x_pos), .tank_y_pos(tank_1_y_pos), 
+                                  .tank_x_pos(tank_1_x_pos), .tank_y_pos(tank_1_y_pos),
+                                  .game_state(game_state), 
                                   .shell_x_pos(shell_1_4_x_pos), .shell_y_pos(shell_1_4_y_pos), 
                                   .valid_shell(valid_1_shell[4]));
 
     single_shell single_shell_2_0(.clk(clk), .rst_n(rst_n), .vanish(vanish_2[0]), 
                                   .fire(fire_2_out[0]), .direction_in(direction_2_in), 
-                                  .tank_x_pos(tank_2_x_pos), .tank_y_pos(tank_2_y_pos), 
+                                  .tank_x_pos(tank_2_x_pos), .tank_y_pos(tank_2_y_pos),
+                                  .game_state(game_state), 
                                   .shell_x_pos(shell_2_0_x_pos), .shell_y_pos(shell_2_0_y_pos), 
                                   .valid_shell(valid_2_shell[0]));
     single_shell single_shell_2_1(.clk(clk), .rst_n(rst_n), .vanish(vanish_2[1]), 
                                   .fire(fire_2_out[1]), .direction_in(direction_2_in), 
-                                  .tank_x_pos(tank_2_x_pos), .tank_y_pos(tank_2_y_pos), 
+                                  .tank_x_pos(tank_2_x_pos), .tank_y_pos(tank_2_y_pos),
+                                  .game_state(game_state), 
                                   .shell_x_pos(shell_2_1_x_pos), .shell_y_pos(shell_2_1_y_pos), 
                                   .valid_shell(valid_2_shell[1]));
     single_shell single_shell_2_2(.clk(clk), .rst_n(rst_n), .vanish(vanish_2[2]), 
                                   .fire(fire_2_out[2]), .direction_in(direction_2_in), 
-                                  .tank_x_pos(tank_2_x_pos), .tank_y_pos(tank_2_y_pos), 
+                                  .tank_x_pos(tank_2_x_pos), .tank_y_pos(tank_2_y_pos),
+                                  .game_state(game_state), 
                                   .shell_x_pos(shell_2_2_x_pos), .shell_y_pos(shell_2_2_y_pos), 
                                   .valid_shell(valid_2_shell[2]));
     single_shell single_shell_2_3(.clk(clk), .rst_n(rst_n), .vanish(vanish_2[3]), 
                                   .fire(fire_2_out[3]), .direction_in(direction_2_in), 
-                                  .tank_x_pos(tank_2_x_pos), .tank_y_pos(tank_2_y_pos), 
+                                  .tank_x_pos(tank_2_x_pos), .tank_y_pos(tank_2_y_pos),
+                                  .game_state(game_state), 
                                   .shell_x_pos(shell_2_3_x_pos), .shell_y_pos(shell_2_3_y_pos), 
                                   .valid_shell(valid_2_shell[3]));
     single_shell single_shell_2_4(.clk(clk), .rst_n(rst_n), .vanish(vanish_2[4]), 
                                   .fire(fire_2_out[4]), .direction_in(direction_2_in), 
-                                  .tank_x_pos(tank_2_x_pos), .tank_y_pos(tank_2_y_pos), 
+                                  .tank_x_pos(tank_2_x_pos), .tank_y_pos(tank_2_y_pos),
+                                  .game_state(game_state), 
                                   .shell_x_pos(shell_2_4_x_pos), .shell_y_pos(shell_2_4_y_pos), 
                                   .valid_shell(valid_2_shell[4]));
 endmodule
@@ -157,6 +168,7 @@ module single_shell(
     input [1:0] direction_in, //0_up, 1_down, 2_left, 3_right
     input [5:0] tank_x_pos,
     input [5:0] tank_y_pos,
+    input [1:0] game_state,
     //////To Game and VGA//////
     output logic [5:0] shell_x_pos,// shell x pos
     output logic [5:0] shell_y_pos,// shell y pos
@@ -184,14 +196,14 @@ module single_shell(
         case(state) 
             IDLE: begin
                 count_n = 0;
-                shell_x_pos_n = tank_x_pos;
-                shell_y_pos_n = tank_y_pos;
+                shell_x_pos_n = tank_x_pos;//tank_x_pos;
+                shell_y_pos_n = tank_y_pos;//tank_y_pos;
                 state_n = state;
                 valid_shell = 1;
                 record_direction_n = STAND;
                 if (fire) begin
                     state_n = SHOOT;
-                    valid_shell = 0;
+                    valid_shell = 1;/////////
                     record_direction_n = direction_in;
                 end
             end
@@ -206,10 +218,10 @@ module single_shell(
                 if (count == 20'd400000) begin
                     count_n = 0;
                     if (record_direction == UP) begin
-                        shell_y_pos_n = shell_y_pos + 1;
+                        shell_y_pos_n = shell_y_pos - 1;
                     end
                     else if (record_direction == DOWN) begin
-                        shell_y_pos_n = shell_y_pos - 1;
+                        shell_y_pos_n = shell_y_pos + 1;
                     end
                     else if (record_direction == LEFT) begin
                         shell_x_pos_n = shell_x_pos - 1;
@@ -225,7 +237,15 @@ module single_shell(
                 end
             end
         endcase // state
+        if(game_state == 2'b10) begin
+        valid_shell = 1;
+        state_n = IDLE;
+        count_n = 0;
+        shell_x_pos_n = tank_x_pos;
+        shell_y_pos_n = tank_y_pos;
+      end
     end
+    
 
     always_ff @(posedge clk) begin
         if (~rst_n) begin
