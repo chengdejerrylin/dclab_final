@@ -162,16 +162,16 @@ assign p1_right  = SW[13];
 assign p1_fire   = SW[17];
 
 `else 
-assign p1_up     = GPIO[1];
+assign p1_right  = GPIO[1];
 assign p1_down   = GPIO[3];
-assign p1_left   = GPIO[5];
-assign p1_right  = GPIO[7];
+assign p1_up     = GPIO[5];
+assign p1_left   = GPIO[7];
 assign p1_fire   = GPIO[9];
 
-assign p2_up     = GPIO[27];
+assign p2_right  = GPIO[27];
 assign p2_down   = GPIO[29];
-assign p2_left   = GPIO[31];
-assign p2_right  = GPIO[33];
+assign p2_up     = GPIO[31];
+assign p2_left   = GPIO[33];
 assign p2_fire   = GPIO[35];
 `endif
 
@@ -272,14 +272,15 @@ state state_1(.clk(CLOCK_25), .rst_n(RST_N), .press_up_1(up_1_joy_state), .press
 			  .o_dir_2(direction_2_state_tank), .o_fire_1(fire_1), .o_fire_2(fire_2), 
 			  .i_x_pos(x_pos_vga_state), .i_y_pos(y_pos_vga_state), .i_busy(VGA_busy),
 			  .o_is_map(is_map), .o_state(game_state), .o_who_wins(who_wins), 
-			  .press_start_1(start_1_joy_state), .press_start_2(start_2_joy_state), 
 			  .tank_1_dir(direction_tank_1), .tank_2_dir(direction_tank_2));
 
 shell shell_1(.clk(CLOCK_25), .rst_n(RST_N), .fire_1(fire_1), .fire_2(fire_2),
 			  .valid_give_shell_1(valid_frame_1), .valid_give_shell_2(valid_frame_2),
 			  .vanish_1(shell_vanish_1), .vanish_2(shell_vanish_2), .direction_1_in(direction_tank_1),
 			  .direction_2_in(direction_tank_2), .tank_1_x_pos(tank_1_pos_x), .tank_1_y_pos(tank_1_pos_y), 
-			  .tank_2_x_pos(tank_2_pos_x), .tank_2_y_pos(tank_2_pos_y), .shell_1_0_x_pos(shell_1_0_pos_x), 
+			  .tank_2_x_pos(tank_2_pos_x), .tank_2_y_pos(tank_2_pos_y), 
+			  .game_state(game_state),
+			  .shell_1_0_x_pos(shell_1_0_pos_x), 
 			  .shell_1_0_y_pos(shell_1_0_pos_y), .shell_1_1_x_pos(shell_1_1_pos_x), 
 			  .shell_1_1_y_pos(shell_1_1_pos_y), .shell_1_2_x_pos(shell_1_2_pos_x),
 			  .shell_1_2_y_pos(shell_1_2_pos_y), .shell_1_3_x_pos(shell_1_3_pos_x), 
@@ -294,12 +295,14 @@ shell shell_1(.clk(CLOCK_25), .rst_n(RST_N), .fire_1(fire_1), .fire_2(fire_2),
 
 tank tank_1(.clk(CLOCK_25), .rst_n(RST_N), .initial_x(o_init_tank_1_pos_x), 
 			.initial_y(o_init_tank_1_pos_y), .initial_direction(2'd3), 
-			.direction_in(direction_1_state_tank), .valid_take_direction(valid_frame_1), 
+			.direction_in(direction_1_state_tank), .valid_take_direction(valid_frame_1),
+			.game_state(game_state), 
 			.tank_x_pos(tank_1_pos_x), .tank_y_pos(tank_1_pos_y), .direction_out(direction_tank_1));
     
 tank tank_2(.clk(CLOCK_25), .rst_n(RST_N), .initial_x(o_init_tank_2_pos_x), 
 			.initial_y(o_init_tank_2_pos_y), .initial_direction(2'd2), 
 			.direction_in(direction_2_state_tank), .valid_take_direction(valid_frame_2), 
+			.game_state(game_state),
 			.tank_x_pos(tank_2_pos_x), .tank_y_pos(tank_2_pos_y), .direction_out(direction_tank_2));
 
 /******************

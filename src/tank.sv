@@ -9,6 +9,7 @@ module tank(
     input [2:0] initial_direction,
     input [2:0] direction_in, //0_UP, 1_DOWN, 2_LEFT, 3_RIGHT, 4_STAND
     input valid_take_direction,
+    input [1:0] game_state,
     
     //////To Game and VGA///////
     output logic [5:0] tank_x_pos,// tank central x pos
@@ -38,7 +39,8 @@ module tank(
 	reg [1:0] direction_out_n;
 
 	always_comb begin
-		direction_out_n = direction_out; 
+		direction_out_n = direction_out;
+
 		case(state)
 			STATE_0: begin
 				if (~valid_take_direction) begin
@@ -126,15 +128,31 @@ module tank(
 						direction_last_n = direction_in;
 					end
 					else begin
-						state_n = STATE_4;
+						state_n = STATE_0;
+						direction_last_n = direction_in;
 						tank_x_pos_n = tank_x_pos;
 						tank_y_pos_n = tank_y_pos;
-						direction_last_n = direction_in;
+						if (direction_last == UP) begin
+							tank_y_pos_n = tank_y_pos - 1;
+							direction_out_n = direction_last [1:0];
+						end
+						else if (direction_last == DOWN) begin
+							tank_y_pos_n = tank_y_pos + 1;
+							direction_out_n = direction_last [1:0];
+						end
+						else if (direction_last == LEFT) begin
+							tank_x_pos_n = tank_x_pos - 1;
+							direction_out_n = direction_last [1:0];
+						end
+						else if (direction_last == RIGHT) begin
+							tank_x_pos_n = tank_x_pos + 1;
+							direction_out_n = direction_last [1:0];
+						end
 					end
 				end
 			end
 
-			STATE_4: begin
+			/*STATE_4: begin
 				if (~valid_take_direction) begin
 					state_n = state;
 					tank_x_pos_n = tank_x_pos;
@@ -171,7 +189,7 @@ module tank(
 						end
 					end
 				end
-			end
+			end*/
 
 			default : begin
 				state_n = state;
@@ -180,6 +198,11 @@ module tank(
 				direction_last_n = direction_last;
 			end
 		endcase // state
+
+		if (game_state == 2'b10) begin
+			tank_x_pos_n = initial_x;
+			tank_y_pos_n = initial_y;
+		end
 	end
 
 	always_ff @(posedge clk or negedge rst_n) begin

@@ -10,14 +10,13 @@ module state(
     input press_left_1,
     input press_right_1,
     input press_fire_1,
-    input press_start_1,
+
 
     input press_up_2,
     input press_down_2,
     input press_left_2,
     input press_right_2,
     input press_fire_2,
-    input press_start_2,
     
     //object
     input[5:0] tank_1_pos_x,
@@ -97,6 +96,8 @@ module state(
     logic          save_fire_2, save_next_fire_2;
     logic [4:0]    shell_vanish_1, next_shell_vanish_1;
     logic [4:0]    shell_vanish_2, next_shell_vanish_2;
+    logic [4:0]    shell_hit_1, next_shell_hit_1;
+    logic [4:0]    shell_hit_2, next_shell_hit_2;
     //for VGA
     logic          is_map, next_is_map;
     logic [1:0]    state, next_state;
@@ -137,11 +138,13 @@ module state(
                 next_fire_2 = fire_2;
                 next_shell_vanish_1 = shell_vanish_1;
                 next_shell_vanish_2 = shell_vanish_2;
+                next_shell_hit_1 = shell_hit_1;
+                next_shell_hit_2 = shell_hit_2;
                 next_is_map = is_map;
                 next_who_wins = who_wins;
             end
             START: begin
-                if( (~press_start_1)& (~press_start_2) ) next_state = GAME;
+                if( (~press_left_1)& (~press_left_2) ) next_state = GAME;
                 else next_state = state;
 
                 //others
@@ -154,6 +157,8 @@ module state(
                 next_fire_2         = 1'b0;
                 next_shell_vanish_1 = 5'b0;
                 next_shell_vanish_2 = 5'b0;
+                next_shell_hit_1    = 5'b0;
+                next_shell_hit_2    = 5'b0;
                 //VGA
                 next_is_map         = 1'b0;
                 next_who_wins       = 2'b00;
@@ -297,21 +302,21 @@ module state(
                     if( map_mem[shell_1_0_pos_y][63 - shell_1_0_pos_x] ) next_shell_vanish_1[0] = 1'b1;
                     else next_shell_vanish_1[0] = 1'b0;
                     //shell hit car
-                    if( shell_1_0_pos_x >= (tank_2_pos_x - 2)
+                    if(( shell_1_0_pos_x >= (tank_2_pos_x - 2)
                       & shell_1_0_pos_x <= (tank_2_pos_x + 2)
                       & shell_1_0_pos_y >= tank_2_pos_y - 2
-                      & shell_1_0_pos_y <= tank_2_pos_y + 2 ) begin
-                        next_state = END;
+                      & shell_1_0_pos_y <= tank_2_pos_y + 2 )) begin
+                        next_shell_hit_1[0] = 1'b1;
                         next_who_wins = 2'b01;
                     end
                     else begin
-                        next_state = state;
+                        next_shell_hit_1[0] = 1'b0;
                         next_who_wins = 2'b00;
                     end
                 end
                 else begin
                     next_shell_vanish_1[0] = 1'b0;
-                    next_state = state;
+                    next_shell_hit_1[0] = 1'b0;
                     next_who_wins = who_wins;
                 end
                 //----------------------------tank_1, shell_1---------------------------------
@@ -320,21 +325,21 @@ module state(
                     if( map_mem[shell_1_1_pos_y][63 - shell_1_1_pos_x] ) next_shell_vanish_1[1] = 1'b1;
                     else next_shell_vanish_1[1] = 1'b0;
                     //shell hit car
-                    if( shell_1_1_pos_x >= (tank_2_pos_x - 2)
+                    if(( shell_1_1_pos_x >= (tank_2_pos_x - 2)
                       & shell_1_1_pos_x <= (tank_2_pos_x + 2)
                       & shell_1_1_pos_y >= tank_2_pos_y - 2
-                      & shell_1_1_pos_y <= tank_2_pos_y + 2 ) begin
-                        next_state = END;
+                      & shell_1_1_pos_y <= tank_2_pos_y + 2 )) begin
+                        next_shell_hit_1[1] = 1'b1;
                         next_who_wins = 2'b01;
                     end
                     else begin
-                        next_state = state;
+                        next_shell_hit_1[1] = 1'b0;
                         next_who_wins = 2'b00;
                     end
                 end
                 else begin
                     next_shell_vanish_1[1] = 1'b0;
-                    next_state = state;
+                    next_shell_hit_1[1] = 1'b0;
                     next_who_wins = who_wins;
                 end
                 //----------------------------tank_1, shell_2---------------------------------
@@ -343,21 +348,21 @@ module state(
                     if( map_mem[shell_1_2_pos_y][63 - shell_1_2_pos_x] ) next_shell_vanish_1[2] = 1'b1;
                     else next_shell_vanish_1[2] = 1'b0;
                     //shell hit car
-                    if( shell_1_2_pos_x >= (tank_2_pos_x - 2)
+                    if(( shell_1_2_pos_x >= (tank_2_pos_x - 2)
                       & shell_1_2_pos_x <= (tank_2_pos_x + 2)
                       & shell_1_2_pos_y >= tank_2_pos_y - 2
-                      & shell_1_2_pos_y <= tank_2_pos_y + 2 ) begin
-                        next_state = END;
+                      & shell_1_2_pos_y <= tank_2_pos_y + 2 )) begin
+                        next_shell_hit_1[2] = 1'b1;
                         next_who_wins = 2'b01;
                     end
                     else begin
-                        next_state = state;
+                        next_shell_hit_1[2] = 1'b0;
                         next_who_wins = 2'b00;
                     end
                 end
                 else begin
                     next_shell_vanish_1[2] = 1'b0;
-                    next_state = state;
+                    next_shell_hit_1[2] = 1'b0;
                     next_who_wins = who_wins;
                 end
                 //----------------------------tank_1, shell_3---------------------------------
@@ -366,21 +371,21 @@ module state(
                     if( map_mem[shell_1_3_pos_y][63 - shell_1_3_pos_x] ) next_shell_vanish_1[3] = 1'b1;
                     else next_shell_vanish_1[3] = 1'b0;
                     //shell hit car
-                    if( shell_1_3_pos_x >= (tank_2_pos_x - 2)
+                    if(( shell_1_3_pos_x >= (tank_2_pos_x - 2)
                       & shell_1_3_pos_x <= (tank_2_pos_x + 2)
                       & shell_1_3_pos_y >= tank_2_pos_y - 2
-                      & shell_1_3_pos_y <= tank_2_pos_y + 2 ) begin
-                        next_state = END;
+                      & shell_1_3_pos_y <= tank_2_pos_y + 2 )) begin
+                        next_shell_hit_1[3] = 1'b1;
                         next_who_wins = 2'b01;
                     end
                     else begin
-                        next_state = state;
+                        next_shell_hit_1[3] = 1'b0;
                         next_who_wins = 2'b00;
                     end
                 end
                 else begin
                     next_shell_vanish_1[3] = 1'b0;
-                    next_state = state;
+                    next_shell_hit_1[3] = 1'b0;
                     next_who_wins = who_wins;
                 end
                 //----------------------------tank_1, shell_4---------------------------------
@@ -389,21 +394,21 @@ module state(
                     if( map_mem[shell_1_4_pos_y][63 - shell_1_4_pos_x] ) next_shell_vanish_1[4] = 1'b1;
                     else next_shell_vanish_1[4] = 1'b0;
                     //shell hit car
-                    if( shell_1_4_pos_x >= (tank_2_pos_x - 2)
+                    if(( shell_1_4_pos_x >= (tank_2_pos_x - 2)
                       & shell_1_4_pos_x <= (tank_2_pos_x + 2)
                       & shell_1_4_pos_y >= tank_2_pos_y - 2
-                      & shell_1_4_pos_y <= tank_2_pos_y + 2 ) begin
-                        next_state = END;
+                      & shell_1_4_pos_y <= tank_2_pos_y + 2 )) begin
+                        next_shell_hit_1[4] = 1'b1;
                         next_who_wins = 2'b01;
                     end
                     else begin
-                        next_state = state;
+                        next_shell_hit_1[4] = 1'b0;
                         next_who_wins = 2'b00;
                     end
                 end
                 else begin
                     next_shell_vanish_1[4] = 1'b0;
-                    next_state = state;
+                    next_shell_hit_1[4] = 1'b0;
                     next_who_wins = who_wins;
                 end
                 //----------------------------tank_2, shell_0---------------------------------
@@ -412,21 +417,21 @@ module state(
                     if( map_mem[shell_2_0_pos_y][63 - shell_2_0_pos_x] ) next_shell_vanish_2[0] = 1'b1;
                     else next_shell_vanish_2[0] = 1'b0;
                     //shell hit car
-                    if( shell_2_0_pos_x >= (tank_1_pos_x - 2) 
+                    if(( shell_2_0_pos_x >= (tank_1_pos_x - 2) 
                       & shell_2_0_pos_x <= (tank_1_pos_x + 2)  
                       & shell_2_0_pos_y >= tank_1_pos_y - 2
-                      & shell_2_0_pos_y <= tank_1_pos_y + 2 ) begin
-                        next_state = END;
+                      & shell_2_0_pos_y <= tank_1_pos_y + 2 )) begin
+                        next_shell_hit_2[0] = 1'b1;
                         next_who_wins = 2'b10;
                     end
                     else begin
-                        next_state = state;
+                        next_shell_hit_2[0] = 1'b0;
                         next_who_wins = 2'b00;
                     end
                 end
                 else begin
                     next_shell_vanish_2[0] = 1'b0;
-                    next_state = state;
+                    next_shell_hit_2[0] = 1'b0;
                     next_who_wins = who_wins;
                 end
                 //----------------------------tank_2, shell_1---------------------------------
@@ -435,21 +440,21 @@ module state(
                     if( map_mem[shell_2_1_pos_y][63 - shell_2_1_pos_x] ) next_shell_vanish_2[1] = 1'b1;
                     else next_shell_vanish_2[1] = 1'b0;
                     //shell hit car
-                    if( shell_2_1_pos_x >= (tank_1_pos_x - 2) 
+                    if(( shell_2_1_pos_x >= (tank_1_pos_x - 2) 
                       & shell_2_1_pos_x <= (tank_1_pos_x + 2)  
                       & shell_2_1_pos_y >= tank_1_pos_y - 2
-                      & shell_2_1_pos_y <= tank_1_pos_y + 2 ) begin
-                        next_state = END;
+                      & shell_2_1_pos_y <= tank_1_pos_y + 2 )) begin
+                        next_shell_hit_2[1] = 1'b1;
                         next_who_wins = 2'b10;
                     end
                     else begin
-                        next_state = state;
+                        next_shell_hit_2[1] = 1'b0;
                         next_who_wins = 2'b00;
                     end
                 end
                 else begin
                     next_shell_vanish_2[1] = 1'b0;
-                    next_state = state;
+                    next_shell_hit_2[1] = 1'b0;
                     next_who_wins = who_wins;
                 end
                 //----------------------------tank_2, shell_2---------------------------------
@@ -458,21 +463,21 @@ module state(
                     if( map_mem[shell_2_2_pos_y][63 - shell_2_2_pos_x] ) next_shell_vanish_2[2] = 1'b1;
                     else next_shell_vanish_2[2] = 1'b0;
                     //shell hit car
-                    if( shell_2_2_pos_x >= (tank_1_pos_x - 2) 
+                    if(( shell_2_2_pos_x >= (tank_1_pos_x - 2) 
                       & shell_2_2_pos_x <= (tank_1_pos_x + 2)  
                       & shell_2_2_pos_y >= tank_1_pos_y - 2
-                      & shell_2_2_pos_y <= tank_1_pos_y + 2 ) begin
-                        next_state = END;
+                      & shell_2_2_pos_y <= tank_1_pos_y + 2 )) begin
+                        next_shell_hit_2[2] = 1'b1;
                         next_who_wins = 2'b10;
                     end
                     else begin
-                        next_state = state;
+                        next_shell_hit_2[2] = 1'b0;
                         next_who_wins = 2'b00;
                     end
                 end
                 else begin
                     next_shell_vanish_2[2] = 1'b0;
-                    next_state = state;
+                    next_shell_hit_2[2] = 1'b0;
                     next_who_wins = who_wins;
                 end
                 //----------------------------tank_2, shell_3---------------------------------
@@ -481,21 +486,21 @@ module state(
                     if( map_mem[shell_2_3_pos_y][63 - shell_2_3_pos_x] ) next_shell_vanish_2[3] = 1'b1;
                     else next_shell_vanish_2[3] = 1'b0;
                     //shell hit car
-                    if( shell_2_3_pos_x >= (tank_1_pos_x - 2) 
+                    if(( shell_2_3_pos_x >= (tank_1_pos_x - 2) 
                       & shell_2_3_pos_x <= (tank_1_pos_x + 2)  
                       & shell_2_3_pos_y >= tank_1_pos_y - 2
-                      & shell_2_3_pos_y <= tank_1_pos_y + 2 ) begin
-                        next_state = END;
+                      & shell_2_3_pos_y <= tank_1_pos_y + 2 )) begin
+                        next_shell_hit_2[3] = 1'b1;
                         next_who_wins = 2'b10;
                     end
                     else begin
-                        next_state = state;
+                        next_shell_hit_2[3] = 1'b0;
                         next_who_wins = 2'b00;
                     end
                 end
                 else begin
                     next_shell_vanish_2[3] = 1'b0;
-                    next_state = state;
+                    next_shell_hit_2[3] = 1'b0;
                     next_who_wins = who_wins;
                 end
                 //----------------------------tank_2, shell_4---------------------------------
@@ -504,23 +509,29 @@ module state(
                     if( map_mem[shell_2_4_pos_y][63 - shell_2_4_pos_x] ) next_shell_vanish_2[4] = 1'b1;
                     else next_shell_vanish_2[4] = 1'b0;
                     //shell hit car
-                    if( shell_2_4_pos_x >= (tank_1_pos_x - 2) 
+                    if(( shell_2_4_pos_x >= (tank_1_pos_x - 2) 
                       & shell_2_4_pos_x <= (tank_1_pos_x + 2)  
                       & shell_2_4_pos_y >= tank_1_pos_y - 2
-                      & shell_2_4_pos_y <= tank_1_pos_y + 2 ) begin
-                        next_state = END;
+                      & shell_2_4_pos_y <= tank_1_pos_y + 2 )) begin
+                        next_shell_hit_2[4] = 1'b1;
                         next_who_wins = 2'b10;
                     end
                     else begin
-                        next_state = state;
+                        next_shell_hit_2[4] = 1'b0;
                         next_who_wins = 2'b00;
                     end
                 end
                 else begin
                     next_shell_vanish_2[4] = 1'b0;
-                    next_state = state;
+                    next_shell_hit_2[4] = 1'b0;
                     next_who_wins = who_wins;
                 end
+
+                if( next_shell_hit_1[0] | next_shell_hit_1[1] | next_shell_hit_1[2] | next_shell_hit_1[3] | next_shell_hit_1[4]
+                  | next_shell_hit_2[0] | next_shell_hit_2[1] | next_shell_hit_2[2] | next_shell_hit_2[3] | next_shell_hit_2[4] )
+                    next_state = END;
+                else next_state = state;
+
 
                 //draw map--> next_is_map==================================================
                 //output o_is_map
@@ -530,7 +541,7 @@ module state(
                 
             end
             END: begin
-                if( ~press_start_1 & ~press_start_2 ) next_state = START;
+                if( ~press_right_1 & ~press_right_2 ) next_state = START;
                 else next_state = state;
                 //others
                 //object
@@ -542,6 +553,8 @@ module state(
                 next_fire_2         = 1'b0;
                 next_shell_vanish_1 = 5'b0;
                 next_shell_vanish_2 = 5'b0;
+                next_shell_hit_1    = 5'b0;
+                next_shell_hit_2    = 5'b0;
                 //VGA
                 next_is_map         = 1'b0;
                 next_who_wins       = who_wins;
@@ -561,6 +574,8 @@ module state(
             fire_2           <= 1'b0;
             shell_vanish_1   <= 5'b0;
             shell_vanish_2   <= 5'b0;
+            shell_hit_1      <= 5'b0;
+            shell_hit_2      <= 5'b0;
             //VGA
             is_map    <= 1'b0;
             state     <= START;
@@ -576,6 +591,8 @@ module state(
             fire_2         <= next_fire_2;
             shell_vanish_1 <= next_shell_vanish_1;
             shell_vanish_2 <= next_shell_vanish_2;
+            shell_hit_1    <= next_shell_hit_1;
+            shell_hit_2    <= next_shell_hit_2;
             //VGA
             is_map    <= next_is_map;
             state     <= next_state;
