@@ -25,11 +25,15 @@ module state(
     input[5:0] tank_2_pos_y,
     input[1:0] tank_1_dir,
     input[1:0] tank_2_dir,
+    input[2:0] tank_1_life,
+    input[2:0] tank_2_life,
 
     output[5:0] o_init_tank_1_pos_x,
     output[5:0] o_init_tank_1_pos_y,
     output[5:0] o_init_tank_2_pos_x,
     output[5:0] o_init_tank_2_pos_y,
+    output logic o_tank_1_hurt,
+    output logic o_tank_2_hurt,
     
     input[4:0] i_valid_shell_1,   //if the shell is being shot
     input[4:0] i_valid_shell_2,
@@ -98,6 +102,7 @@ module state(
     logic [4:0]    shell_vanish_2, next_shell_vanish_2;
     logic [4:0]    shell_hit_1, next_shell_hit_1;
     logic [4:0]    shell_hit_2, next_shell_hit_2;
+    logic          next_tank_1_hurt, next_tank_2_hurt;
     //for VGA
     logic          is_map, next_is_map;
     logic [1:0]    state, next_state;
@@ -127,6 +132,9 @@ module state(
 
     //combinational part===============================================================================
     always_comb begin
+        next_tank_1_hurt = 1'b0;
+        next_tank_2_hurt = 1'b0;
+
         case(state)
             default: begin
                 next_state = state;
@@ -497,16 +505,26 @@ module state(
                     next_shell_hit_2[4] = 1'b0;
                 end
 
-                if( next_shell_hit_1[0] | next_shell_hit_1[1] | next_shell_hit_1[2] | next_shell_hit_1[3] | next_shell_hit_1[4]
-                  | next_shell_hit_2[0] | next_shell_hit_2[1] | next_shell_hit_2[2] | next_shell_hit_2[3] | next_shell_hit_2[4] )
-                    next_state = END;
-                else next_state = state;
+                next_state = state;
+                next_who_wins = 2'b00;
 
-                if( next_shell_hit_1[0] | next_shell_hit_1[1] | next_shell_hit_1[2] | next_shell_hit_1[3] | next_shell_hit_1[4] )
-                    next_who_wins = 2'b01;
-                else if( next_shell_hit_2[0] | next_shell_hit_2[1] | next_shell_hit_2[2] | next_shell_hit_2[3] | next_shell_hit_2[4] )
-                    next_who_wins = 2'b10;
-                else next_who_wins = 2'b00;
+                if( next_shell_hit_1[0] | next_shell_hit_1[1] | next_shell_hit_1[2] | next_shell_hit_1[3] | next_shell_hit_1[4] ) begin
+                    if(tank_1_life) next_tank_1_hurt = 1'b1;
+                    else begin
+                        next_state = END;
+                        next_who_wins = 2'b01;
+                    end
+                    
+                end
+                
+                if( next_shell_hit_2[0] | next_shell_hit_2[1] | next_shell_hit_2[2] | next_shell_hit_2[3] | next_shell_hit_2[4] ) begin 
+                    if(tank_2_life) next_tank_2_hurt = 1'b1;
+                    else begin
+                        next_state = END;
+                        next_who_wins = 2'b10;
+                    end
+                end
+                    
 
 
                 //draw map--> next_is_map==================================================
@@ -552,6 +570,8 @@ module state(
             shell_vanish_2   <= 5'b0;
             shell_hit_1      <= 5'b0;
             shell_hit_2      <= 5'b0;
+            o_tank_1_hurt    <= 1'b0;
+            o_tank_2_hurt    <= 1'b0;
             //VGA
             is_map    <= 1'b0;
             state     <= START;
@@ -569,6 +589,8 @@ module state(
             shell_vanish_2 <= next_shell_vanish_2;
             shell_hit_1    <= next_shell_hit_1;
             shell_hit_2    <= next_shell_hit_2;
+            o_tank_1_hurt    <= next_tank_1_hurt;
+            o_tank_2_hurt    <= next_tank_2_hurt;
             //VGA
             is_map    <= next_is_map;
             state     <= next_state;

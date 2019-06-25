@@ -10,10 +10,12 @@ module tank(
     input [2:0] direction_in, //0_UP, 1_DOWN, 2_LEFT, 3_RIGHT, 4_STAND
     input valid_take_direction,
     input [1:0] game_state,
+    input is_hurt,
     
     //////To Game and VGA///////
     output logic [5:0] tank_x_pos,// tank central x pos
     output logic [5:0] tank_y_pos,// tank central y pos
+    output logic [2:0] tank_life,
     
     //////To VGA(Genn)//////
     output logic [1:0] direction_out
@@ -33,13 +35,18 @@ module tank(
 	localparam STATE_3 = 3;
 	localparam STATE_4 = 4;
 
+	//life
+	localparam LIFE_MAX = 2;
+
 	reg [2:0] state, state_n;
 	reg [5:0] tank_x_pos_n, tank_y_pos_n;
 	reg [2:0] direction_last, direction_last_n; //record the direction of last frame(not cycle!)
 	reg [1:0] direction_out_n;
+	reg [2:0] life_n;
 
 	always_comb begin
 		direction_out_n = direction_out;
+		life_n = is_hurt ? life -1 : life;
 
 		case(state)
 			STATE_0: begin
@@ -202,6 +209,7 @@ module tank(
 		if (game_state == 2'b10) begin
 			tank_x_pos_n = initial_x;
 			tank_y_pos_n = initial_y;
+			life_n = LIFE_MAX;
 		end
 	end
 
@@ -212,6 +220,7 @@ module tank(
 			tank_y_pos <= initial_y;
 			direction_last <= STAND;
 			direction_out <= initial_direction;
+			life <= LIFE_MAX;
 		end
 
 		else begin
@@ -220,6 +229,7 @@ module tank(
 			tank_y_pos <= tank_y_pos_n;
 			direction_last <= direction_last_n;
 			direction_out <= direction_out_n;
+			life <= life_n;
 		end
 	end
 

@@ -26,9 +26,11 @@ module VGA(
     input [5:0] i_tank0_x,
     input [5:0] i_tank0_y,
     input [1:0] i_tank0_dir,
+    input [2:0] i_tank0_life,
     input [5:0] i_tank1_x,
     input [5:0] i_tank1_y,
     input [1:0] i_tank1_dir,
+    input [2:0] i_tank1_life,
 
     //shell
     input [5:0] i_shell0_0_x,
@@ -164,7 +166,8 @@ always_comb begin
 						6'd4, 6'd5, 6'd6 : begin //shell 0 remain
 							symbol_x_w = (display_x - 6'd4)* PIXEL_PER_GRID + grid_x;
 							symbol_y_w = display_y * PIXEL_PER_GRID + grid_y;
-							symbol_type_w = remain(i_shell0_valid);
+							//symbol_type_w = remain(i_shell0_valid);
+							symbol_type_w = i_tank0_life;
 							n_VGA_RGB = symbol_dot_w ? 24'd0 : `STATUS_BAR_COLOR;
 						end
 
@@ -205,7 +208,8 @@ always_comb begin
 						6'd57, 6'd58, 6'd59 : begin //shell 1 remain
 							symbol_x_w = (display_x - 6'd57)* PIXEL_PER_GRID + grid_x;
 							symbol_y_w = display_y * PIXEL_PER_GRID + grid_y;
-							symbol_type_w = remain(i_shell1_valid);
+							//symbol_type_w = remain(i_shell1_valid);
+							symbol_type_w = i_tank1_life;
 							n_VGA_RGB = symbol_dot_w ? 24'd0 : `STATUS_BAR_COLOR;
 						end 
 

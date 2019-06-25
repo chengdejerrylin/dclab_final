@@ -190,6 +190,8 @@ pll pll(.clk_clk(CLOCK_50), .reset_reset_n(RST_N), .altpll_0_c0_clk(CLOCK_25));
 logic up_1_joy_state, down_1_joy_state, left_1_joy_state, right_1_joy_state, fire_1_joy_state, start_1_joy_state;
 logic up_2_joy_state, down_2_joy_state, left_2_joy_state, right_2_joy_state, fire_2_joy_state, start_2_joy_state;
 logic [5:0] tank_1_pos_x, tank_1_pos_y, tank_2_pos_x, tank_2_pos_y;
+logic [2:0] tank_1_life, tank_2_life;
+logic tank_1_hurt, tank_2_hurt;
 logic [5:0] o_init_tank_1_pos_x, o_init_tank_1_pos_y, o_init_tank_2_pos_x, o_init_tank_2_pos_y;
 logic [4:0] valid_shell_1, valid_shell_2;
 logic [5:0] shell_1_0_pos_x, shell_1_0_pos_y, shell_1_1_pos_x, shell_1_1_pos_y, shell_1_2_pos_x,
@@ -232,7 +234,8 @@ VGA vga(.clk(CLOCK_25), .rst_n(RST_N), .VGA_B(VGA_B), .VGA_BLANK_N(VGA_BLANK_N),
 	.i_shell1_2_x(shell_2_2_pos_x), .i_shell1_2_y(shell_2_2_pos_y), 
 	.i_shell1_3_x(shell_2_3_pos_x), .i_shell1_3_y(shell_2_3_pos_y), 
 	.i_shell1_4_x(shell_2_4_pos_x), .i_shell1_4_y(shell_2_4_pos_y), 
-	.i_shell0_valid(valid_1_shell), .i_shell1_valid(valid_2_shell));
+	.i_shell0_valid(valid_1_shell), .i_shell1_valid(valid_2_shell), 
+	.i_tank0_life(tank_1_life), .i_tank1_life(tank_2_life));
 
 timer t(.clk(CLOCK_25), .rst_n(RST_N), .i_top_state(game_state), .i_VGA_buzy(VGA_busy), .o_min_ten(min_ten), .o_min_one(min_one), 
 	.o_sec_ten(sec_ten), .o_sec_one(sec_one));
@@ -272,7 +275,9 @@ state state_1(.clk(CLOCK_25), .rst_n(RST_N), .press_up_1(up_1_joy_state), .press
 			  .o_dir_2(direction_2_state_tank), .o_fire_1(fire_1), .o_fire_2(fire_2), 
 			  .i_x_pos(x_pos_vga_state), .i_y_pos(y_pos_vga_state), .i_busy(VGA_busy),
 			  .o_is_map(is_map), .o_state(game_state), .o_who_wins(who_wins), 
-			  .tank_1_dir(direction_tank_1), .tank_2_dir(direction_tank_2));
+			  .tank_1_dir(direction_tank_1), .tank_2_dir(direction_tank_2), 
+			  .tank_1_life(tank_1_life), .tank_2_life(tank_2_life), 
+			  .o_tank_1_hurt(tank_1_hurt), .o_tank_2_hurt(tank_2_hurt));
 
 shell shell_1(.clk(CLOCK_25), .rst_n(RST_N), .fire_1(fire_1), .fire_2(fire_2),
 			  .valid_give_shell_1(valid_frame_1), .valid_give_shell_2(valid_frame_2),
@@ -297,13 +302,15 @@ tank tank_1(.clk(CLOCK_25), .rst_n(RST_N), .initial_x(o_init_tank_1_pos_x),
 			.initial_y(o_init_tank_1_pos_y), .initial_direction(2'd3), 
 			.direction_in(direction_1_state_tank), .valid_take_direction(valid_frame_1),
 			.game_state(game_state), 
-			.tank_x_pos(tank_1_pos_x), .tank_y_pos(tank_1_pos_y), .direction_out(direction_tank_1));
+			.tank_x_pos(tank_1_pos_x), .tank_y_pos(tank_1_pos_y), .direction_out(direction_tank_1), 
+			.tank_life(tank_1_life), .is_hurt(tank_1_hurt));
     
 tank tank_2(.clk(CLOCK_25), .rst_n(RST_N), .initial_x(o_init_tank_2_pos_x), 
 			.initial_y(o_init_tank_2_pos_y), .initial_direction(2'd2), 
 			.direction_in(direction_2_state_tank), .valid_take_direction(valid_frame_2), 
 			.game_state(game_state),
-			.tank_x_pos(tank_2_pos_x), .tank_y_pos(tank_2_pos_y), .direction_out(direction_tank_2));
+			.tank_x_pos(tank_2_pos_x), .tank_y_pos(tank_2_pos_y), .direction_out(direction_tank_2), 
+			.tank_life(tank_2_life), .is_hurt(tank_2_hurt));
 
 /******************
        Debug
