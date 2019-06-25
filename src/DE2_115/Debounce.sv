@@ -6,7 +6,7 @@ module Debounce(
 	output o_neg,
 	output o_pos
 );
-	parameter CNT_N = 7;
+	parameter CNT_N = 15;
 	localparam CNT_BIT = $clog2(CNT_N+1);
 
 	logic o_debounced_r, o_debounced_w;
