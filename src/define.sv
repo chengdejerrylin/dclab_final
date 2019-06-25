@@ -3,7 +3,7 @@
 ***************************/
 
 //`define USE_SWITCH
-`define COMPILE_FRAME
+//`define COMPILE_FRAME
 `define COMPILE_SMALL
 
 /**************************
@@ -11,7 +11,7 @@
 ***************************/
 
 //background
-`define STATUS_BAR_COLOR  24'h7f7f7f
+`define STATUS_BAR_COLOR  24'he0e0e0
 `define GROUND_COLOR  24'hffffff
 
 //shell

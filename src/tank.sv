@@ -36,17 +36,17 @@ module tank(
 	localparam STATE_4 = 4;
 
 	//life
-	localparam LIFE_MAX = 2;
+	localparam LIFE_MAX = 5;
 
 	reg [2:0] state, state_n;
 	reg [5:0] tank_x_pos_n, tank_y_pos_n;
 	reg [2:0] direction_last, direction_last_n; //record the direction of last frame(not cycle!)
 	reg [1:0] direction_out_n;
-	reg [2:0] life_n;
+	reg [2:0] tank_life_n;
 
 	always_comb begin
 		direction_out_n = direction_out;
-		life_n = is_hurt ? life -1 : life;
+		tank_life_n = is_hurt ? tank_life -3'd1 : tank_life;
 
 		case(state)
 			STATE_0: begin
@@ -57,7 +57,7 @@ module tank(
 					direction_last_n = direction_last;
 				end
 				else begin
-					// if(direction_in != 3'd4)direction_out_n = direction_in[1:0];
+					if(direction_in != 3'd4)direction_out_n = direction_in[1:0];
 					if (direction_last != direction_in) begin
 						state_n = STATE_0;
 						tank_x_pos_n = tank_x_pos;
@@ -209,7 +209,7 @@ module tank(
 		if (game_state == 2'b10) begin
 			tank_x_pos_n = initial_x;
 			tank_y_pos_n = initial_y;
-			life_n = LIFE_MAX;
+			tank_life_n = LIFE_MAX;
 		end
 	end
 
@@ -220,7 +220,7 @@ module tank(
 			tank_y_pos <= initial_y;
 			direction_last <= STAND;
 			direction_out <= initial_direction;
-			life <= LIFE_MAX;
+			tank_life <= LIFE_MAX;
 		end
 
 		else begin
@@ -229,7 +229,7 @@ module tank(
 			tank_y_pos <= tank_y_pos_n;
 			direction_last <= direction_last_n;
 			direction_out <= direction_out_n;
-			life <= life_n;
+			tank_life <= tank_life_n;
 		end
 	end
 

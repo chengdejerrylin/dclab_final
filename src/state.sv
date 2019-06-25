@@ -193,7 +193,8 @@ module state(
 
 
                 if( ~press_up_1 ) begin
-                    if( map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x - 2)] 
+                    if(tank_1_dir != 2'd0)next_dir_1 = 3'd0;
+                    else if( map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x - 2)] 
                       | map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x - 1)]
                       | map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x)]
                       | map_mem[tank_1_pos_y - 3][63 - (tank_1_pos_x + 1)]
@@ -205,7 +206,8 @@ module state(
                     else next_dir_1 = 3'b000;
                 end
                 else if( ~press_down_1 ) begin
-                    if( map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x - 2)] 
+                    if(tank_1_dir != 2'd1)next_dir_1 = 3'd1;
+                    else if( map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x - 2)] 
                       | map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x - 1)]
                       | map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x)]
                       | map_mem[tank_1_pos_y + 3][63 - (tank_1_pos_x + 1)]
@@ -217,7 +219,8 @@ module state(
                     else next_dir_1 = 3'b001;
                 end
                 else if( ~press_left_1 ) begin
-                    if( map_mem[tank_1_pos_y - 2][63 - (tank_1_pos_x - 3)]
+                    if(tank_1_dir != 2'd2)next_dir_1 = 3'd2;
+                    else if( map_mem[tank_1_pos_y - 2][63 - (tank_1_pos_x - 3)]
                       | map_mem[tank_1_pos_y - 1][63 - (tank_1_pos_x - 3)]
                       | map_mem[tank_1_pos_y][63 - (tank_1_pos_x - 3)]
                       | map_mem[tank_1_pos_y + 1][63 - (tank_1_pos_x - 3)]
@@ -229,7 +232,8 @@ module state(
                     else next_dir_1 = 3'b010;
                 end
                 else if( ~press_right_1 ) begin
-                    if( map_mem[tank_1_pos_y - 2][63 - (tank_1_pos_x + 3)]
+                    if(tank_1_dir != 2'd3)next_dir_1 = 3'd3;
+                    else if( map_mem[tank_1_pos_y - 2][63 - (tank_1_pos_x + 3)]
                       | map_mem[tank_1_pos_y - 1][63 - (tank_1_pos_x + 3)]
                       | map_mem[tank_1_pos_y][63 - (tank_1_pos_x + 3)]
                       | map_mem[tank_1_pos_y + 1][63 - (tank_1_pos_x + 3)]
@@ -250,7 +254,8 @@ module state(
                 else next_fire_2 = ~valid_frame_2;
 
                 if( ~press_up_2 ) begin
-                    if( map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x - 2)] 
+                    if(tank_2_dir != 2'd0)next_dir_2 = 3'd0;
+                    else if( map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x - 2)] 
                       | map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x - 1)]
                       | map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x)]
                       | map_mem[tank_2_pos_y - 3][63 - (tank_2_pos_x + 1)]
@@ -262,7 +267,8 @@ module state(
                     else next_dir_2 = 3'b000;
                 end
                 else if( ~press_down_2 ) begin
-                    if( map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x - 2)] 
+                    if(tank_2_dir != 2'd1)next_dir_2 = 3'd1;
+                    else if( map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x - 2)] 
                       | map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x - 1)]
                       | map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x)]
                       | map_mem[tank_2_pos_y + 3][63 - (tank_2_pos_x + 1)]
@@ -274,7 +280,8 @@ module state(
                     else next_dir_2 = 3'b001;
                 end
                 else if( ~press_left_2 ) begin
-                    if( map_mem[tank_2_pos_y - 2][63 - (tank_2_pos_x - 3)]
+                    if(tank_2_dir != 2'd2)next_dir_2 = 3'd2;
+                    else if( map_mem[tank_2_pos_y - 2][63 - (tank_2_pos_x - 3)]
                       | map_mem[tank_2_pos_y - 1][63 - (tank_2_pos_x - 3)]
                       | map_mem[tank_2_pos_y][63 - (tank_2_pos_x - 3)]
                       | map_mem[tank_2_pos_y + 1][63 - (tank_2_pos_x - 3)]
@@ -286,7 +293,8 @@ module state(
                     else next_dir_2 = 3'b010;
                 end
                 else if( ~press_right_2 ) begin
-                    if( map_mem[tank_2_pos_y - 2][63 - (tank_2_pos_x + 3)]
+                    if(tank_2_dir != 2'd3)next_dir_2 = 3'd3;
+                    else if( map_mem[tank_2_pos_y - 2][63 - (tank_2_pos_x + 3)]
                       | map_mem[tank_2_pos_y - 1][63 - (tank_2_pos_x + 3)]
                       | map_mem[tank_2_pos_y][63 - (tank_2_pos_x + 3)]
                       | map_mem[tank_2_pos_y + 1][63 - (tank_2_pos_x + 3)]
@@ -305,7 +313,7 @@ module state(
                 //output next_shell_vanish_1[0:4], next_shell_vanish_2[0:4], next_state, next_who_wins
                 //use    i_valid_shell_1, i_valid_shell_2
                 //----------------------------tank_1, shell_0---------------------------------
-                if( ~i_valid_shell_1[0] ) begin
+                if( ~i_valid_shell_1[0] & ~shell_vanish_1[0]) begin
                     //shell hit wall
                     if( map_mem[shell_1_0_pos_y][63 - shell_1_0_pos_x] ) next_shell_vanish_1[0] = 1'b1;
                     else next_shell_vanish_1[0] = 1'b0;
@@ -315,6 +323,7 @@ module state(
                       & shell_1_0_pos_y >= tank_2_pos_y - 2
                       & shell_1_0_pos_y <= tank_2_pos_y + 2 )) begin
                         next_shell_hit_1[0] = 1'b1;
+                        next_shell_vanish_1[0] = 1'b1;
                     end
                     else begin
                         next_shell_hit_1[0] = 1'b0;
@@ -325,7 +334,7 @@ module state(
                     next_shell_hit_1[0] = 1'b0;
                 end
                 //----------------------------tank_1, shell_1---------------------------------
-                if( ~i_valid_shell_1[1] ) begin
+                if( ~i_valid_shell_1[1] & ~shell_vanish_1[1]) begin
                     //shell hit wall
                     if( map_mem[shell_1_1_pos_y][63 - shell_1_1_pos_x] ) next_shell_vanish_1[1] = 1'b1;
                     else next_shell_vanish_1[1] = 1'b0;
@@ -335,6 +344,7 @@ module state(
                       & shell_1_1_pos_y >= tank_2_pos_y - 2
                       & shell_1_1_pos_y <= tank_2_pos_y + 2 )) begin
                         next_shell_hit_1[1] = 1'b1;
+                        next_shell_vanish_1[1] = 1'b1;
                     end
                     else begin
                         next_shell_hit_1[1] = 1'b0;
@@ -345,7 +355,7 @@ module state(
                     next_shell_hit_1[1] = 1'b0;
                 end
                 //----------------------------tank_1, shell_2---------------------------------
-                if( ~i_valid_shell_1[2] ) begin
+                if( ~i_valid_shell_1[2] & ~shell_vanish_1[2]) begin
                     //shell hit wall
                     if( map_mem[shell_1_2_pos_y][63 - shell_1_2_pos_x] ) next_shell_vanish_1[2] = 1'b1;
                     else next_shell_vanish_1[2] = 1'b0;
@@ -355,6 +365,7 @@ module state(
                       & shell_1_2_pos_y >= tank_2_pos_y - 2
                       & shell_1_2_pos_y <= tank_2_pos_y + 2 )) begin
                         next_shell_hit_1[2] = 1'b1;
+                        next_shell_vanish_1[2] = 1'b1;
                     end
                     else begin
                         next_shell_hit_1[2] = 1'b0;
@@ -365,7 +376,7 @@ module state(
                     next_shell_hit_1[2] = 1'b0;
                 end
                 //----------------------------tank_1, shell_3---------------------------------
-                if( ~i_valid_shell_1[3] ) begin
+                if( ~i_valid_shell_1[3] & ~shell_vanish_1[3]) begin
                     //shell hit wall
                     if( map_mem[shell_1_3_pos_y][63 - shell_1_3_pos_x] ) next_shell_vanish_1[3] = 1'b1;
                     else next_shell_vanish_1[3] = 1'b0;
@@ -375,6 +386,7 @@ module state(
                       & shell_1_3_pos_y >= tank_2_pos_y - 2
                       & shell_1_3_pos_y <= tank_2_pos_y + 2 )) begin
                         next_shell_hit_1[3] = 1'b1;
+                        next_shell_vanish_1[3] = 1'b1;
                     end
                     else begin
                         next_shell_hit_1[3] = 1'b0;
@@ -385,7 +397,7 @@ module state(
                     next_shell_hit_1[3] = 1'b0;
                 end
                 //----------------------------tank_1, shell_4---------------------------------
-                if( ~i_valid_shell_1[4] ) begin
+                if( ~i_valid_shell_1[4] & ~shell_vanish_1[4]) begin
                     //shell hit wall
                     if( map_mem[shell_1_4_pos_y][63 - shell_1_4_pos_x] ) next_shell_vanish_1[4] = 1'b1;
                     else next_shell_vanish_1[4] = 1'b0;
@@ -395,6 +407,7 @@ module state(
                       & shell_1_4_pos_y >= tank_2_pos_y - 2
                       & shell_1_4_pos_y <= tank_2_pos_y + 2 )) begin
                         next_shell_hit_1[4] = 1'b1;
+                        next_shell_vanish_1[4] = 1'b1;
                     end
                     else begin
                         next_shell_hit_1[4] = 1'b0;
@@ -405,7 +418,7 @@ module state(
                     next_shell_hit_1[4] = 1'b0;
                 end
                 //----------------------------tank_2, shell_0---------------------------------
-                if( ~i_valid_shell_2[0] ) begin
+                if( ~i_valid_shell_2[0] & ~shell_vanish_2[0]) begin
                     //shell hit wall
                     if( map_mem[shell_2_0_pos_y][63 - shell_2_0_pos_x] ) next_shell_vanish_2[0] = 1'b1;
                     else next_shell_vanish_2[0] = 1'b0;
@@ -415,6 +428,7 @@ module state(
                       & shell_2_0_pos_y >= tank_1_pos_y - 2
                       & shell_2_0_pos_y <= tank_1_pos_y + 2 )) begin
                         next_shell_hit_2[0] = 1'b1;
+                        next_shell_vanish_2[0] = 1'b1;
                     end
                     else begin
                         next_shell_hit_2[0] = 1'b0;
@@ -425,7 +439,7 @@ module state(
                     next_shell_hit_2[0] = 1'b0;
                 end
                 //----------------------------tank_2, shell_1---------------------------------
-                if( ~i_valid_shell_2[1] ) begin
+                if( ~i_valid_shell_2[1] & ~shell_vanish_2[1]) begin
                     //shell hit wall
                     if( map_mem[shell_2_1_pos_y][63 - shell_2_1_pos_x] ) next_shell_vanish_2[1] = 1'b1;
                     else next_shell_vanish_2[1] = 1'b0;
@@ -435,6 +449,7 @@ module state(
                       & shell_2_1_pos_y >= tank_1_pos_y - 2
                       & shell_2_1_pos_y <= tank_1_pos_y + 2 )) begin
                         next_shell_hit_2[1] = 1'b1;
+                        next_shell_vanish_2[1] = 1'b1;
                     end
                     else begin
                         next_shell_hit_2[1] = 1'b0;
@@ -445,7 +460,7 @@ module state(
                     next_shell_hit_2[1] = 1'b0;
                 end
                 //----------------------------tank_2, shell_2---------------------------------
-                if( ~i_valid_shell_2[2] ) begin
+                if( ~i_valid_shell_2[2] & ~shell_vanish_2[2]) begin
                     //shell hit wall
                     if( map_mem[shell_2_2_pos_y][63 - shell_2_2_pos_x] ) next_shell_vanish_2[2] = 1'b1;
                     else next_shell_vanish_2[2] = 1'b0;
@@ -455,6 +470,7 @@ module state(
                       & shell_2_2_pos_y >= tank_1_pos_y - 2
                       & shell_2_2_pos_y <= tank_1_pos_y + 2 )) begin
                         next_shell_hit_2[2] = 1'b1;
+                        next_shell_vanish_2[2] = 1'b1;
                     end
                     else begin
                         next_shell_hit_2[2] = 1'b0;
@@ -465,7 +481,7 @@ module state(
                     next_shell_hit_2[2] = 1'b0;
                 end
                 //----------------------------tank_2, shell_3---------------------------------
-                if( ~i_valid_shell_2[3] ) begin
+                if( ~i_valid_shell_2[3] & ~shell_vanish_2[3]) begin
                     //shell hit wall
                     if( map_mem[shell_2_3_pos_y][63 - shell_2_3_pos_x] ) next_shell_vanish_2[3] = 1'b1;
                     else next_shell_vanish_2[3] = 1'b0;
@@ -475,6 +491,7 @@ module state(
                       & shell_2_3_pos_y >= tank_1_pos_y - 2
                       & shell_2_3_pos_y <= tank_1_pos_y + 2 )) begin
                         next_shell_hit_2[3] = 1'b1;
+                        next_shell_vanish_2[3] = 1'b1;
                     end
                     else begin
                         next_shell_hit_2[3] = 1'b0;
@@ -485,7 +502,7 @@ module state(
                     next_shell_hit_2[3] = 1'b0;
                 end
                 //----------------------------tank_2, shell_4---------------------------------
-                if( ~i_valid_shell_2[4] ) begin
+                if( ~i_valid_shell_2[4] & ~shell_vanish_2[4]) begin
                     //shell hit wall
                     if( map_mem[shell_2_4_pos_y][63 - shell_2_4_pos_x] ) next_shell_vanish_2[4] = 1'b1;
                     else next_shell_vanish_2[4] = 1'b0;
@@ -495,6 +512,7 @@ module state(
                       & shell_2_4_pos_y >= tank_1_pos_y - 2
                       & shell_2_4_pos_y <= tank_1_pos_y + 2 )) begin
                         next_shell_hit_2[4] = 1'b1;
+                        next_shell_vanish_2[4] = 1'b1;
                     end
                     else begin
                         next_shell_hit_2[4] = 1'b0;
@@ -508,8 +526,8 @@ module state(
                 next_state = state;
                 next_who_wins = 2'b00;
 
-                if( next_shell_hit_1[0] | next_shell_hit_1[1] | next_shell_hit_1[2] | next_shell_hit_1[3] | next_shell_hit_1[4] ) begin
-                    if(tank_1_life) next_tank_1_hurt = 1'b1;
+                if( shell_hit_1 ) begin
+                    if(tank_2_life > 3'd1) next_tank_2_hurt = 1'b1;
                     else begin
                         next_state = END;
                         next_who_wins = 2'b01;
@@ -517,8 +535,8 @@ module state(
                     
                 end
                 
-                if( next_shell_hit_2[0] | next_shell_hit_2[1] | next_shell_hit_2[2] | next_shell_hit_2[3] | next_shell_hit_2[4] ) begin 
-                    if(tank_2_life) next_tank_2_hurt = 1'b1;
+                if( shell_hit_2 ) begin 
+                    if(tank_1_life > 3'd1) next_tank_1_hurt = 1'b1;
                     else begin
                         next_state = END;
                         next_who_wins = 2'b10;
