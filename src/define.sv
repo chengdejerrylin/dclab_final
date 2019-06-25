@@ -19,5 +19,7 @@
 `define SHELL_1 24'h0000ff
 
 //wall
-`define WALL_0 24'hff00ff
-`define WALL_1 24'h00ffff
+`define WALL_0 24'h548c00
+`define WALL_1 24'h00ec00
+`define WALL_2 24'h02df82
+`define WALL_3 24'h8cea00

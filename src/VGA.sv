@@ -287,7 +287,7 @@ shellDisplay shell(.i_display_x(display_x), .i_display_y(display_y - STATUS_BAR_
 	.i_shell1_2_x  (i_shell1_2_x), .i_shell1_2_y(i_shell1_2_y), .i_shell1_3_x(i_shell1_3_x), .i_shell1_3_y(i_shell1_3_y), 
 	.i_shell1_4_x  (i_shell1_4_x), .i_shell1_4_y(i_shell1_4_y), .i_shell1_valid(i_shell1_valid), .o_rgb_w(shell_rgb_w));
 
-Wall wall(.i_x(grid_x), .i_y(grid_y), .i_is_wall(i_is_wall), .i_sel(display_y[0] ^ display_x[0]), .o_rgb_w  (wall_rgb_w));
+Wall wall(.i_x(grid_x), .i_y(grid_y), .i_is_wall(i_is_wall), .i_sel(display_y[1:0] ^ display_x[1:0]), .o_rgb_w  (wall_rgb_w));
 always_ff @(posedge clk or negedge rst_n) begin
 	if(~rst_n) begin
 		//control
