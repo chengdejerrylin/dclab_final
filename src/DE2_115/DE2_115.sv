@@ -162,15 +162,21 @@ assign p1_right  = SW[13];
 assign p1_fire   = SW[17];
 
 `else 
-assign p1_right  = GPIO[1];
-assign p1_down   = GPIO[3];
-assign p1_up     = GPIO[5];
+
+//A : up
+//B : right
+//C : down
+//D : left
+//k : fire
+assign p1_right  = GPIO[3];
+assign p1_down   = GPIO[5];
+assign p1_up     = GPIO[1];
 assign p1_left   = GPIO[7];
 assign p1_fire   = GPIO[9];
 
-assign p2_right  = GPIO[27];
-assign p2_down   = GPIO[29];
-assign p2_up     = GPIO[31];
+assign p2_right  = GPIO[29];
+assign p2_down   = GPIO[31];
+assign p2_up     = GPIO[27];
 assign p2_left   = GPIO[33];
 assign p2_fire   = GPIO[35];
 `endif

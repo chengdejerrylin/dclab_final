@@ -567,7 +567,7 @@ module state(
                 
             end
             END: begin
-                if( ~press_right_1 & ~press_right_2 ) next_state = START;
+                if( ~press_left_1 & ~press_left_2 ) next_state = GAME;
                 else next_state = state;
                 //others
                 //object
