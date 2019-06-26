@@ -348,7 +348,7 @@ module state(
                     //shell hit wall
                     if( map_mem[shell_1_0_pos_y][63 - shell_1_0_pos_x] || 
                     shell_1_0_pos_x == 6'd0 || shell_1_0_pos_x == 6'd63 || 
-                    shell_1_0_pos_x == 6'd0 || shell_1_0_pos_y == 6'd43) begin
+                    shell_1_0_pos_y == 6'd0 || shell_1_0_pos_y == 6'd43) begin
                         next_shell_vanish_1[0] = 1'b1;
                         `ifdef COMPILE_MULTIPLE_MAPS
                         next_map_hit_valid = 1'b1;
@@ -378,7 +378,7 @@ module state(
                     //shell hit wall
                     if( map_mem[shell_1_1_pos_y][63 - shell_1_1_pos_x] || 
                     shell_1_1_pos_x == 6'd0 || shell_1_1_pos_x == 6'd63 || 
-                    shell_1_1_pos_x == 6'd0 || shell_1_1_pos_y == 6'd43 ) begin
+                    shell_1_1_pos_y == 6'd0 || shell_1_1_pos_y == 6'd43 ) begin
                         next_shell_vanish_1[1] = 1'b1;
                         `ifdef COMPILE_MULTIPLE_MAPS
                         next_map_hit_valid = 1'b1;
@@ -408,7 +408,7 @@ module state(
                     //shell hit wall
                     if( map_mem[shell_1_2_pos_y][63 - shell_1_2_pos_x] || 
                     shell_1_2_pos_x == 6'd0 || shell_1_2_pos_x == 6'd63 || 
-                    shell_1_2_pos_x == 6'd0 || shell_1_2_pos_y == 6'd43 ) begin
+                    shell_1_2_pos_y == 6'd0 || shell_1_2_pos_y == 6'd43 ) begin
                         next_shell_vanish_1[2] = 1'b1;
                         `ifdef COMPILE_MULTIPLE_MAPS
                         next_map_hit_valid = 1'b1;
@@ -438,7 +438,7 @@ module state(
                     //shell hit wall
                     if( map_mem[shell_1_3_pos_y][63 - shell_1_3_pos_x] || 
                     shell_1_3_pos_x == 6'd0 || shell_1_3_pos_x == 6'd63 || 
-                    shell_1_3_pos_x == 6'd0 || shell_1_3_pos_y == 6'd43 ) begin
+                    shell_1_3_pos_y == 6'd0 || shell_1_3_pos_y == 6'd43 ) begin
                         next_shell_vanish_1[3] = 1'b1;
                         `ifdef COMPILE_MULTIPLE_MAPS
                         next_map_hit_valid = 1'b1;
@@ -468,7 +468,7 @@ module state(
                     //shell hit wall
                     if( map_mem[shell_1_4_pos_y][63 - shell_1_4_pos_x] || 
                     shell_1_4_pos_x == 6'd0 || shell_1_4_pos_x == 6'd63 || 
-                    shell_1_4_pos_x == 6'd0 || shell_1_4_pos_y == 6'd43 ) begin
+                    shell_1_4_pos_y == 6'd0 || shell_1_4_pos_y == 6'd43 ) begin
                         next_shell_vanish_1[4] = 1'b1;
                         `ifdef COMPILE_MULTIPLE_MAPS
                         next_map_hit_valid = 1'b1;
@@ -498,7 +498,7 @@ module state(
                     //shell hit wall
                     if( map_mem[shell_2_0_pos_y][63 - shell_2_0_pos_x] || 
                     shell_2_0_pos_x == 6'd0 || shell_2_0_pos_x == 6'd63 || 
-                    shell_2_0_pos_x == 6'd0 || shell_2_0_pos_y == 6'd43 ) begin
+                    shell_2_0_pos_y == 6'd0 || shell_2_0_pos_y == 6'd43 ) begin
                         next_shell_vanish_2[0] = 1'b1;
                         `ifdef COMPILE_MULTIPLE_MAPS
                         next_map_hit_valid = 1'b1;
@@ -528,7 +528,7 @@ module state(
                     //shell hit wall
                     if( map_mem[shell_2_1_pos_y][63 - shell_2_1_pos_x] || 
                     shell_2_1_pos_x == 6'd0 || shell_2_1_pos_x == 6'd63 || 
-                    shell_2_1_pos_x == 6'd0 || shell_2_1_pos_y == 6'd43 ) begin
+                    shell_2_1_pos_y == 6'd0 || shell_2_1_pos_y == 6'd43 ) begin
                         next_shell_vanish_2[1] = 1'b1;
                         `ifdef COMPILE_MULTIPLE_MAPS
                         next_map_hit_valid = 1'b1;
@@ -558,7 +558,7 @@ module state(
                     //shell hit wall
                     if( map_mem[shell_2_2_pos_y][63 - shell_2_2_pos_x] || 
                     shell_2_2_pos_x == 6'd0 || shell_2_2_pos_x == 6'd63 || 
-                    shell_2_2_pos_x == 6'd0 || shell_2_2_pos_y == 6'd43 ) begin
+                    shell_2_2_pos_y == 6'd0 || shell_2_2_pos_y == 6'd43 ) begin
                         next_shell_vanish_2[2] = 1'b1;
                         `ifdef COMPILE_MULTIPLE_MAPS
                         next_map_hit_valid = 1'b1;
@@ -588,7 +588,7 @@ module state(
                     //shell hit wall
                     if( map_mem[shell_2_3_pos_y][63 - shell_2_3_pos_x] || 
                     shell_2_3_pos_x == 6'd0 || shell_2_3_pos_x == 6'd63 || 
-                    shell_2_3_pos_x == 6'd0 || shell_2_3_pos_y == 6'd43 ) begin
+                    shell_2_3_pos_y == 6'd0 || shell_2_3_pos_y == 6'd43 ) begin
                         next_shell_vanish_2[3] = 1'b1;
                         `ifdef COMPILE_MULTIPLE_MAPS
                         next_map_hit_valid = 1'b1;
@@ -618,7 +618,7 @@ module state(
                     //shell hit wall
                     if( map_mem[shell_2_4_pos_y][63 - shell_2_4_pos_x] || 
                     shell_2_4_pos_x == 6'd0 || shell_2_4_pos_x == 6'd63 || 
-                    shell_2_4_pos_x == 6'd0 || shell_2_4_pos_y == 6'd43 ) begin
+                    shell_2_4_pos_y == 6'd0 || shell_2_4_pos_y == 6'd43 ) begin
                         next_shell_vanish_2[4] = 1'b1;
                         `ifdef COMPILE_MULTIPLE_MAPS
                         next_map_hit_valid = 1'b1;
