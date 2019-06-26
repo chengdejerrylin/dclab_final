@@ -346,7 +346,9 @@ module state(
                 //----------------------------tank_1, shell_0---------------------------------
                 if( ~i_valid_shell_1[0] & ~shell_vanish_1[0]) begin
                     //shell hit wall
-                    if( map_mem[shell_1_0_pos_y][63 - shell_1_0_pos_x] ) begin
+                    if( map_mem[shell_1_0_pos_y][63 - shell_1_0_pos_x] || 
+                    shell_1_0_pos_x == 6'd0 || shell_1_0_pos_x == 6'd63 || 
+                    shell_1_0_pos_x == 6'd0 || shell_1_0_pos_y == 6'd43) begin
                         next_shell_vanish_1[0] = 1'b1;
                         `ifdef COMPILE_MULTIPLE_MAPS
                         next_map_hit_valid = 1'b1;
@@ -374,7 +376,9 @@ module state(
                 //----------------------------tank_1, shell_1---------------------------------
                 if( ~i_valid_shell_1[1] & ~shell_vanish_1[1]) begin
                     //shell hit wall
-                    if( map_mem[shell_1_1_pos_y][63 - shell_1_1_pos_x] ) begin
+                    if( map_mem[shell_1_1_pos_y][63 - shell_1_1_pos_x] || 
+                    shell_1_1_pos_x == 6'd0 || shell_1_1_pos_x == 6'd63 || 
+                    shell_1_1_pos_x == 6'd0 || shell_1_1_pos_y == 6'd43 ) begin
                         next_shell_vanish_1[1] = 1'b1;
                         `ifdef COMPILE_MULTIPLE_MAPS
                         next_map_hit_valid = 1'b1;
@@ -402,7 +406,9 @@ module state(
                 //----------------------------tank_1, shell_2---------------------------------
                 if( ~i_valid_shell_1[2] & ~shell_vanish_1[2]) begin
                     //shell hit wall
-                    if( map_mem[shell_1_2_pos_y][63 - shell_1_2_pos_x] ) begin
+                    if( map_mem[shell_1_2_pos_y][63 - shell_1_2_pos_x] || 
+                    shell_1_2_pos_x == 6'd0 || shell_1_2_pos_x == 6'd63 || 
+                    shell_1_2_pos_x == 6'd0 || shell_1_2_pos_y == 6'd43 ) begin
                         next_shell_vanish_1[2] = 1'b1;
                         `ifdef COMPILE_MULTIPLE_MAPS
                         next_map_hit_valid = 1'b1;
@@ -430,7 +436,9 @@ module state(
                 //----------------------------tank_1, shell_3---------------------------------
                 if( ~i_valid_shell_1[3] & ~shell_vanish_1[3]) begin
                     //shell hit wall
-                    if( map_mem[shell_1_3_pos_y][63 - shell_1_3_pos_x] ) begin
+                    if( map_mem[shell_1_3_pos_y][63 - shell_1_3_pos_x] || 
+                    shell_1_3_pos_x == 6'd0 || shell_1_3_pos_x == 6'd63 || 
+                    shell_1_3_pos_x == 6'd0 || shell_1_3_pos_y == 6'd43 ) begin
                         next_shell_vanish_1[3] = 1'b1;
                         `ifdef COMPILE_MULTIPLE_MAPS
                         next_map_hit_valid = 1'b1;
@@ -458,7 +466,9 @@ module state(
                 //----------------------------tank_1, shell_4---------------------------------
                 if( ~i_valid_shell_1[4] & ~shell_vanish_1[4]) begin
                     //shell hit wall
-                    if( map_mem[shell_1_4_pos_y][63 - shell_1_4_pos_x] ) begin
+                    if( map_mem[shell_1_4_pos_y][63 - shell_1_4_pos_x] || 
+                    shell_1_4_pos_x == 6'd0 || shell_1_4_pos_x == 6'd63 || 
+                    shell_1_4_pos_x == 6'd0 || shell_1_4_pos_y == 6'd43 ) begin
                         next_shell_vanish_1[4] = 1'b1;
                         `ifdef COMPILE_MULTIPLE_MAPS
                         next_map_hit_valid = 1'b1;
@@ -486,7 +496,9 @@ module state(
                 //----------------------------tank_2, shell_0---------------------------------
                 if( ~i_valid_shell_2[0] & ~shell_vanish_2[0]) begin
                     //shell hit wall
-                    if( map_mem[shell_2_0_pos_y][63 - shell_2_0_pos_x] ) begin
+                    if( map_mem[shell_2_0_pos_y][63 - shell_2_0_pos_x] || 
+                    shell_2_0_pos_x == 6'd0 || shell_2_0_pos_x == 6'd63 || 
+                    shell_2_0_pos_x == 6'd0 || shell_2_0_pos_y == 6'd43 ) begin
                         next_shell_vanish_2[0] = 1'b1;
                         `ifdef COMPILE_MULTIPLE_MAPS
                         next_map_hit_valid = 1'b1;
@@ -514,7 +526,9 @@ module state(
                 //----------------------------tank_2, shell_1---------------------------------
                 if( ~i_valid_shell_2[1] & ~shell_vanish_2[1]) begin
                     //shell hit wall
-                    if( map_mem[shell_2_1_pos_y][63 - shell_2_1_pos_x] ) begin
+                    if( map_mem[shell_2_1_pos_y][63 - shell_2_1_pos_x] || 
+                    shell_2_1_pos_x == 6'd0 || shell_2_1_pos_x == 6'd63 || 
+                    shell_2_1_pos_x == 6'd0 || shell_2_1_pos_y == 6'd43 ) begin
                         next_shell_vanish_2[1] = 1'b1;
                         `ifdef COMPILE_MULTIPLE_MAPS
                         next_map_hit_valid = 1'b1;
@@ -542,7 +556,9 @@ module state(
                 //----------------------------tank_2, shell_2---------------------------------
                 if( ~i_valid_shell_2[2] & ~shell_vanish_2[2]) begin
                     //shell hit wall
-                    if( map_mem[shell_2_2_pos_y][63 - shell_2_2_pos_x] ) begin
+                    if( map_mem[shell_2_2_pos_y][63 - shell_2_2_pos_x] || 
+                    shell_2_2_pos_x == 6'd0 || shell_2_2_pos_x == 6'd63 || 
+                    shell_2_2_pos_x == 6'd0 || shell_2_2_pos_y == 6'd43 ) begin
                         next_shell_vanish_2[2] = 1'b1;
                         `ifdef COMPILE_MULTIPLE_MAPS
                         next_map_hit_valid = 1'b1;
@@ -570,7 +586,9 @@ module state(
                 //----------------------------tank_2, shell_3---------------------------------
                 if( ~i_valid_shell_2[3] & ~shell_vanish_2[3]) begin
                     //shell hit wall
-                    if( map_mem[shell_2_3_pos_y][63 - shell_2_3_pos_x] ) begin
+                    if( map_mem[shell_2_3_pos_y][63 - shell_2_3_pos_x] || 
+                    shell_2_3_pos_x == 6'd0 || shell_2_3_pos_x == 6'd63 || 
+                    shell_2_3_pos_x == 6'd0 || shell_2_3_pos_y == 6'd43 ) begin
                         next_shell_vanish_2[3] = 1'b1;
                         `ifdef COMPILE_MULTIPLE_MAPS
                         next_map_hit_valid = 1'b1;
@@ -598,7 +616,9 @@ module state(
                 //----------------------------tank_2, shell_4---------------------------------
                 if( ~i_valid_shell_2[4] & ~shell_vanish_2[4]) begin
                     //shell hit wall
-                    if( map_mem[shell_2_4_pos_y][63 - shell_2_4_pos_x] ) begin
+                    if( map_mem[shell_2_4_pos_y][63 - shell_2_4_pos_x] || 
+                    shell_2_4_pos_x == 6'd0 || shell_2_4_pos_x == 6'd63 || 
+                    shell_2_4_pos_x == 6'd0 || shell_2_4_pos_y == 6'd43 ) begin
                         next_shell_vanish_2[4] = 1'b1;
                         `ifdef COMPILE_MULTIPLE_MAPS
                         next_map_hit_valid = 1'b1;
