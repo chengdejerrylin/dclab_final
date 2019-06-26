@@ -1,3 +1,5 @@
+`include "src/define.sv"
+
 module RandomMap(
 	input clk, 
 	input rst_n,
@@ -9,7 +11,7 @@ module RandomMap(
 	output logic [64*44-1 : 0] o_map
 );
 integer i;
-localparam WALL_LIFE = 3;
+localparam WALL_LIFE = `WALL_LIFE;
 
 logic update, n_update;
 logic [31:0] random, n_random;

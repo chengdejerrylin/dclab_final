@@ -1,3 +1,5 @@
+`include "src/define.sv"
+
 module tank(
 	//////global//////
 	input clk,
@@ -36,7 +38,7 @@ module tank(
 	localparam STATE_4 = 4;
 
 	//life
-	localparam LIFE_MAX = 5;
+	localparam LIFE_MAX = `TANK_LIFE;
 
 	reg [2:0] state, state_n;
 	reg [5:0] tank_x_pos_n, tank_y_pos_n;

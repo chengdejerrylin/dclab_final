@@ -9,7 +9,7 @@ module EndFrame(
 
 localparam HORIZONTAL =  9'd320;
 localparam VERTICAL   =  8'd240;
-localparam PIXEL_BITS = 3;
+localparam PIXEL_BITS = 4;
 
 logic [PIXEL_BITS-1 : 0] mem [0 : HORIZONTAL * VERTICAL -1];
 logic [23:0] center [0 : (1 << PIXEL_BITS)-1];
@@ -23,8 +23,12 @@ assign current_pixel = mem[addr];
 assign pixel = center[current_pixel];
 
 always_comb begin
-	if(pixel) o_rgb = pixel;
-	else o_rgb = i_is_p1_win ? 24'h8b0403 : 24'h04038b;
+	if(pixel) begin
+		if(pixel[23:20] && (pixel[15 : 12] == 0) && (pixel[7 : 4] == 0)) 
+			o_rgb = i_is_p1_win ? pixel : {pixel[7:0], pixel[15:8], pixel[23:16]};
+
+		else o_rgb = pixel;
+	end  else o_rgb = i_is_p1_win ? 24'h9e0302 : 24'h02039e;
 end
 
 `ifdef COMPILE_FRAME
