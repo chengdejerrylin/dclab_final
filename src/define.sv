@@ -2,8 +2,8 @@
           control
 ***************************/
 
-//`define USE_SWITCH
-`define COMPILE_FRAME
+`define USE_SWITCH
+//`define COMPILE_FRAME
 `define COMPILE_SMALL
 `define COMPILE_MULTIPLE_MAPS
 
