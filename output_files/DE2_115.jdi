@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="175666645700f0335733"/>
+    <hash md5_digest_80b="bbed644e98d5c71ce81d"/>
   </project>
   <file_info>
     <file device="EP4CE115F29C7" path="DE2_115.sof" usercode="0xFFFFFFFF"/>
@@ -9,7 +9,7 @@
     <sld_info hpath="pll:pll" name="pll">
       <assignment_values>
         <assignment_value text="QSYS_NAME pll HAS_SOPCINFO 1 GENERATION_ID 1561265025"/>
-        <assignment_value text="QSYS_NAME pll HAS_SOPCINFO 1 GENERATION_ID 1561532004"/>
+        <assignment_value text="QSYS_NAME pll HAS_SOPCINFO 1 GENERATION_ID 1561536401"/>
       </assignment_values>
       <parameters/>
     </sld_info>
