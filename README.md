@@ -5,4 +5,4 @@ Tank Game implementation on FPGA
 ![pic](https://imgur.com/4beY5Df.jpg)
 ![pic](https://github.com/whoami90506/dclab_final/blob/master/resource/picture/tankVictory_4_reduction.jpg)
 
-For more information, please see report.pdf
+## **For more information, please see report.pdf**
